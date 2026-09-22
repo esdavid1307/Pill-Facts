@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      # Local development only. Production Postgres is Neon (ADR-0009) and its
+      # credentials come from the environment, never from this file.
+      POSTGRES_DB: pillfacts
+      POSTGRES_USER: pillfacts
+      POSTGRES_PASSWORD: pillfacts
+    ports:
+      - "${PILLFACTS_DB_PORT:-5432}:5432"
+    volumes:
+      - pillfacts-db:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pillfacts -d pillfacts"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      PILLFACTS_DB_URL: jdbc:postgresql://db:5432/pillfacts
+      PILLFACTS_DB_USERNAME: pillfacts
+      PILLFACTS_DB_PASSWORD: pillfacts
+    ports:
+      - "${PILLFACTS_API_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "${PILLFACTS_WEB_PORT:-5173}:80"
+    depends_on:
+      - backend
+
+volumes:
+  pillfacts-db:

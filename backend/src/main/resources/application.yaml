@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: pill-facts-backend
+  datasource:
+    url: ${PILLFACTS_DB_URL:jdbc:postgresql://localhost:5432/pillfacts}
+    username: ${PILLFACTS_DB_USERNAME:pillfacts}
+    password: ${PILLFACTS_DB_PASSWORD:pillfacts}
+
+pillfacts:
+  upstream:
+    # Base URLs so tests can point the application at a stub instead of the live APIs.
+    # Nothing calls these yet; Resolution (#3) is the first caller.
+    rxnorm:
+      base-url: ${PILLFACTS_RXNORM_BASE_URL:https://rxnav.nlm.nih.gov}
+    openfda:
+      base-url: ${PILLFACTS_OPENFDA_BASE_URL:https://api.fda.gov}
