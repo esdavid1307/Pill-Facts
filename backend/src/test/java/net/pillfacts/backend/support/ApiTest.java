@@ -1,7 +1,5 @@
 package net.pillfacts.backend.support;
 
-import com.github.tomakehurst.wiremock.WireMockServer;
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.DynamicPropertyRegistry;
@@ -9,18 +7,18 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.web.servlet.client.RestTestClient;
 import org.testcontainers.containers.PostgreSQLContainer;
 
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
-
 /**
  * The backend's one test seam: the running application exercised through its HTTP
- * surface, against a real Postgres and with the upstream APIs stubbed.
+ * surface, against a real Postgres.
  *
  * <p>Tests here assert on the JSON a request returns. They do not reach past the HTTP
  * boundary into services or repositories, so any refactor that leaves the API contract
  * intact leaves them passing.
  *
- * <p>Both the container and the stub server are static, so one of each is shared by
- * every test class that extends this.
+ * <p>The container is static, so one Postgres is shared by every test class that extends
+ * this. Resolution (#3) adds the WireMock stub for RxNorm and openFDA here; when it
+ * does, the server must NOT be stopped in a per-class {@code @AfterAll}, or the first
+ * class to finish leaves it dead for all the rest.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class ApiTest {
@@ -28,13 +26,8 @@ public abstract class ApiTest {
 	private static final PostgreSQLContainer<?> POSTGRES =
 			new PostgreSQLContainer<>("postgres:18-alpine");
 
-	/** Stub responses for RxNorm and openFDA. Every upstream call in a test goes here. */
-	protected static final WireMockServer upstream =
-			new WireMockServer(wireMockConfig().dynamicPort());
-
 	static {
 		POSTGRES.start();
-		upstream.start();
 	}
 
 	@DynamicPropertySource
@@ -42,17 +35,10 @@ public abstract class ApiTest {
 		registry.add("spring.datasource.url", POSTGRES::getJdbcUrl);
 		registry.add("spring.datasource.username", POSTGRES::getUsername);
 		registry.add("spring.datasource.password", POSTGRES::getPassword);
-		registry.add("pillfacts.upstream.rxnorm.base-url", upstream::baseUrl);
-		registry.add("pillfacts.upstream.openfda.base-url", upstream::baseUrl);
 	}
 
 	@LocalServerPort
 	private int port;
-
-	@BeforeEach
-	void resetUpstream() {
-		upstream.resetAll();
-	}
 
 	/** A client pointed at the running application. */
 	protected RestTestClient api() {

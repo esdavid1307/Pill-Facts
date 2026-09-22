@@ -40,10 +40,10 @@ cd backend && ./mvnw spring-boot:run
 
 ### Working on the frontend
 
-Vite proxies `/api` to `http://localhost:8080`, and nginx does the same in the built
-image, so the app is same-origin either way — there is no API URL to configure and no
-CORS anywhere. Deploying (#13) has to preserve that: ADR-0009 puts the frontend on
-Cloudflare Pages and the backend on EC2, which needs a proxy route in front of `/api`.
+Vite proxies `/api` to `http://localhost:8080`, nginx does the same in the built image,
+and a Pages Function will do it in production, so the app is same-origin everywhere —
+there is no API URL to configure and no CORS anywhere. See
+[ADR-0011](docs/adr/0011-the-frontend-proxies-api-to-the-backend.md).
 
 ```sh
 cd frontend && npm install && npm run dev
@@ -73,13 +73,11 @@ CI runs both on every pull request, each only when its own directory changed.
 No credential or API key belongs in this repository. The backend reads everything it
 needs from the environment:
 
-| Variable                     | Default                                        |
-| ---------------------------- | ---------------------------------------------- |
-| `PILLFACTS_DB_URL`           | `jdbc:postgresql://localhost:5432/pillfacts`   |
-| `PILLFACTS_DB_USERNAME`      | `pillfacts`                                    |
-| `PILLFACTS_DB_PASSWORD`      | `pillfacts`                                    |
-| `PILLFACTS_RXNORM_BASE_URL`  | `https://rxnav.nlm.nih.gov`                    |
-| `PILLFACTS_OPENFDA_BASE_URL` | `https://api.fda.gov`                          |
+| Variable                | Default                                      |
+| ----------------------- | -------------------------------------------- |
+| `PILLFACTS_DB_URL`      | `jdbc:postgresql://localhost:5432/pillfacts` |
+| `PILLFACTS_DB_USERNAME` | `pillfacts`                                  |
+| `PILLFACTS_DB_PASSWORD` | `pillfacts`                                  |
 
-The defaults describe the local compose stack and the live public APIs. Production
-values are supplied by the deployment environment.
+The defaults describe the local compose stack. Production values are supplied by the
+deployment environment.
