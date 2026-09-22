@@ -4,19 +4,19 @@ import { fetchStatus } from './api/status'
 
 type Loading = { state: 'loading' }
 type Loaded = { state: 'loaded'; status: string }
-type Unreachable = { state: 'unreachable' }
-type BackendStatus = Loading | Loaded | Unreachable
+type BackendDown = { state: 'backend-down' }
+type BackendStatus = Loading | Loaded | BackendDown
 
 function App() {
   const [backend, setBackend] = useState<BackendStatus>({ state: 'loading' })
 
   useEffect(() => {
-    let current = true
+    let mounted = true
     fetchStatus()
-      .then(({ status }) => current && setBackend({ state: 'loaded', status }))
-      .catch(() => current && setBackend({ state: 'unreachable' }))
+      .then(({ status }) => mounted && setBackend({ state: 'loaded', status }))
+      .catch(() => mounted && setBackend({ state: 'backend-down' }))
     return () => {
-      current = false
+      mounted = false
     }
   }, [])
 
@@ -33,7 +33,7 @@ function App() {
             <strong>{backend.status}</strong>
           </p>
         )}
-        {backend.state === 'unreachable' && (
+        {backend.state === 'backend-down' && (
           <p role="alert">We couldn&rsquo;t reach the backend.</p>
         )}
       </section>

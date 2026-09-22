@@ -6,8 +6,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   server: {
-    // The app always calls /api on its own origin, in dev and in production alike,
-    // so there is no CORS configuration anywhere and no API URL to configure.
+    // The app calls /api on its own origin, so there is no CORS configuration
+    // anywhere and no API URL to configure. nginx does the same job in the built image.
     proxy: {
       '/api': {
         target: process.env.PILLFACTS_BACKEND_URL ?? 'http://localhost:8080',

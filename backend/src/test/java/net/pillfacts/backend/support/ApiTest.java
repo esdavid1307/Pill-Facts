@@ -1,7 +1,6 @@
 package net.pillfacts.backend.support;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -29,12 +28,13 @@ public abstract class ApiTest {
 	private static final PostgreSQLContainer<?> POSTGRES =
 			new PostgreSQLContainer<>("postgres:18-alpine");
 
-	private static final WireMockServer UPSTREAM =
+	/** Stub responses for RxNorm and openFDA. Every upstream call in a test goes here. */
+	protected static final WireMockServer upstream =
 			new WireMockServer(wireMockConfig().dynamicPort());
 
 	static {
 		POSTGRES.start();
-		UPSTREAM.start();
+		upstream.start();
 	}
 
 	@DynamicPropertySource
@@ -42,24 +42,16 @@ public abstract class ApiTest {
 		registry.add("spring.datasource.url", POSTGRES::getJdbcUrl);
 		registry.add("spring.datasource.username", POSTGRES::getUsername);
 		registry.add("spring.datasource.password", POSTGRES::getPassword);
-		registry.add("pillfacts.upstream.rxnorm.base-url", UPSTREAM::baseUrl);
-		registry.add("pillfacts.upstream.openfda.base-url", UPSTREAM::baseUrl);
+		registry.add("pillfacts.upstream.rxnorm.base-url", upstream::baseUrl);
+		registry.add("pillfacts.upstream.openfda.base-url", upstream::baseUrl);
 	}
 
 	@LocalServerPort
 	private int port;
 
-	/** Stub responses for RxNorm and openFDA. Every upstream call in a test goes here. */
-	protected static final WireMockServer upstream = UPSTREAM;
-
 	@BeforeEach
 	void resetUpstream() {
-		UPSTREAM.resetAll();
-	}
-
-	@AfterAll
-	static void stopUpstream() {
-		UPSTREAM.stop();
+		upstream.resetAll();
 	}
 
 	/** A client pointed at the running application. */

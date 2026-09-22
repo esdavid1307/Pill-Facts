@@ -6,8 +6,7 @@ Pill-Facts answers one question for people in the United States: what are the kn
 effects and safety warnings of a medication? It presents FDA-published drug labelling
 verbatim, attributed to its source, and authors no medical content of its own.
 
-See [`CONTEXT.md`](CONTEXT.md) for the domain language and [`docs/adr/`](docs/adr) for
-the decisions behind it.
+See [`docs/adr/`](docs/adr) for the decisions behind it.
 
 ## Layout
 
@@ -41,8 +40,10 @@ cd backend && ./mvnw spring-boot:run
 
 ### Working on the frontend
 
-Vite proxies `/api` to `http://localhost:8080`, so the app is same-origin in development
-and in production alike — there is no API URL to configure and no CORS anywhere.
+Vite proxies `/api` to `http://localhost:8080`, and nginx does the same in the built
+image, so the app is same-origin either way — there is no API URL to configure and no
+CORS anywhere. Deploying (#13) has to preserve that: ADR-0009 puts the frontend on
+Cloudflare Pages and the backend on EC2, which needs a proxy route in front of `/api`.
 
 ```sh
 cd frontend && npm install && npm run dev
