@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: pill-facts-backend
+  datasource:
+    url: ${PILLFACTS_DB_URL:jdbc:postgresql://localhost:5432/pillfacts}
+    username: ${PILLFACTS_DB_USERNAME:pillfacts}
+    password: ${PILLFACTS_DB_PASSWORD:pillfacts}

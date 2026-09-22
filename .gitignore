@@ -1,0 +1,9 @@
+# Agent tooling — kept locally, never published
+CLAUDE.md
+CONTEXT.md
+docs/agents/
+
+# Local secrets and machine noise
+.env
+.env.local
+.DS_Store
