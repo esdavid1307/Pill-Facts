@@ -1,0 +1,121 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "153010",
+        "rxaui": "1003945",
+        "score": "13.111054420471191",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "153010",
+        "rxaui": "1003946",
+        "score": "13.111054420471191",
+        "rank": "1",
+        "name": "Advil",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1172038",
+        "rxaui": "3828744",
+        "score": "12.624154087543488",
+        "rank": "3",
+        "name": "Advil Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1171346",
+        "rxaui": "3828739",
+        "score": "12.207744260205747",
+        "rank": "4",
+        "name": "Advil Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1296361",
+        "rxaui": "4616448",
+        "score": "12.207744260205747",
+        "rank": "4",
+        "name": "Advil Chewable Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "365861",
+        "rxaui": "12312967",
+        "score": "11.853382586863281",
+        "rank": "6",
+        "name": "ibuprofen Oral Suspension [Advil]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "91703",
+        "rxaui": "12319798",
+        "score": "11.853382586863281",
+        "rank": "6",
+        "name": "ibuprofen Oral Tablet [Advil]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "731528",
+        "rxaui": "12320080",
+        "score": "11.853382586863281",
+        "rank": "6",
+        "name": "ibuprofen Chewable Tablet [Advil]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "731532",
+        "rxaui": "12320081",
+        "score": "11.853382586863281",
+        "rank": "6",
+        "name": "ibuprofen Oral Capsule [Advil]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1171345",
+        "rxaui": "3828738",
+        "score": "11.84745589556985",
+        "rank": "10",
+        "name": "Advil Oral Liquid Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "215043",
+        "rxaui": "1174349",
+        "score": "11.36173867878914",
+        "rank": "11",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "215044",
+        "rxaui": "1174351",
+        "score": "11.36173867878914",
+        "rank": "11",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "2534907",
+        "rxaui": "12620044",
+        "score": "11.36173867878914",
+        "rank": "11",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "284651",
+        "rxaui": "1358797",
+        "score": "11.36173867878914",
+        "rank": "11",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "2388166",
+        "rxaui": "2542287",
+        "score": "11.36173867878914",
+        "rank": "11",
+        "source": "MMSL"
+      }
+    ]
+  }
+}

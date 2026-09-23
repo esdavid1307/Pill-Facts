@@ -56,6 +56,14 @@ surface, against a real Postgres from Testcontainers with the upstream APIs stub
 WireMock. Tests extend `ApiTest` and assert on the JSON a request returns. **Docker must
 be running.**
 
+No test touches a live upstream. WireMock answers from responses recorded under
+`backend/src/test/resources/fixtures/`, so a test names a search term and nothing else.
+Re-record them when an upstream's shape changes, and read the diff before committing it:
+
+```sh
+python3 backend/tools/record-rxnorm-fixtures.py
+```
+
 ```sh
 cd backend && ./mvnw verify
 ```
@@ -78,6 +86,7 @@ needs from the environment:
 | `PILLFACTS_DB_URL`      | `jdbc:postgresql://localhost:5432/pillfacts` |
 | `PILLFACTS_DB_USERNAME` | `pillfacts`                                  |
 | `PILLFACTS_DB_PASSWORD` | `pillfacts`                                  |
+| `PILLFACTS_RXNORM_BASE_URL` | `https://rxnav.nlm.nih.gov`              |
 
 The defaults describe the local compose stack. Production values are supplied by the
 deployment environment.

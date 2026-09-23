@@ -1,0 +1,141 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "153165",
+        "rxaui": "1004568",
+        "score": "14.153162002563477",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "153165",
+        "rxaui": "1004570",
+        "score": "14.153162002563477",
+        "rank": "1",
+        "name": "Lipitor",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1177401",
+        "rxaui": "3839431",
+        "score": "13.583828543663026",
+        "rank": "3",
+        "name": "Lipitor Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1177400",
+        "rxaui": "3839430",
+        "score": "13.097005355584384",
+        "rank": "4",
+        "name": "Lipitor Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "367665",
+        "rxaui": "2053520",
+        "score": "12.68221450223303",
+        "rank": "5",
+        "name": "atorvastatin Oral Tablet [Lipitor]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "617320",
+        "rxaui": "12868587",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "617318",
+        "rxaui": "12877417",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "262095",
+        "rxaui": "12877418",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "617314",
+        "rxaui": "12887788",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "617320",
+        "rxaui": "12887789",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "574676",
+        "rxaui": "2290648",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "name": "atorvastatin 80 MG [Lipitor]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "617313",
+        "rxaui": "2455093",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "name": "atorvastatin 10 MG [Lipitor]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "617317",
+        "rxaui": "2455097",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "name": "atorvastatin 20 MG [Lipitor]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "617319",
+        "rxaui": "2455100",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "name": "atorvastatin 40 MG [Lipitor]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "617314",
+        "rxaui": "2645687",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "617318",
+        "rxaui": "2645688",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "617320",
+        "rxaui": "2645689",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      },
+      {
+        "rxcui": "262095",
+        "rxaui": "2645690",
+        "score": "10.68421400223303",
+        "rank": "6",
+        "source": "GS"
+      }
+    ]
+  }
+}

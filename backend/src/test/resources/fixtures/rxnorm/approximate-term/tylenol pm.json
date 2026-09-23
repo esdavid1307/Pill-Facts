@@ -1,0 +1,138 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "220581",
+        "rxaui": "1184469",
+        "score": "13.144487619400024",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "220581",
+        "rxaui": "2382500",
+        "score": "13.144487619400024",
+        "rank": "1",
+        "name": "Tylenol PM",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1187314",
+        "rxaui": "3848822",
+        "score": "12.664650634789467",
+        "rank": "3",
+        "name": "Tylenol PM Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1187313",
+        "rxaui": "3848821",
+        "score": "12.249577471892167",
+        "rank": "4",
+        "name": "Tylenol PM Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "202433",
+        "rxaui": "1135801",
+        "score": "12.061681747436523",
+        "rank": "5",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "202433",
+        "rxaui": "1135802",
+        "score": "12.061681747436523",
+        "rank": "5",
+        "name": "Tylenol",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1187312",
+        "rxaui": "3848820",
+        "score": "11.886908147831889",
+        "rank": "7",
+        "name": "Tylenol PM Oral Liquid Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "220585",
+        "rxaui": "1184475",
+        "score": "11.66362190246582",
+        "rank": "8",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "1187315",
+        "rxaui": "3848823",
+        "score": "11.66362190246582",
+        "rank": "8",
+        "name": "Tylenol Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "604823",
+        "rxaui": "12313631",
+        "score": "11.578810048726249",
+        "rank": "10",
+        "name": "acetaminophen / diphenhydramine Oral Solution [Tylenol PM]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1092377",
+        "rxaui": "12313641",
+        "score": "11.578810048726249",
+        "rank": "10",
+        "name": "acetaminophen / diphenhydramine Oral Tablet [Tylenol PM]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "220572",
+        "rxaui": "1184452",
+        "score": "11.317943734645844",
+        "rank": "12",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "1187311",
+        "rxaui": "3848819",
+        "score": "11.317943734645844",
+        "rank": "12",
+        "name": "Tylenol Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1296526",
+        "rxaui": "4615813",
+        "score": "11.317943734645844",
+        "rank": "12",
+        "name": "Tylenol Chewable Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1861541",
+        "rxaui": "8703005",
+        "score": "11.317943734645844",
+        "rank": "12",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "2654810",
+        "rxaui": "12837733",
+        "score": "11.300221315717435",
+        "rank": "16",
+        "name": "acetaminophen / diphenhydramine hydrochloride Oral Tablet [Tylenol PM]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "2657845",
+        "rxaui": "12840768",
+        "score": "11.300221315717435",
+        "rank": "16",
+        "name": "acetaminophen / diphenhydramine hydrochloride Oral Solution [Tylenol PM]",
+        "source": "RXNORM"
+      }
+    ]
+  }
+}

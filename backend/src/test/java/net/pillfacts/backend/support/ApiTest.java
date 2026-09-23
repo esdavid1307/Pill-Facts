@@ -9,22 +9,24 @@ import org.testcontainers.containers.PostgreSQLContainer;
 
 /**
  * The backend's one test seam: the running application exercised through its HTTP
- * surface, against a real Postgres.
+ * surface, against a real Postgres and recorded upstream fixtures.
  *
  * <p>Tests here assert on the JSON a request returns. They do not reach past the HTTP
  * boundary into services or repositories, so any refactor that leaves the API contract
  * intact leaves them passing.
  *
- * <p>The container is static, so one Postgres is shared by every test class that extends
- * this. Resolution (#3) adds the WireMock stub for RxNorm and openFDA here; when it
- * does, the server must NOT be stopped in a per-class {@code @AfterAll}, or the first
- * class to finish leaves it dead for all the rest.
+ * <p>Postgres and the RxNorm stub are both static, so one of each is shared by every
+ * test class that extends this. Neither may be stopped in a per-class {@code @AfterAll},
+ * or the first class to finish leaves them dead for all the rest; both live until the
+ * JVM does.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class ApiTest {
 
 	private static final PostgreSQLContainer<?> POSTGRES =
 			new PostgreSQLContainer<>("postgres:18-alpine");
+
+	private static final String RXNORM_BASE_URL = new RxNormStub().start();
 
 	static {
 		POSTGRES.start();
@@ -35,6 +37,7 @@ public abstract class ApiTest {
 		registry.add("spring.datasource.url", POSTGRES::getJdbcUrl);
 		registry.add("spring.datasource.username", POSTGRES::getUsername);
 		registry.add("spring.datasource.password", POSTGRES::getPassword);
+		registry.add("pillfacts.rxnorm.base-url", () -> RXNORM_BASE_URL);
 	}
 
 	@LocalServerPort
