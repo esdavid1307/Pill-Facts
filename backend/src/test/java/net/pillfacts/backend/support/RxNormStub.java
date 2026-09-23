@@ -1,15 +1,10 @@
 package net.pillfacts.backend.support;
 
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.charset.StandardCharsets;
-
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 /**
  * RxNorm, served from recorded fixtures instead of the live API.
@@ -24,8 +19,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
  */
 final class RxNormStub {
 
-	private static final String FIXTURES = "classpath*:fixtures/rxnorm/";
-
 	private final WireMockServer server = new WireMockServer(WireMockConfiguration.options().dynamicPort());
 
 	String start() {
@@ -37,20 +30,20 @@ final class RxNormStub {
 	}
 
 	private void stubApproximateTerm() {
-		for (Resource fixture : fixtures("approximate-term")) {
+		for (Resource fixture : Fixtures.in("rxnorm/approximate-term")) {
 			server.stubFor(WireMock.get(WireMock.urlPathEqualTo("/REST/approximateTerm.json"))
-					.withQueryParam("term", WireMock.equalTo(stem(fixture)))
-					.willReturn(json(read(fixture))));
+					.withQueryParam("term", WireMock.equalTo(Fixtures.stem(fixture)))
+					.willReturn(json(Fixtures.read(fixture))));
 		}
 	}
 
 	private void stubConcepts(String directory, String pathTemplate, String tty) {
-		for (Resource fixture : fixtures(directory)) {
-			var mapping = WireMock.get(WireMock.urlPathEqualTo(pathTemplate.formatted(stem(fixture))));
+		for (Resource fixture : Fixtures.in("rxnorm/" + directory)) {
+			var mapping = WireMock.get(WireMock.urlPathEqualTo(pathTemplate.formatted(Fixtures.stem(fixture))));
 			if (tty != null) {
 				mapping = mapping.withQueryParam("tty", WireMock.equalTo(tty));
 			}
-			server.stubFor(mapping.willReturn(json(read(fixture))));
+			server.stubFor(mapping.willReturn(json(Fixtures.read(fixture))));
 		}
 	}
 
@@ -59,34 +52,5 @@ final class RxNormStub {
 				.withStatus(200)
 				.withHeader("Content-Type", "application/json")
 				.withBody(body);
-	}
-
-	private static Resource[] fixtures(String directory) {
-		try {
-			Resource[] found = new PathMatchingResourcePatternResolver()
-					.getResources(FIXTURES + directory + "/*.json");
-			if (found.length == 0) {
-				throw new IllegalStateException("No RxNorm fixtures found in " + directory
-						+ ". Run backend/tools/record-rxnorm-fixtures.py.");
-			}
-			return found;
-		}
-		catch (IOException ex) {
-			throw new UncheckedIOException(ex);
-		}
-	}
-
-	private static String stem(Resource fixture) {
-		String name = fixture.getFilename();
-		return name.substring(0, name.length() - ".json".length());
-	}
-
-	private static String read(Resource fixture) {
-		try (var in = fixture.getInputStream()) {
-			return new String(in.readAllBytes(), StandardCharsets.UTF_8);
-		}
-		catch (IOException ex) {
-			throw new UncheckedIOException(ex);
-		}
 	}
 }

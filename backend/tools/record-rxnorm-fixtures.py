@@ -26,6 +26,7 @@ TERMS = [
     "ibuprofen",      # and its Active Ingredient
     "hydroxy",        # ambiguous: several Drug Concepts, plus obsolete concepts
     "tylenol pm",     # a Brand that is a Combination Product, alongside one that isn't
+    "warfarin",       # the Active Ingredient ADR-0007 uses as its Boxed Warning example
     "zzzqqqnotadrug", # matches nothing
 ]
 
@@ -45,8 +46,14 @@ def write(relative, body):
     print(f"  {target.relative_to(FIXTURES.parent.parent.parent.parent)}")
 
 
+# RxCUIs the tests ask about directly, which no search term above would reach.
+EXTRA_RXCUIS = [
+    "999999999",  # no such concept: RxNorm answers 200 with an empty body
+]
+
+
 def main():
-    rxcuis = []
+    rxcuis = list(EXTRA_RXCUIS)
     for term in TERMS:
         body = get("/REST/approximateTerm.json", term=term, maxEntries=20)
         write(f"approximate-term/{term}.json", body)
@@ -56,7 +63,8 @@ def main():
 
     for rxcui in rxcuis:
         write(f"properties/{rxcui}.json", get(f"/REST/rxcui/{rxcui}/properties.json"))
-        write(f"related-ingredient/{rxcui}.json", get(f"/REST/rxcui/{rxcui}/related.json", tty="IN"))
+        if rxcui not in EXTRA_RXCUIS:
+            write(f"related-ingredient/{rxcui}.json", get(f"/REST/rxcui/{rxcui}/related.json", tty="IN"))
 
 
 if __name__ == "__main__":

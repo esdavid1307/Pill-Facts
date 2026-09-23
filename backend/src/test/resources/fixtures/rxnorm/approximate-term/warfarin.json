@@ -1,0 +1,109 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "11289",
+        "rxaui": "10327847",
+        "score": "12.062381744384766",
+        "rank": "1",
+        "source": "GS"
+      },
+      {
+        "rxcui": "11289",
+        "rxaui": "12253984",
+        "score": "12.062381744384766",
+        "rank": "1",
+        "name": "warfarin",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "11289",
+        "rxaui": "2075376",
+        "score": "12.062381744384766",
+        "rank": "1",
+        "name": "WARFARIN",
+        "source": "VANDF"
+      },
+      {
+        "rxcui": "11289",
+        "rxaui": "5482898",
+        "score": "12.062381744384766",
+        "rank": "1",
+        "name": "warfarin",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "11289",
+        "rxaui": "6809178",
+        "score": "12.062381744384766",
+        "rank": "1",
+        "source": "NDDF"
+      },
+      {
+        "rxcui": "11289",
+        "rxaui": "8544269",
+        "score": "12.062381744384766",
+        "rank": "1",
+        "name": "Warfarin",
+        "source": "DRUGBANK"
+      },
+      {
+        "rxcui": "1161791",
+        "rxaui": "12291511",
+        "score": "11.65843445301056",
+        "rank": "7",
+        "name": "warfarin Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "374319",
+        "rxaui": "12261534",
+        "score": "11.31288116604972",
+        "rank": "8",
+        "name": "warfarin Oral Tablet",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "374320",
+        "rxaui": "12261535",
+        "score": "11.31288116604972",
+        "rank": "8",
+        "name": "warfarin Injectable Solution",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1161789",
+        "rxaui": "12291509",
+        "score": "11.31288116604972",
+        "rank": "8",
+        "name": "warfarin Injectable Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1161790",
+        "rxaui": "12291510",
+        "score": "11.31288116604972",
+        "rank": "8",
+        "name": "warfarin Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "540228",
+        "rxaui": "12313369",
+        "score": "11.28800366982912",
+        "rank": "12",
+        "name": "warfarin Oral Tablet [Marfarin]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "540207",
+        "rxaui": "12319417",
+        "score": "11.100573380944102",
+        "rank": "13",
+        "name": "warfarin Oral Tablet [Narfarin]",
+        "source": "RXNORM"
+      }
+    ]
+  }
+}

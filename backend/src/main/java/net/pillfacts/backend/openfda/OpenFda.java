@@ -1,0 +1,172 @@
+package net.pillfacts.backend.openfda;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.StreamSupport;
+
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.node.MissingNode;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClient;
+
+/**
+ * openFDA, where the Labels come from.
+ *
+ * <p>Everything about openFDA's shape stops here: the Lucene search expressions, the
+ * every-field-is-an-array JSON, the {@code 20240415} dates, the 404 that means "nothing
+ * matched" rather than "something broke". Callers get Labels.
+ *
+ * <p>Labels are found by generic name, never by RxCUI, for the reasons in ADR-0004.
+ * That is a text search, so it also matches Labels for Combination Products containing
+ * the Active Ingredient — Caduet answers a search for atorvastatin. Those are filtered
+ * out here, because a Label describing two Active Ingredients speaks for neither Drug
+ * Concept (ADR-0012), and letting one out of this class would put amlodipine's warnings
+ * on atorvastatin's page.
+ */
+@Component
+public class OpenFda {
+
+	/**
+	 * The Label sections Pill-Facts may read. Dosing instructions are absent from this
+	 * list and stay absent: it is the one place that guarantees they reach no response
+	 * (ADR-0007).
+	 */
+	private static final List<String> SAFETY_SECTIONS = List.of(
+			"boxed_warning",
+			"contraindications",
+			"warnings_and_cautions",
+			"adverse_reactions",
+			"drug_interactions");
+
+	/** A property of the pill rather than an instruction to a patient, so kept (ADR-0007). */
+	private static final String STRENGTHS = "dosage_forms_and_strengths";
+
+	private static final String PRESCRIPTION =
+			"openfda.generic_name:\"%s\" AND openfda.product_type:\"HUMAN PRESCRIPTION DRUG\"";
+
+	private static final String BRAND_ONLY = " AND openfda.application_number:NDA*";
+
+	/**
+	 * How many Labels to read per search. A popular Active Ingredient has hundreds, all
+	 * but the first useful one discarded; the page only needs to be deep enough to see
+	 * past the Combination Products that sort above it.
+	 */
+	private static final int PAGE_SIZE = 10;
+
+	private static final DateTimeFormatter EFFECTIVE_TIME = DateTimeFormatter.BASIC_ISO_DATE;
+
+	private final RestClient http;
+
+	OpenFda(RestClient.Builder builder, @Value("${pillfacts.openfda.base-url}") String baseUrl) {
+		this.http = builder.baseUrl(baseUrl).build();
+	}
+
+	/** The prescription Labels published for a Drug Concept, most recently updated first. */
+	public List<Label> prescriptionLabels(String activeIngredient) {
+		return search(PRESCRIPTION.formatted(activeIngredient));
+	}
+
+	/**
+	 * The same, restricted to Labels approved under a new drug application — the brand
+	 * Labels ADR-0010 prefers to speak for a Drug Concept.
+	 */
+	public List<Label> brandPrescriptionLabels(String activeIngredient) {
+		return search(PRESCRIPTION.formatted(activeIngredient) + BRAND_ONLY);
+	}
+
+	private List<Label> search(String expression) {
+		JsonNode results = get(expression).path("results");
+
+		List<Label> labels = new ArrayList<>();
+		for (JsonNode result : results) {
+			Label label = labelFrom(result);
+			if (label.isForOneDrugConcept() && label.effectiveDate() != null) {
+				labels.add(label);
+			}
+		}
+
+		// openFDA sorts by effective time, but says nothing about how it breaks a tie,
+		// and repackagers publish several Labels on the same day. Ordering by set id
+		// within a date is what makes the Representative Label the same one every time.
+		labels.sort(Comparator.comparing(Label::effectiveDate).reversed().thenComparing(Label::setId));
+		return List.copyOf(labels);
+	}
+
+	private static Label labelFrom(JsonNode result) {
+		JsonNode openfda = result.path("openfda");
+		Map<String, String> sections = new LinkedHashMap<>();
+		for (String section : SAFETY_SECTIONS) {
+			text(result, section).ifPresent(body -> sections.put(section, body));
+		}
+		return new Label(
+				result.path("set_id").stringValue(null),
+				first(openfda, "brand_name").orElseGet(() -> first(openfda, "generic_name").orElse(null)),
+				first(openfda, "manufacturer_name").orElse(null),
+				first(openfda, "application_number").orElse(null),
+				effectiveDate(result),
+				strings(openfda.path("substance_name")),
+				Map.copyOf(sections),
+				text(result, STRENGTHS).orElse(null));
+	}
+
+	/**
+	 * One section's prose. openFDA splits a section into several strings where the SPL
+	 * did, so they are rejoined as the paragraphs they were.
+	 */
+	private static Optional<String> text(JsonNode result, String section) {
+		List<String> paragraphs = strings(result.path(section));
+		return paragraphs.isEmpty()
+				? Optional.empty()
+				: Optional.of(String.join("\n\n", paragraphs));
+	}
+
+	private static LocalDate effectiveDate(JsonNode result) {
+		String effectiveTime = result.path("effective_time").stringValue(null);
+		if (effectiveTime == null) {
+			return null;
+		}
+		try {
+			return LocalDate.parse(effectiveTime, EFFECTIVE_TIME);
+		}
+		catch (DateTimeParseException ex) {
+			// An undated Label cannot be ranked against the others, so it is not one we
+			// can choose; search() drops it.
+			return null;
+		}
+	}
+
+	private static Optional<String> first(JsonNode node, String field) {
+		return strings(node.path(field)).stream().findFirst();
+	}
+
+	private static List<String> strings(JsonNode array) {
+		return StreamSupport.stream(array.spliterator(), false)
+				.map(element -> element.stringValue(null))
+				.filter(value -> value != null && !value.isBlank())
+				.toList();
+	}
+
+	private JsonNode get(String expression) {
+		JsonNode body = this.http.get()
+				.uri(uri -> uri.path("/drug/label.json")
+						.queryParam("search", expression)
+						.queryParam("sort", "effective_time:desc")
+						.queryParam("limit", PAGE_SIZE)
+						.build())
+				.retrieve()
+				// openFDA answers a search that matched nothing with 404. That is an
+				// answer — this Drug Concept is Unlabelled — and not a failure. Every
+				// other status still throws, so an outage stays distinguishable.
+				.onStatus(status -> status.value() == 404, (request, response) -> { })
+				.body(JsonNode.class);
+		return (body == null) ? MissingNode.getInstance() : body;
+	}
+}
