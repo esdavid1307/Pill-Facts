@@ -2,6 +2,7 @@ package net.pillfacts.backend.resolution;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import net.pillfacts.backend.rxnorm.RxNorm;
 import net.pillfacts.backend.rxnorm.RxNormConcept;
@@ -30,9 +31,14 @@ class Resolution {
 	}
 
 	List<Candidate> resolve(String query) {
+		// RxNorm rejects an empty term, and there is nothing to ask it about anyway.
+		if (query.isBlank()) {
+			return List.of();
+		}
+
 		List<Candidate> candidates = new ArrayList<>();
 		for (String matched : this.rxNorm.approximateMatches(query)) {
-			drugConceptOf(matched).ifPresent(ingredient -> record(candidates, matched, ingredient));
+			drugConceptOf(matched).ifPresent(ingredient -> merge(candidates, matched, ingredient));
 		}
 		return candidates;
 	}
@@ -40,34 +46,30 @@ class Resolution {
 	/**
 	 * The Active Ingredient a match belongs to, where it has exactly one. A match with
 	 * several is a Combination Product, which is not a Drug Concept and so is no
-	 * candidate for anything; a match with none is an obsolete concept RxNorm still
-	 * returns but no longer relates to an ingredient.
+	 * candidate for anything (ADR-0012); a match with none is an obsolete concept RxNorm
+	 * still returns but no longer relates to an ingredient.
 	 */
-	private java.util.Optional<RxNormConcept> drugConceptOf(String matched) {
+	private Optional<RxNormConcept> drugConceptOf(String matched) {
 		List<RxNormConcept> ingredients = this.rxNorm.activeIngredientsOf(matched);
-		return (ingredients.size() == 1) ? java.util.Optional.of(ingredients.getFirst()) : java.util.Optional.empty();
+		return (ingredients.size() == 1) ? Optional.of(ingredients.getFirst()) : Optional.empty();
 	}
 
-	private void record(List<Candidate> candidates, String matched, RxNormConcept ingredient) {
-		int seen = indexOf(candidates, ingredient.rxcui());
-		if (seen < 0) {
+	/**
+	 * Folds one match into the candidates, either as a Drug Concept not seen yet or as
+	 * another sighting of one already there. A popular Brand matches a dozen times, and
+	 * every sighting after the first that can teach us nothing costs an upstream call we
+	 * skip.
+	 */
+	private void merge(List<Candidate> candidates, String matched, RxNormConcept ingredient) {
+		Optional<Candidate> seen = candidates.stream()
+				.filter(candidate -> candidate.rxcui().equals(ingredient.rxcui()))
+				.findFirst();
+		if (seen.isEmpty()) {
 			candidates.add(new Candidate(ingredient.rxcui(), ingredient.name(), brandOf(matched)));
 		}
-		else if (candidates.get(seen).brand() == null) {
-			candidates.set(seen, candidates.get(seen).withBrand(brandOf(matched)));
+		else if (seen.get().brand() == null) {
+			candidates.set(candidates.indexOf(seen.get()), seen.get().withBrand(brandOf(matched)));
 		}
-		// Otherwise this Drug Concept and the Brand that found it are both already known,
-		// and asking RxNorm about this match would teach us nothing. A popular Brand
-		// matches a dozen times, so this is most of the work a search would otherwise do.
-	}
-
-	private static int indexOf(List<Candidate> candidates, String rxcui) {
-		for (int i = 0; i < candidates.size(); i++) {
-			if (candidates.get(i).rxcui().equals(rxcui)) {
-				return i;
-			}
-		}
-		return -1;
 	}
 
 	/** The name of a match that is itself a Brand, and null for one that isn't. */

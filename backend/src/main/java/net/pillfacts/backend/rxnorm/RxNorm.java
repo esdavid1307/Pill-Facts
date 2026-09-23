@@ -1,9 +1,12 @@
 package net.pillfacts.backend.rxnorm;
 
 import java.net.URI;
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.Function;
 
 import tools.jackson.databind.JsonNode;
@@ -48,14 +51,15 @@ public class RxNorm {
 				.path("approximateGroup")
 				.path("candidate");
 
-		List<String> rxcuis = new ArrayList<>();
+		// RxNorm returns a row per source vocabulary, so the same RxCUI repeats.
+		Set<String> rxcuis = new LinkedHashSet<>();
 		for (JsonNode candidate : candidates) {
 			String rxcui = candidate.path("rxcui").stringValue(null);
-			if (rxcui != null && !rxcuis.contains(rxcui)) {
+			if (rxcui != null) {
 				rxcuis.add(rxcui);
 			}
 		}
-		return rxcuis;
+		return List.copyOf(rxcuis);
 	}
 
 	/**
@@ -81,16 +85,15 @@ public class RxNorm {
 				.path("relatedGroup")
 				.path("conceptGroup");
 
-		List<RxNormConcept> ingredients = new ArrayList<>();
+		// One ingredient can appear in several groups, so key them by RxCUI.
+		Map<String, RxNormConcept> ingredients = new LinkedHashMap<>();
 		for (JsonNode group : groups) {
 			for (JsonNode concept : group.path("conceptProperties")) {
 				RxNormConcept ingredient = conceptFrom(concept);
-				if (ingredients.stream().noneMatch(seen -> seen.rxcui().equals(ingredient.rxcui()))) {
-					ingredients.add(ingredient);
-				}
+				ingredients.putIfAbsent(ingredient.rxcui(), ingredient);
 			}
 		}
-		return ingredients;
+		return List.copyOf(ingredients.values());
 	}
 
 	private static RxNormConcept conceptFrom(JsonNode node) {

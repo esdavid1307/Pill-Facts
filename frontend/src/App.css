@@ -13,16 +13,43 @@ h1 {
   color: var(--muted);
 }
 
-.status {
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 0 1rem 1rem;
+.masthead a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.status h2 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+[role='search'] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+[role='search'] label {
+  flex-basis: 100%;
+  color: var(--muted);
+}
+
+[role='search'] input {
+  flex: 1 1 14rem;
+  padding: 0.5rem;
+}
+
+.candidates {
+  list-style: none;
+  padding: 0;
+}
+
+.candidates li {
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+
+.candidates span {
+  color: var(--muted);
+}
+
+.pending {
   color: var(--muted);
 }
 

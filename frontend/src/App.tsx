@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router'
 import './App.css'
-import { DrugConceptPage } from './drug/DrugConceptPage'
+import { DrugConceptPage } from './drugconcept/DrugConceptPage'
 import { SearchPage } from './search/SearchPage'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<SearchPage />} />
-          <Route path="/drug/:rxcui" element={<DrugConceptPage />} />
+          <Route path="/drug-concepts/:rxcui" element={<DrugConceptPage />} />
         </Routes>
       </main>
     </BrowserRouter>

@@ -5,6 +5,7 @@ import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import org.springframework.core.io.Resource;
@@ -17,8 +18,9 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
  * test names a search term and nothing else. The recorder that produced them is
  * {@code backend/tools/record-rxnorm-fixtures.py}.
  *
- * <p>Anything not recorded answers 404, which surfaces as an empty result rather than a
- * passing test quietly reaching somewhere it shouldn't.
+ * <p>Anything not recorded answers 404, which fails the test that asked for it. That is
+ * the point: a test must never quietly pass because it reached somewhere it shouldn't,
+ * and the fix is to record the fixture rather than to tolerate the gap.
  */
 final class RxNormStub {
 
@@ -52,7 +54,7 @@ final class RxNormStub {
 		}
 	}
 
-	private static com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder json(String body) {
+	private static ResponseDefinitionBuilder json(String body) {
 		return WireMock.aResponse()
 				.withStatus(200)
 				.withHeader("Content-Type", "application/json")

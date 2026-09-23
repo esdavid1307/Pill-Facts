@@ -1,8 +1,7 @@
 import { useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { searchDrugConcepts, type Candidate } from '../api/search'
-import { drugConceptPath } from '../drug/drugConceptPath'
+import { drugConceptPath } from '../drugconcept/drugConceptPath'
 
 type Idle = { state: 'idle' }
 type Searching = { state: 'searching' }

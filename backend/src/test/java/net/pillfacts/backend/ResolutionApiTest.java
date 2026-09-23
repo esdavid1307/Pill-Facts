@@ -63,7 +63,7 @@ class ResolutionApiTest extends ApiTest {
 	 * one and cannot be a candidate. Searching "tylenol pm" matches the Combination
 	 * Product itself and several of its packagings, all of which carry acetaminophen and
 	 * diphenhydramine together; only plain Tylenol resolves to a Drug Concept. Neither
-	 * constituent may be offered on its own behalf, per ADR-0005.
+	 * constituent may be offered on its own behalf, per ADR-0012.
 	 */
 	@Test
 	void never_offers_a_combination_product_as_a_drug_concept() {
@@ -75,6 +75,16 @@ class ResolutionApiTest extends ApiTest {
 				.jsonPath("$.candidates[0].rxcui").isEqualTo("161")
 				.jsonPath("$.candidates[0].name").isEqualTo("acetaminophen")
 				.jsonPath("$.candidates[0].brand").isEqualTo("Tylenol");
+	}
+
+	/** RxNorm rejects an empty term outright, so an empty search must not reach it. */
+	@Test
+	void returns_nothing_for_an_empty_query() {
+		api().get().uri("/api/search?q={q}", "   ")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.candidates").isEmpty();
 	}
 
 	@Test

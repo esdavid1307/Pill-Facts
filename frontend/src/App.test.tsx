@@ -23,7 +23,7 @@ async function search(query: string) {
 
 afterEach(() => vi.unstubAllGlobals())
 
-describe('searching for a medication', () => {
+describe('resolving a search to a Drug Concept', () => {
   it('lands on the Drug Concept when one candidate is clearly right', async () => {
     backendReturns({
       candidates: [{ rxcui: '83367', name: 'atorvastatin', brand: 'Lipitor' }],
