@@ -17,8 +17,10 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class DrugConceptApiTest extends ApiTest {
 
-	private static final String LIPITOR = "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid="
-			+ "a60cc18b-0631-4cf0-b021-9f52224ece65";
+	private static final String LIPITOR = "a60cc18b-0631-4cf0-b021-9f52224ece65";
+
+	private static final String LIPITOR_URL =
+			"https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=" + LIPITOR;
 
 	@Test
 	void returns_safety_sections_in_render_order_each_carrying_its_own_provenance() {
@@ -33,11 +35,12 @@ class DrugConceptApiTest extends ApiTest {
 						"Warnings and Precautions",
 						"Adverse Reactions",
 						"Drug Interactions"))
+				.jsonPath("$.sections[0].provenance.labelId").isEqualTo(LIPITOR)
 				.jsonPath("$.sections[0].provenance.label").isEqualTo("Lipitor")
 				.jsonPath("$.sections[0].provenance.manufacturer").isEqualTo("Viatris Specialty LLC")
 				.jsonPath("$.sections[0].provenance.effectiveDate").isEqualTo("2024-04-15")
-				.jsonPath("$.sections[0].provenance.url").isEqualTo(LIPITOR)
-				.jsonPath("$.sections[3].provenance.label").isEqualTo("Lipitor");
+				.jsonPath("$.sections[0].provenance.url").isEqualTo(LIPITOR_URL)
+				.jsonPath("$.sections[3].provenance.labelId").isEqualTo(LIPITOR);
 	}
 
 	/**
@@ -56,7 +59,13 @@ class DrugConceptApiTest extends ApiTest {
 						assertThat((List<String>) labels).containsOnly("Lipitor"));
 	}
 
-	/** ADR-0010: the brand Label is preferred, and the same request answers the same way. */
+	/**
+	 * ADR-0010: the brand Label is preferred, and repeating the request does not change
+	 * which one that is. Selection reads one page of Labels and orders it itself, so what
+	 * this pins is that nothing in that walk depends on iteration order; Labels sharing
+	 * an Effective Date, which is what the ordering's tie-break is for, are rarer than
+	 * any one drug's recorded page and are not among these.
+	 */
 	@Test
 	void chooses_the_same_representative_label_on_every_request() {
 		for (int attempt = 0; attempt < 3; attempt++) {
@@ -64,7 +73,7 @@ class DrugConceptApiTest extends ApiTest {
 					.exchange()
 					.expectStatus().isOk()
 					.expectBody()
-					.jsonPath("$.sections[0].provenance.url").isEqualTo(LIPITOR);
+					.jsonPath("$.sections[0].provenance.labelId").isEqualTo(LIPITOR);
 		}
 	}
 

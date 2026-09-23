@@ -25,6 +25,7 @@ function backendReturns(routes: Record<string, unknown>) {
 }
 
 const LIPITOR = {
+  labelId: 'a60cc18b-0631-4cf0-b021-9f52224ece65',
   label: 'Lipitor',
   manufacturer: 'Viatris Specialty LLC',
   effectiveDate: '2024-04-15',
@@ -178,22 +179,47 @@ describe("a prescription Drug Concept's page", () => {
     expect(screen.getByText(/10 mg, 20 mg, 40 mg and 80 mg/)).toBeInTheDocument()
   })
 
-  /** Unlabelled is a fact about the drug, and never worded as Unreachable is. */
-  it('says the FDA publishes nothing when a Drug Concept has no Label', async () => {
+  /**
+   * ADR-0008 allows shipping the prescription renderer alone only while the page says
+   * that is what it is. Having nothing to show is stated as a fact about Pill-Facts, and
+   * never as the claim that the FDA publishes nothing.
+   */
+  it('says the over-the-counter gap is ours when there is nothing to show', async () => {
     await open(drugConcept())
 
-    expect(await screen.findByText(/publishes no prescription labelling/i)).toBeInTheDocument()
+    expect(await screen.findByText(/no prescription labelling to show/i)).toBeInTheDocument()
+    expect(screen.getByText(/over-the-counter labelling isn’t here yet/i)).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/publishes no/i)
     expect(screen.queryByRole('alert')).toBeNull()
   })
 
-  /** Unreachable is a fact about an outage, and never worded as Unlabelled is. */
+  /** Unreachable is a fact about an outage, and never worded as the other two are. */
   it('says the FDA could not be reached when the request fails', async () => {
-    backendReturns({ '/api/search': { candidates: [{ rxcui: '83367', name: 'atorvastatin' }] } })
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (url: string) =>
+        url.startsWith('/api/search')
+          ? new Response(JSON.stringify({ candidates: [{ rxcui: '83367', name: 'atorvastatin' }] }))
+          : Promise.reject(new TypeError('network down')),
+      ),
+    )
 
     await search('atorvastatin')
 
-    const alert = await screen.findByRole('alert')
-    expect(alert).toHaveTextContent(/couldn’t reach the FDA/i)
-    expect(document.body.textContent).not.toMatch(/publishes no/i)
+    expect(await screen.findByRole('alert')).toHaveTextContent(/couldn’t reach the FDA/i)
+    expect(document.body.textContent).not.toMatch(/no prescription labelling to show/i)
+  })
+
+  /** No such Drug Concept is a fact about the address, and never worded as an outage. */
+  it('says there is no medication at the address when the RxCUI is not one', async () => {
+    backendReturns({
+      '/api/search': { candidates: [{ rxcui: '153165', name: 'atorvastatin' }] },
+      // and no /api/drug-concepts route, so the stub answers 404
+    })
+
+    await search('lipitor')
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/medication at this address/i)
+    expect(document.body.textContent).not.toMatch(/couldn’t reach the FDA/i)
   })
 })

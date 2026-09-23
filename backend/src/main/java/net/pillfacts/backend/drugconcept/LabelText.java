@@ -6,11 +6,18 @@ import java.util.regex.Pattern;
 /**
  * Label prose, made readable without being rewritten.
  *
- * <p>ADR-0006 renders Label text verbatim, and limits cleanup to exactly two things: the
- * section numbering the SPL carries in the prose itself, and the cross-references that
- * point at parts of the Label we do not render and so lead nowhere. Nothing here
- * paraphrases, summarises, reorders or abridges; whatever is left is the FDA's own
- * words.
+ * <p>ADR-0006 renders Label text verbatim and limits cleanup to two things: the section
+ * numbering the SPL carries in the prose itself, and the cross-references that lead
+ * nowhere. Nothing here paraphrases, summarises, reorders or abridges; whatever is left
+ * is the FDA's own words, and the only other liberty taken is closing up the whitespace
+ * a removal leaves behind.
+ *
+ * <p>Two readings are worth stating, because both look wider than the rule they follow.
+ * The SPL writes a section's number and its title together — "4 CONTRAINDICATIONS" —
+ * and under a heading already reading "Contraindications" the whole of that is the
+ * section's own numbering, so the whole of it goes. And every {@code [see …]} reference
+ * is unresolvable here without exception: they point at parts of the Label this system
+ * does not render, and a reader cannot follow one to anywhere.
  */
 final class LabelText {
 

@@ -16,7 +16,9 @@ import java.util.Optional;
  * @param name the Brand this Label is published under, falling back to its generic name
  * @param manufacturer who published it
  * @param applicationNumber the FDA application it was approved under, {@code NDA…} for a
- * brand Label and {@code ANDA…} for a generic one
+ * brand Label and {@code ANDA…} for a generic one. Which of the two a search is
+ * restricted to is asked of openFDA rather than decided here, so this is carried for
+ * what it tells a reader of the response, not to be branched on
  * @param effectiveDate the date this version of the Label took effect
  * @param activeIngredients every substance in the product the Label describes
  * @param sections the Safety Sections present, keyed by their openFDA field name
@@ -32,22 +34,12 @@ public record Label(
 		Map<String, String> sections,
 		String strengths) {
 
-	private static final String BRAND_APPLICATION = "NDA";
-
 	/**
 	 * Where a reader can go to see this Label whole. DailyMed publishes every version of
 	 * a set id, so the link outlives the version this Label is.
 	 */
 	public String url() {
 		return "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=" + this.setId;
-	}
-
-	/**
-	 * Whether this Label was approved under a new drug application, which is what makes
-	 * it the brand Label ADR-0010 prefers.
-	 */
-	public boolean isBrandLabel() {
-		return this.applicationNumber != null && this.applicationNumber.startsWith(BRAND_APPLICATION);
 	}
 
 	/**

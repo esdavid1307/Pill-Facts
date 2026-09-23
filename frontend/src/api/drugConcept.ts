@@ -33,9 +33,19 @@ export type DrugConcept = {
   sections: SafetySection[]
 }
 
+/**
+ * Thrown where the RxCUI identifies no Drug Concept at all. That is an answer about the
+ * address the reader followed, and is not the FDA being unreachable — the two are
+ * different facts and are never worded as though they were the same one.
+ */
+export class NoSuchDrugConcept extends Error {}
+
 /** Same-origin, like every other call the frontend makes. See ADR-0011. */
 export async function fetchDrugConcept(rxcui: string): Promise<DrugConcept> {
   const response = await fetch(`/api/drug-concepts/${encodeURIComponent(rxcui)}`)
+  if (response.status === 404) {
+    throw new NoSuchDrugConcept(rxcui)
+  }
   if (!response.ok) {
     throw new Error(`GET /api/drug-concepts/${rxcui} returned ${response.status}`)
   }

@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.StreamSupport;
 
 import tools.jackson.databind.JsonNode;
@@ -38,8 +39,14 @@ public class OpenFda {
 	 * The Label sections Pill-Facts may read. Dosing instructions are absent from this
 	 * list and stay absent: it is the one place that guarantees they reach no response
 	 * (ADR-0007).
+	 *
+	 * <p>Which of these a page shows, under what heading and in what order, is the
+	 * renderers' business — {@code PrescriptionSection} names the same fields again for
+	 * that. The two agreeing is what {@code DrugConceptApiTest} asserts when it pins the
+	 * headings a Drug Concept comes back with; a field named here and nowhere else is
+	 * read and then dropped, and one named there and not here renders as absent.
 	 */
-	private static final List<String> SAFETY_SECTIONS = List.of(
+	private static final Set<String> SAFETY_SECTIONS = Set.of(
 			"boxed_warning",
 			"contraindications",
 			"warnings_and_cautions",
@@ -69,7 +76,13 @@ public class OpenFda {
 		this.http = builder.baseUrl(baseUrl).build();
 	}
 
-	/** The prescription Labels published for a Drug Concept, most recently updated first. */
+	/**
+	 * The prescription Labels published for a Drug Concept, most recently updated first.
+	 *
+	 * <p>A Label openFDA publishes no effective time for is not among them. It cannot be
+	 * ranked against the rest, and Provenance is a promise about when as much as about
+	 * who, so a Label that cannot say when is one this system cannot attribute.
+	 */
 	public List<Label> prescriptionLabels(String activeIngredient) {
 		return search(PRESCRIPTION.formatted(activeIngredient));
 	}
