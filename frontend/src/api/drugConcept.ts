@@ -18,19 +18,30 @@ export type SafetySection = {
   provenance: Provenance
 }
 
+export type RegulatoryClass = 'OVER_THE_COUNTER' | 'PRESCRIPTION'
+
+/** The part of a Drug Concept page spoken by one Representative Label. */
+export type RegulatoryClassBlock = {
+  regulatoryClass: RegulatoryClass
+  /** The Representative Label behind claims carried directly by this block. */
+  provenance: Provenance
+  /** The strengths this Label states, absent where it states none. */
+  strengths?: string
+  /** The Safety Sections this Representative Label carries, in render order. */
+  sections: SafetySection[]
+}
+
 export type DrugConcept = {
   /** The ingredient-level RxCUI that identifies the Drug Concept. See ADR-0002. */
   rxcui: string
   /** The Active Ingredient's name. */
   name: string
-  /** The strengths the drug is made in, absent where the Label omits them. */
-  strengths?: string
   /**
-   * The Safety Sections the Representative Label carries, in the order they are to be
-   * read. A section the Label does not carry is simply not here — there is nothing to
-   * check for and nothing to say about it. See ADR-0007.
+   * One block per Regulatory Class in which the FDA publishes a Label, OTC first. A
+   * class without a Representative Label is absent rather than represented by an empty
+   * placeholder. See ADR-0010.
    */
-  sections: SafetySection[]
+  labelling: RegulatoryClassBlock[]
 }
 
 /**

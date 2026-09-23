@@ -22,10 +22,3 @@ since a visitor is more often holding the drugstore box than a prescription.
 A single Drug Concept page may run both renderers from ADR-0008, so neither may assume
 it owns the page. Rejected: splitting ibuprofen into two Drug Concepts, which would
 solve the selection problem by breaking the identity model in ADR-0002.
-
-**Not yet true as written.** Showing every class at once is #6. Until it lands, a page
-asks the classes in the order above and shows the first that has a Representative Label,
-so ibuprofen gets its Advil box and nothing of its prescription labelling. That is this
-ADR's ordering honoured and its "renders all of them" deferred, not overruled — the
-deferral is what makes #5 shippable on its own, and #6 closes it. The one-per-class
-selection rule, which is the part that is hard to reverse, is implemented in full.

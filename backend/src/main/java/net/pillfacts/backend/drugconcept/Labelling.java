@@ -47,20 +47,17 @@ class Labelling {
 	}
 
 	/**
-	 * Regulatory Class is a property of the Label and not of the Drug Concept, so the
-	 * classes are asked in the order ADR-0010 shows them and the first that has a Label
-	 * speaks. Ibuprofen is sold in both and gets its Advil box, which is what a visitor
-	 * holding one is looking for; a drug sold in one class has only the one answer to
-	 * give. Showing both at once, so neither has to be chosen over the other, is #6.
+	 * Regulatory Class is a property of the Label and not of the Drug Concept, so every
+	 * class with a Representative Label gets its own block. Declaration order puts OTC
+	 * first, as ADR-0010 requires.
 	 */
 	private DrugConceptPage pageFor(RxNormConcept drugConcept) {
-		for (RegulatoryClass regulatoryClass : RegulatoryClass.values()) {
-			Optional<Label> representative = representativeLabel(regulatoryClass, drugConcept.name());
-			if (representative.isPresent()) {
-				return rendered(drugConcept, regulatoryClass, representative.get());
-			}
-		}
-		return new DrugConceptPage(drugConcept.rxcui(), drugConcept.name(), null, List.of());
+		List<RegulatoryClassBlock> blocks = List.of(RegulatoryClass.values()).stream()
+				.flatMap(regulatoryClass -> representativeLabel(regulatoryClass, drugConcept.name())
+						.map(label -> rendered(regulatoryClass, label))
+						.stream())
+				.toList();
+		return new DrugConceptPage(drugConcept.rxcui(), drugConcept.name(), blocks);
 	}
 
 	/**
@@ -68,13 +65,12 @@ class Labelling {
 	 * class's vocabulary. Only a Prescription Label states the strengths a drug is made
 	 * in; the Drug Facts panel has no section for them, so an OTC page has none (#18).
 	 */
-	private DrugConceptPage rendered(
-			RxNormConcept drugConcept, RegulatoryClass regulatoryClass, Label label) {
+	private RegulatoryClassBlock rendered(RegulatoryClass regulatoryClass, Label label) {
 		return switch (regulatoryClass) {
-			case OVER_THE_COUNTER -> new DrugConceptPage(
-					drugConcept.rxcui(), drugConcept.name(), null, this.otc.render(label));
-			case PRESCRIPTION -> new DrugConceptPage(
-					drugConcept.rxcui(), drugConcept.name(),
+			case OVER_THE_COUNTER -> new RegulatoryClassBlock(
+					regulatoryClass, Provenance.from(label), null, this.otc.render(label));
+			case PRESCRIPTION -> new RegulatoryClassBlock(
+					regulatoryClass, Provenance.from(label),
 					this.prescription.strengths(label), this.prescription.render(label));
 		};
 	}

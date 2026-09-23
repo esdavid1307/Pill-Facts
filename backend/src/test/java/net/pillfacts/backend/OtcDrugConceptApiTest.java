@@ -30,17 +30,17 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.expectBody()
 				.jsonPath("$.rxcui").isEqualTo("161")
 				.jsonPath("$.name").isEqualTo("acetaminophen")
-				.jsonPath("$.sections[*].heading").isEqualTo(List.of(
+				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Warnings",
 						"Do not use",
 						"Ask a doctor before use if",
 						"Stop use and ask a doctor if"))
-				.jsonPath("$.sections[0].provenance.labelId").isEqualTo(FEVERALL)
-				.jsonPath("$.sections[0].provenance.label").isEqualTo("Feverall Jr. Strength")
-				.jsonPath("$.sections[0].provenance.manufacturer")
+				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(FEVERALL)
+				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Feverall Jr. Strength")
+				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer")
 						.isEqualTo("Sun Pharmaceutical Industries, Inc.")
-				.jsonPath("$.sections[0].provenance.effectiveDate").isEqualTo("2026-09-03")
-				.jsonPath("$.sections[3].provenance.labelId").isEqualTo(FEVERALL);
+				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-09-03")
+				.jsonPath("$.labelling[0].sections[3].provenance.labelId").isEqualTo(FEVERALL);
 	}
 
 	/**
@@ -53,11 +53,14 @@ class OtcDrugConceptApiTest extends ApiTest {
 		api().get().uri("/api/drug-concepts/161")
 				.exchange()
 				.expectStatus().isOk()
-				.expectBody(String.class)
-				.value(body -> assertThat(body)
-						.doesNotContainIgnoringCase("Adverse Reactions")
-						.doesNotContainIgnoringCase("Contraindications")
-						.doesNotContainIgnoringCase("Warnings and Precautions"));
+				.expectBody()
+				.jsonPath("$.labelling[0].regulatoryClass").isEqualTo("OVER_THE_COUNTER")
+				.jsonPath("$.labelling[0].sections[*].heading").value(headings ->
+						assertThat((List<String>) headings)
+								.doesNotContain(
+										"Adverse Reactions",
+										"Contraindications",
+										"Warnings and Precautions"));
 	}
 
 	/**
@@ -72,13 +75,18 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.expectStatus().isOk()
 				.expectBody()
 				.jsonPath("$.name").isEqualTo("ibuprofen")
-				.jsonPath("$.sections[*].heading").isEqualTo(List.of(
+				.jsonPath("$.labelling.length()").isEqualTo(2)
+				.jsonPath("$.labelling[0].regulatoryClass").isEqualTo("OVER_THE_COUNTER")
+				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Warnings",
 						"Do not use",
 						"Ask a doctor before use if",
 						"When using this product",
 						"Stop use and ask a doctor if"))
-				.jsonPath("$.sections[0].provenance.label").isEqualTo("Advil Menstrual Pain");
+				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Advil Menstrual Pain")
+				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
+				.jsonPath("$.labelling[1].sections.length()").value(length ->
+						assertThat((Integer) length).isPositive());
 	}
 
 	/**
@@ -94,10 +102,10 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.expectStatus().isOk()
 				.expectBody()
 				// Four sections, not five with one of them standing empty.
-				.jsonPath("$.sections.length()").isEqualTo(4)
-				.jsonPath("$.sections[*].heading").value(headings ->
+				.jsonPath("$.labelling[0].sections.length()").isEqualTo(4)
+				.jsonPath("$.labelling[0].sections[*].heading").value(headings ->
 						assertThat((List<String>) headings).doesNotContain("When using this product"))
-				.jsonPath("$.sections[*].text").value(texts ->
+				.jsonPath("$.labelling[0].sections[*].text").value(texts ->
 						assertThat((List<String>) texts).noneMatch(String::isBlank));
 	}
 
@@ -115,40 +123,48 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.expectStatus().isOk()
 				.expectBody()
 				.jsonPath("$.name").isEqualTo("diphenhydramine")
-				.jsonPath("$.sections[0].provenance.label").isEqualTo("Nighttime Sleep Aid Berry Flavor")
-				.jsonPath("$.sections[0].provenance.effectiveDate").isEqualTo("2026-09-09")
-				.jsonPath("$.sections[*].provenance.label").value(labels ->
+				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Nighttime Sleep Aid Berry Flavor")
+				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-09-09")
+				.jsonPath("$.labelling[0].sections[*].provenance.label").value(labels ->
 						assertThat((List<String>) labels).containsOnly("Nighttime Sleep Aid Berry Flavor"));
 	}
 
-	/**
-	 * ADR-0010 shows the classes OTC first, and until #6 renders both at once the first
-	 * is the only one shown. Diphenhydramine is sold in both and its prescription Labels
-	 * are recorded here for exactly this test: they are an injection's, they carry
-	 * contraindications and adverse reactions, and they would make a perfectly good page.
-	 * The OTC Label is chosen over them because a visitor is more often holding the
-	 * drugstore box.
-	 *
-	 * <p>Recording them is what makes this an assertion rather than an accident. With
-	 * only the OTC fixtures present, reversing the preference would fail the suite as an
-	 * unrecorded search answering 500, which says nothing about which class should win.
-	 */
+	/** ADR-0010: every Regulatory Class gets its own block, with OTC first. */
 	@Test
-	void prefers_the_otc_label_for_a_drug_concept_sold_in_both_classes() {
+	void returns_both_regulatory_classes_otc_first() {
 		api().get().uri("/api/drug-concepts/3498")
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.sections[0].provenance.label").isEqualTo("Nighttime Sleep Aid Berry Flavor")
-				.jsonPath("$.sections[*].heading").isEqualTo(List.of(
+				.jsonPath("$.labelling.length()").isEqualTo(2)
+				.jsonPath("$.labelling[0].regulatoryClass").isEqualTo("OVER_THE_COUNTER")
+				.jsonPath("$.labelling[0].sections[0].provenance.label")
+						.isEqualTo("Nighttime Sleep Aid Berry Flavor")
+				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Warnings",
 						"Do not use",
 						"Ask a doctor before use if",
 						"When using this product",
 						"Stop use and ask a doctor if"))
-				// The prescription Label's own Representative, had that class been asked first.
-				.jsonPath("$.sections[*].provenance.label").value(labels ->
-						assertThat((List<String>) labels).doesNotContain("DIPHENHYDRAMINE HYDROCHLORIDE"));
+				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
+				.jsonPath("$.labelling[1].sections[0].provenance.label")
+						.isEqualTo("DIPHENHYDRAMINE HYDROCHLORIDE")
+				.jsonPath("$.labelling[1].sections[*].heading").isEqualTo(List.of(
+						"Contraindications",
+						"Adverse Reactions"));
+	}
+
+	@Test
+	void chooses_the_same_representative_label_for_each_class_on_every_request() {
+		for (int attempt = 0; attempt < 3; attempt++) {
+			api().get().uri("/api/drug-concepts/3498")
+					.exchange()
+					.expectStatus().isOk()
+					.expectBody()
+					.jsonPath("$.labelling[*].sections[0].provenance.label").isEqualTo(List.of(
+							"Nighttime Sleep Aid Berry Flavor",
+							"DIPHENHYDRAMINE HYDROCHLORIDE"));
+		}
 	}
 
 	/**
@@ -162,11 +178,11 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.sections[1].heading").isEqualTo("Do not use")
-				.jsonPath("$.sections[1].text").value(text -> assertThat((String) text)
+				.jsonPath("$.labelling[0].sections[1].heading").isEqualTo("Do not use")
+				.jsonPath("$.labelling[0].sections[1].text").value(text -> assertThat((String) text)
 						.startsWith("in children under 6 years")
 						.contains("with any other drug containing acetaminophen"))
-				.jsonPath("$.sections[2].text").value(text -> assertThat((String) text)
+				.jsonPath("$.labelling[0].sections[2].text").value(text -> assertThat((String) text)
 						.startsWith("you have liver disease"));
 	}
 
