@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
-import type { DrugConcept, SafetySection } from './api/drugConcept'
+import type { DrugConcept, RegulatoryClassBlock, SafetySection } from './api/drugConcept'
 
 /**
  * The frontend's one test seam: a component rendered in jsdom with the backend stubbed
@@ -37,7 +37,23 @@ function section(heading: string, text: string): SafetySection {
 }
 
 function drugConcept(overrides: Partial<DrugConcept> = {}): DrugConcept {
-  return { rxcui: '83367', name: 'atorvastatin', sections: [], ...overrides }
+  return { rxcui: '83367', name: 'atorvastatin', labelling: [], ...overrides }
+}
+
+function prescription(
+  sections: SafetySection[],
+  strengths?: string,
+): RegulatoryClassBlock {
+  return {
+    regulatoryClass: 'PRESCRIPTION',
+    provenance: sections[0]?.provenance ?? LIPITOR,
+    sections,
+    strengths,
+  }
+}
+
+function overTheCounter(sections: SafetySection[]): RegulatoryClassBlock {
+  return { regulatoryClass: 'OVER_THE_COUNTER', provenance: sections[0]?.provenance ?? LIPITOR, sections }
 }
 
 /**
@@ -108,15 +124,18 @@ describe("a prescription Drug Concept's page", () => {
   it('renders the Safety Sections in the order the backend gave them', async () => {
     await openPage(
       drugConcept({
-        sections: [
-          section('Contraindications', 'Acute liver failure.'),
-          section('Warnings and Precautions', 'Myopathy and rhabdomyolysis.'),
+        labelling: [
+          prescription([
+            section('Contraindications', 'Acute liver failure.'),
+            section('Warnings and Precautions', 'Myopathy and rhabdomyolysis.'),
+          ]),
         ],
       }),
     )
 
     expect(await screen.findByRole('heading', { name: 'Contraindications' })).toBeInTheDocument()
-    const headings = screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)
+    expect(screen.getByRole('heading', { name: 'Prescription labelling' })).toBeInTheDocument()
+    const headings = screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)
     expect(headings).toEqual(['Contraindications', 'Warnings and Precautions'])
     expect(screen.getByText('Acute liver failure.')).toBeInTheDocument()
   })
@@ -126,15 +145,17 @@ describe("a prescription Drug Concept's page", () => {
       drugConcept({
         rxcui: '11289',
         name: 'warfarin',
-        sections: [
-          section('Boxed Warning', 'WARNING: BLEEDING RISK'),
-          section('Contraindications', 'Pregnancy.'),
+        labelling: [
+          prescription([
+            section('Boxed Warning', 'WARNING: BLEEDING RISK'),
+            section('Contraindications', 'Pregnancy.'),
+          ]),
         ],
       }),
     )
 
     const boxed = await screen.findByRole('heading', { name: 'Boxed Warning' })
-    expect(screen.getAllByRole('heading', { level: 2 })[0]).toBe(boxed)
+    expect(screen.getAllByRole('heading', { level: 3 })[0]).toBe(boxed)
     expect(boxed.closest('section')).toHaveClass('boxed-warning')
   })
 
@@ -143,7 +164,11 @@ describe("a prescription Drug Concept's page", () => {
    * drug is safe. Nothing may stand in for it — no heading, no "None", no reassurance.
    */
   it('says nothing at all about a Boxed Warning a Drug Concept does not have', async () => {
-    await openPage(drugConcept({ sections: [section('Contraindications', 'Acute liver failure.')] }))
+    await openPage(
+      drugConcept({
+        labelling: [prescription([section('Contraindications', 'Acute liver failure.')])],
+      }),
+    )
 
     expect(await screen.findByRole('heading', { name: 'Contraindications' })).toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/boxed/i)
@@ -153,9 +178,11 @@ describe("a prescription Drug Concept's page", () => {
   it('attributes every Safety Section to the Label it came from', async () => {
     await openPage(
       drugConcept({
-        sections: [
-          section('Contraindications', 'Acute liver failure.'),
-          section('Adverse Reactions', 'Nasopharyngitis.'),
+        labelling: [
+          prescription([
+            section('Contraindications', 'Acute liver failure.'),
+            section('Adverse Reactions', 'Nasopharyngitis.'),
+          ]),
         ],
       }),
     )
@@ -174,13 +201,18 @@ describe("a prescription Drug Concept's page", () => {
   it('shows the strengths a drug is made in', async () => {
     await openPage(
       drugConcept({
-        strengths: 'Tablets: 10 mg, 20 mg, 40 mg and 80 mg of atorvastatin.',
-        sections: [section('Contraindications', 'Acute liver failure.')],
+        labelling: [
+          prescription(
+            [section('Contraindications', 'Acute liver failure.')],
+            'Tablets: 10 mg, 20 mg, 40 mg and 80 mg of atorvastatin.',
+          ),
+        ],
       }),
     )
 
     expect(await screen.findByRole('heading', { name: 'Strengths' })).toBeInTheDocument()
     expect(screen.getByText(/10 mg, 20 mg, 40 mg and 80 mg/)).toBeInTheDocument()
+    expect(screen.getAllByText(/From the FDA label for/)).toHaveLength(2)
   })
 
   /**
@@ -196,6 +228,22 @@ describe("a prescription Drug Concept's page", () => {
       .toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/publishes no/i)
     expect(screen.queryByRole('alert')).toBeNull()
+  })
+
+  it('keeps the same empty state when a Label has no supported Safety Sections', async () => {
+    await openPage(
+      drugConcept({
+        labelling: [
+          prescription([], 'Tablets: 10 mg, 20 mg, 40 mg and 80 mg of atorvastatin.'),
+        ],
+      }),
+    )
+
+    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
+    expect(screen.getByText(/not a statement that this medication has no known risks/i))
+      .toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Prescription labelling' })).toBeNull()
+    expect(screen.queryByRole('heading', { name: 'Strengths' })).toBeNull()
   })
 
   /** Unreachable is a fact about an outage, and never worded as the other two are. */
@@ -254,7 +302,11 @@ describe("an over-the-counter Drug Concept's page", () => {
     return {
       rxcui: '161',
       name: 'acetaminophen',
-      sections: panel.map(([heading, text]) => ({ heading, text, provenance: FEVERALL })),
+      labelling: [
+        overTheCounter(
+          panel.map(([heading, text]) => ({ heading, text, provenance: FEVERALL })),
+        ),
+      ],
     }
   }
 
@@ -262,7 +314,9 @@ describe("an over-the-counter Drug Concept's page", () => {
     await openPage(acetaminophen())
 
     expect(await screen.findByRole('heading', { name: 'Warnings' })).toBeInTheDocument()
-    expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual([
+    expect(screen.getByRole('heading', { name: 'Over-the-counter labelling' }))
+      .toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)).toEqual([
       'Warnings',
       'Do not use',
       'Ask a doctor before use if',
@@ -305,5 +359,39 @@ describe("an over-the-counter Drug Concept's page", () => {
 
     expect(await screen.findByRole('heading', { name: 'Warnings' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Strengths' })).toBeNull()
+  })
+})
+
+describe('a Drug Concept sold in both Regulatory Classes', () => {
+  it('shows both classes under clear headings, with over-the-counter labelling first', async () => {
+    backendReturns({
+      '/api/search': { candidates: [{ rxcui: '5640', name: 'ibuprofen' }] },
+      '/api/drug-concepts/5640': {
+        rxcui: '5640',
+        name: 'ibuprofen',
+        labelling: [
+          {
+            regulatoryClass: 'OVER_THE_COUNTER',
+            provenance: LIPITOR,
+            sections: [section('Warnings', 'Stomach bleeding warning.')],
+          },
+          {
+            regulatoryClass: 'PRESCRIPTION',
+            provenance: LIPITOR,
+            strengths: 'Tablets: 400 mg, 600 mg, and 800 mg.',
+            sections: [section('Warnings and Precautions', 'Cardiovascular thrombotic events.')],
+          },
+        ],
+      },
+    })
+
+    await search('ibuprofen')
+
+    expect(await screen.findByRole('heading', { name: 'Over-the-counter labelling' }))
+      .toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent))
+      .toEqual(['Over-the-counter labelling', 'Prescription labelling'])
+    expect(screen.getByText('Stomach bleeding warning.')).toBeInTheDocument()
+    expect(screen.getByText('Cardiovascular thrombotic events.')).toBeInTheDocument()
   })
 })

@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router'
-import { fetchDrugConcept, NoSuchDrugConcept, type DrugConcept } from '../api/drugConcept'
+import {
+  fetchDrugConcept,
+  NoSuchDrugConcept,
+  type DrugConcept,
+  type RegulatoryClass,
+  type RegulatoryClassBlock,
+} from '../api/drugConcept'
 import type { Candidate } from '../api/search'
-import { SafetySections } from './SafetySections'
+import { LabelProvenance, SafetySections } from './SafetySections'
 
 /**
  * What came back, and which Drug Concept it came back for. Navigating from one Drug
@@ -93,7 +99,7 @@ function Labelling({ drugConcept }: { drugConcept: DrugConcept }) {
    * tell them apart, this says only what is true of both: that the gap is ours to
    * explain, and that it is not a claim about the medication.
    */
-  if (drugConcept.sections.length === 0) {
+  if (drugConcept.labelling.every((block) => block.sections.length === 0)) {
     return (
       <p className="unlabelled">
         Pill-Facts has no labelling to show for {drugConcept.name}. That is a gap in what we have,
@@ -102,17 +108,36 @@ function Labelling({ drugConcept }: { drugConcept: DrugConcept }) {
     )
   }
 
-  // Safety first, literally: nothing is allowed above the Boxed Warning.
   return (
     <>
-      <SafetySections sections={drugConcept.sections} />
-      {drugConcept.strengths && (
-        <section aria-labelledby="strengths">
-          <h2 id="strengths">Strengths</h2>
-          <p>{drugConcept.strengths}</p>
+      {drugConcept.labelling.map((block) => (
+        <ClassLabelling key={block.regulatoryClass} block={block} />
+      ))}
+    </>
+  )
+}
+
+const CLASS_HEADINGS: Record<RegulatoryClass, string> = {
+  OVER_THE_COUNTER: 'Over-the-counter labelling',
+  PRESCRIPTION: 'Prescription labelling',
+}
+
+/** One Representative Label, clearly bounded so its class cannot be mistaken. */
+function ClassLabelling({ block }: { block: RegulatoryClassBlock }) {
+  const id = `labelling-${block.regulatoryClass.toLowerCase().replaceAll('_', '-')}`
+  return (
+    <section className="regulatory-class" aria-labelledby={id}>
+      <h2 id={id}>{CLASS_HEADINGS[block.regulatoryClass]}</h2>
+      {/* Safety first within the class: no claim is allowed above a Boxed Warning. */}
+      <SafetySections sections={block.sections} />
+      {block.strengths && (
+        <section aria-labelledby={`${id}-strengths`}>
+          <h3 id={`${id}-strengths`}>Strengths</h3>
+          <p>{block.strengths}</p>
+          <LabelProvenance provenance={block.provenance} />
         </section>
       )}
-    </>
+    </section>
   )
 }
 

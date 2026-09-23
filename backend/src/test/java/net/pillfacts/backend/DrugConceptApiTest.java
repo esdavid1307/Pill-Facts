@@ -30,17 +30,19 @@ class DrugConceptApiTest extends ApiTest {
 				.expectBody()
 				.jsonPath("$.rxcui").isEqualTo("83367")
 				.jsonPath("$.name").isEqualTo("atorvastatin")
-				.jsonPath("$.sections[*].heading").isEqualTo(List.of(
+				.jsonPath("$.labelling.length()").isEqualTo(1)
+				.jsonPath("$.labelling[0].regulatoryClass").isEqualTo("PRESCRIPTION")
+				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Contraindications",
 						"Warnings and Precautions",
 						"Adverse Reactions",
 						"Drug Interactions"))
-				.jsonPath("$.sections[0].provenance.labelId").isEqualTo(LIPITOR)
-				.jsonPath("$.sections[0].provenance.label").isEqualTo("Lipitor")
-				.jsonPath("$.sections[0].provenance.manufacturer").isEqualTo("Viatris Specialty LLC")
-				.jsonPath("$.sections[0].provenance.effectiveDate").isEqualTo("2024-04-15")
-				.jsonPath("$.sections[0].provenance.url").isEqualTo(LIPITOR_URL)
-				.jsonPath("$.sections[3].provenance.labelId").isEqualTo(LIPITOR);
+				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(LIPITOR)
+				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Lipitor")
+				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer").isEqualTo("Viatris Specialty LLC")
+				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2024-04-15")
+				.jsonPath("$.labelling[0].sections[0].provenance.url").isEqualTo(LIPITOR_URL)
+				.jsonPath("$.labelling[0].sections[3].provenance.labelId").isEqualTo(LIPITOR);
 	}
 
 	/**
@@ -55,7 +57,7 @@ class DrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.sections[*].provenance.label").value(labels ->
+				.jsonPath("$.labelling[0].sections[*].provenance.label").value(labels ->
 						assertThat((List<String>) labels).containsOnly("Lipitor"));
 	}
 
@@ -73,7 +75,7 @@ class DrugConceptApiTest extends ApiTest {
 					.exchange()
 					.expectStatus().isOk()
 					.expectBody()
-					.jsonPath("$.sections[0].provenance.labelId").isEqualTo(LIPITOR);
+					.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(LIPITOR);
 		}
 	}
 
@@ -85,9 +87,9 @@ class DrugConceptApiTest extends ApiTest {
 				.expectStatus().isOk()
 				.expectBody()
 				.jsonPath("$.name").isEqualTo("warfarin")
-				.jsonPath("$.sections[0].provenance.label").isEqualTo("Warfarin Sodium")
-				.jsonPath("$.sections[0].provenance.manufacturer").isEqualTo("Coupler LLC")
-				.jsonPath("$.sections[0].provenance.effectiveDate").isEqualTo("2026-08-31");
+				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Warfarin Sodium")
+				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer").isEqualTo("Coupler LLC")
+				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-08-31");
 	}
 
 	@Test
@@ -96,8 +98,8 @@ class DrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.sections[0].heading").isEqualTo("Boxed Warning")
-				.jsonPath("$.sections[0].text").value(text ->
+				.jsonPath("$.labelling[0].sections[0].heading").isEqualTo("Boxed Warning")
+				.jsonPath("$.labelling[0].sections[0].text").value(text ->
 						assertThat((String) text).startsWith("WARNING: BLEEDING RISK"));
 	}
 
@@ -121,8 +123,9 @@ class DrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.strengths").value(strengths ->
-						assertThat((String) strengths).startsWith("Tablets:").contains("10 mg of atorvastatin"));
+				.jsonPath("$.labelling[0].strengths").value(strengths ->
+						assertThat((String) strengths).startsWith("Tablets:").contains("10 mg of atorvastatin"))
+				.jsonPath("$.labelling[0].provenance.labelId").isEqualTo(LIPITOR);
 	}
 
 	/**
@@ -154,7 +157,7 @@ class DrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.sections[0].text").value(text -> assertThat((String) text)
+				.jsonPath("$.labelling[0].sections[0].text").value(text -> assertThat((String) text)
 						// "4 CONTRAINDICATIONS • Acute liver failure…", less its own numbering
 						.startsWith("• Acute liver failure or decompensated cirrhosis")
 						.doesNotContain("[see ")
@@ -173,7 +176,7 @@ class DrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.sections[4].text").value(text -> assertThat((String) text)
+				.jsonPath("$.labelling[0].sections[4].text").value(text -> assertThat((String) text)
 						.contains("inducers of CYP2C9, 1A2, or 3A4.")
 						.doesNotContain("( 7 )"));
 	}

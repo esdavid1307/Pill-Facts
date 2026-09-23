@@ -3,6 +3,7 @@ package net.pillfacts.backend.drugconcept;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import net.pillfacts.backend.openfda.Label;
 
 /**
  * Who said this, and when. Carried alongside every rendered claim so a reader can always
@@ -22,4 +23,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record Provenance(
-		String labelId, String label, String manufacturer, LocalDate effectiveDate, String url) {}
+		String labelId, String label, String manufacturer, LocalDate effectiveDate, String url) {
+
+	static Provenance from(Label label) {
+		return new Provenance(
+				label.setId(), label.name(), label.manufacturer(), label.effectiveDate(), label.url());
+	}
+}

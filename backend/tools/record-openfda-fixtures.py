@@ -39,11 +39,9 @@ CLASSES = [
     ("prescription", "HUMAN PRESCRIPTION DRUG"),
 ]
 
-# The Active Ingredients the tests look up. A drug is recorded in each class up to the
-# first one that speaks for it, because that is where the backend stops asking: a class
-# with no Labels answers 404, which is a recorded answer and the one that sends
-# selection on to the next class. When #6 renders every class at once this stops early
-# where the backend no longer does, and the drugs in both classes need re-recording.
+# The Active Ingredients the tests look up. Every one is recorded in both classes,
+# because the backend asks both and returns one block per class that has a Representative
+# Label (ADR-0010). A class with no Labels answers 404, which is itself a recorded answer.
 INGREDIENTS = [
     "atorvastatin",     # prescription only; brand/NDA Label chosen over the Combination Products above it
     "warfarin",         # prescription only, no NDA Label at all, so the generic fallback runs; has a Boxed Warning
@@ -51,14 +49,6 @@ INGREDIENTS = [
     "ibuprofen",        # the same, and the drug ADR-0010 uses as its two-class example
     "diphenhydramine",  # OTC brand Labels that are every one a Combination Product, so the fallback runs
 ]
-
-# Recorded in every class even past the one that answers, which is the one exception to
-# the rule above. A test has to be able to show a Drug Concept that genuinely has Labels
-# in both classes still being given its OTC page; with only the OTC fixtures recorded,
-# that preference would be pinned by the absence of a fixture rather than by an
-# assertion, and reversing it would fail the suite as a 500 rather than as a disagreement.
-# Diphenhydramine is the one chosen because its prescription Labels are the smallest.
-EVERY_CLASS = ["diphenhydramine"]
 
 
 def get(search):
@@ -105,8 +95,6 @@ def main():
                 fallback = get(search)
                 write(f"{directory}/{ingredient}.json", fallback)
                 results = json.loads(fallback).get("results", [])
-            if any(map(speaks_for_a_drug_concept, results)) and ingredient not in EVERY_CLASS:
-                break
 
 
 if __name__ == "__main__":

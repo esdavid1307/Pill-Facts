@@ -18,8 +18,7 @@ class PrescriptionRenderer {
 
 	/** The sections this Label carries, in render order, each attributed to it. */
 	List<SafetySection> render(Label label) {
-		Provenance provenance = new Provenance(
-				label.setId(), label.name(), label.manufacturer(), label.effectiveDate(), label.url());
+		Provenance provenance = Provenance.from(label);
 
 		List<SafetySection> sections = new ArrayList<>();
 		for (PrescriptionSection section : PrescriptionSection.values()) {

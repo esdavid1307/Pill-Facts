@@ -17,8 +17,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  *
  * @param rxcui the ingredient-level RxCUI identifying the Drug Concept (ADR-0002)
  * @param name its Active Ingredient's name
- * @param strengths the strengths the drug is made in, absent where the Label omits them
- * @param sections its Safety Sections, in render order
+ * @param labelling one block per Regulatory Class in which the FDA publishes a Label,
+ * OTC first
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record DrugConceptPage(String rxcui, String name, String strengths, List<SafetySection> sections) {}
+public record DrugConceptPage(String rxcui, String name, List<RegulatoryClassBlock> labelling) {}

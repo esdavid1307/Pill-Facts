@@ -19,12 +19,12 @@ export function SafetySections({ sections }: { sections: SafetySection[] }) {
           key={section.heading}
           className={section.heading === BOXED_WARNING ? 'safety boxed-warning' : 'safety'}
         >
-          <h2>{section.heading}</h2>
+          <h3>{section.heading}</h3>
           {/* Verbatim, per ADR-0006: the FDA's paragraphs, not ours. */}
           {section.text.split('\n\n').map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
-          <Attribution provenance={section.provenance} />
+          <LabelProvenance provenance={section.provenance} />
         </section>
       ))}
     </>
@@ -35,7 +35,7 @@ export function SafetySections({ sections }: { sections: SafetySection[] }) {
  * Who said this and when, next to the words themselves. Every rendered claim carries it,
  * so a reader never has to wonder whether a sentence is the FDA's or ours.
  */
-function Attribution({ provenance }: { provenance: Provenance }) {
+export function LabelProvenance({ provenance }: { provenance: Provenance }) {
   return (
     <p className="provenance">
       From the FDA label for <strong>{provenance.label}</strong>

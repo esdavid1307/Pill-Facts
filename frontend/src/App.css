@@ -62,7 +62,7 @@ h1 {
   margin: 2rem 0;
 }
 
-.safety h2 {
+.safety h3 {
   font-size: 1.1rem;
 }
 
@@ -77,8 +77,12 @@ h1 {
   padding: 0 1rem 0.5rem;
 }
 
-.boxed-warning h2 {
+.boxed-warning h3 {
   color: var(--alert);
+}
+
+.regulatory-class {
+  margin: 2.5rem 0;
 }
 
 .provenance {
