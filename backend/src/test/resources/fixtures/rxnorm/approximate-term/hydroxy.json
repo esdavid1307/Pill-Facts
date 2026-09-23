@@ -1,0 +1,161 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "154500",
+        "rxaui": "1009025",
+        "score": "10.64404760541916",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "486270",
+        "rxaui": "2071480",
+        "score": "10.64404760541916",
+        "rank": "1",
+        "name": "HYDROXY TEA",
+        "source": "VANDF"
+      },
+      {
+        "rxcui": "217649",
+        "rxaui": "2622977",
+        "score": "10.64404760541916",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "217649",
+        "rxaui": "1179163",
+        "score": "10.638725581616452",
+        "rank": "4",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "217649",
+        "rxaui": "1179164",
+        "score": "10.638725581616452",
+        "rank": "4",
+        "name": "Hydroxy-Cobal",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "236797",
+        "rxaui": "12252305",
+        "score": "10.32193769544783",
+        "rank": "6",
+        "name": "alpha hydroxy acids",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "236797",
+        "rxaui": "5471350",
+        "score": "10.32193769544783",
+        "rank": "6",
+        "source": "NDDF"
+      },
+      {
+        "rxcui": "1541733",
+        "rxaui": "12253176",
+        "score": "10.316776726600104",
+        "rank": "8",
+        "name": "4-hydroxy acetophenone",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1175498",
+        "rxaui": "3838120",
+        "score": "10.038157479477487",
+        "rank": "9",
+        "name": "Hydroxy-Cobal Injectable Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1370572",
+        "rxaui": "5072951",
+        "score": "10.038157479477487",
+        "rank": "9",
+        "name": "3-hydroxy-4-methoxybenzenesulfonate",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "377566",
+        "rxaui": "12262748",
+        "score": "9.799497365946147",
+        "rank": "11",
+        "name": "alpha hydroxy acids Topical Cream",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "377567",
+        "rxaui": "12262766",
+        "score": "9.799497365946147",
+        "rank": "11",
+        "name": "alpha hydroxy acids Topical Lotion",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1153430",
+        "rxaui": "12296643",
+        "score": "9.799497365946147",
+        "rank": "11",
+        "name": "alpha hydroxy acids Topical Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1307551",
+        "rxaui": "12255341",
+        "score": "9.794597617263175",
+        "rank": "14",
+        "name": "3-hydroxy-4-methoxybenzenesulfonic acid",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1428956",
+        "rxaui": "12322111",
+        "score": "9.412416895273092",
+        "rank": "15",
+        "name": "alpha hydroxy acids / urea Topical Cream [Hydrasyn25]",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "19192",
+        "rxaui": "13053208",
+        "score": "9.285099053940094",
+        "rank": "16",
+        "source": "GS"
+      },
+      {
+        "rxcui": "751545",
+        "rxaui": "2762026",
+        "score": "9.285099053940094",
+        "rank": "16",
+        "name": "HYDROXY-BETA-METHYLBUTYRATE",
+        "source": "VANDF"
+      },
+      {
+        "rxcui": "19192",
+        "rxaui": "9197461",
+        "score": "9.285099053940094",
+        "rank": "16",
+        "source": "NDDF"
+      },
+      {
+        "rxcui": "1428952",
+        "rxaui": "12354440",
+        "score": "9.038861162110795",
+        "rank": "19",
+        "name": "alpha hydroxy acids / urea",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1801703",
+        "rxaui": "12250925",
+        "score": "9.034341731529741",
+        "rank": "20",
+        "name": "5.alpha.-hydroxy laxogenin",
+        "source": "RXNORM"
+      }
+    ]
+  }
+}

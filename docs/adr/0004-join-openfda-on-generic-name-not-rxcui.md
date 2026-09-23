@@ -13,3 +13,15 @@ filter against openFDA, never the join key.
 
 This is recorded because the next person to read the code will see an unused `rxcui`
 field on the Label response and try to "fix" the join.
+
+## Consequences
+
+`openfda.generic_name` is a text field, so the join matches Labels that merely *contain*
+the Active Ingredient as well as Labels *for* it. Searching atorvastatin returns Caduet,
+an amlodipine-and-atorvastatin Combination Product, and returns it ahead of Lipitor
+because it is published more recently. A Representative Label chosen without care would
+therefore put amlodipine's warnings on atorvastatin's page under the FDA's name.
+
+Labels are filtered to those naming exactly one substance before any of them is allowed
+to speak for a Drug Concept, which follows from ADR-0012: a Label describing two Active
+Ingredients describes two Drug Concepts and is the Representative Label of neither.

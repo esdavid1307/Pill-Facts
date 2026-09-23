@@ -1,0 +1,108 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "83367",
+        "rxaui": "10324581",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "source": "GS"
+      },
+      {
+        "rxcui": "83367",
+        "rxaui": "2626975",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "name": "ATORVASTATIN",
+        "source": "VANDF"
+      },
+      {
+        "rxcui": "83367",
+        "rxaui": "3811343",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "source": "NDDF"
+      },
+      {
+        "rxcui": "83367",
+        "rxaui": "5478744",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "name": "atorvastatin",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "83367",
+        "rxaui": "675800",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "83367",
+        "rxaui": "675801",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "name": "atorvastatin",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "83367",
+        "rxaui": "8267258",
+        "score": "11.892830848693848",
+        "rank": "1",
+        "name": "Atorvastatin",
+        "source": "DRUGBANK"
+      },
+      {
+        "rxcui": "1158285",
+        "rxaui": "3824569",
+        "score": "11.502294986724854",
+        "rank": "8",
+        "name": "atorvastatin Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "2630759",
+        "rxaui": "12796813",
+        "score": "11.16819906769395",
+        "rank": "9",
+        "name": "atorvastatin Oral Suspension",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "370621",
+        "rxaui": "1575587",
+        "score": "11.16819906769395",
+        "rank": "9",
+        "name": "atorvastatin Oral Tablet",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "437783",
+        "rxaui": "1767128",
+        "score": "11.16819906769395",
+        "rank": "9",
+        "name": "atorvastatin Oral Capsule",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1158284",
+        "rxaui": "3824568",
+        "score": "11.16819906769395",
+        "rank": "9",
+        "name": "atorvastatin Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "2630758",
+        "rxaui": "12796812",
+        "score": "10.879035597839282",
+        "rank": "13",
+        "name": "atorvastatin Oral Liquid Product",
+        "source": "RXNORM"
+      }
+    ]
+  }
+}

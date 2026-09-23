@@ -13,19 +13,79 @@ h1 {
   color: var(--muted);
 }
 
-.status {
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 0 1rem 1rem;
+.masthead a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.status h2 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+[role='search'] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+[role='search'] label {
+  flex-basis: 100%;
+  color: var(--muted);
+}
+
+[role='search'] input {
+  flex: 1 1 14rem;
+  padding: 0.5rem;
+}
+
+.candidates {
+  list-style: none;
+  padding: 0;
+}
+
+.candidates li {
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+
+.candidates span {
+  color: var(--muted);
+}
+
+.pending {
   color: var(--muted);
 }
 
 [role='alert'] {
   color: var(--alert);
+}
+
+.safety {
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.safety h2 {
+  font-size: 1.1rem;
+}
+
+/*
+ * The FDA's most serious warning leads the page and has to look like it. See ADR-0007:
+ * a drug without one shows nothing here at all, so this styling is never a reassurance
+ * by its absence.
+ */
+.boxed-warning {
+  border: 2px solid var(--alert);
+  border-radius: 4px;
+  padding: 0 1rem 0.5rem;
+}
+
+.boxed-warning h2 {
+  color: var(--alert);
+}
+
+.provenance {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.unlabelled {
+  color: var(--muted);
 }

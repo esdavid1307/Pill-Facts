@@ -1,0 +1,139 @@
+{
+  "approximateGroup": {
+    "inputTerm": null,
+    "candidate": [
+      {
+        "rxcui": "5640",
+        "rxaui": "10282384",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "Ibuprofen",
+        "source": "USP"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "10326351",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "source": "GS"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "12254458",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "ibuprofen",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "179265",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "179276",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "source": "MMSL"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "2071507",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "IBUPROFEN",
+        "source": "VANDF"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "3605298",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "source": "NDDF"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "5480549",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "ibuprofen",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "5480550",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "ibuprofen",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "5480551",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "ibuprofen",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "5480552",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "ibuprofen",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "7717203",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "ibuprofen",
+        "source": "ATC"
+      },
+      {
+        "rxcui": "5640",
+        "rxaui": "8574087",
+        "score": "10.50613021850586",
+        "rank": "1",
+        "name": "Ibuprofen",
+        "source": "DRUGBANK"
+      },
+      {
+        "rxcui": "1747293",
+        "rxaui": "12267168",
+        "score": "10.225286791801453",
+        "rank": "14",
+        "name": "ibuprofen Injection",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1156278",
+        "rxaui": "12289173",
+        "score": "10.225286791801453",
+        "rank": "14",
+        "name": "ibuprofen Pill",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1156277",
+        "rxaui": "12289172",
+        "score": "9.98488638887167",
+        "rank": "16",
+        "name": "ibuprofen Oral Product",
+        "source": "RXNORM"
+      },
+      {
+        "rxcui": "1295502",
+        "rxaui": "12295780",
+        "score": "9.98488638887167",
+        "rank": "16",
+        "name": "ibuprofen Chewable Product",
+        "source": "RXNORM"
+      }
+    ]
+  }
+}
