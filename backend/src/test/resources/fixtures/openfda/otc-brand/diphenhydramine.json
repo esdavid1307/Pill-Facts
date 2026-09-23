@@ -1,0 +1,799 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-23",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 6
+    }
+  },
+  "results": [
+    {
+      "spl_product_data_elements": [
+        "ADVIL PM diphenhydramine HCl, ibuprofen DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE IBUPROFEN IBUPROFEN D&C RED NO. 33 FD&C BLUE NO. 1 GELATIN, UNSPECIFIED MEDIUM-CHAIN TRIGLYCERIDES POLYETHYLENE GLYCOL, UNSPECIFIED POTASSIUM HYDROXIDE WATER SORBITAN SORBITOL Clear blue Oval liqui-gel Advil;PM ADVIL PM diphenhydramine HCl, ibuprofen DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE IBUPROFEN IBUPROFEN D&C RED NO. 33 FD&C BLUE NO. 1 GELATIN, UNSPECIFIED MEDIUM-CHAIN TRIGLYCERIDES POLYETHYLENE GLYCOL, UNSPECIFIED POTASSIUM HYDROXIDE WATER SORBITAN SORBITOL Clear blue Oval liqui-gel Advil;PM;Minis"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each capsule) Diphenhydramine hydrochloride 25 mg Solubilized ibuprofen equal to 200 mg ibuprofen (NSAID)* (present as the free acid and potassium salt) *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Nighttime sleep-aid Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses for relief of occasional sleeplessness when associated with minor aches and pains helps you fall asleep and stay asleep"
+      ],
+      "warnings": [
+        "Warnings Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warning: NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke. you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke. you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug"
+      ],
+      "when_using": [
+        "When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed adults and children 12 years and over: take 2 capsules at bedtime do not take more than 2 capsules in 24 hours"
+      ],
+      "spl_unclassified_section": [
+        "Other information each capsule contains: potassium 20 mg read all warnings and directions before use. Keep carton. store at 20-25\u00b0C (68-77\u00b0F) avoid excessive heat above 40\u00b0C (104\u00b0F) protect from light",
+        "Additional Information Do Not Use if seal under bottle cap imprinted with \u201cSEALED for YOUR PROTECTION\u201d is broken or missing. READ AND KEEP CARTON FOR COMPLETE WARNINGS AND INFORMATION"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients D&C red no. 33, FD&C blue no. 1, gelatin, medium-chain triglycerides, pharmaceutical ink, polyethylene glycol, potassium hydroxide, purified water, sorbitol sorbitan solution"
+      ],
+      "questions": [
+        "Questions or Comments? Call 1-855-297-3031"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL (Advil PM Liqui-Gels) Advil \u00ae PM LIQUI\u2022GELS \u00ae Solubilized Ibuprofen, 200 mg / Diphenhydramine HCl, 25 mg Pain Reliever (NSAID) / Nighttime Sleep-Aid Actual Size 20 Liquid Filled Capsules Advil PM LiquiGels 20 capsules",
+        "Principal Display Panel (Advil PM Liqui-Gels Minis) Advil \u00ae PM LIQUI\u2022GELS \u00ae minis Smaller Capsule Same Strength* Solubilized Ibuprofen, 200 mg / Diphenhydramine HCl, 25 mg Pain Reliever (NSAID) / Nighttime Sleep-Aid *Compared to Advil PM Liqui-Gels Actual Size 40 Liquid Filled Capsules Advil PM LG Minis 40 ct"
+      ],
+      "set_id": "405afdb4-c157-1d88-f232-848063ba4714",
+      "id": "57c5339d-4ab8-ce7f-e063-6394a90a75a5",
+      "effective_time": "20260729",
+      "version": "22",
+      "openfda": {
+        "application_number": [
+          "NDA021393"
+        ],
+        "brand_name": [
+          "ADVIL PM"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HCL, IBUPROFEN"
+        ],
+        "manufacturer_name": [
+          "Haleon US Holdings LLC"
+        ],
+        "product_ndc": [
+          "0573-0148",
+          "0573-0167"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE",
+          "IBUPROFEN"
+        ],
+        "rxcui": [
+          "901814"
+        ],
+        "spl_id": [
+          "57c5339d-4ab8-ce7f-e063-6394a90a75a5"
+        ],
+        "spl_set_id": [
+          "405afdb4-c157-1d88-f232-848063ba4714"
+        ],
+        "package_ndc": [
+          "0573-0167-10",
+          "0573-0167-20",
+          "0573-0167-21",
+          "0573-0167-25",
+          "0573-0167-43",
+          "0573-0167-55",
+          "0573-0167-18",
+          "0573-0167-19",
+          "0573-0167-26",
+          "0573-0167-42",
+          "0573-0167-44",
+          "0573-0167-56",
+          "0573-0148-06",
+          "0573-0148-07"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "TC2D6JAD40",
+          "WK2XYI10QM"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "ADVIL PM diphenhydramine citrate and ibuprofen CALCIUM STEARATE CARNAUBA WAX SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED SODIUM LAURYL SULFATE SODIUM STARCH GLYCOLATE TYPE A POTATO STEARIC ACID TITANIUM DIOXIDE DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE IBUPROFEN IBUPROFEN blue Advil;PM"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Diphenhydramine citrate 38 mg Ibuprofen 200 mg (NSAID)* *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Nighttime sleep-aid Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses for relief of occasional sleeplessness when associated with minor aches and pains helps you fall asleep and stay asleep"
+      ],
+      "warnings": [
+        "Warnings Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warning: NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke because ibuprofen may decrease this benefit of aspirin taking any other drug When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke because ibuprofen may decrease this benefit of aspirin taking any other drug"
+      ],
+      "when_using": [
+        "When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed adults and children 12 years and over: take 2 caplets at bedtime do not take more than 2 caplets in 24 hours"
+      ],
+      "spl_unclassified_section": [
+        "Other ingredients read all warnings and directions before use. Keep carton. store at 20-25\u00b0C (68-77\u00b0F) avoid excessive heat above 40\u00b0C (104\u00b0F)",
+        "Additional Information Do Not Use if seal under bottle cap imprinted with \u201cSEALED for YOUR PROTECTION\u201d is broken or missing. For most recent product information, visit www.Advil.com. Distributed by: GSK Consumer Healthcare, Warren, NJ 07059 \u00a92021 GSK or licensor Trademarks owned or licensed by GSK"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients calcium stearate, carnauba wax, colloidal silicon dioxide, corn starch, croscarmellose sodium, FD&C blue no. 2 aluminum lake, glyceryl dibehenate, hypromellose, lactose monohydrate, microcrystalline cellulose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, sodium lauryl sulfate, sodium starch glycolate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or Comments? Call weekdays 9 AM to 5 PM EST at 1-800-88-ADVIL"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel Advilpm-2 Advilpm-5 AdvilPM-4 Advil PM-4 Advil PM -1"
+      ],
+      "set_id": "52c67ae0-707c-851b-e063-6294a90afda4",
+      "id": "52c6675a-0f8f-f7bf-e063-6394a90acddc",
+      "effective_time": "20260527",
+      "version": "1",
+      "openfda": {
+        "application_number": [
+          "NDA021394"
+        ],
+        "brand_name": [
+          "ADVIL PM"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE CITRATE AND IBUPROFEN"
+        ],
+        "manufacturer_name": [
+          "Select Consumer Group"
+        ],
+        "product_ndc": [
+          "85237-1784"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE CITRATE",
+          "IBUPROFEN"
+        ],
+        "rxcui": [
+          "895664"
+        ],
+        "spl_id": [
+          "52c6675a-0f8f-f7bf-e063-6394a90acddc"
+        ],
+        "spl_set_id": [
+          "52c67ae0-707c-851b-e063-6294a90afda4"
+        ],
+        "package_ndc": [
+          "85237-1784-0",
+          "85237-1784-1",
+          "85237-1784-2",
+          "85237-1784-4",
+          "85237-1784-5",
+          "85237-1784-7"
+        ],
+        "original_packager_product_ndc": [
+          "0573-0164"
+        ],
+        "upc": [
+          "0655708117842",
+          "0655708017807",
+          "0655708217849",
+          "0655708017845"
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "4OD433S209",
+          "WK2XYI10QM"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Advil PM DIPHENHYDRAMINE CITRATE, IBUPROFEN CALCIUM STEARATE CARNAUBA WAX SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 ALUMINUM OXIDE GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED SODIUM LAURYL SULFATE STEARIC ACID TITANIUM DIOXIDE DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE IBUPROFEN IBUPROFEN Advil;PM"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts",
+        "Other information \u2022 read all warnings and directions before use. Keep carton. \u2022 store at 20-25\u00b0C (68-77\u00b0F) \u2022 avoid excessive heat above 40\u00b0C (104\u00b0F)"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Diphenhydramine citrate 38 mg Ibuprofen 200 mg (NSAID)* *nonsteroidal anti-inflammatory drug Purposes Nighttime sleep-aid Pain reliever"
+      ],
+      "purpose": [
+        "Purposes Nighttime sleep-aid Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses \u2022 for relief of occasional sleeplessness when associated with minor aches and pains \u2022 helps you fall asleep and stay asleep"
+      ],
+      "warnings": [
+        "Warnings Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: \u2022 hives \u2022 facial swelling \u2022 asthma (wheezing) \u2022 shock \u2022 rash \u2022 skin reddening \u2022 blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you \u2022 are age 60 or older \u2022 have had stomach ulcers or bleeding problems \u2022 take a blood thinning (anticoagulant) or steroid drug \u2022 take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] \u2022 have 3 or more alcoholic drinks every day while using this product \u2022 take more or for a longer time than directed Do not use \u2022 if you have ever had an allergic reaction to any other pain reliever/fever reducer \u2022 unless you have time for a full night\u2019s sleep \u2022 in children under 12 years of age \u2022 right before or after heart surgery \u2022 with any other product containing diphenhydramine, even one used on skin \u2022 if you have sleeplessness without pain Ask a doctor before use if \u2022 stomach bleeding warning applies to you \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, kidney disease, or asthma \u2022 you are taking a diuretic \u2022 you have a breathing problem such as emphysema or chronic bronchitis \u2022 you have glaucoma \u2022 you have trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are \u2022 taking sedatives or tranquilizers, or any other sleep-aid \u2022 under a doctor\u2019s care for any continuing medical illness \u2022 taking any other antihistamines \u2022 taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin \u2022 taking any other drug When using this product \u2022 drowsiness will occur \u2022 avoid alcoholic drinks \u2022 do not drive a motor vehicle or operate machinery \u2022 take with food or milk if stomach upset occurs \u2022 the risk of heart attack or stroke may increase if you use more than directed or for longer than directed Stop use and ask a doctor if \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 pain gets worse or lasts more than 10 days \u2022 sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. \u2022 redness or swelling is present in the painful area \u2022 any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of the reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "do_not_use": [
+        "Do not use \u2022 if you have ever had an allergic reaction to any other pain reliever/fever reducer \u2022 unless you have time for a full night\u2019s sleep \u2022 in children under 12 years of age \u2022 right before or after heart surgery \u2022 with any other product containing diphenhydramine, even one used on skin \u2022 if you have sleeplessness without pain"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if \u2022 stomach bleeding warning applies to you \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, kidney disease, or asthma \u2022 you are taking a diuretic \u2022 you have a breathing problem such as emphysema or chronic bronchitis \u2022 you have glaucoma \u2022 you have trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u2022 taking sedatives or tranquilizers, or any other sleep-aid \u2022 under a doctor\u2019s care for any continuing medical illness \u2022 taking any other antihistamines \u2022 taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin \u2022 taking any other drug"
+      ],
+      "when_using": [
+        "When using this product \u2022 drowsiness will occur \u2022 avoid alcoholic drinks \u2022 do not drive a motor vehicle or operate machinery \u2022 take with food or milk if stomach upset occurs \u2022 the risk of heart attack or stroke may increase if you use more than directed or for longer than directed"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 pain gets worse or lasts more than 10 days \u2022 sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. \u2022 redness or swelling is present in the painful area \u2022 any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of the reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions \u2022 do not take more than directed \u2022 adults and children 12 years and over: take 2 caplets at bedtime \u2022 do not take more than 2 caplets in 24 hours"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients calcium stearate, carnauba wax, colloidal silicon dioxide, corn starch, croscarmellose sodium, FD&C blue no. 2 aluminum lake, glyceryl behenate, hypromellose, lactose monohydrate, microcrystalline cellulose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, sodium lauryl sulfate, sodium starch glycolate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? Call toll free 1-800-88-ADVIL"
+      ],
+      "package_label_principal_display_panel": [
+        "Package Labeling: Advil PM"
+      ],
+      "set_id": "a3c30dd2-75f3-4f8b-88d7-4a63dea5bad7",
+      "id": "4efb3fed-e69e-91c7-e063-6294a90aafdd",
+      "effective_time": "20260408",
+      "version": "3",
+      "openfda": {
+        "application_number": [
+          "NDA021394"
+        ],
+        "brand_name": [
+          "Advil PM"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE CITRATE, IBUPROFEN"
+        ],
+        "manufacturer_name": [
+          "Navajo Manufacturing Company Inc."
+        ],
+        "product_ndc": [
+          "67751-147"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE CITRATE",
+          "IBUPROFEN"
+        ],
+        "rxcui": [
+          "895664"
+        ],
+        "spl_id": [
+          "4efb3fed-e69e-91c7-e063-6294a90aafdd"
+        ],
+        "spl_set_id": [
+          "a3c30dd2-75f3-4f8b-88d7-4a63dea5bad7"
+        ],
+        "package_ndc": [
+          "67751-147-01",
+          "67751-147-02",
+          "67751-147-06"
+        ],
+        "original_packager_product_ndc": [
+          "0573-0164"
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "4OD433S209",
+          "WK2XYI10QM"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Aleve PM DIPHENHYDRAMINE HYDROCHLORIDE and NAPROXEN SODIUM FD&C BLUE NO. 2 ALUMINUM OXIDE HYPROMELLOSES MAGNESIUM STEARATE CELLULOSE, MICROCRYSTALLINE POLYETHYLENE GLYCOL, UNSPECIFIED CARNAUBA WAX POVIDONE WATER TALC TITANIUM DIOXIDE DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE NAPROXEN SODIUM NAPROXEN ALEVE;PM"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Purposes Diphenhydramine hydrochloride 25 mg Nighttime sleep-aid Naproxen sodium 220 mg (naproxen 200 mg) (NSAID) nonsteroidal anti-inflammatory drug Pain reliever"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"75%\"><colgroup><col align=\"left\" valign=\"bottom\" width=\"75%\"/><col align=\"right\" valign=\"bottom\" width=\"25%\"/></colgroup><thead><tr><th><content styleCode=\"italics\">Active ingredients (in each caplet)</content></th><th><content styleCode=\"italics\">Purposes</content></th></tr></thead><tbody><tr><td>Diphenhydramine hydrochloride 25 mg</td><td>Nighttime sleep-aid</td></tr><tr><td>Naproxen sodium 220 mg (naproxen 200 mg) (NSAID) <footnote ID=\"K546\">nonsteroidal anti-inflammatory drug</footnote></td><td>Pain reliever</td></tr></tbody></table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each caplet) Purposes Diphenhydramine hydrochloride 25 mg Nighttime sleep-aid Naproxen sodium 220 mg (naproxen 200 mg) (NSAID) nonsteroidal anti-inflammatory drug Pain reliever"
+      ],
+      "purpose_table": [
+        "<table width=\"75%\"><colgroup><col align=\"left\" valign=\"bottom\" width=\"75%\"/><col align=\"right\" valign=\"bottom\" width=\"25%\"/></colgroup><thead><tr><th><content styleCode=\"italics\">Active ingredients (in each caplet)</content></th><th><content styleCode=\"italics\">Purposes</content></th></tr></thead><tbody><tr><td>Diphenhydramine hydrochloride 25 mg</td><td>Nighttime sleep-aid</td></tr><tr><td>Naproxen sodium 220 mg (naproxen 200 mg) (NSAID) <footnote ID=\"K546\">nonsteroidal anti-inflammatory drug</footnote></td><td>Pain reliever</td></tr></tbody></table>"
+      ],
+      "indications_and_usage": [
+        "Uses for relief of occasional sleeplessness when associated with minor aches and pains helps you fall asleep and stay asleep"
+      ],
+      "warnings": [
+        "Warnings Allergy alert Naproxen sodium may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warning NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any serious condition taking aspirin for heart attack or stroke, because naproxen may decrease this benefit of aspirin taking any other antihistamines taking any other drug When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear you have difficulty swallowing it feels like the pill is stuck in your throat If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use naproxen sodium 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any serious condition taking aspirin for heart attack or stroke, because naproxen may decrease this benefit of aspirin taking any other antihistamines taking any other drug"
+      ],
+      "when_using": [
+        "When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear you have difficulty swallowing it feels like the pill is stuck in your throat"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use naproxen sodium 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed drink a full glass of water with each dose adults and children 12 years and over: take 2 caplets at bedtime do not take more than 2 caplets in 24 hours if taken with food, this product may take longer to work"
+      ],
+      "storage_and_handling": [
+        "Other information read all warnings and directions before use. Keep outer carton. each caplet contains: sodium 20 mg store at 20-25\u00b0C (68-77\u00b0F) avoid high humidity and excessive heat above 40\u00b0C (104\u00b0F)"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients carnauba wax, FD&C blue #2 aluminum lake, hypromellose, magnesium stearate, microcrystalline cellulose, polyethylene glycol, povidone, purified water, talc, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? 1-800-395-0689 (Mon \u2013 Fri 9AM \u2013 5PM EST)"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - 20 Tablet Bottle Carton Aleve\u00ae PM naproxen sodium, 220 mg (NSAID)/ diphenhydramine HCl, 25 mg Pain reliever/nighttime sleep-aid SLEEP AID PLUS 12 HOUR PAIN RELIEVING STRENGTH OF ALEVE ACTUAL SIZE 20 CAPLETS *CAPSULE-SHAPED TABLETS Aleve PM 20 count Carton"
+      ],
+      "set_id": "82891458-ab0d-459a-8602-dcebd22c3010",
+      "id": "45265ccc-d985-a6ad-e063-6394a90a75b7",
+      "effective_time": "20251204",
+      "version": "16",
+      "openfda": {
+        "application_number": [
+          "NDA205352"
+        ],
+        "brand_name": [
+          "Aleve PM"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE AND NAPROXEN SODIUM"
+        ],
+        "manufacturer_name": [
+          "Bayer HealthCare LLC."
+        ],
+        "product_ndc": [
+          "0280-1200"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE",
+          "NAPROXEN SODIUM"
+        ],
+        "rxcui": [
+          "1550957",
+          "1550963"
+        ],
+        "spl_id": [
+          "45265ccc-d985-a6ad-e063-6394a90a75b7"
+        ],
+        "spl_set_id": [
+          "82891458-ab0d-459a-8602-dcebd22c3010"
+        ],
+        "package_ndc": [
+          "0280-1200-02",
+          "0280-1200-20",
+          "0280-1200-40",
+          "0280-1200-80",
+          "0280-1200-01",
+          "0280-1200-08",
+          "0280-1200-03",
+          "0280-1200-04",
+          "0280-1200-05"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0025866591882"
+        ],
+        "unii": [
+          "TC2D6JAD40",
+          "9TN87S3A3C"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Advil PM Ibuprofen and Diphenhydramine citrate CALCIUM STEARATE CARNAUBA WAX SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 ALUMINUM OXIDE GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED SODIUM LAURYL SULFATE STEARIC ACID TITANIUM DIOXIDE IBUPROFEN IBUPROFEN DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE Capsule-Shaped, Smooth in texture w/ polish surface Advil;PM Advil PM Ibuprofen and Diphenhydramine citrate CALCIUM STEARATE CARNAUBA WAX SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 ALUMINUM OXIDE GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED SODIUM LAURYL SULFATE STEARIC ACID TITANIUM DIOXIDE IBUPROFEN IBUPROFEN DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE Capsule-Shaped, Smooth in texture w/ polish surface Advil;PM Advil PM, TRAVEL BASIX Ibuprofen and Diphenhydramine citrate CARNAUBA WAX SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 ALUMINUM OXIDE GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE CALCIUM STEARATE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED SODIUM LAURYL SULFATE STEARIC ACID TITANIUM DIOXIDE IBUPROFEN IBUPROFEN DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE Capsule-Shaped, Smooth in texture w/ polish surface Advil;PM Advil PM, CVP HEALTH Ibuprofen and Diphenhydramine citrate SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 ALUMINUM OXIDE GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE CALCIUM STEARATE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED CARNAUBA WAX SODIUM LAURYL SULFATE STEARIC ACID TITANIUM DIOXIDE IBUPROFEN IBUPROFEN DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE Capsule-Shaped, Smooth in texture w/ polish surface Advil;PM"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts",
+        "Repackaged and distributed with permission of Pfizer Consumer Healthcare by: Lil' Drug Store Products, Inc., 1201 Continental Place NE, Cedar Rapids, IA 52402"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Purposes Diphenhydramine citrate 38 mg Nighttime sleep-aid Ibuprofen 200 mg (NSAID) nonsteroidal anti-inflammatory drug Pain reliever"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"75%\"><col width=\"50%\" align=\"left\" valign=\"top\"/><col width=\"50%\" align=\"right\" valign=\"top\"/><thead><tr><th><content styleCode=\"italics\">Active ingredients (in each caplet)</content></th><th><content styleCode=\"italics\">Purposes</content></th></tr></thead><tbody><tr><td>Diphenhydramine citrate 38 mg</td><td>Nighttime sleep-aid </td></tr><tr styleCode=\"Botrule\"><td>Ibuprofen 200 mg (NSAID) <footnote ID=\"K705\">nonsteroidal anti-inflammatory drug</footnote></td><td>Pain reliever</td></tr></tbody></table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each caplet) Purposes Diphenhydramine citrate 38 mg Nighttime sleep-aid Ibuprofen 200 mg (NSAID) nonsteroidal anti-inflammatory drug Pain reliever"
+      ],
+      "purpose_table": [
+        "<table width=\"75%\"><col width=\"50%\" align=\"left\" valign=\"top\"/><col width=\"50%\" align=\"right\" valign=\"top\"/><thead><tr><th><content styleCode=\"italics\">Active ingredients (in each caplet)</content></th><th><content styleCode=\"italics\">Purposes</content></th></tr></thead><tbody><tr><td>Diphenhydramine citrate 38 mg</td><td>Nighttime sleep-aid </td></tr><tr styleCode=\"Botrule\"><td>Ibuprofen 200 mg (NSAID) <footnote ID=\"K705\">nonsteroidal anti-inflammatory drug</footnote></td><td>Pain reliever</td></tr></tbody></table>"
+      ],
+      "indications_and_usage": [
+        "Uses for relief of occasional sleeplessness when associated with minor aches and pains helps you fall asleep and stay asleep"
+      ],
+      "warnings": [
+        "Warnings Allergy alert Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warning NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug"
+      ],
+      "when_using": [
+        "When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed adults and children 12 years and over: take 2 caplets at bedtime do not take more than 2 caplets in 24 hours"
+      ],
+      "storage_and_handling": [
+        "Other information read all warnings and directions before use. Keep carton store at 20-25\u00b0C (68-77\u00b0F) avoid excessive heat above 40\u00b0C (104\u00b0F)"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients calcium stearate, carnauba wax, colloidal silicon dioxide, corn starch, croscarmellose sodium, FD&C blue no. 2 aluminum lake, glyceryl behenate, hypromellose, lactose monohydrate, microcrystalline cellulose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, sodium lauryl sulfate, sodium starch glycolate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? Call weekdays 9 AM to 5 PM EST at 1-800-88-ADVIL"
+      ],
+      "package_label_principal_display_panel": [
+        "Advil PM, 6ct, Lil' Drug Store \u00ae - PDP/Package Advil \u00ae PM Ibuprofen, 200 mg/ Diphenhydramine citrate, 38 mg Pain Reliever (NSAID)/ Nighttime Sleep-Aid [caplet image] 6 Coated Caplets* *Capsule-Shaped Tablets [ Lil' Drug Store \u00ae logo] PDP/Package",
+        "Advil PM, 4ct TRAVEL BASIX - PDP/Package Advil PM Ibuprofen, 200 mg/ Diphenhydramine Citrate, 38 mg Pain Reliever (NSAID) / Nighttime Sleep-Aid [caplet image] 4 Coated Caplets* *Capsule-Shaped Tablets [TRAVEL BASIX logo] PDP/Package",
+        "Advil PM 4ct, CVP \u00ae HEALTH - PDP/Package Advil PM Ibuprofen, 200 mg/ Diphenhydramine Citrate, 38 mg Pain Reliever (NSAID) / Nighttime Sleep-Aid [caplet image] 4 Coated Caplets* *Capsule-Shaped Tablets [CVP\u00ae HEALTH logo] PDP/Package",
+        "AdvilPM 30pc Dispens-It Box, Lil' Drug Store \u00ae AdvilPM Ibuprofen, 200 mg/ Diphenhydramine citrate, 38 mg Pain Reliever (NSAID)/ Nighttime Sleep-Aid [caplet image] For relief of occasional sleeplessness when associated with minor aches and pains Helps you fall asleep and stay asleep See full Drug Facts information on the back of this dispenser 30 PACKETS OF 2 COATED CAPLETS EACH* *Capsule-Shaped Tablets [Lil' Drug Store\u00ae logo] PDP/Package"
+      ],
+      "set_id": "b876bb40-a38b-445a-bc8a-466b3bfe166d",
+      "id": "27e68e85-e284-30b9-e063-6394a90aba9b",
+      "effective_time": "20241127",
+      "version": "12",
+      "openfda": {
+        "application_number": [
+          "NDA021394"
+        ],
+        "brand_name": [
+          "Advil PM, TRAVEL BASIX",
+          "Advil PM, CVP HEALTH",
+          "Advil PM"
+        ],
+        "generic_name": [
+          "IBUPROFEN AND DIPHENHYDRAMINE CITRATE"
+        ],
+        "manufacturer_name": [
+          "Lil' Drug Store Products, Inc."
+        ],
+        "product_ndc": [
+          "66715-6433",
+          "66715-9633",
+          "66715-9733",
+          "66715-6533"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "IBUPROFEN",
+          "DIPHENHYDRAMINE CITRATE"
+        ],
+        "rxcui": [
+          "895664"
+        ],
+        "spl_id": [
+          "27e68e85-e284-30b9-e063-6394a90aba9b"
+        ],
+        "spl_set_id": [
+          "b876bb40-a38b-445a-bc8a-466b3bfe166d"
+        ],
+        "package_ndc": [
+          "66715-9633-3",
+          "66715-9733-2",
+          "66715-9733-8",
+          "66715-9733-3",
+          "66715-6433-2",
+          "66715-6533-2"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "4OD433S209",
+          "WK2XYI10QM"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "ADVIL PM diphenhydramine citrate and ibuprofen CALCIUM STEARATE CARNAUBA WAX SILICON DIOXIDE STARCH, CORN CROSCARMELLOSE SODIUM FD&C BLUE NO. 2 GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED LACTOSE MONOHYDRATE MICROCRYSTALLINE CELLULOSE POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED SODIUM LAURYL SULFATE SODIUM STARCH GLYCOLATE TYPE A POTATO STEARIC ACID TITANIUM DIOXIDE DIPHENHYDRAMINE CITRATE DIPHENHYDRAMINE IBUPROFEN IBUPROFEN blue Advil;PM"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Diphenhydramine citrate 38 mg Ibuprofen 200 mg (NSAID)* *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Nighttime sleep-aid Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses for relief of occasional sleeplessness when associated with minor aches and pains helps you fall asleep and stay asleep"
+      ],
+      "warnings": [
+        "Warnings Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warning: NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke because ibuprofen may decrease this benefit of aspirin taking any other drug When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to any other pain reliever/fever reducer unless you have time for a full night's sleep in children under 12 years of age right before or after heart surgery with any other product containing diphenhydramine, even one used on skin if you have sleeplessness without pain"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers or fever reducers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic you have a breathing problem such as emphysema or chronic bronchitis you have glaucoma you have trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers, or any other sleep-aid under a doctor's care for any continuing medical illness taking any other antihistamines taking aspirin for heart attack or stroke because ibuprofen may decrease this benefit of aspirin taking any other drug"
+      ],
+      "when_using": [
+        "When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. redness or swelling is present in the painful area any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed adults and children 12 years and over: take 2 caplets at bedtime do not take more than 2 caplets in 24 hours"
+      ],
+      "spl_unclassified_section": [
+        "Other ingredients read all warnings and directions before use. Keep carton. store at 20-25\u00b0C (68-77\u00b0F) avoid excessive heat above 40\u00b0C (104\u00b0F)",
+        "Additional Information Do Not Use if seal under bottle cap imprinted with \u201cSEALED for YOUR PROTECTION\u201d is broken or missing. For most recent product information, visit www.Advil.com. Distributed by: GSK Consumer Healthcare, Warren, NJ 07059 \u00a92021 GSK or licensor Trademarks owned or licensed by GSK"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients calcium stearate, carnauba wax, colloidal silicon dioxide, corn starch, croscarmellose sodium, FD&C blue no. 2 aluminum lake, glyceryl dibehenate, hypromellose, lactose monohydrate, microcrystalline cellulose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, sodium lauryl sulfate, sodium starch glycolate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or Comments? Call weekdays 9 AM to 5 PM EST at 1-800-88-ADVIL"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel NDC 0573-0164-20 Advil PM Ibuprofen, 200 mg / Diphenhydramine citrate, 38 mg Pain Reliever (NSAID) / Nighttime Sleep-Aid 20 Coated Caplets* *Capsule-Shaped Tablets Advil PM 20 Coated Caplets"
+      ],
+      "set_id": "658fc201-47c9-6a6d-8af9-6208298d43b4",
+      "id": "15971707-84cd-4742-e063-6394a90af906",
+      "effective_time": "20240408",
+      "version": "21",
+      "openfda": {
+        "application_number": [
+          "NDA021394"
+        ],
+        "brand_name": [
+          "ADVIL PM"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE CITRATE AND IBUPROFEN"
+        ],
+        "manufacturer_name": [
+          "Haleon US Holdings LLC"
+        ],
+        "product_ndc": [
+          "0573-0164"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE CITRATE",
+          "IBUPROFEN"
+        ],
+        "rxcui": [
+          "895664"
+        ],
+        "spl_id": [
+          "15971707-84cd-4742-e063-6394a90af906"
+        ],
+        "spl_set_id": [
+          "658fc201-47c9-6a6d-8af9-6208298d43b4"
+        ],
+        "package_ndc": [
+          "0573-0164-33",
+          "0573-0164-04",
+          "0573-0164-20",
+          "0573-0164-30",
+          "0573-0164-40",
+          "0573-0164-43",
+          "0573-0164-45",
+          "0573-0164-32",
+          "0573-0164-41",
+          "0573-0164-91",
+          "0573-0164-05",
+          "0573-0164-55",
+          "0573-0164-21",
+          "0573-0164-44",
+          "0573-0164-14",
+          "0573-0164-12",
+          "0573-0164-49",
+          "0573-0164-46",
+          "0573-0164-65",
+          "0573-0164-08",
+          "0573-0164-09"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "4OD433S209",
+          "WK2XYI10QM"
+        ]
+      }
+    }
+  ]
+}

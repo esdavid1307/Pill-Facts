@@ -40,6 +40,18 @@ function drugConcept(overrides: Partial<DrugConcept> = {}): DrugConcept {
   return { rxcui: '83367', name: 'atorvastatin', sections: [], ...overrides }
 }
 
+/**
+ * Arriving at a Drug Concept's page the way a reader does, through a search that
+ * resolves to it. The payload is the one the backend would return for that RxCUI.
+ */
+async function openPage(page: DrugConcept) {
+  backendReturns({
+    '/api/search': { candidates: [{ rxcui: page.rxcui, name: page.name }] },
+    [`/api/drug-concepts/${page.rxcui}`]: page,
+  })
+  await search(page.name)
+}
+
 async function search(query: string) {
   const user = userEvent.setup()
   render(<App />)
@@ -93,16 +105,8 @@ describe('resolving a search to a Drug Concept', () => {
 })
 
 describe("a prescription Drug Concept's page", () => {
-  async function open(page: DrugConcept) {
-    backendReturns({
-      '/api/search': { candidates: [{ rxcui: page.rxcui, name: page.name }] },
-      [`/api/drug-concepts/${page.rxcui}`]: page,
-    })
-    await search(page.name)
-  }
-
   it('renders the Safety Sections in the order the backend gave them', async () => {
-    await open(
+    await openPage(
       drugConcept({
         sections: [
           section('Contraindications', 'Acute liver failure.'),
@@ -118,7 +122,7 @@ describe("a prescription Drug Concept's page", () => {
   })
 
   it('shows a Boxed Warning first and prominently', async () => {
-    await open(
+    await openPage(
       drugConcept({
         rxcui: '11289',
         name: 'warfarin',
@@ -139,7 +143,7 @@ describe("a prescription Drug Concept's page", () => {
    * drug is safe. Nothing may stand in for it — no heading, no "None", no reassurance.
    */
   it('says nothing at all about a Boxed Warning a Drug Concept does not have', async () => {
-    await open(drugConcept({ sections: [section('Contraindications', 'Acute liver failure.')] }))
+    await openPage(drugConcept({ sections: [section('Contraindications', 'Acute liver failure.')] }))
 
     expect(await screen.findByRole('heading', { name: 'Contraindications' })).toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/boxed/i)
@@ -147,7 +151,7 @@ describe("a prescription Drug Concept's page", () => {
   })
 
   it('attributes every Safety Section to the Label it came from', async () => {
-    await open(
+    await openPage(
       drugConcept({
         sections: [
           section('Contraindications', 'Acute liver failure.'),
@@ -168,7 +172,7 @@ describe("a prescription Drug Concept's page", () => {
   })
 
   it('shows the strengths a drug is made in', async () => {
-    await open(
+    await openPage(
       drugConcept({
         strengths: 'Tablets: 10 mg, 20 mg, 40 mg and 80 mg of atorvastatin.',
         sections: [section('Contraindications', 'Acute liver failure.')],
@@ -180,15 +184,16 @@ describe("a prescription Drug Concept's page", () => {
   })
 
   /**
-   * ADR-0008 allows shipping the prescription renderer alone only while the page says
-   * that is what it is. Having nothing to show is stated as a fact about Pill-Facts, and
-   * never as the claim that the FDA publishes nothing.
+   * Having nothing to show is stated as a fact about Pill-Facts, never as the claim that
+   * the FDA publishes nothing, and above all never as a claim about the drug. Which of
+   * the three empty states this actually is stays #9's work.
    */
-  it('says the over-the-counter gap is ours when there is nothing to show', async () => {
-    await open(drugConcept())
+  it('says the gap is ours when there is nothing to show', async () => {
+    await openPage(drugConcept())
 
-    expect(await screen.findByText(/no prescription labelling to show/i)).toBeInTheDocument()
-    expect(screen.getByText(/over-the-counter labelling isn’t here yet/i)).toBeInTheDocument()
+    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
+    expect(screen.getByText(/not a statement that this medication has no known risks/i))
+      .toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/publishes no/i)
     expect(screen.queryByRole('alert')).toBeNull()
   })
@@ -207,7 +212,7 @@ describe("a prescription Drug Concept's page", () => {
     await search('atorvastatin')
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/couldn’t reach the FDA/i)
-    expect(document.body.textContent).not.toMatch(/no prescription labelling to show/i)
+    expect(document.body.textContent).not.toMatch(/no labelling to show/i)
   })
 
   /** No such Drug Concept is a fact about the address, and never worded as an outage. */
@@ -221,5 +226,84 @@ describe("a prescription Drug Concept's page", () => {
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/medication at this address/i)
     expect(document.body.textContent).not.toMatch(/couldn’t reach the FDA/i)
+  })
+})
+
+/**
+ * The page renders whatever vocabulary the backend sends, which is what lets one
+ * component serve both renderers (ADR-0008) without knowing there are two. What these
+ * assert is that nothing in it is keyed to the prescription vocabulary.
+ */
+describe("an over-the-counter Drug Concept's page", () => {
+  const FEVERALL = {
+    labelId: '3561bbc3-53b0-4857-8b71-39e165ed95ce',
+    label: 'Feverall Jr. Strength',
+    manufacturer: 'Sun Pharmaceutical Industries, Inc.',
+    effectiveDate: '2026-09-03',
+    url: 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3561bbc3',
+  }
+
+  /** The sections the FDA's own Drug Facts panel prints, as the backend sends them. */
+  function acetaminophen(): DrugConcept {
+    const panel: [string, string][] = [
+      ['Warnings', 'Liver warning This product contains acetaminophen.'],
+      ['Do not use', 'in children under 6 years'],
+      ['Ask a doctor before use if', 'you have liver disease.'],
+      ['Stop use and ask a doctor if', 'fever lasts more than 3 days (72 hours), or recurs.'],
+    ]
+    return {
+      rxcui: '161',
+      name: 'acetaminophen',
+      sections: panel.map(([heading, text]) => ({ heading, text, provenance: FEVERALL })),
+    }
+  }
+
+  it('renders the Drug Facts headings in the order the backend gave them', async () => {
+    await openPage(acetaminophen())
+
+    expect(await screen.findByRole('heading', { name: 'Warnings' })).toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual([
+      'Warnings',
+      'Do not use',
+      'Ask a doctor before use if',
+      'Stop use and ask a doctor if',
+    ])
+    expect(screen.getByText('in children under 6 years')).toBeInTheDocument()
+  })
+
+  /**
+   * An OTC Label has no Boxed Warning, so nothing here may be styled as one. The lead
+   * styling means "the FDA's most serious warning", and over a section that is merely
+   * first it would say something the FDA did not.
+   */
+  it('styles no section as a Boxed Warning', async () => {
+    await openPage(acetaminophen())
+
+    expect(await screen.findByRole('heading', { name: 'Warnings' })).toBeInTheDocument()
+    expect(document.querySelector('.boxed-warning')).toBeNull()
+    expect(document.body.textContent).not.toMatch(/boxed/i)
+  })
+
+  it('attributes every section to the OTC Label it came from', async () => {
+    await openPage(acetaminophen())
+
+    const attributions = await screen.findAllByText(/From the FDA label for/)
+    expect(attributions).toHaveLength(4)
+    expect(attributions[0]).toHaveTextContent(
+      'From the FDA label for Feverall Jr. Strength, published by Sun Pharmaceutical Industries, Inc., effective 2026-09-03.',
+    )
+  })
+
+  /**
+   * ADR-0007 renders the strengths a drug is made in, where the Label gives them. An OTC
+   * Label has no strengths section at all, so the heading is absent rather than standing
+   * empty over nothing — the same rule as any other absent section. #18 asks whether the
+   * panel's active ingredient line is the same fact.
+   */
+  it('shows no strengths heading where the Label carries none', async () => {
+    await openPage(acetaminophen())
+
+    expect(await screen.findByRole('heading', { name: 'Warnings' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Strengths' })).toBeNull()
   })
 })

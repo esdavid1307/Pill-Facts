@@ -1,0 +1,1097 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-23",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1080
+    }
+  },
+  "results": [
+    {
+      "spl_product_data_elements": [
+        "Nighttime Sleep Aid Berry Flavor DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE ANHYDROUS CITRIC ACID FD&C BLUE NO. 1 FD&C RED NO. 40 GLYCERIN POTASSIUM CITRATE WATER SODIUM BENZOATE SORBITOL SUCRALOSE XANTHAN GUM Naturally and Artificially"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each 30 mL) Diphenhydramine HCl 50 mg"
+      ],
+      "purpose": [
+        "Purpose Nighttime sleep-aid"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa for the relief of occasional sleeplessness \u25aa reduces time to fall asleep if you have difficulty falling asleep"
+      ],
+      "warnings": [
+        "Warnings Do not use \u25aa for children under 12 years of age \u25aa with any other product containing diphenhydramine, even one used on skin Ask a doctor before use if you have \u25aa a breathing problem such as emphysema, or chronic bronchitis \u25aa glaucoma \u25aa difficulty in urination due to enlargement of the prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers. When using this product \u25aa avoid alcoholic beverages Stop use and ask a doctor if sleeplessness persists continuously for more than two weeks. Insomnia may be a symptom of serious underlying medical illness. If pregnant or breast-feeding , ask a health professional before use. Keep out of reach of children. Overdose warning: In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222."
+      ],
+      "do_not_use": [
+        "Do not use \u25aa for children under 12 years of age \u25aa with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25aa a breathing problem such as emphysema, or chronic bronchitis \u25aa glaucoma \u25aa difficulty in urination due to enlargement of the prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers."
+      ],
+      "when_using": [
+        "When using this product \u25aa avoid alcoholic beverages"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if sleeplessness persists continuously for more than two weeks. Insomnia may be a symptom of serious underlying medical illness."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding , ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions \u25aa take only one dose per day (24 hours) \u25aa only use cup provided adults & children 12yrs & over One Dose 30 mL at bed time if needed or as directed by a doctor Children under 12 yrs do not use"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"100%\"><col width=\"42%\"/><col width=\"58%\"/><tbody><tr><td styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><paragraph>adults &amp; children 12yrs &amp; over</paragraph></td><td styleCode=\"Botrule Lrule Toprule \" valign=\"top\"><paragraph>One Dose 30 mL at bed time if needed or as directed by a doctor</paragraph></td></tr><tr><td styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><paragraph>Children under 12 yrs</paragraph></td><td styleCode=\"Botrule Lrule Toprule \" valign=\"top\"><paragraph>do not use</paragraph></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u25aa each 30 mL dose contains: potassium 5 mg, sodium 10 mg \u25aa store at room temperature"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients anhydrous citric acid, FD&C Blue No. 1, FD&C Red No. 40, flavor, glycerin, potassium citrate, purified water, sodium benzoate, sorbitol, sucralose, xanthan gum."
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL DRx CHOICE \u00ae NDC 68163-730-06 Compare to in ZzzQuil\u00ae Nighttime Sleep-Aid active ingredient * Sleep-Aid Nighttime Diphenhydramine HCl Non-Habit Forming BERRY FLAVOR Naturally and Artificially Flavored Not for treating Cold or Flu See Warnings 6 FL OZ (177 mL) $1.99 AMAZING NEW VALUE! TAMPER EVIDENT: DO NOT USE IF PRINTED SHRINK BAND IS MISSING OR BROKEN *This product is not manufactured or distributed by Procter & Gamble, the distributor of ZzzQuil\u2122 Nighttime Sleep-Aid. Manufactured by: Raritan Pharmaceuticals 8 Joanna Court, East Brunswick, NJ 08816 DRx Choice Sleep Aid Nighttime Berry Flavor"
+      ],
+      "set_id": "303d7651-9c8f-4a14-9f2c-7181fa0f003e",
+      "id": "076ae5c8-aef3-4953-b28b-2a9486ab11d4",
+      "effective_time": "20260909",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Nighttime Sleep Aid Berry Flavor"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Raritan Pharmaceuticals Inc"
+        ],
+        "product_ndc": [
+          "68163-730"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1248354"
+        ],
+        "spl_id": [
+          "076ae5c8-aef3-4953-b28b-2a9486ab11d4"
+        ],
+        "spl_set_id": [
+          "303d7651-9c8f-4a14-9f2c-7181fa0f003e"
+        ],
+        "package_ndc": [
+          "68163-730-06"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0368163730067"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "VICKS ZzzQuil NIGHTTIME SLEEP-AID Diphenhydramine HCl FREE OF Diphenhydramine Hydrochloride DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE SODIUM BENZOATE ANHYDROUS CITRIC ACID WATER SACCHARIN SODIUM SODIUM CITRATE GLYCERIN SORBITOL SUCRALOSE POLYSORBATE 20 PROPYLENE GLYCOL SODIUM CHLORIDE"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts",
+        "Tamper Evident: Do not use if printed shrinkband seal around the neck is broken or missing.",
+        "DIST. BY: PROCTER & GAMBLE CINCINNATI, OH 45202"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each 30 mL dose cup) Diphenhydramine HCl 50 mg"
+      ],
+      "purpose": [
+        "Purpose Nighttime sleep-aid"
+      ],
+      "indications_and_usage": [
+        "Uses for the relief of occasional sleeplessness reduces time to fall asleep if you have difficulty falling asleep"
+      ],
+      "warnings": [
+        "Warnings Do not use for children under 12 years of age with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "do_not_use": [
+        "Do not use for children under 12 years of age with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have a breathing problem such as emphysema or chronic bronchitis glaucoma difficulty in urination due to enlargement of the prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers"
+      ],
+      "when_using": [
+        "When using this product avoid alcoholic beverages"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "overdosage": [
+        "In case of overdose, get medical help or contact a Poison Control Center right away."
+      ],
+      "dosage_and_administration": [
+        "Directions take only one dose (30 mL) per day (24 hours) only use dose cup provided adults & children 12 yrs & over 30 mL at bedtime if needed or as directed by a doctor children under 12 yrs do not use"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"50%\"><col width=\"45%\" align=\"left\" valign=\"top\"/><col width=\"55%\" align=\"left\" valign=\"top\"/><tbody><tr styleCode=\"Botrule First\"><td align=\"left\" styleCode=\"Rrule\">adults &amp; children 12 yrs &amp; over</td><td align=\"left\">30 mL at bedtime if needed   or as directed by a doctor </td></tr><tr><td align=\"left\" styleCode=\"Rrule\">children under 12 yrs</td><td align=\"left\">do not use</td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information each 30 mL dose cup contains: sodium 88 mg store at no greater than 25\u00b0C"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients citric acid, glycerin, natural flavor, polysorbate 20, propylene glycol, saccharin sodium, sodium benzoate, sodium chloride, sodium citrate, sorbitol solution, sucralose, water"
+      ],
+      "questions": [
+        "Questions or comments? 1-877-881-5813"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL Vicks\u00ae ZzzQuil\u2122 Nighttime Sleep-Aid Diphenhydramine HCl Free Of High Fructose Corn Syrup Alcohol Artificial Dyes & Flavors Fall Asleep Fast Non-habit Forming Soothing Berry Not for colds or for pain 12 FL OZ (354 mL) 795"
+      ],
+      "set_id": "01906eed-78ee-f2a1-e063-6294a90a809b",
+      "id": "5afd7ec5-6d26-0694-e063-6394a90a1ef0",
+      "effective_time": "20260908",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "M010"
+        ],
+        "brand_name": [
+          "VICKS ZzzQuil NIGHTTIME SLEEP-AID Diphenhydramine HCl FREE OF"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "The Procter & Gamble Manufacturing Company"
+        ],
+        "product_ndc": [
+          "69423-795"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1248354",
+          "1248356"
+        ],
+        "spl_id": [
+          "5afd7ec5-6d26-0694-e063-6394a90a1ef0"
+        ],
+        "spl_set_id": [
+          "01906eed-78ee-f2a1-e063-6294a90a809b"
+        ],
+        "package_ndc": [
+          "69423-795-12"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Nighttime Severe Cold and Cough ACETAMINOPHEN, DIPHENHYDRAMINE, PHENYLEPHRINE ACETAMINOPHEN ACETAMINOPHEN DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ANHYDROUS CITRIC ACID FD&C YELLOW NO. 6 MALTODEXTRIN POTASSIUM CHLORIDE SILICON DIOXIDE SUCRALOSE SUCROSE"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each packet) Acetaminophen 650 mg Diphenhydramine hydrochloride 25 mg Phenylephrine hydrochloride 10 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever / fever reducer Antihistamine / Cough Suppressant Nasal Decongestant"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa temporarily relieves these symptoms due to a cold: \u25aa minor aches and pains \u25aa minor sore throat pain \u25aa headache \u25aa nasal and sinus congestion \u25aa runny nose \u25aa sneezing \u25aa itchy nose or throat \u25aa itchy, watery eyes due to hay fever \u25aa cough due to minor throat and bronchial irritation \u25aa temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take \u25aa more than 4,000 mg of acetaminophen in 24 hours \u25aa with other drugs containing acetaminophen \u25aa 3 or more alcoholic drinks every day while using this product Allergy alert: acetaminophen may cause severe skin reactions, Symptoms may include: \u25aa skin reddening \u25aa blisters \u25aa rash If a skin reaction occurs, stop use and seek medical help right away Sore throat warning: If sore throat is severe, persists for more than 2 days, is accompanied or followed by fever, headache, rash, nausea, or vomiting consult a doctor promptly."
+      ],
+      "do_not_use": [
+        "Do not use \u25aa in a child under 12 years of age \u25aa if you are allergic to acetaminophen \u25aa with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or a pharmacist. \u25aa with any other product containing diphenhydramine, even one used on the skin \u25aa if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains a MAOI, ask a doctor or pharmacist before taking this product."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25aa liver disease \u25aa heart disease \u25aa high blood pressure \u25aa thyroid disease \u25aa diabetes \u25aa glaucoma \u25aa trouble urinating due to an enlarged prostate gland \u25aa a breathing problem such as emphysema, asthma or chronic bronchitis \u25aa cough that occurs with too much phlegm (mucus) \u25aa cough that lasts or is chronic such as occurs with smoking, asthma or emphysema"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u25aa taking sedatives or tranquilizers \u25aa taking the blood thinning drug warfarin"
+      ],
+      "when_using": [
+        "When using this product \u25aa do not exceed recommended dosage \u25aa avoid alcoholic drinks \u25aa marked drowsiness may occur \u25aa alcohol, sedatives and tranquilizers may increase drowsiness \u25aa be careful when driving a motor vehicle or operating machinery \u25aa excitability may occur, especially in children"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u25aa nervousness, dizziness, or sleeplessness occurs \u25aa fever gets worse or lasts more than 3 days \u25aa redness or swelling is present \u25aa new symptoms occur \u25aa pain, cough or nasal congestion gets worse or lasts more than 7 days \u25aa cough comes back or occurs with fever, rash or headache that lasts. There could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast- feeding, ask a health care professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u25aa do not use more than directed \u25aa take every 4 hours while symptoms persist, not to exceed 5 packets in 24 hours unless directed by a doctor Age Dose adults and children 12 years of age and over one packet children under 12 years of age do not use \u25aa dissolve contents of one packet into 8 oz. hot water: sip while hot. Consume entire drink within 10 - 15 minutes. \u25aa if using a microwave, add contents of one packet to 8 oz. of cool water: stir briskly before and after heating, Do not overheat."
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"100%\"><col width=\"50%\"/><col width=\"50%\"/><tbody><tr><td align=\"center\" styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><paragraph>Age</paragraph></td><td align=\"center\" styleCode=\"Botrule Lrule Toprule \" valign=\"top\"><paragraph>Dose</paragraph></td></tr><tr><td align=\"center\" styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>adults and children 12 years of age and over </paragraph></td><td align=\"center\" styleCode=\"Lrule Botrule \" valign=\"top\"><paragraph>one packet </paragraph></td></tr><tr><td align=\"center\" styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>children under 12 years of age</paragraph></td><td align=\"center\" styleCode=\"Botrule \" valign=\"top\"><paragraph>do not use</paragraph></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u25aa each packet contains: potassium 6 mg \u25aa store at room temperature. Protect from excessive heat and moisture."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients citric acid, FD& C Yellow No. 6, flavors, maltodextrin, potassium chloride, silica, sucralose, sucrose,"
+      ],
+      "questions": [
+        "Questions or comments? 1- 866-467-2748"
+      ],
+      "spl_unclassified_section": [
+        "Principal Display Panels *Compare to the active ingredients in Theraflu \u00ae Nighttime Severe Cold & Cough* NDC# 68163-541-06 Nighttime Severe Cold & Cough ACETAMINOPHEN PAIN RELIEVER/FEVER REDUER DIPHENHYDRAMINE HCl ANTIHISTAMINE/ COUGH SUPPRESSANT PHENYLEPHRINE HCl NASAL DECONGESTANT \u2022 Aspartame free \u2022 Sodium Free Relieves: Body Ache & Fever \u2022 Cough \u2022 Fever \u2022 Headache \u2022 Nasal Congestion \u2022 Runny Nose \u2022 Sneezing \u2022 Sore Throat Pain 6 PACKETS Honey Lemon Flavor Infused with Chamomile & White Tea Flavors TAMPER EVIDENT: DO NOT USE IF INNER SEALED PACKET IS TORN Manufactured by: Raritan Pharmaceuticals 8 Joanna Court East Brunswick, NJ 08816 *This product is not manufactured or distributed by GSK consumer Healthcare, owner of the registered trademark THERAFLU \u00ae Nighttime Severe Cold & Cough."
+      ],
+      "spl_unclassified_section_table": [
+        "<table width=\"100%\"><col width=\"100%\"/><tbody><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">TAMPER EVIDENT: DO NOT USE IF INNER SEALED PACKET IS TORN</content></paragraph></td></tr></tbody></table>"
+      ],
+      "package_label_principal_display_panel": [
+        "Display DRx Nighttime Severe Cold and Cough Honey Lemon Flavor"
+      ],
+      "set_id": "9819155b-2713-42be-867e-16605e7643d0",
+      "id": "7fd2aabb-24db-49c6-a943-74dc35da3877",
+      "effective_time": "20260908",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Nighttime Severe Cold and Cough"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, DIPHENHYDRAMINE, PHENYLEPHRINE"
+        ],
+        "manufacturer_name": [
+          "RARITAN PHARMACEUTICALS INC"
+        ],
+        "product_ndc": [
+          "68163-541"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "DIPHENHYDRAMINE HYDROCHLORIDE",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1659960"
+        ],
+        "spl_id": [
+          "7fd2aabb-24db-49c6-a943-74dc35da3877"
+        ],
+        "spl_set_id": [
+          "9819155b-2713-42be-867e-16605e7643d0"
+        ],
+        "package_ndc": [
+          "68163-541-06"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "TC2D6JAD40",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Drx Choice childrens allergy chews Diphenhydramine HCl DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE CITRIC ACID MONOHYDRATE CROSPOVIDONE (120 .MU.M) D&C RED NO. 30 DEXTROSE, UNSPECIFIED FORM FD&C BLUE NO. 1 MAGNESIUM STEARATE MALTODEXTRIN POTASSIUM CITRATE SILICON DIOXIDE SODIUM POLYSTYRENE SULFONATE STARCH, CORN SUCRALOSE RP012"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each tablet) Diphenhydramine HCl 12.5 mg"
+      ],
+      "purpose": [
+        "Purpose Antihistamine"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa temporarily relieves these symptoms due to hay fever or other upper respiratory allergies. \u25aa runny nose \u25aa itchy, watery eyes \u25aa sneezing \u25aa itching of the nose or throat"
+      ],
+      "warnings": [
+        "Warnings Do not use \u25aa to make a child sleepy \u25aa with any other product containing diphenhydramine, even one used on skin Ask your doctor before use if you have \u25aa glaucoma \u25aa a breathing problem such as emphysema or chronic bronchitis \u25aa trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers. When using this product \u25aa marked drowsiness may occur \u25aa avoid alcoholic drinks \u25aa alcohol, sedatives, and tranquilizers may increase drowsiness \u25aa be careful when driving a motor vehicle or operating machinery \u25aa excitability may occur, especially in children If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222"
+      ],
+      "do_not_use": [
+        "Do not use \u25aa to make a child sleepy \u25aa with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "ask_doctor": [
+        "Ask your doctor before use if you have \u25aa glaucoma \u25aa a breathing problem such as emphysema or chronic bronchitis \u25aa trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers."
+      ],
+      "when_using": [
+        "When using this product \u25aa marked drowsiness may occur \u25aa avoid alcoholic drinks \u25aa alcohol, sedatives, and tranquilizers may increase drowsiness \u25aa be careful when driving a motor vehicle or operating machinery \u25aa excitability may occur, especially in children"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222"
+      ],
+      "dosage_and_administration": [
+        "Directions \u25aa chew one tablet completely at the onset of symptoms. Do not swallow tablets whole. \u25aa Find right dose on chart below \u25aa take every 4 to 6 hours, or as directed by a doctor \u25aa do not take more than 6 doses in 24 hours Age (Yr) Dose (chewable tablets) children under 2 years of age do not use children 2 to under 5 years of age do not use unless directed by a doctor children 6 to under 12 years of age 1 to 2 tablets adults and children 12 years of age and over 2 to 4 tablets"
+      ],
+      "dosage_and_administration_table": [
+        "<table styleCode=\"Noautorules\" width=\"100%\"><col width=\"50%\"/><col width=\"44%\"/><tbody><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Age (Yr)</content></paragraph></td><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Dose (chewable tablets)</content></paragraph></td></tr><tr><td styleCode=\"Rrule Lrule Botrule \" valign=\"top\"><paragraph>children under 2 years of age</paragraph></td><td styleCode=\"Rrule Lrule Toprule Botrule \" valign=\"top\"><paragraph>do not use </paragraph></td></tr><tr><td styleCode=\"Rrule Lrule Botrule \" valign=\"top\"><paragraph>children 2 to under 5 years of age</paragraph></td><td styleCode=\"Rrule Lrule Toprule Botrule \" valign=\"top\"><paragraph>do not use unless directed by a doctor </paragraph></td></tr><tr><td styleCode=\"Rrule Lrule Botrule \" valign=\"top\"><paragraph>children 6 to under 12 years of age </paragraph></td><td styleCode=\"Rrule Lrule Toprule Botrule \" valign=\"top\"><paragraph>1 to 2 tablets </paragraph></td></tr><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph>adults and children 12 years of age and over </paragraph></td><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph>2 to 4 tablets</paragraph></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u25aa store below at room temperature. Avoid high humidity. Protect from light."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients citric acid, crospovidone, D&C Red No.30, dextrose, FD&C Blue No 1, flavors, magnesium stearate, maltodextrin, potassium citrate, silica, sodium polystyrene sulfonate, starch, sucralose"
+      ],
+      "questions": [
+        "Questions or comments ? 1-866-467-2748"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel NDC 68163-012-48 Compare to active ingredient in Children's Benadryl\u00ae Allergy Chewable Tablets DRx Choice children's allergy chews diphenhydramine HCl, 12.5 mg/ antihistamine For Relief of: \u2022 Sneezing \u2022 Runny nose \u2022 Itchy throat or Nose \u2022 Itchy, watery eyes 48 Chewable Tablets Grape Flavor 4-6 HOURS/DOSE TAMPER EVIDENT: DO NOT USE IF CARTON IS OPENED OR IF BLISTER UNIT IS TORN, BROKEN OR SHOWS ANY SIGNS OF TAMPERING *This product is not manufactured or distributed by Johnson & Johnson Consumer INC, owner of the registered trademark Children's Benadryl\u00ae Allergy Chewable Tablets. Manufactured by: Raritan Pharmaceuticals 8 Joanna Court, East Brunswick, NJ 08816 IMPORTANT: Keep this carton for future reference on full labelling DRx Choice Children's allergy Chews 48 Tablets"
+      ],
+      "set_id": "dd2be906-bd0a-437c-9693-54b9391a5da3",
+      "id": "27297b57-3765-4bb9-ba60-df495d64bea0",
+      "effective_time": "20260905",
+      "version": "5",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Drx Choice childrens allergy chews"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HCL"
+        ],
+        "manufacturer_name": [
+          "RARITAN PHARMACEUTICALS INC"
+        ],
+        "product_ndc": [
+          "68163-012"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1049900"
+        ],
+        "spl_id": [
+          "27297b57-3765-4bb9-ba60-df495d64bea0"
+        ],
+        "spl_set_id": [
+          "dd2be906-bd0a-437c-9693-54b9391a5da3"
+        ],
+        "package_ndc": [
+          "68163-012-48"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Maximum Strength Nighttime Cold and Flu Acetaminophen , Diphenhydramine HCl,Phenylephrine HCl ACETAMINOPHEN ACETAMINOPHEN DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ANHYDROUS CITRIC ACID EDETATE DISODIUM FD&C BLUE NO. 1 FD&C RED NO. 40 POTASSIUM CITRATE PROPYLENE GLYCOL PROPYL GALLATE WATER SODIUM BENZOATE SORBITOL SUCRALOSE XANTHAN GUM"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each 20 mL) Purposes Acetaminophen 650 mg Pain reliever/fever reducer Diphenhydramine HCl 25 mg Antihistamine/cough suppressant Phenylephrine HCl 10 mg Nasal decongestant"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"75%\"><col width=\"37%\"/><col width=\"38%\"/><thead><tr><th align=\"left\" styleCode=\"Toprule \" valign=\"top\"><content styleCode=\"bold\"><content styleCode=\"italics\">Active ingredients (in each 20 mL)</content></content></th><th align=\"left\" styleCode=\"Toprule \" valign=\"top\"><content styleCode=\"bold\"><content styleCode=\"italics\">Purposes</content></content></th></tr><tr><th align=\"left\" colspan=\"2\" styleCode=\"Botrule \" valign=\"top\"/></tr></thead><tbody><tr><td styleCode=\"Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Acetaminophen 650 mg</content></paragraph></td><td styleCode=\"Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Pain reliever/fever reducer</content></paragraph></td></tr><tr><td valign=\"top\"><paragraph>Diphenhydramine HCl 25 mg</paragraph></td><td valign=\"top\"><paragraph>Antihistamine/cough suppressant</paragraph></td></tr><tr><td styleCode=\"Botrule \" valign=\"top\"><paragraph>Phenylephrine HCl 10 mg</paragraph></td><td styleCode=\"Botrule \" valign=\"top\"><paragraph>Nasal decongestant</paragraph></td></tr></tbody></table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each 20 mL) Purposes Acetaminophen 650 mg Pain reliever/fever reducer Diphenhydramine HCl 25 mg Antihistamine/cough suppressant Phenylephrine HCl 10 mg Nasal decongestant"
+      ],
+      "purpose_table": [
+        "<table width=\"75%\"><col width=\"37%\"/><col width=\"38%\"/><thead><tr><th align=\"left\" styleCode=\"Toprule \" valign=\"top\"><content styleCode=\"bold\"><content styleCode=\"italics\">Active ingredients (in each 20 mL)</content></content></th><th align=\"left\" styleCode=\"Toprule \" valign=\"top\"><content styleCode=\"bold\"><content styleCode=\"italics\">Purposes</content></content></th></tr><tr><th align=\"left\" colspan=\"2\" styleCode=\"Botrule \" valign=\"top\"/></tr></thead><tbody><tr><td styleCode=\"Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Acetaminophen 650 mg</content></paragraph></td><td styleCode=\"Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Pain reliever/fever reducer</content></paragraph></td></tr><tr><td valign=\"top\"><paragraph>Diphenhydramine HCl 25 mg</paragraph></td><td valign=\"top\"><paragraph>Antihistamine/cough suppressant</paragraph></td></tr><tr><td styleCode=\"Botrule \" valign=\"top\"><paragraph>Phenylephrine HCl 10 mg</paragraph></td><td styleCode=\"Botrule \" valign=\"top\"><paragraph>Nasal decongestant</paragraph></td></tr></tbody></table>"
+      ],
+      "indications_and_usage": [
+        "Uses \u2022 temporarily relieves these common cold and flu symptoms: \u2022 cough \u2022 nasal congestion \u2022 minor aches and pains \u2022 sore throat \u2022 headache \u2022 runny nose \u2022 sneezing \u2022 temporarily reduces fever \u2022 controls cough to help you get to sleep"
+      ],
+      "warnings": [
+        "Warnings Liver Warning: This product contains acetaminophen. Severe liver damage may occur if you take: \u2022 more than 6 doses in 24 hours, which is the maximum daily amount \u2022 with other drugs containing acetaminophen \u2022 3 or more alcoholic drinks daily while using this product Allergy alert: Acetaminophen may cause severe skin reactions .Symptoms may include: \u2022 Skin reddening \u2022 Blisters \u2022 rash If a skin reaction occurs, stop use and seek medical help right away. Sore throat warning: if sore throat is severe, persists for more than 2 days, is accompanied or followed by fever, headache, rash, nausea, or vomiting, consult a doctor promptly. Do not use \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. \u2022 with any other drug containing diphenhydramine, even one used on the skin \u2022 if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. Ask a doctor before use if you have \u2022 liver disease \u2022 heart disease \u2022 high blood pressure \u2022 thyroid disease \u2022 diabetes \u2022 trouble urinating due to an enlarged prostate gland \u2022 glaucoma \u2022 a breathing problem such as emphysema or chronic bronchitis \u2022 persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema cough that occurs with too much phlegm (mucus) Ask a doctor or pharmacist before use if \u2022 you are taking the blood thinning drug warfarin \u2022 taking sedatives or tranquilizers When using this product \u2022 do not use more than directed \u2022 excitability may occur, especially in children \u2022 marked drowsiness may occur \u2022 alcohol, sedatives, and tranquilizers may increase drowsiness \u2022 avoid alcoholic drinks be careful when driving a motor vehicle or operating machinery Stop use and ask a doctor if \u2022 nervousness, dizziness, or sleeplessness occur \u2022 pain, nasal congestion, or cough gets worse or lasts more than 7 days \u2022 fever gets worse or lasts more than 3 days \u2022 redness or swelling is present \u2022 new symptoms occur \u2022 cough comes back, or occurs with fever, rash, or headache that lasts. These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning: Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away 1-800-222-1222. Quick medical attention is critical for adults as well as for children, even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. \u2022 with any other drug containing diphenhydramine, even one used on the skin \u2022 if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u2022 liver disease \u2022 heart disease \u2022 high blood pressure \u2022 thyroid disease \u2022 diabetes \u2022 trouble urinating due to an enlarged prostate gland \u2022 glaucoma \u2022 a breathing problem such as emphysema or chronic bronchitis \u2022 persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema cough that occurs with too much phlegm (mucus)"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if \u2022 you are taking the blood thinning drug warfarin \u2022 taking sedatives or tranquilizers"
+      ],
+      "when_using": [
+        "When using this product \u2022 do not use more than directed \u2022 excitability may occur, especially in children \u2022 marked drowsiness may occur \u2022 alcohol, sedatives, and tranquilizers may increase drowsiness \u2022 avoid alcoholic drinks be careful when driving a motor vehicle or operating machinery"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u2022 nervousness, dizziness, or sleeplessness occur \u2022 pain, nasal congestion, or cough gets worse or lasts more than 7 days \u2022 fever gets worse or lasts more than 3 days \u2022 redness or swelling is present \u2022 new symptoms occur \u2022 cough comes back, or occurs with fever, rash, or headache that lasts. These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. Overdose warning: Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away 1-800-222-1222. Quick medical attention is critical for adults as well as for children, even if you do not notice any signs or symptoms."
+      ],
+      "overdosage": [
+        "Overdose warning: Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away 1-800-222-1222. Quick medical attention is critical for adults as well as for children, even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u2022 do not take more than directed (see Overdose warning) \u2022 do not take more than 6 doses in any 24-hour period \u2022 measure only with dosing cup provided \u2022 do not use dosing cup with other products \u2022 dose as follows or as directed by a doctor \u2022 mL= milliliter \u2022 adults and children 12 years of age and older: 20 mL in dosing cup provided every 4 hours \u2022 children under 12 years of age: do not use"
+      ],
+      "storage_and_handling": [
+        "Other information \u2022 each 20 mL contains: sodium 6 mg \u2022 low sodium \u2022 store at room temperature \u2022 do not refrigerate \u2022 dosing cup provided"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients anhydrous citric acid, edetate disodium, FD&C blue #1, FD&C red #40, natural and artificial flavor, potassium citrate ,propylene glycol, propyl gallate, purified water, sodium benzoate, sorbitol, sucralose, xanthan gum."
+      ],
+      "questions": [
+        "Questions or comments? 1-888-287-1915"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - NDC# 30142-736-06 Compare to Mucinex \u00ae Fast-Max \u00ae Maximum Strength Might Time Cold & Flu Active Ingredients Maximum Strength Night Time Cold & Flu Acetaminophen Pain Reliever/Fever Reducer Diphenhydramine HCl Antihistamine/Cough Suppressant Phenylephrine HCl Nasal Decongestant Relieves: \u2022 Sore Throat; Itchy Throat-Cough \u2022 Nasal Congestion \u2013 Sneezing & Runny Nose \u2022 Headache \u2013 Body Pain For Ages 12+ 6 FL OZ (180 mL) *This product is not manufactured or distributed by Reckitt Benckiser, the distributor of Mucinex \u00ae Fast- Max \u00ae Maximum Strength Nighttime Cold & Flu Tamper evident: do not use if printed seal under cap is broken or missing. \u2021Maximum Strength per 4 hour dose. Distributed by: Maximum Strength Nighttime Cold & Flu"
+      ],
+      "set_id": "058b2021-8a61-40b0-8a2e-a784d2b847fb",
+      "id": "dc571b5a-8582-4468-becf-267119166482",
+      "effective_time": "20260902",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Maximum Strength Nighttime Cold and Flu"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN , DIPHENHYDRAMINE HCL,PHENYLEPHRINE HCL"
+        ],
+        "manufacturer_name": [
+          "THE KROGER CO"
+        ],
+        "product_ndc": [
+          "30142-736"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "DIPHENHYDRAMINE HYDROCHLORIDE",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1375932"
+        ],
+        "spl_id": [
+          "dc571b5a-8582-4468-becf-267119166482"
+        ],
+        "spl_set_id": [
+          "058b2021-8a61-40b0-8a2e-a784d2b847fb"
+        ],
+        "package_ndc": [
+          "30142-736-06"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "TC2D6JAD40",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "KROGER Dye Free Childrens Allergy Relief Diphenhydramine hydrochloride DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE ANHYDROUS CITRIC ACID CARBOXYMETHYLCELLULOSE SODIUM, UNSPECIFIED GLYCERIN POTASSIUM CITRATE WATER SODIUM BENZOATE SORBITOL SUCRALOSE"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each 5 mL) Diphenhydramine HCl USP 12.5 mg"
+      ],
+      "purpose": [
+        "Purpose Antihistamine"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: \u25aa runny nose \u25aa sneezing \u25aa itchy, watery eyes \u25aa itching of the nose or throat"
+      ],
+      "warnings": [
+        "Warnings Do not use \u25aa to make a child sleepy \u25aa with any other product containing diphenhydramine, even one used on skin Ask a doctor before use if the child has \u25aa a breathing problem such as chronic bronchitis \u25aa glaucoma Ask a doctor or pharmacist before use if the child is taking sedatives or tranquilizers When using this product \u25aa marked drowsiness may occur \u25aa sedatives and tranquilizers may increase drowsiness \u25aa excitability may occur, especially in children Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222."
+      ],
+      "do_not_use": [
+        "Do not use \u25aa to make a child sleepy \u25aa with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if the child has \u25aa a breathing problem such as chronic bronchitis \u25aa glaucoma"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if the child is taking sedatives or tranquilizers"
+      ],
+      "when_using": [
+        "When using this product \u25aa marked drowsiness may occur \u25aa sedatives and tranquilizers may increase drowsiness \u25aa excitability may occur, especially in children"
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222."
+      ],
+      "dosage_and_administration": [
+        "Directions \u25aa find right dose on chart below \u25aa take every 4 to 6 hours, or as directed by a doctor \u25aa do not take more than 6 doses in 24 hours \u25aa mL = milliliter Age (yr) Dose (mL) children under 2 years do not use children 2 to 5 years do not use unless directed by a doctor children 6 to 11 years 5 mL to 10 mL Attention: use only enclosed dosing cup designed for use with this product. Do not use any other dosing device."
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"75%\"><col width=\"38%\"/><col width=\"38%\"/><tbody><tr><td styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Age (yr)</content></paragraph></td><td styleCode=\"Botrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Dose (mL)</content></paragraph></td></tr><tr><td styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>children under 2 years</paragraph></td><td styleCode=\"Botrule \" valign=\"top\"><paragraph>do not use</paragraph></td></tr><tr><td styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>children 2 to 5 years</paragraph></td><td styleCode=\"Botrule \" valign=\"top\"><paragraph>do not use unless directed by a doctor</paragraph></td></tr><tr><td styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>children 6 to 11 years</paragraph></td><td styleCode=\"Botrule \" valign=\"top\"><paragraph>5 mL to 10 mL</paragraph></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u2022 each 5 mL contains : sodium 3 mg \u2022 store at room temperature \u2022 protect from sunlight \u2022 see bottom panel for lot number and expiration date \u2022 contains low sodium"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients anhydrous citric acid, carboxymethylcellulose sodium, flavors, glycerin, potassium citrate, purified water, sodium benzoate, sorbitol, sucralose."
+      ],
+      "questions": [
+        "Questions or comments? 1-866-467-2748"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL *Compare to the active ingredient in Children's Benadryl\u00ae Dye-Free NDC 41226-710-08 Dye-Free Children\u2019s Allergy Relief Diphenhydramine HCl l Antihistamine Oral Solution For Relief Of: \u2022 Runny nose \u2022 sneezing \u2022 itchy, watery eyes \u2022 Itchy Throat or Nose Sugar Free Natural Cherry Flavor 8 FL. OZ. (236 mL) Distributed by: *This product is not manufactured or distributed by Johnson & Johnson, owner of the registered trademark Children\u2019s Benadryl\u00ae Dye \u2013Free. KROGER Dye-free childrens allergy relief 236 mL"
+      ],
+      "set_id": "2bea22e9-34b6-4961-94bb-5600dd90e891",
+      "id": "e6af3d28-a54b-4586-a758-ea04a09192a1",
+      "effective_time": "20260902",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "KROGER Dye Free Childrens Allergy Relief"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "KROGER COMPANY"
+        ],
+        "product_ndc": [
+          "41226-710"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1049906"
+        ],
+        "spl_id": [
+          "e6af3d28-a54b-4586-a758-ea04a09192a1"
+        ],
+        "spl_set_id": [
+          "2bea22e9-34b6-4961-94bb-5600dd90e891"
+        ],
+        "package_ndc": [
+          "41226-710-08"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Nighttime Severe Cold and Cough ACETAMINOPHEN, DIPHENHYDRAMINE, PHENYLEPHRINE ACETAMINOPHEN ACETAMINOPHEN DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ANHYDROUS CITRIC ACID FD&C YELLOW NO. 6 MALTODEXTRIN POTASSIUM CHLORIDE SILICON DIOXIDE SUCRALOSE SUCROSE"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each packet) Acetaminophen, 650 mg Diphenhydramine HCl 25 mg Phenylephrine HCl 10 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever / fever reducer Antihistamine / Cough Suppressant Nasal Decongestant"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa temporarily relieves these symptoms due to a cold: \u25aa minor aches and pains \u25aa minor sore throat pain \u25aa headache \u25aa nasal and sinus congestion \u25aa runny nose \u25aa sneezing \u25aa itchy nose or throat \u25aa itchy, watery eyes due to hay fever \u25aa cough due to minor throat and bronchial irritation \u25aa temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take \u25aa more than 4,000 mg of acetaminophen in 24 hours \u25aa with other drugs containing acetaminophen \u25aa 3 or more alcoholic drinks every day while using this product Allergy alert: acetaminophen may cause severe skin reactions, Symptoms may include: \u25aa skin reddening \u25aa blisters \u25aa rash Sore throat warning: If sore throat is severe, persists for more than 2 days, is accompanied or followed by fever, headache, rash, nausea, or vomiting consult a doctor promptly."
+      ],
+      "do_not_use": [
+        "Do not use \u25aa in a child under 12 years of age \u25aa if you are allergic to acetaminophen \u25aa with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or a pharmacist. \u25aa with any other product containing diphenhydramine, even one used on the skin \u25aa if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains a MAOI, ask a doctor or pharmacist before taking this product."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25aa liver disease \u25aa heart disease \u25aa high blood pressure \u25aa thyroid disease \u25aa diabetes \u25aa glaucoma \u25aa trouble urinating due to an enlarged prostate gland \u25aa a breathing problem such as emphysema, asthma or chronic bronchitis \u25aa cough that occurs with too much phlegm (mucus) \u25aa cough that lasts or is chronic such as occurs with smoking, asthma or emphysema"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u25aa taking sedatives or tranquilizers \u25aa taking the blood thinning drug warfarin"
+      ],
+      "when_using": [
+        "When using this product \u25aa do not exceed recommended dosage \u25aa avoid alcoholic drinks \u25aa marked drowsiness may occur \u25aa alcohol, sedatives and tranquilizers may increase drowsiness \u25aa be careful when driving a motor vehicle or operating machinery \u25aa excitability may occur, especially in children"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u25aa nervousness, dizziness, or sleeplessness occurs \u25aa fever gets worse or lasts more than 3 days \u25aa redness or swelling is present \u25aa new symptoms occur \u25aa symptoms do not get better or worsen \u25aa pain, cough or nasal congestion gets worse or lasts more than 7 days \u25aa cough comes back or occurs with fever, rash or headache that lasts. There could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast- feeding, ask a health care professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u25aa do not use more than directed \u25aa take every 4 hours while symptoms persist, not to exceed 5 packets in 24 hours unless directed by a doctor Age Dose children under 12 years of age do not use adults and children 12 years of age and over one packet \u25aa dissolve contents of one packet into 8 oz. hot water: sip while hot. Consume entire drink within 10 - 15 minutes. \u25aa if using a microwave, add contents of one packet to 8 oz. of cool water: stir briskly before and after heating, Do not overheat."
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"100%\"><col width=\"50%\"/><col width=\"50%\"/><tbody><tr><td align=\"center\" styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><paragraph>Age</paragraph></td><td align=\"center\" styleCode=\"Botrule Lrule Toprule \" valign=\"top\"><paragraph>Dose</paragraph></td></tr><tr><td align=\"center\" styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>children under 12 years of age</paragraph></td><td align=\"center\" styleCode=\"Lrule Botrule \" valign=\"top\"><paragraph>do not use </paragraph></td></tr><tr><td align=\"center\" styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>adults and children 12 years of age and over</paragraph></td><td align=\"center\" styleCode=\"Botrule \" valign=\"top\"><paragraph>one packet</paragraph></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u25aa each packet contains: potassium 6 mg \u25aa aspartame free, sodium free \u25aa store at room temperature. Protect from excessive heat and moisture."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients citric acid, FD& C yellow#6, flavors, maltodextrin, potassium chloride, silica, sucralose, sucrose,"
+      ],
+      "questions": [
+        "Questions or comments? 1-866-467-2748"
+      ],
+      "spl_unclassified_section": [
+        "Additional Information Listed On Other Panels Compare to the active ingredient in Theraflu Nighttime Severe Cold &Cough* NDC 41226-541-06 NIGHTTIME SEVERE COLD & COUGH Acetaminophen/ Pain Reliever/ Fever Reducer Diphenhydramine HCl / Antihistamine/ Cough Suppressant Phenylephrine HCl / Nasal Decongestant Relieves \u2022 Cough \u2022 Nasal Congestion \u2022 Sore Throat Pain \u2022 Headache \u2022 Body ache \u2022 Fever \u2022 Runny nose \u2022 Sneezing Honey Lemon Infused with Chamomile & White Tea Flavors 6 Packets READ ALL WARNINGS AND DIRECTIONS ON CARTON BEFORE USE, KEEP CARTON FOR REFERENCE, DO NOT DISCARD. TAMPER EVIDENT: DO NOT USE INNER SEALED PACKET IF TORN OR BROKEN. Distributed by: *This product is not manufactured or distributed by GSK Consumer Healthcare, distributor of Theraflu Nighttime Severe Cold & Cough."
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Kroger NIGHTTIME Severe Cold & Cough Honey Lemon 6 Packets"
+      ],
+      "set_id": "7def6781-0881-46bf-ad7a-7a3f23a8d9f7",
+      "id": "6274b9f7-e082-4696-9877-e1ba783d98c0",
+      "effective_time": "20260902",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "M010"
+        ],
+        "brand_name": [
+          "Nighttime Severe Cold and Cough"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, DIPHENHYDRAMINE, PHENYLEPHRINE"
+        ],
+        "manufacturer_name": [
+          "KROGER COMPANY"
+        ],
+        "product_ndc": [
+          "41226-541"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "DIPHENHYDRAMINE HYDROCHLORIDE",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1659960"
+        ],
+        "spl_id": [
+          "6274b9f7-e082-4696-9877-e1ba783d98c0"
+        ],
+        "spl_set_id": [
+          "7def6781-0881-46bf-ad7a-7a3f23a8d9f7"
+        ],
+        "package_ndc": [
+          "41226-541-06"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "TC2D6JAD40",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "KROGER Nighttime Sleep-Aid DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE ANHYDROUS CITRIC ACID FD&C BLUE NO. 1 FD&C RED NO. 40 GLYCERIN POTASSIUM CITRATE WATER SODIUM BENZOATE SORBITOL SUCRALOSE XANTHAN GUM"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each 30 mL dose cup) Diphenhydramine HCl 50 mg"
+      ],
+      "purpose": [
+        "Purpose Nighttime sleep-aid"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa for the relief of occasional sleeplessness \u25aa reduces time to fall asleep if you have difficulty falling asleep"
+      ],
+      "warnings": [
+        "Warnings Do not use \u25aa for children under 12 years of age \u25aa with any other product containing diphenhydramine, even one used on skin Ask a doctor before use if you have \u25aa a breathing problem such as asthma, emphysema, or chronic bronchitis \u25aa glaucoma \u25aa difficulty in urination due to enlargement of the prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers. When using this product \u25aa avoid alcoholic beverages Stop use and ask a doctor if sleeplessness persists continuously for more than two weeks. Insomnia may be a symptom of serious underlying medical illness. If pregnant or breast-feeding , ask a health professional before use. Keep out of reach of children. Overdose warning: Taking more than directed can cause serious health problems. In case of overdose, get medical help or contact a Poison Control Center right away.1-800-222-1222"
+      ],
+      "do_not_use": [
+        "Do not use \u25aa for children under 12 years of age \u25aa with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25aa a breathing problem such as asthma, emphysema, or chronic bronchitis \u25aa glaucoma \u25aa difficulty in urination due to enlargement of the prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers."
+      ],
+      "when_using": [
+        "When using this product \u25aa avoid alcoholic beverages"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if sleeplessness persists continuously for more than two weeks. Insomnia may be a symptom of serious underlying medical illness."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding , ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions \u2022 take only one dose per day (24 hours) \u2022 Only use dose cup provided adults & children 12 yrs & over 30 mL at bed time if needed or as directed by a doctor Children under 12 yrs Do not use"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"100%\"><col width=\"42%\"/><col width=\"58%\"/><tbody><tr><td styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><paragraph>adults &amp; children 12 yrs &amp; over</paragraph></td><td styleCode=\"Botrule Lrule Toprule \" valign=\"top\"><paragraph>30 mL at bed time if needed or as directed by a doctor</paragraph></td></tr><tr><td styleCode=\"Rrule Botrule \" valign=\"top\"><paragraph>Children under 12 yrs</paragraph></td><td styleCode=\"Botrule Lrule \" valign=\"top\"><paragraph>Do not use</paragraph></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u25aa each 30 mL dose cup contains: potassium 5 mg; sodium 10 mg \u25aa store at room temperature"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients anhydrous citric acid, FD&C blue 1, FD&C red 40, flavor, glycerin, potassium citrate, purified water, sodium benzoate, sorbitol, sucralose, xanthan gum."
+      ],
+      "questions": [
+        "Questions or comments? 1-866-467-2748"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL Compare to the active ingredient in ZzzQuil\u2122 Nighttime Sleep-Aid* NDC 41226-730-12 Nighttime Sleep-Aid Diphenhydramine HCl Non-habit forming Makes you fall asleep fast Berry Flavor Naturally & artificially flavored No added alcohol Not for pain. Not for Colds. Just for Sleep 12 FL. OZ. (354 mL) TAMPER EVIDENT: Do not use if printed shrink band is missing or broken *This product is not manufactured or distributed by Proctor & Gamble, the distributor of ZzzQuil\u2122 Nighttime Sleep-Aid. Distributed by: KROGER Nighttime Sleep Aid Berry Flavor 12 FL OZ"
+      ],
+      "set_id": "a26d63db-8841-47a4-ae09-ac736d7ec357",
+      "id": "e15b51f2-ab21-44ac-8f71-e17d8aadb57c",
+      "effective_time": "20260902",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "M010"
+        ],
+        "brand_name": [
+          "KROGER Nighttime Sleep-Aid"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "KROGER COMPANY"
+        ],
+        "product_ndc": [
+          "41226-730"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1248354"
+        ],
+        "spl_id": [
+          "e15b51f2-ab21-44ac-8f71-e17d8aadb57c"
+        ],
+        "spl_set_id": [
+          "a26d63db-8841-47a4-ae09-ac736d7ec357"
+        ],
+        "package_ndc": [
+          "41226-730-12"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Sleep Aid Diphenhydramine HCl DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE FD&C BLUE NO. 1 GELATIN GLYCERIN LIGHT MINERAL OIL POLYETHYLENE GLYCOL, UNSPECIFIED WATER SORBITAN SORBITOL LECITHIN, SOYBEAN MANNITOL PC5"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each softgel) Diphenhydramine HCl 50 mg"
+      ],
+      "purpose": [
+        "Purpose Nighttime sleep-aid"
+      ],
+      "indications_and_usage": [
+        "Use for relief of occasional sleeplessness."
+      ],
+      "warnings": [
+        "Warnings Do not use for children under 12 years of age with any other product containing diphenhydramine, even one used on skin Ask a doctor before use if you have a breathing problem such as emphysema or chronic bronchitis glaucoma trouble urinating due to an enlarged prostate gland Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers. When using this product avoid alcoholic drinks. Stop use and ask a doctor if sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center (1-800-222-1222) right away."
+      ],
+      "do_not_use": [
+        "Do not use for children under 12 years of age with any other product containing diphenhydramine, even one used on skin"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have a breathing problem such as emphysema or chronic bronchitis glaucoma trouble urinating due to an enlarged prostate gland"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers."
+      ],
+      "when_using": [
+        "When using this product avoid alcoholic drinks."
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of a serious underlying medical illness."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center (1-800-222-1222) right away."
+      ],
+      "dosage_and_administration": [
+        "Directions adults and children 12 years of age and over: 1 softgel (50 mg) at bedtime if needed, or as directed by a doctor"
+      ],
+      "storage_and_handling": [
+        "Other information store between 15-30\u00b0C (59\u00b0-86\u00b0F)"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients FD&C blue #1, gelatin, glycerin, lecithin, light mineral oil, mannitol, polyethylene glycol, purified water, sorbitol, sorbitan, white ink"
+      ],
+      "questions": [
+        "Questions or comments? Call 1- 800-910-6874"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel Compare to the active ingredient in Unisom\u00ae SleepGels\u00ae* Nighttime Sleep-Aid 50 mg Diphenhydramine HCl SOFTGELS ONE SOFTGEL PER DOSE TAMPER EVIDENT: DO NOT USE IF PRINTED SAFETY SEAL UNDER CAP IS BROKEN OR MISSING. KEEP OUTER CARTON FOR COMPLETE WARNINGS AND PRODUCT INFORMATION. *This product is not manufactured or distributed by Sanofi Consumer Healthcare NA, distributor of Unisom\u00ae SleepGels\u00ae. Distributed by Target Corporation Minneapolis, MN 55403",
+        "Package Label TARGET (up&up) Nighttime Sleep Aid Diphenhydramine HCl 50 mg"
+      ],
+      "set_id": "edfe32b5-9213-4350-9508-2530ee26c5d5",
+      "id": "a6f49f60-16de-4c29-b757-09cad4e5c6a4",
+      "effective_time": "20260902",
+      "version": "6",
+      "openfda": {
+        "application_number": [
+          "M010"
+        ],
+        "brand_name": [
+          "Sleep Aid"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HCL"
+        ],
+        "manufacturer_name": [
+          "TARGET Corporation"
+        ],
+        "product_ndc": [
+          "11673-360"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1020477"
+        ],
+        "spl_id": [
+          "a6f49f60-16de-4c29-b757-09cad4e5c6a4"
+        ],
+        "spl_set_id": [
+          "edfe32b5-9213-4350-9508-2530ee26c5d5"
+        ],
+        "package_ndc": [
+          "11673-360-32",
+          "11673-360-60"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0359726916349"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Pain Reliever PM Extra Strength Acetaminophen, Diphenhydramine HCl ACETAMINOPHEN ACETAMINOPHEN DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE STARCH, CORN D&C RED NO. 27 FD&C BLUE NO. 1 GELATIN GLYCERIN HYPROMELLOSES MALTODEXTRIN CELLULOSE, MICROCRYSTALLINE POLYETHYLENE GLYCOL, UNSPECIFIED POVIDONE WATER SILICON DIOXIDE STEARIC ACID TITANIUM DIOXIDE CROSCARMELLOSE SODIUM ALUMINUM OXIDE BP50"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each geltab) Acetaminophen 500 mg Diphenhydramine HCl 25 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever Nighttime sleep-aid"
+      ],
+      "indications_and_usage": [
+        "Uses temporary relief of occasional headaches and minor aches and pains with accompanying sleeplessness."
+      ],
+      "warnings": [
+        "Warnings Liver warning : This product contains acetaminophen. Severe liver damage may occur if you take: more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away, Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. with any other product containing diphenhydramine, even one used on skin in children under 12 years of age if you have ever had an allergic reaction to this product or any of its ingredients Ask a doctor before use if you have liver disease a breathing problem such as emphysema or chronic bronchitis trouble urinating due to an enlarged prostate gland glaucoma Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin taking sedatives or tranquilizers When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery Stop use and ask a doctor if sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of serious underlying medical illness. new symptoms occur redness or swelling is present pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning: In case of overdose, get medical help or contact a Poison Control Center (1-800-222-1222) right away: Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. with any other product containing diphenhydramine, even one used on skin in children under 12 years of age if you have ever had an allergic reaction to this product or any of its ingredients"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease a breathing problem such as emphysema or chronic bronchitis trouble urinating due to an enlarged prostate gland glaucoma"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin taking sedatives or tranquilizers"
+      ],
+      "when_using": [
+        "When using this product drowsiness will occur avoid alcoholic drinks do not drive a motor vehicle or operate machinery"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if sleeplessness persists continuously for more than 2 weeks. Insomnia may be a symptom of serious underlying medical illness. new symptoms occur redness or swelling is present pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. Overdose warning: In case of overdose, get medical help or contact a Poison Control Center (1-800-222-1222) right away: Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning) adults and children 12 years and over: take 2 geltabs at bedtime. Do not take more than 2 geltabs of this product in 24 hours. children under 12 years: do not use"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20-25\u00baC (68-86\u00baF) avoid high humidity and excessive heat"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients corn starch, croscarmellose sodium, D&C red #27 aluminum lake, edible black ink, FD&C blue #1 aluminum lake, gelatin, glycerin, hypromellose, maltodextrin, microcrystalline cellulose, polyethylene glycol, povidone, purified water, silicon dioxide, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? Call toll free 1-888-423-0139"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel COMPARE TO EXTRA STRENGTH TYLENOL\u00ae PM ACTIVE INGREDIENTS* EXTRA STRENGTH NIGHTTIME Pain Relief PM ACETAMINOPHEN, DIPHENHYDRAMINE HCl, 500/25mg PAIN RELIEVER / NIGHTTIME SLEEP-AID GELTABS For Ages 12 Years and Over *This product is not manufactured or distributed by Kenvue Brands LLC., distributor of Extra Strength Tylenol\u00ae PM. TAMPER EVIDENT: DO NOT USE IF PRINTED SAFETY SEAL UNDER CAP IS BROKEN OR MISSING. KEEP OUTER CARTON FOR COMPLETE WARNINGS AND PRODUCT INFORMATION. DISTRIBUTED BY TOPCO ASSOCIATES LLC ITASCA, IL 60143",
+        "Product Label TOPCARE HEALTH Extra Strength Nighttime Pain Relief PM Acetaminophen 500 mg Diphenhydramine HCl 25 mg"
+      ],
+      "set_id": "923b443d-73cc-4c52-92e4-a075786b1ae3",
+      "id": "8f866a48-29e1-489c-9798-e5b9c1615243",
+      "effective_time": "20260901",
+      "version": "9",
+      "openfda": {
+        "application_number": [
+          "M013"
+        ],
+        "brand_name": [
+          "Pain Reliever PM Extra Strength"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, DIPHENHYDRAMINE HCL"
+        ],
+        "manufacturer_name": [
+          "TOP CARE (Topco Associates LLC)"
+        ],
+        "product_ndc": [
+          "36800-466"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1092189"
+        ],
+        "spl_id": [
+          "8f866a48-29e1-489c-9798-e5b9c1615243"
+        ],
+        "spl_set_id": [
+          "923b443d-73cc-4c52-92e4-a075786b1ae3"
+        ],
+        "package_ndc": [
+          "36800-466-10",
+          "36800-466-50"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0036800251410"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "TC2D6JAD40"
+        ]
+      }
+    }
+  ]
+}

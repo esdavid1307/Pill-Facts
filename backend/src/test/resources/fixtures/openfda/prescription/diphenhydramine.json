@@ -1,0 +1,1078 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-23",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 35
+    }
+  },
+  "results": [
+    {
+      "spl_product_data_elements": [
+        "DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE SODIUM HYDROXIDE HYDROCHLORIC ACID"
+      ],
+      "spl_unclassified_section": [
+        "SPL UNCLASSIFIED Rx only",
+        "SPL UNCLASSIFIED www.fresenius-kabi.com/us 45954D Revised: May 2018 LOGO"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine hydrochloride is an antihistamine drug having the chemical name 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. It occurs as a white, crystalline powder, is freely soluble in water and alcohol. The structural formula is as follows: C17H21NO\u2022HCl M.W. 291.82 Diphenhydramine hydrochloride in the parenteral form is a sterile, pyrogen-free solution available in a concentration of 50 mg of diphenhydramine hydrochloride per mL. pH 4.0 to 6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. STRUCTURE"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine hydrochloride is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of diphenhydramine hydrochloride injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS & USAGE Diphenhydramine hydrochloride in the injectable form is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when diphenhydramine hydrochloride in the oral form is impractical. Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled, and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents; mild cases of parkinsonism in other age groups, and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also contraindicated in the following conditions: Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy, or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine hydrochloride. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions, or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation, and hypotension in elderly patients."
+      ],
+      "precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Pregnancy Category B. Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE & ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are underscored. General: Urticaria, drug rash, anaphylactic shock, photosensitivity, excessive perspiration, chills, dryness of mouth, nose and throat. Cardiovascular System: Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System: Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System: Sedation, sleepiness, dizziness, disturbed coordination, fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. GI System: Epigastric distress, anorexia, nausea, vomiting, diarrhea, constipation. GU System: Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System: Thickening of bronchial secretions, tightness of chest or throat and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms; dry mouth; fixed, dilated pupils; flushing; and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE & ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine hydrochloride in the injectable form is indicated when the oral form is impractical. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, other than premature infants and neonates: 5 mg/kg/24 hr or 150 mg/m 2/24 hr. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults: 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly, 100 mg if required; maximum daily dosage is 400 mg."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED DIPHENHYDRAMINE HYDROCHLORIDE INJECTION, USP is supplied in the following dosage forms. NDC 51662-1374-1 DIPHENHYDRAMINE HYDROCHLORIDE INJECTION, USP 50 mg PER mL, 1mL in VIAL HF Acquisition Co LLC, DBA HealthFirst Mukilteo, WA 98275 Also supplied in the following manufacture supplied dosage forms DiphenhydrAMINE Hydrochloride Injection, USP in parenteral form is supplied as: It is supplied as a sterile, pyrogen-free solution containing 50 mg diphenhydramine hydrochloride in each milliliter of solution. The container closure is not made with natural rubber latex. Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP Controlled Room Temperature]. Protect from light. Keep from freezing. HOW SUPPLIED"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - VIAL LABEL VIAL LABEL",
+        "PRINCIPAL DISPLAY PANEL - SERIALIZED LABELING Label",
+        "Principal Display Panel - Serialized and Vial Labeling Updated 3-01-2021 Vial Labeling",
+        "POUCH AND BOX LABELLING POUCH LABELLING BOX LABELLING Principal Display Principal Display"
+      ],
+      "set_id": "9713d8ee-6ab2-2fdf-e053-2a95a90a9e19",
+      "id": "596c6e45-0e6d-3332-e063-6294a90a9562",
+      "effective_time": "20260819",
+      "version": "6",
+      "openfda": {
+        "application_number": [
+          "ANDA040466"
+        ],
+        "brand_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "HF Acquisition Co LLC, DBA HealthFirst"
+        ],
+        "product_ndc": [
+          "51662-1374"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1723740"
+        ],
+        "spl_id": [
+          "596c6e45-0e6d-3332-e063-6294a90a9562"
+        ],
+        "spl_set_id": [
+          "9713d8ee-6ab2-2fdf-e053-2a95a90a9e19"
+        ],
+        "package_ndc": [
+          "51662-1374-1",
+          "51662-1374-2",
+          "51662-1374-3"
+        ],
+        "original_packager_product_ndc": [
+          "63323-664"
+        ],
+        "upc": [
+          "0363323664008"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine HCL Diphenhydramine Hydrochloride DIPHENHYDRAMINE HYDROCHLORIDE Diphenhydramine Alcohol Anhydrous Citric Acid D&C Red No. 33 FD&C Red No. 40 Water SODIUM CITRATE, UNSPECIFIED FORM Sucrose clear purple/red"
+      ],
+      "spl_unclassified_section": [
+        "Rx ONLY",
+        "Distributed by: Redmont Pharmaceuticals, LLC Birmingham, AL 35209 X048904R0626 R06/26"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine hydrochloride is an antihistamine drug having the chemical name 2-(diphenylmethoxy)-N,N -dimethylethylamine hydrochloride and has the molecular formula C 17 H 21 NO\u2219HCI (molecular weight 291.82). It occurs as a white odorless, crystalline powder and is freely soluble in water and alcohol. The structural formula is as follows: Each 5 mL contains 12.5 mg of diphenhydramine hydrochloride and alcohol 14% for oral administration. Inactive Ingredients: Citric acid, D&C Red No. 33, FD&C Red No. 40, flavoring, purified water, sodium citrate, and sucrose. Chemical Structure"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. A single oral dose of diphenhydramine hydrochloride is quickly absorbed with maximum activity occurring in approximately one hour. The duration of activity following an average dose of diphenhydramine hydrochloride is from four to six hours. Diphenhydramine is widely distributed throughout the body, including the CNS. Little, if any, is excreted unchanged in the urine; most appears as the degradation products of metabolic transformation in the liver, which are almost completely excreted within 24 hours."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine hydrochloride in the oral form is effective for the following indications: Antihistaminic For allergic conjunctivitis due to foods; mild, uncomplicated allergic skin manifestations of urticaria and angioedema; amelioration of allergic reactions to blood or plasma; dermatographism; as therapy for anaphylactic reactions adjunctive to epinephrine and other standard measures after the acute manifestations have been controlled. Motion Sickness For active and prophylactic treatment of motion sickness. Antiparkinsonism For parkinsonism (including drug-induced) in the elderly unable to tolerate more potent agents; mild cases of parkinsonism (including drug-induced) in other age groups; in other cases of parkinsonism (including drug-induced) in combination with centrally acting anticholinergic agents. Nighttime Sleep-aid."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Antihistamines are also contraindicated in the following conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy, or bladder-neck obstruction. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions, or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are most likely to cause dizziness, sedation, and hypotension in elderly patients."
+      ],
+      "precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Pregnancy Category B Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "general_precautions": [
+        "General Diphenhydramine hydrochloride has an atropine-like action and therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pregnancy": [
+        "Pregnancy Pregnancy Category B Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are underscored. General: Urticaria, drug rash, anaphylactic shock, photosensitivity, excessive perspiration, chills, dryness of the mouth, nose and throat. Cardiovascular System: Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System: Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System: Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. GI System: Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. GU System: Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System: Thickening of bronchial secretions , tightness of chest or throat and wheezing, nasal stuffiness. To report SUSPECTED ADVERSE REACTIONS, contact Redmont Pharmaceuticals, Inc. at 1-800-986-5909 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing and gastrointestinal symptoms may also occur. If vomiting has not occurred spontaneously , the patient should be induced to vomit. This is best done by having him drink a glass of water or milk after which he should be made to gag. Precaution against aspiration must be taken, especially in infants and children. If vomiting is unsuccessful , gastric lavage is indicated within 3 hours after ingestion and even later if large amounts of milk or cream were given beforehand. Isotonic or 1/2 isotonic saline is the lavage solution of choice. Saline cathartics , as milk of magnesia, by osmosis draw water into the bowel and therefore are valuable for their action in rapid dilution of bowel content. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. A single oral dose of diphenhydramine hydrochloride is quickly absorbed with maximum activity occurring in approximately one hour. The duration of activity following an average dose of diphenhydramine hydrochloride is from four to six hours. Adults 25 to 50 mg three or four times daily. The nighttime sleep-aid dosage is 50 mg at bedtime. Pediatric Patients, other than premature infants and neonates 12.5 to 25 mg three or four times daily. Maximum daily dosage not to exceed 300 mg. For physicians who wish to calculate the dose on the basis of body weight or surface area, the recommended dosage is 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Data are not available on the use of diphenhydramine hydrochloride as a nighttime sleep-aid in children under 12 years. The basis for determining the most effective dosage regimen will be the response of the patient to medication and the condition under treatment. In motion sickness, full dosage is recommended for prophylactic use, the first dose to be given 30 minutes before exposure to motion and similar doses before meals and upon retiring for the duration of exposure."
+      ],
+      "storage_and_handling": [
+        "STORAGE Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F). [See USP Controlled Room Temperature]. Protect from freezing and light."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Each 5 mL of Diphenhydramine Hydrochloride Oral Solution USP (clear purple/red liquid, cinnamon/anise flavor) contains 12.5 mg diphenhydramine hydrochloride with 14% alcohol and is supplied in the following oral dosage forms: NDC 71741-511-04: 118mL Bottle"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - 118 mL Bottle Label NDC 71741-511-04 Diphenhydramine HCL Oral Solution, USP 12.5 mg/5 mL Each 5 mL (teaspoonful) contains: Diphenhydramine HCl.....12.5 mg Alcohol.......................14% Rx Only \u2219 118 mL REDMONT PHARMACEUTICALS PRINCIPAL DISPLAY PANEL - 118 mL Bottle Label"
+      ],
+      "set_id": "d8944f3c-acef-4ebe-9633-7d641ae95edf",
+      "id": "b70e7c6f-aaf1-40dd-8e7b-09215db5b4ac",
+      "effective_time": "20260803",
+      "version": "2",
+      "openfda": {
+        "application_number": [
+          "ANDA087513"
+        ],
+        "brand_name": [
+          "Diphenhydramine HCL"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Redmont Pharmaceuticals, LLC"
+        ],
+        "product_ndc": [
+          "71741-511"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1049906"
+        ],
+        "spl_id": [
+          "b70e7c6f-aaf1-40dd-8e7b-09215db5b4ac"
+        ],
+        "spl_set_id": [
+          "d8944f3c-acef-4ebe-9633-7d641ae95edf"
+        ],
+        "package_ndc": [
+          "71741-511-04"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine Hydrochloride diphenhydramine hydrochloride DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE BENZETHONIUM CHLORIDE WATER SODIUM HYDROXIDE HYDROCHLORIC ACID"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine Hydrochloride Injection is a sterile, nonpyrogenic solution for intravenous or deep intramuscular use as an antihistaminic agent. Each mL contains diphenhydramine hydrochloride 50 mg and benzethonium chloride 100 mcg in Water for Injection. pH 4.0-6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. The chemical name of diphenhydramine hydrochloride is 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. The structural formula is as follows: C 17 H 21 NO \u2022 HCl MW 291.82 Diphenhydramine hydrochloride occurs as a white crystalline powder and is freely soluble in water and alcohol. Structural formula"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of Diphenhydramine Hydrochloride Injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine Hydrochloride Injection is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when the oral form is impractical: Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents, mild cases of parkinsonism in other age groups and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also Contraindicated in the Following Conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation and hypotension in elderly patients."
+      ],
+      "general_precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease, including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Teratogenic Effects\u2014Pregnancy Category B Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are italicized. General Urticaria; drug rash; anaphylactic shock; photosensitivity; excessive perspiration; chills; dryness of mouth, nose and throat. Cardiovascular System Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. Gastrointestinal System Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. Genitourinary System Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System Thickening of bronchial secretions , tightness of chest and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing, and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine Hydrochloride Injection is indicated when the oral form is impractical. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, Other Than Premature Infants and Neonates 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly; 100 mg if required; maximum daily dosage is 400 mg. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Diphenhydramine Hydrochloride Injection, USP 50 mg/mL 1 mL vials packaged in 25s NDC 85766-253-25 (relabeled from NDC 0641-0376-25) Storage Protect from light. Keep covered in carton until time of use. Store at 20\u00b0 to 25 \u00b0 C (68 \u00b0 to 77 \u00b0 F), excursions permitted to 15 \u00b0 to 30 \u00b0 C (59 \u00b0 to 86 \u00b0 F) [See USP Controlled Room Temperature]. To report SUSPECTED ADVERSE REACTIONS, contact Hikma Pharmaceuticals USA Inc. at 1-877-845-0689, or the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . For Product Inquiry call 1-877-845-0689. Distributed by: Sportpharm LLC 379 Van Ness Ave 1401, Torrance, CA 90501 Relabeled by: Enovachem PHARMACEUTICALS Torrance, CA 90501"
+      ],
+      "storage_and_handling": [
+        "Storage Protect from light. Keep covered in carton until time of use. Store at 20\u00b0 to 25 \u00b0 C (68 \u00b0 to 77 \u00b0 F), excursions permitted to 15 \u00b0 to 30 \u00b0 C (59 \u00b0 to 86 \u00b0 F) [See USP Controlled Room Temperature]. To report SUSPECTED ADVERSE REACTIONS, contact Hikma Pharmaceuticals USA Inc. at 1-877-845-0689, or the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . For Product Inquiry call 1-877-845-0689. Distributed by: Sportpharm LLC 379 Van Ness Ave 1401, Torrance, CA 90501 Relabeled by: Enovachem PHARMACEUTICALS Torrance, CA 90501"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL 1"
+      ],
+      "set_id": "e5af2dd2-cc91-46c7-bdb9-97a7cdddcb69",
+      "id": "57421a16-f973-0fdd-e063-6294a90a3a9b",
+      "effective_time": "20260723",
+      "version": "1",
+      "openfda": {
+        "application_number": [
+          "ANDA080817"
+        ],
+        "brand_name": [
+          "Diphenhydramine Hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Sportpharm LLC"
+        ],
+        "product_ndc": [
+          "85766-253"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1723740"
+        ],
+        "spl_id": [
+          "57421a16-f973-0fdd-e063-6294a90a3a9b"
+        ],
+        "spl_set_id": [
+          "e5af2dd2-cc91-46c7-bdb9-97a7cdddcb69"
+        ],
+        "package_ndc": [
+          "85766-253-01",
+          "85766-253-25"
+        ],
+        "original_packager_product_ndc": [
+          "0641-0376"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine hydrochloride Diphenhydramine hydrochloride CHINESE CINNAMON OIL CITRIC ACID MONOHYDRATE D&C RED NO. 33 ALCOHOL FD&C RED NO. 40 WATER SUCROSE TRISODIUM CITRATE DIHYDRATE CINNAMALDEHYDE CINNAMON LEAF OIL EUGENOL TRIACETIN DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE purple to red Diphenhydramine hydrochloride Diphenhydramine hydrochloride CHINESE CINNAMON OIL CITRIC ACID MONOHYDRATE D&C RED NO. 33 ALCOHOL FD&C RED NO. 40 WATER SUCROSE TRISODIUM CITRATE DIHYDRATE CINNAMALDEHYDE CINNAMON LEAF OIL EUGENOL TRIACETIN DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE purple to red"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine hydrochloride USP is an antihistamine drug having the chemical name 2-(diphenylmethoxy)-N,N-dimethylethanamine hydrochloride and has the molecular formula C 17 H 21 NO\u2022HCl (molecular weight 291.82). It occurs as a white, odorless, crystalline powder. Slowly darkens on exposure to light and is freely soluble in water, alcohol and in chloroform. Sparingly soluble in acetone. Very slightly soluble in benzene and in ether. The structural formula is as follows: Each 5 mL contains 12.5 mg of diphenhydramine hydrochloride USP and alcohol 14% for oral administration. Inactive Ingredients: cassia cinnamon flavour (contains cassia bark oil, cinnamic aldehyde, cinnamon leaf oil, eugenol and glyceryl triacetate), citric acid monohydrate, D&C red No. 33, ethyl alcohol dehydrated, FD&C red No. 40, purified water, sucrose and trisodium citrate dihydrate. diphenhydraminehclstruct"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. A single oral dose of diphenhydramine hydrochloride is quickly absorbed with maximum activity occurring in approximately one hour. The duration of activity following an average dose of diphenhydramine hydrochloride is from four to six hours. Diphenhydramine is widely distributed throughout the body, including the CNS. Little, if any, is excreted unchanged in the urine; most appears as the degradation products of metabolic transformation in the liver, which are almost completely excreted within 24 hours."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine hydrochloride in the oral form is effective for the following indications: Antihistaminic For allergic conjunctivitis due to foods; mild, uncomplicated allergic skin manifestations of urticaria and angioedema; amelioration of allergic reactions to blood or plasma; dermatographism; as therapy for anaphylactic reactions adjunctive to epinephrine and other standard measures after the acute manifestations have been controlled. Motion Sickness For active and prophylactic treatment of motion sickness. Antiparkinsonism For parkinsonism (including drug-induced) in the elderly unable to tolerate more potent agents; mild cases of parkinsonism (including drug-induced) in other age groups; in other cases of parkinsonism (including drug-induced) in combination with centrally acting anticholinergic agents. Nighttime Sleep-aid."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Antihistamines are also contraindicated in the following conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy, or bladder-neck obstruction. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions, or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are most likely to cause dizziness, sedation, and hypotension in elderly patients."
+      ],
+      "precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well- controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "general_precautions": [
+        "General Diphenhydramine hydrochloride has an atropine-like action and therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pregnancy": [
+        "Pregnancy Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well- controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are underscored. 1. General: Urticaria, drug rash, anaphylactic shock, photosensitivity, excessive perspiration, chills, dryness of the mouth, nose and throat. 2. Cardiovascular System: Hypotension, headache, palpitations, tachycardia, extrasystoles. 3. Hematologic System: Hemolytic anemia, thrombocytopenia, agranulocytosis. 4. Nervous System: Sedation, sleepiness, dizziness, disturbed coordination, fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. 5. GI System: Epigastric distress, anorexia, nausea, vomiting, diarrhea, constipation. 6. GU System: Urinary frequency, difficult urination, urinary retention, early menses. 7. Respiratory System: Thickening of bronchial secretions, tightness of chest or throat and wheezing, nasal stuffiness. To report SUSPECTED ADVERSE REACTIONS, contact Annora Pharma Limited at 1-866-495-1995 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing and gastrointestinal symptoms may also occur. If vomiting has not occurred spontaneously, the patient should be induced to vomit. This is best done by having him drink a glass of water or milk after which he should be made to gag. Precaution against aspiration must be taken, especially in infants and children. If vomiting is unsuccessful, gastric lavage is indicated within 3 hours after ingestion and even later if large amounts of milk or cream were given beforehand. Isotonic or 1/2 isotonic saline is the lavage solution of choice. Saline cathartics, as milk of magnesia, by osmosis draw water into the bowel and therefore are valuable for their action in rapid dilution of bowel content. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. A single oral dose of diphenhydramine hydrochloride is quickly absorbed with maximum activity occurring in approximately one hour. The duration of activity following an average dose of diphenhydramine hydrochloride is from four to six hours. Adults 25 to 50 mg three to four times daily. The nightime sleep aid dosage is 50 mg at bedtime. Pediatric Patients, other than premature infants and neonates 12.5 mg to 25 mg three or four times daily. Maximum daily dosage not to exceed 300 mg. For physicians who wish to calculate the dose on the basis of body weight or surface area, the recommended dosage is 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Data are not available on the use of diphenhydramine hydrochloride as a nighttime sleep-aid in children under 12 years. The basis for determining the most effective dosage regimen will be the response of the patient to medication and the condition under treatment. In motion sickness, full dosage is recommended for prophylactic use, the first dose to be given 30 minutes before exposure to motion and similar doses before meals and upon retiring for the duration of exposure"
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Each 5 mL of Diphenhydramine Hydrochloride Oral Solution, USP- Clear, purple to red solution with cinnamon flavour, contains 12.5 mg diphenhydramine hydrochloride with 14% alcohol and is supplied as: NDC 31722-600-11 118 mL (4 oz) bottle NDC 31722-600-31 Box of 100 (10 cartons containing 10 x 5 mL unit dose cups in each.) NDC 31722-601-31 Box of 100 (10 cartons containing 10 x 10 mL unit dose cups in each.) STORAGE Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F). [See USP Controlled Room Temperature]. Protect from freezing and light. Manufactured for: Camber Pharmaceuticals, Inc. Piscataway, NJ 08854. By: Annora Pharma Pvt. Ltd. Sangareddy - 502313, Telangana, India. Revised: 05/2026 camberlogo"
+      ],
+      "package_label_principal_display_panel": [
+        "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL 12.5 mg/5 mL-Cup Label 12.5 mg/5 mL-Cup carton label 12.5 mg/5 mL-Box Label 25 mg/10 mL-Cup Label 25 mg/10 mL-Cup carton label 25 mg/10 mL-Box Label diphenhydraminehcl125mg5mlcuplabel diphenhydraminehcl125mg5mlcupcartonlabel diphenhydraminehcl125mg5mlboxlabel diphenhydraminehcl25mg10mlcuplabel diphenhydraminehcl25mg10mlcupcartonlabel diphenhydraminehcl25mg10mlboxlabel"
+      ],
+      "set_id": "f808ee14-fccf-4abe-b53a-a40b0b3bba03",
+      "id": "55c4288b-2cc9-7cb6-e063-6294a90a8ff8",
+      "effective_time": "20260704",
+      "version": "1",
+      "openfda": {
+        "application_number": [
+          "ANDA219470"
+        ],
+        "brand_name": [
+          "Diphenhydramine hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Camber Pharmaceuticals, Inc."
+        ],
+        "product_ndc": [
+          "31722-600",
+          "31722-601"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1049906"
+        ],
+        "spl_id": [
+          "55c4288b-2cc9-7cb6-e063-6294a90a8ff8"
+        ],
+        "spl_set_id": [
+          "f808ee14-fccf-4abe-b53a-a40b0b3bba03"
+        ],
+        "package_ndc": [
+          "31722-600-11",
+          "31722-600-31",
+          "31722-601-31"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0331722601313",
+          "0331722601337"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine Hydrochloride diphenhydramine hydrochloride DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE WATER SODIUM HYDROXIDE HYDROCHLORIC ACID"
+      ],
+      "spl_unclassified_section": [
+        "Rx only",
+        "www.fresenius-kabi.com/us Distributed By: Cardinal Health Dublin, OH 43017 L35116230425 45954E Revised: October 2024 logo"
+      ],
+      "description": [
+        "DESCRIPTION: Diphenhydramine hydrochloride is an antihistamine drug having the chemical name 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. It occurs as a white, crystalline powder, is freely soluble in water and alcohol. The structural formula is as follows: C 17 H 21 NO\u2022HCl M.W. 291.82 Diphenhydramine hydrochloride in the parenteral form is a sterile, pyrogen-free solution available in a concentration of 50 mg of diphenhydramine hydrochloride per mL. pH 4.0 to 6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. Structural Formula"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY: Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine hydrochloride is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of diphenhydramine hydrochloride injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE: Diphenhydramine hydrochloride in the injectable form is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when diphenhydramine hydrochloride in the oral form is impractical. Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled, and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents; mild cases of parkinsonism in other age groups, and in other cases of parkinsonism in combination with centrally acting anticholinergic agents.",
+        "Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled, and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated.",
+        "Motion Sickness For active treatment of motion sickness.",
+        "Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents; mild cases of parkinsonism in other age groups, and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS: Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also contraindicated in the following conditions: Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure.",
+        "Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants.",
+        "Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers.",
+        "Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also contraindicated in the following conditions: Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS: Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy, or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine hydrochloride. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions, or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation, and hypotension in elderly patients.",
+        "Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions, or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation.",
+        "Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation, and hypotension in elderly patients."
+      ],
+      "precautions": [
+        "PRECAUTIONS: General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Pregnancy Category B. Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section.",
+        "General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma.",
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc.",
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines.",
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed.",
+        "Pregnancy Pregnancy Category B. Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed.",
+        "Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS: To report SUSPECTED ADVERSE REACTIONS, contact Fresenius Kabi USA, LLC at 1-800-551-7176 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. The most frequent adverse reactions are underscored. 1. General: Urticaria, drug rash, anaphylactic shock, photosensitivity, excessive perspiration, chills, dryness of mouth, nose and throat. 2. Cardiovascular System: Hypotension, headache, palpitations, tachycardia, extrasystoles. 3. Hematologic System: Hemolytic anemia, thrombocytopenia, agranulocytosis. 4. Nervous System: Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. 5. GI System: Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. 6. GU System: Urinary frequency, difficult urination, urinary retention, early menses. 7. Respiratory System: Thickening of bronchial secretions , tightness of chest or throat and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE: Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms; dry mouth; fixed, dilated pupils; flushing; and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION: THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine hydrochloride in the injectable form is indicated when the oral form is impractical. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, other than premature infants and neonates: 5 mg/kg/24 hr or 150 mg/m 2 /24 hr. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults: 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly, 100 mg if required; maximum daily dosage is 400 mg."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED: DiphenhydrAMINE Hydrochloride Injection, USP in parenteral form is supplied as: Unit of Sale Strength Overbagged with 5 x 1 mL Single Dose Vial in each bag, NDC 55154-9363-5 50 mg per mL 1 mL fill in a 2 mL vial. WARNING: This Unit Dose package is not child resistant and is Intended for Institutional Use Only. Keep this and all drugs out of the reach of children. It is supplied as a sterile, pyrogen-free solution containing 50 mg diphenhydramine hydrochloride in each milliliter of solution. The container closure is not made with natural rubber latex. Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP Controlled Room Temperature]. Protect from light. Keep from freezing."
+      ],
+      "how_supplied_table": [
+        "<table width=\"100%\"><col width=\"67%\"/><col width=\"31%\"/><tbody><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Unit of Sale</content></paragraph></td><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph><content styleCode=\"bold\">Strength</content></paragraph></td></tr><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph>Overbagged with 5 x 1 mL Single Dose Vial in each bag, NDC 55154-9363-5</paragraph></td><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph>50 mg per mL</paragraph><paragraph>1 mL fill in a 2 mL vial.</paragraph></td></tr></tbody></table>"
+      ],
+      "package_label_principal_display_panel": [
+        "Package/Label Display Panel NDC 55154-9363-5 DiphenhydrAMINE HYDROCHLORIDE INJECTION, USP 50 mg per mL HIGH POTENCY 5 x 1 mL SINGLE DOSE VIALS 50mg per mL bag label"
+      ],
+      "set_id": "50df93bf-fe72-48f6-a02e-ea9a313d47c2",
+      "id": "2c218283-6f34-46a2-8e73-b402449f30d3",
+      "effective_time": "20260515",
+      "version": "13",
+      "openfda": {
+        "application_number": [
+          "ANDA040466"
+        ],
+        "brand_name": [
+          "Diphenhydramine Hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Cardinal Health 107, LLC"
+        ],
+        "product_ndc": [
+          "55154-9363"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1723740"
+        ],
+        "spl_id": [
+          "2c218283-6f34-46a2-8e73-b402449f30d3"
+        ],
+        "spl_set_id": [
+          "50df93bf-fe72-48f6-a02e-ea9a313d47c2"
+        ],
+        "package_ndc": [
+          "55154-9363-5"
+        ],
+        "original_packager_product_ndc": [
+          "63323-664"
+        ],
+        "upc": [
+          "0055154936354"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine Hydrochloride Diphenhydramine Hydrochloride HYDROCHLORIC ACID SODIUM HYDROXIDE WATER DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine Hydrochloride Injection, USP is a sterile, nonpyrogenic solution for intravenous or deep intramuscular use as an antihistaminic agent. Each mL contains diphenhydramine hydrochloride 50 mg in Water for Injection. pH 4.0 to 6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. The chemical name of diphenhydramine hydrochloride is 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. The structural formula is as follows: C 17 H 21 NO \u2022 HCl MW 291.82 Diphenhydramine hydrochloride occurs as a white crystalline powder and is freely soluble in water and alcohol. structure"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of diphenhydramine hydrochloride injection, USP is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine hydrochloride injection, USP is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when the oral form is impractical. Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents, mild cases of parkinsonism in other age groups and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also Contraindicated in the Following Conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation and hypotension in elderly patients."
+      ],
+      "precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease, including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Teratogenic Effects Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "general_precautions": [
+        "General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease, including asthma."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pregnancy": [
+        "Pregnancy Teratogenic Effects Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are italicized. General Urticaria; drug rash; anaphylactic shock; photosensitivity; excessive perspiration; chills; dryness of mouth, nose and throat. Cardiovascular System Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. Gastrointestinal System Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. Genitourinary System Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System Thickening of bronchial secretions , tightness of chest and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing, and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine hydrochloride injection, USP is indicated when the oral form is impractical. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, Other Than Premature Infants and Neonates 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults 10 mg to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly; 100 mg if required; maximum daily dosage is 400 mg. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Diphenhydramine Hydrochloride Injection, USP 50 mg/mL is a sterile, nonpyrogenic, clear colourless solution, and is supplied as 1 mL single dose vial in package of 25s (NDC 23155-264-41). Storage Discard unused portion Protect from light. Keep covered in carton until time of use. Store at 20 \u00b0 to 25 \u00b0 C (68 \u00b0 to 77 \u00b0 F); excursions permitted between 15 \u00b0 to 30 \u00b0 C (59 \u00b0 to 86 \u00b0 F) [See USP Controlled Room Temperature]. To report SUSPECTED ADVERSE REACTIONS, contact Avet Pharmaceuticals Inc. at 1-866-901-DRUG (3784 ) , or the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch. Manufactured by: Maiva Pharma Private Limited. No.32, Sipcot Industrial Complex, Phase-1, Hosur-635126, Tamilnadu, INDIA. Manufactured for: Avet Pharmaceuticals Inc. East Brunswick, NJ 08816 1.866.901.DRUG (3784) Revised: 11/2023 logo"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - VIAL LABEL DiphenhydrAMINE Hydrochloride Injection, USP 50 mg/mL 1 mL Single Dose Vial Rx only 7373m.pdp",
+        "PRINCIPAL DISPLAY PANEL - OUTER PACKAGE NDC 71872-7373-1 DiphenhydrAMINE Hydrochloride Injection, USP 50 mg/mL 1 x 1mL Single Dose Vials Rx only 7373.pdp"
+      ],
+      "set_id": "51bb483f-3fe6-8a94-e063-6394a90acf7d",
+      "id": "51bb1ca2-32ef-4840-e063-6394a90a6faa",
+      "effective_time": "20260513",
+      "version": "1",
+      "openfda": {
+        "application_number": [
+          "ANDA205336"
+        ],
+        "brand_name": [
+          "Diphenhydramine Hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Medical Purchasing Solutions, LLC"
+        ],
+        "product_ndc": [
+          "71872-7373"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1723740"
+        ],
+        "spl_id": [
+          "51bb1ca2-32ef-4840-e063-6394a90a6faa"
+        ],
+        "spl_set_id": [
+          "51bb483f-3fe6-8a94-e063-6394a90acf7d"
+        ],
+        "package_ndc": [
+          "71872-7373-1"
+        ],
+        "original_packager_product_ndc": [
+          "23155-264"
+        ],
+        "upc": [
+          "0323155264319"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine Hydrochloride diphenhydramine hydrochloride DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE BENZETHONIUM CHLORIDE WATER SODIUM HYDROXIDE HYDROCHLORIC ACID"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine Hydrochloride Injection is a sterile, nonpyrogenic solution for intravenous or deep intramuscular use as an antihistaminic agent. Each mL contains diphenhydramine hydrochloride 50 mg and benzethonium chloride 100 mcg in Water for Injection. pH 4.0-6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. The chemical name of diphenhydramine hydrochloride is 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. The structural formula is as follows: C 17 H 21 NO \u2022 HCl MW 291.82 Diphenhydramine hydrochloride occurs as a white crystalline powder and is freely soluble in water and alcohol. Structural formula"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of Diphenhydramine Hydrochloride Injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine Hydrochloride Injection is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when the oral form is impractical: Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents, mild cases of parkinsonism in other age groups and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also Contraindicated in the Following Conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation and hypotension in elderly patients."
+      ],
+      "general_precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease, including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Teratogenic Effects\u2014Pregnancy Category B Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are italicized. General Urticaria; drug rash; anaphylactic shock; photosensitivity; excessive perspiration; chills; dryness of mouth, nose and throat. Cardiovascular System Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. Gastrointestinal System Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. Genitourinary System Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System Thickening of bronchial secretions , tightness of chest and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing, and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine Hydrochloride Injection is indicated when the oral form is impractical. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, Other Than Premature Infants and Neonates 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly; 100 mg if required; maximum daily dosage is 400 mg. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Diphenhydramine Hydrochloride Injection, USP 50 mg/mL Overbagged with 5 x 1 mL vials in each bag, NDC 55154-5102-5 WARNING: This Unit Dose package is not child resistant and is Intended for Institutional Use Only. Keep this and all drugs out of the reach of children. Storage Protect from light. Keep covered in carton until time of use. Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F), excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [See USP Controlled Room Temperature]. To report SUSPECTED ADVERSE REACTIONS, contact Hikma Pharmaceuticals USA Inc. at 1-877-845-0689, or the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . For Product Inquiry call 1-877-845-0689. Manufactured by: Hikma Pharmaceuticals USA Inc. Berkeley Heights, NJ 07922 Distributed By: Cardinal Health Dublin, OH 43017 L25632450425 Revised September 2023 462-220-03"
+      ],
+      "storage_and_handling": [
+        "Storage Protect from light. Keep covered in carton until time of use. Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F), excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [See USP Controlled Room Temperature]. To report SUSPECTED ADVERSE REACTIONS, contact Hikma Pharmaceuticals USA Inc. at 1-877-845-0689, or the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch . For Product Inquiry call 1-877-845-0689. Manufactured by: Hikma Pharmaceuticals USA Inc. Berkeley Heights, NJ 07922 Distributed By: Cardinal Health Dublin, OH 43017 L25632450425 Revised September 2023 462-220-03"
+      ],
+      "package_label_principal_display_panel": [
+        "Package/Label Display Panel NDC 55154-5102-5 DiphenhydrAMINE HCl INJECTION, USP 50 mg/mL HIGH POTENCY 5 x 1 mL VIALS 50mg/mL bag label"
+      ],
+      "set_id": "d32d074a-f1b6-4a9a-8e10-e19f0e67c61b",
+      "id": "73e2929d-3cb1-40ca-a471-10046cd49e91",
+      "effective_time": "20260505",
+      "version": "16",
+      "openfda": {
+        "application_number": [
+          "ANDA080817"
+        ],
+        "brand_name": [
+          "Diphenhydramine Hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Cardinal Health 107, LLC"
+        ],
+        "product_ndc": [
+          "55154-5102"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1049633"
+        ],
+        "spl_id": [
+          "73e2929d-3cb1-40ca-a471-10046cd49e91"
+        ],
+        "spl_set_id": [
+          "d32d074a-f1b6-4a9a-8e10-e19f0e67c61b"
+        ],
+        "package_ndc": [
+          "55154-5102-5"
+        ],
+        "original_packager_product_ndc": [
+          "0641-0376"
+        ],
+        "upc": [
+          "0055154510257"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine Hydrochloride diphenhydramine hydrochloride DIPHENHYDRAMINE HCL DIPHENHYDRAMINE BENZETHONIUM CHLORIDE WATER SODIUM HYDROXIDE HYDROCHLORIC ACID"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine Hydrochloride Injection is a sterile, nonpyrogenic solution for intravenous or deep intramuscular use as an antihistaminic agent. Each mL contains diphenhydramine hydrochloride 50 mg and benzethonium chloride 100 mcg in Water for Injection. pH 4.0-6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. The chemical name of diphenhydramine hydrochloride is 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. The structural formula is as follows: C 17 H 21 NO \u2022 HCl MW 291.82 Diphenhydramine hydrochloride occurs as a white crystalline powder and is freely soluble in water and alcohol. Structural formula"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of Diphenhydramine Hydrochloride Injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine Hydrochloride Injection is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when the oral form is impractical: Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents, mild cases of parkinsonism in other age groups and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also Contraindicated in the Following Conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation and hypotension in elderly patients."
+      ],
+      "general_precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease, including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Teratogenic Effects\u2014Pregnancy Category B Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are italicized. General Urticaria; drug rash; anaphylactic shock; photosensitivity; excessive perspiration; chills; dryness of mouth, nose and throat. Cardiovascular System Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. Gastrointestinal System Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. Genitourinary System Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System Thickening of bronchial secretions , tightness of chest and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing, and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine Hydrochloride Injection is indicated when the oral form is impractical. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, Other Than Premature Infants and Neonates 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly; 100 mg if required; maximum daily dosage is 400 mg. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Product: 50090-0878 NDC: 50090-0878-0 50 mL in a VIAL / 1 in a CARTON"
+      ],
+      "package_label_principal_display_panel": [
+        "DIPHENHYDRAMINE HYDROCHLORIDE INJECTION Label Image"
+      ],
+      "set_id": "eedb421c-0020-4e5f-8b09-26a1cbabb681",
+      "id": "3e351041-092e-4928-afd5-798f66c4dc9b",
+      "effective_time": "20260326",
+      "version": "6",
+      "openfda": {
+        "application_number": [
+          "ANDA080817"
+        ],
+        "brand_name": [
+          "Diphenhydramine Hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "A-S Medication Solutions"
+        ],
+        "product_ndc": [
+          "50090-0878"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HCL"
+        ],
+        "rxcui": [
+          "1049633"
+        ],
+        "spl_id": [
+          "3e351041-092e-4928-afd5-798f66c4dc9b"
+        ],
+        "spl_set_id": [
+          "eedb421c-0020-4e5f-8b09-26a1cbabb681"
+        ],
+        "package_ndc": [
+          "50090-0878-0"
+        ],
+        "original_packager_product_ndc": [
+          "0641-0376"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "DIPHENHYDRAMINE Diphenhydramine Hydrochloride SODIUM HYDROXIDE HYDROCHLORIC ACID WATER DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE DIPHENHYDRAMINE Diphenhydramine Hydrochloride SODIUM HYDROXIDE HYDROCHLORIC ACID WATER DIPHENHYDRAMINE HYDROCHLORIDE DIPHENHYDRAMINE"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine hydrochloride USP is an antihistamine drug having the chemical name 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. It occurs as a white, crystalline powder, is freely soluble in water and alcohol and has a molecular weight of 291.82. The molecular formula is C 17 H 21 NO \u2022 HCI. The structural formula is as follows: Diphenhydramine hydrochloride USP in the parenteral form is a sterile, pyrogen-free solution available in a concentration of 50 mg of diphenhydramine hydrochloride USP per mL. The solutions for parenteral use have been adjusted to a pH between 4 and 6.5 with either sodium hydroxide or hydrochloric acid. structure"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine hydrochloride is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of Diphenhydramine Hydrochloride Injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine hydrochloride in the injectable form is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when diphenhydramine hydrochloride in the oral form is impractical. Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled, and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents; mild cases of parkinsonism in other age groups, and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also contraindicated in the following conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy, or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine hydrochloride injection. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions, or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation, and hypotension in elderly patients."
+      ],
+      "precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Pregnancy Category B. Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride injection may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "general_precautions": [
+        "General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease including asthma."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc). MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pregnancy": [
+        "Pregnancy Pregnancy Category B. Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine hydrochloride should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine hydrochloride injection may diminish mental alertness, or, in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions, or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are underscored. 1. General: Urticaria, drug rash, anaphylactic shock, photosensitivity, excessive perspiration, chills, dryness of mouth, nose, and throat. 2. Cardiovascular System: Hypotension, headache, palpitations, tachycardia, extrasystoles. 3. Hematologic System: Hemolytic anemia, thrombocytopenia, agranulocytosis. 4. Nervous System: Sedation, sleepiness, dizziness, disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. 5. GI System: Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. 6. GU System: Urinary frequency, difficult urination, urinary retention, early menses. 7. Respiratory System: Thickening of bronchial secretions , tightness of chest or throat and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms; dry mouth; fixed, dilated pupils; flushing; and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine hydrochloride in the injectable form is indicated when the oral form is impractical. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, other than premature infants and neonates 5 mg/kg/24 hr or 150 mg/m 2 /24 hr. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly, 100 mg if required; maximum daily dosage is 400 mg."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Diphenhydramine Hydrochloride Injection, USP in parenteral form is supplied as: Sterile, pyrogen-free solution containing 50 mg diphenhydramine hydrochloride USP in a 1 mL amber color glass ampule with yellow bands and white OPC mark, and available in packages of ten packed in a PVC rondo tray in a single carton. 1 mL fill in 1 mL Ampule NDC 42571-169-54 Carton of 10 x 1 mL Ampule NDC 42571-169-55 Clear, colorless solution, free from any visible particles, no visible leaks or damage to the container closure system filled in tubular USP Type I glass vials. 1 mL fill in 2 mLVial NDC 42571-337-95 Carton of 1 mL Vial NDC 42571-337-56 Carton of 25 x 1 mL Vial NDC 42571-337-87 Carton of 5 x 1 mL Vial NDC 42571-337-78 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP Controlled Room Temperature]. Protect from freezing and light. Retain in carton until time of use. Rx only Manufactured by: Micro Labs Limited Bangalore-560 099, India. Manufactured for: Micro Labs USA, Inc. Somerset, NJ 08873 Rev. 03/2026"
+      ],
+      "package_label_principal_display_panel": [
+        "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL-1 mL Ampule Label NDC 42571-169-54 DiphenhydrAMINE HCl Injection, USP 50 mg/mL Rx Only HIGH POTENCY IV or DEEP IM 1 mL MICRO LABS NDC 42571-337-95 DiphenhydrAMINE HCl Injection, USP 50 mg/mL Rx Only HIGH POTENCY For Intravenous or Deep Intramuscular Use 1 mL Single-Dose Vial MICRO LABS ampule label diphenhydramine-viallabel.jpg",
+        "PACKAGE LABEL.PRINCIPAL DISPLAY PANEL-Carton of 10x1 mL Ampule NDC 42571-169-55 Rx Only DiphenhydrAMINE Hydrochloride Injection, USP 50 mg/mL HIGH POTENCY Sterile, Pyrogen-free For Intravenous or Deep Intramuscular Use 10 Single-Dose Ampules (1 mL each) MICRO LABS NDC 42571- 337 -87 Rx Only DiphenhydrAMINE Hydrochloride Injection, USP 50 mg/mL HIGH POTENCY Sterile, Pyrogen-free For Intravenous or Deep Intramuscular Use 25 x 1 mL Single-Dose Vial MICRO LABS NDC 42571- 337 -78 Rx Only DiphenhydrAMINE Hydrochloride Injection, USP 50 mg/mL HIGH POTENCY Sterile, Pyrogen-free For Intravenous or Deep Intramuscular Use 5 x 1 mL Single-Dose Vials MICRO LABS NDC 42571- 337 -56 Rx Only DiphenhydrAMINE Hydrochloride Injection, USP 50 mg/mL HIGH POTENCY Sterile, Pyrogen-free For Intravenous or Deep Intramuscular Use 1 mL Single-Dose Vials MICRO LABS ampule carton diphenhydramine-vialcarton25.jpg diphenhydramine-vialcarton5.jpg diphenhydramine-vialcarton1.jpg"
+      ],
+      "set_id": "a1110433-498a-48cb-ac79-5732fd4f8fba",
+      "id": "4c46492b-00c4-8ee4-e063-6294a90a6914",
+      "effective_time": "20260305",
+      "version": "11",
+      "openfda": {
+        "application_number": [
+          "ANDA205723"
+        ],
+        "brand_name": [
+          "DIPHENHYDRAMINE"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Micro Labs Limited"
+        ],
+        "product_ndc": [
+          "42571-169",
+          "42571-337"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "rxcui": [
+          "1723740"
+        ],
+        "spl_id": [
+          "4c46492b-00c4-8ee4-e063-6294a90a6914"
+        ],
+        "spl_set_id": [
+          "a1110433-498a-48cb-ac79-5732fd4f8fba"
+        ],
+        "package_ndc": [
+          "42571-169-54",
+          "42571-169-55",
+          "42571-337-95",
+          "42571-337-87",
+          "42571-337-78",
+          "42571-337-56"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0342571337957",
+          "0342571169541"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Diphenhydramine Hydrochloride diphenhydramine hydrochloride DIPHENHYDRAMINE HCL DIPHENHYDRAMINE BENZETHONIUM CHLORIDE WATER SODIUM HYDROXIDE HYDROCHLORIC ACID"
+      ],
+      "description": [
+        "DESCRIPTION Diphenhydramine Hydrochloride Injection is a sterile, nonpyrogenic solution for intravenous or deep intramuscular use as an antihistaminic agent. Each mL contains diphenhydramine hydrochloride 50 mg and benzethonium chloride 100 mcg in Water for Injection. pH 4.0-6.5; sodium hydroxide and/or hydrochloric acid added, if needed, for pH adjustment. The chemical name of diphenhydramine hydrochloride is 2-(Diphenylmethoxy)-N,N-dimethylethylamine hydrochloride. The structural formula is as follows: C 17 H 21 NO \u2022 HCl MW 291.82 Diphenhydramine hydrochloride occurs as a white crystalline powder and is freely soluble in water and alcohol. Structural formula"
+      ],
+      "clinical_pharmacology": [
+        "CLINICAL PHARMACOLOGY Diphenhydramine hydrochloride is an antihistamine with anticholinergic (drying) and sedative side effects. Antihistamines appear to compete with histamine for cell receptor sites on effector cells. Diphenhydramine hydrochloride in the injectable form has a rapid onset of action. Diphenhydramine is widely distributed throughout the body, including the CNS. A portion of the drug is excreted unchanged in the urine, while the rest is metabolized via the liver. Detailed information on the pharmacokinetics of Diphenhydramine Hydrochloride Injection is not available."
+      ],
+      "indications_and_usage": [
+        "INDICATIONS AND USAGE Diphenhydramine Hydrochloride Injection is effective in adults and pediatric patients, other than premature infants and neonates, for the following conditions when the oral form is impractical: Antihistaminic For amelioration of allergic reactions to blood or plasma, in anaphylaxis as an adjunct to epinephrine and other standard measures after the acute symptoms have been controlled and for other uncomplicated allergic conditions of the immediate type when oral therapy is impossible or contraindicated. Motion Sickness For active treatment of motion sickness. Antiparkinsonism For use in parkinsonism, when oral therapy is impossible or contraindicated, as follows: parkinsonism in the elderly who are unable to tolerate more potent agents, mild cases of parkinsonism in other age groups and in other cases of parkinsonism in combination with centrally acting anticholinergic agents."
+      ],
+      "contraindications": [
+        "CONTRAINDICATIONS Use in Neonates or Premature Infants This drug should not be used in neonates or premature infants. Use in Nursing Mothers Because of the higher risk of antihistamines for infants generally, and for neonates and prematures in particular, antihistamine therapy is contraindicated in nursing mothers. Use as a Local Anesthetic Because of the risk of local necrosis, this drug should not be used as a local anesthetic. Antihistamines are also Contraindicated in the Following Conditions Hypersensitivity to diphenhydramine hydrochloride and other antihistamines of similar chemical structure."
+      ],
+      "warnings": [
+        "WARNINGS Antihistamines should be used with considerable caution in patients with narrow-angle glaucoma, stenosing peptic ulcer, pyloroduodenal obstruction, symptomatic prostatic hypertrophy or bladder-neck obstruction. Local necrosis has been associated with the use of subcutaneous or intradermal use of intravenous diphenhydramine. Use in Pediatric Patients In pediatric patients, especially, antihistamines in overdosage may cause hallucinations, convulsions or death. As in adults, antihistamines may diminish mental alertness in pediatric patients. In the young pediatric patient, particularly, they may produce excitation. Use in the Elderly (approximately 60 years or older) Antihistamines are more likely to cause dizziness, sedation and hypotension in elderly patients."
+      ],
+      "general_precautions": [
+        "PRECAUTIONS General Diphenhydramine hydrochloride has an atropine-like action and, therefore, should be used with caution in patients with a history of bronchial asthma, increased intraocular pressure, hyperthyroidism, cardiovascular disease or hypertension. Use with caution in patients with lower respiratory disease, including asthma. Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc. Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines. Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed. Pregnancy Teratogenic Effects\u2014Pregnancy Category B Reproduction studies have been performed in rats and rabbits at doses up to 5 times the human dose and have revealed no evidence of impaired fertility or harm to the fetus due to diphenhydramine hydrochloride. There are, however, no adequate and well-controlled studies in pregnant women. Because animal reproduction studies are not always predictive of human response, this drug should be used during pregnancy only if clearly needed. Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "information_for_patients": [
+        "Information for Patients Patients taking diphenhydramine hydrochloride should be advised that this drug may cause drowsiness and has an additive effect with alcohol. Patients should be warned about engaging in activities requiring mental alertness, such as driving a car or operating appliances, machinery, etc."
+      ],
+      "drug_interactions": [
+        "Drug Interactions Diphenhydramine hydrochloride has additive effects with alcohol and other CNS depressants (hypnotics, sedatives, tranquilizers, etc.) MAO inhibitors prolong and intensify the anticholinergic (drying) effects of antihistamines."
+      ],
+      "carcinogenesis_and_mutagenesis_and_impairment_of_fertility": [
+        "Carcinogenesis, Mutagenesis, Impairment of Fertility Long-term studies in animals to determine mutagenic and carcinogenic potential have not been performed."
+      ],
+      "pediatric_use": [
+        "Pediatric Use Diphenhydramine should not be used in neonates and premature infants (see CONTRAINDICATIONS ). Diphenhydramine may diminish mental alertness, or in the young pediatric patient, cause excitation. Overdosage may cause hallucinations, convulsions or death (see WARNINGS and OVERDOSAGE ). See also DOSAGE AND ADMINISTRATION section."
+      ],
+      "adverse_reactions": [
+        "ADVERSE REACTIONS The most frequent adverse reactions are italicized. General Urticaria; drug rash; anaphylactic shock; photosensitivity; excessive perspiration; chills; dryness of mouth, nose and throat. Cardiovascular System Hypotension, headache, palpitations, tachycardia, extrasystoles. Hematologic System Hemolytic anemia, thrombocytopenia, agranulocytosis. Nervous System Sedation , sleepiness , dizziness , disturbed coordination , fatigue, confusion, restlessness, excitation, nervousness, tremor, irritability, insomnia, euphoria, paresthesia, blurred vision, diplopia, vertigo, tinnitus, acute labyrinthitis, neuritis, convulsions. Gastrointestinal System Epigastric distress , anorexia, nausea, vomiting, diarrhea, constipation. Genitourinary System Urinary frequency, difficult urination, urinary retention, early menses. Respiratory System Thickening of bronchial secretions , tightness of chest and wheezing, nasal stuffiness."
+      ],
+      "overdosage": [
+        "OVERDOSAGE Antihistamine overdosage reactions may vary from central nervous system depression to stimulation. Stimulation is particularly likely in pediatric patients. Atropine-like signs and symptoms, dry mouth; fixed, dilated pupils; flushing, and gastrointestinal symptoms may also occur. Stimulants should not be used. Vasopressors may be used to treat hypotension."
+      ],
+      "dosage_and_administration": [
+        "DOSAGE AND ADMINISTRATION THIS PRODUCT IS FOR INTRAVENOUS OR INTRAMUSCULAR ADMINISTRATION ONLY. Diphenhydramine Hydrochloride Injection is indicated when the oral form is impractical. DOSAGE SHOULD BE INDIVIDUALIZED ACCORDING TO THE NEEDS AND THE RESPONSE OF THE PATIENT. Pediatric Patients, Other Than Premature Infants and Neonates 5 mg/kg/24 hours or 150 mg/m 2 /24 hours. Maximum daily dosage is 300 mg. Divide into four doses, administered intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly. Adults 10 to 50 mg intravenously at a rate generally not exceeding 25 mg/min, or deep intramuscularly; 100 mg if required; maximum daily dosage is 400 mg. Parenteral drug products should be inspected visually for particulate matter and discoloration prior to administration, whenever solution and container permit."
+      ],
+      "how_supplied": [
+        "HOW SUPPLIED Product: 50090-1841 NDC: 50090-1841-0 1 mL in a VIAL / 25 in a PACKAGE"
+      ],
+      "package_label_principal_display_panel": [
+        "diphenhydramine hydrochloride Label Image"
+      ],
+      "set_id": "5af966ae-535b-492b-ba2c-eeb4e40be959",
+      "id": "8d155a86-c841-435e-9452-e1262e598072",
+      "effective_time": "20260211",
+      "version": "16",
+      "openfda": {
+        "application_number": [
+          "ANDA080817"
+        ],
+        "brand_name": [
+          "Diphenhydramine Hydrochloride"
+        ],
+        "generic_name": [
+          "DIPHENHYDRAMINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "A-S Medication Solutions"
+        ],
+        "product_ndc": [
+          "50090-1841"
+        ],
+        "product_type": [
+          "HUMAN PRESCRIPTION DRUG"
+        ],
+        "route": [
+          "INTRAMUSCULAR",
+          "INTRAVENOUS"
+        ],
+        "substance_name": [
+          "DIPHENHYDRAMINE HCL"
+        ],
+        "rxcui": [
+          "1049633"
+        ],
+        "spl_id": [
+          "8d155a86-c841-435e-9452-e1262e598072"
+        ],
+        "spl_set_id": [
+          "5af966ae-535b-492b-ba2c-eeb4e40be959"
+        ],
+        "package_ndc": [
+          "50090-1841-0"
+        ],
+        "original_packager_product_ndc": [
+          "0641-0376"
+        ],
+        "unii": [
+          "TC2D6JAD40"
+        ]
+      }
+    }
+  ]
+}

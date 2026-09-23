@@ -49,6 +49,8 @@ def write(relative, body):
 # RxCUIs the tests ask about directly, which no search term above would reach.
 EXTRA_RXCUIS = [
     "999999999",  # no such concept: RxNorm answers 200 with an empty body
+    "161",        # acetaminophen, the Active Ingredient ADR-0008 uses as its OTC example
+    "3498",       # diphenhydramine, whose OTC brand Labels are all Combination Products
 ]
 
 
