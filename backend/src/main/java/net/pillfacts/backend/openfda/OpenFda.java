@@ -36,28 +36,42 @@ import org.springframework.web.client.RestClient;
 public class OpenFda {
 
 	/**
-	 * The Label sections Pill-Facts may read. Dosing instructions are absent from this
-	 * list and stay absent: it is the one place that guarantees they reach no response
-	 * (ADR-0007).
+	 * The Label sections Pill-Facts may read, both Regulatory Classes' worth. Dosing
+	 * instructions are absent from this list and stay absent: it is the one place that
+	 * guarantees they reach no response (ADR-0007).
 	 *
 	 * <p>Which of these a page shows, under what heading and in what order, is the
-	 * renderers' business — {@code PrescriptionSection} names the same fields again for
-	 * that. The two agreeing is what {@code DrugConceptApiTest} asserts when it pins the
-	 * headings a Drug Concept comes back with; a field named here and nowhere else is
-	 * read and then dropped, and one named there and not here renders as absent.
+	 * renderers' business — {@code PrescriptionSection} names the prescription five
+	 * again and {@code OtcSection} the OTC five, this being a Set precisely because
+	 * order is theirs to decide. Those two agreeing with this is what
+	 * {@code DrugConceptApiTest} and {@code OtcDrugConceptApiTest} assert when they pin
+	 * the headings a Drug Concept comes back with; a field named here and nowhere else
+	 * is read and then dropped, and one named there and not here renders as absent.
+	 *
+	 * <p>This being the union of the two, a Label can carry a field belonging to the
+	 * other class's vocabulary — {@code warnings} is an OTC section and also the one an
+	 * old pre-PLR Prescription Label still uses, and diphenhydramine's injection Labels
+	 * carry both it and {@code contraindications}. Nothing renders it on a prescription
+	 * page, because the renderer is chosen by Regulatory Class and names only its own
+	 * five. Reading it and dropping it is the allowlist working, not leaking.
 	 */
 	private static final Set<String> SAFETY_SECTIONS = Set.of(
 			"boxed_warning",
 			"contraindications",
 			"warnings_and_cautions",
 			"adverse_reactions",
-			"drug_interactions");
+			"drug_interactions",
+			"warnings",
+			"do_not_use",
+			"ask_doctor",
+			"when_using",
+			"stop_use");
 
 	/** A property of the pill rather than an instruction to a patient, so kept (ADR-0007). */
 	private static final String STRENGTHS = "dosage_forms_and_strengths";
 
-	private static final String PRESCRIPTION =
-			"openfda.generic_name:\"%s\" AND openfda.product_type:\"HUMAN PRESCRIPTION DRUG\"";
+	private static final String BY_CLASS =
+			"openfda.generic_name:\"%s\" AND openfda.product_type:\"%s\"";
 
 	private static final String BRAND_ONLY = " AND openfda.application_number:NDA*";
 
@@ -77,22 +91,27 @@ public class OpenFda {
 	}
 
 	/**
-	 * The prescription Labels published for a Drug Concept, most recently updated first.
+	 * The Labels published for a Drug Concept in one Regulatory Class, most recently
+	 * updated first.
 	 *
 	 * <p>A Label openFDA publishes no effective time for is not among them. It cannot be
 	 * ranked against the rest, and Provenance is a promise about when as much as about
 	 * who, so a Label that cannot say when is one this system cannot attribute.
 	 */
-	public List<Label> prescriptionLabels(String activeIngredient) {
-		return search(PRESCRIPTION.formatted(activeIngredient));
+	public List<Label> labels(RegulatoryClass regulatoryClass, String activeIngredient) {
+		return search(byClass(regulatoryClass, activeIngredient));
 	}
 
 	/**
 	 * The same, restricted to Labels approved under a new drug application — the brand
 	 * Labels ADR-0010 prefers to speak for a Drug Concept.
 	 */
-	public List<Label> brandPrescriptionLabels(String activeIngredient) {
-		return search(PRESCRIPTION.formatted(activeIngredient) + BRAND_ONLY);
+	public List<Label> brandLabels(RegulatoryClass regulatoryClass, String activeIngredient) {
+		return search(byClass(regulatoryClass, activeIngredient) + BRAND_ONLY);
+	}
+
+	private static String byClass(RegulatoryClass regulatoryClass, String activeIngredient) {
+		return BY_CLASS.formatted(activeIngredient, regulatoryClass.productType());
 	}
 
 	private List<Label> search(String expression) {

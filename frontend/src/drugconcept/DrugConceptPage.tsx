@@ -86,18 +86,18 @@ export function DrugConceptPage() {
 function Labelling({ drugConcept }: { drugConcept: DrugConcept }) {
   /*
    * Nothing to show is not the same as nothing to know, and must never read as though it
-   * were. Pill-Facts renders prescription labelling and no other kind yet (#5 adds the
-   * OTC renderer, #6 puts both classes on one page), so a Drug Concept sold only over
-   * the counter lands here with an empty list — and ADR-0008 is explicit that shipping
-   * the prescription renderer alone is acceptable only while the page says so. This says
-   * what Pill-Facts has, and claims nothing about what the FDA publishes.
+   * were. Both Regulatory Classes now have a renderer, so an empty list no longer means
+   * "we don't render this kind of drug" — but it still runs two facts together, because
+   * a Drug Concept the FDA publishes no Label for and a Label carrying none of the
+   * sections we read arrive here identically. Until #9 gives the API the vocabulary to
+   * tell them apart, this says only what is true of both: that the gap is ours to
+   * explain, and that it is not a claim about the medication.
    */
   if (drugConcept.sections.length === 0) {
     return (
       <p className="unlabelled">
-        Pill-Facts has no prescription labelling to show for {drugConcept.name}. Over-the-counter
-        labelling isn&rsquo;t here yet, so a medication sold only over the counter looks like this
-        too.
+        Pill-Facts has no labelling to show for {drugConcept.name}. That is a gap in what we have,
+        and not a statement that this medication has no known risks.
       </p>
     )
   }

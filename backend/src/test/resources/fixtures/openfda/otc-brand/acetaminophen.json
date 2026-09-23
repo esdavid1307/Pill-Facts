@@ -1,0 +1,1277 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-23",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 19
+    }
+  },
+  "results": [
+    {
+      "spl_product_data_elements": [
+        "Feverall Jr. Strength Acetaminophen ACETAMINOPHEN ACETAMINOPHEN GLYCERYL MONOSTEARATE HYDROGENATED PALM KERNEL OIL PEG-100 STEARATE POLYSORBATE 80"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts",
+        "Dist. by: Ohm Laboratories, Inc. New Brunswick, NJ 08901 Tamper-evident: Suppositories are individually wrapped. Do not use if imprinted wrapper is opened or damaged."
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each rectal suppository) Acetaminophen, USP 325 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever/fever reducer"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily reduces fever relieves minor aches, pains, and headache"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if a child 6 to 12 years takes more than 5 doses in 24 hours an adult or child 12 years and older takes more than 6 doses in 24 hours, which is the maximum daily amount taken with other drugs containing acetaminophen an adult takes 3 or more alcoholic drinks every day while using this product Allergy alert: acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. For rectal use only. Do not use in children under 6 years if you are allergic to acetaminophen. with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if you have liver disease. you are taking the blood thinning drug warfarin. Stop use and ask a doctor if fever lasts more than 3 days (72 hours), or recurs. pain gets worse or lasts more than 10 days. new symptoms occur. redness or swelling is present in the painful area. These may be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. If swallowed or in case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical in case of overdose for adults and for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use in children under 6 years if you are allergic to acetaminophen. with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease. you are taking the blood thinning drug warfarin."
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if fever lasts more than 3 days (72 hours), or recurs. pain gets worse or lasts more than 10 days. new symptoms occur. redness or swelling is present in the painful area. These may be signs of a serious condition."
+      ],
+      "keep_out_of_reach_of_children": [
+        "If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. If swallowed or in case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical in case of overdose for adults and for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions do not use more than directed remove wrapper carefully insert suppository well up into the rectum Dosing Chart Age Dose under 6 years do not use 6 to 12 years Use 1 suppository every 4 to 6 hours. (maximum of 5 doses in 24 hours) adults and children 12 years and older Use 2 suppositories every 4 to 6 hours. (maximum of 6 doses)"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"50%\"><caption>Dosing Chart</caption><col width=\"30%\" align=\"left\" valign=\"top\"/><col width=\"70%\" align=\"left\" valign=\"top\"/><thead><tr><th styleCode=\"Lrule Rrule\">Age</th><th styleCode=\"Rrule\">Dose</th></tr></thead><tbody><tr styleCode=\"Botrule\"><td styleCode=\"Rrule Lrule\">under 6 years</td><td styleCode=\"Rrule\">do not use</td></tr><tr styleCode=\"Botrule\"><td styleCode=\"Rrule Lrule\">6 to 12 years</td><td styleCode=\"Rrule\">Use 1 suppository every 4 to 6 hours. (maximum of 5 doses in 24 hours)</td></tr><tr styleCode=\"Botrule\"><td styleCode=\"Rrule Lrule\">adults and children 12 years and older</td><td styleCode=\"Rrule\">Use 2 suppositories every 4 to 6 hours. (maximum of 6 doses)</td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information store at 2\u00b0-27\u00b0C (35\u00b0-80\u00b0F) do not use if imprinted suppository wrapper is opened or damaged"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients glycerol monostearate, hydrogenated vegetable oil, polyoxyethylene stearate, polysorbate 80"
+      ],
+      "questions": [
+        "Questions? call 1-866-923-4914"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - 325 mg Suppository Blister Pack Carton NDC 51672-2116-2 JR. STRENGTH ages 6-12 years FeverAll \u00ae ACETAMINOPHEN SUPPOSITORIES Pain Reliever/Fever Reducer 6 Rectal Suppositories 325 mg each Carton"
+      ],
+      "set_id": "3561bbc3-53b0-4857-8b71-39e165ed95ce",
+      "id": "5a99e46d-4983-579f-e063-6394a90a40db",
+      "effective_time": "20260903",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "NDA018337"
+        ],
+        "brand_name": [
+          "Feverall Jr. Strength"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "Sun Pharmaceutical Industries, Inc."
+        ],
+        "product_ndc": [
+          "51672-2116"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "RECTAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN"
+        ],
+        "rxcui": [
+          "198437",
+          "209361"
+        ],
+        "spl_id": [
+          "5a99e46d-4983-579f-e063-6394a90a40db"
+        ],
+        "spl_set_id": [
+          "3561bbc3-53b0-4857-8b71-39e165ed95ce"
+        ],
+        "package_ndc": [
+          "51672-2116-0",
+          "51672-2116-2",
+          "51672-2116-4"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Feverall Childrens Acetaminophen ACETAMINOPHEN ACETAMINOPHEN GLYCERYL MONOSTEARATE HYDROGENATED PALM KERNEL OIL PEG-100 STEARATE POLYSORBATE 80"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts",
+        "Dist. by: Ohm Laboratories, Inc. New Brunswick, NJ 08901"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each rectal suppository) Acetaminophen, USP 120 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever/fever reducer"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily reduces fever relieves minor aches, pains, and headache"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if your child takes more than 5 doses in 24 hours, which is the maximum daily amount with other drugs containing acetaminophen Allergy alert: acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. For rectal use only. Do not use if you are allergic to acetaminophen. with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if the child has liver disease. the child is taking the blood thinning drug warfarin. Stop use and ask a doctor if fever lasts more than 3 days (72 hours), or recurs. pain lasts more than 5 days or gets worse. new symptoms occur. redness or swelling is present in the painful area. These may be signs of a serious condition. Keep out of reach of children. If swallowed or in case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical in case of overdose for adults and for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use if you are allergic to acetaminophen. with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if the child has liver disease. the child is taking the blood thinning drug warfarin."
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if fever lasts more than 3 days (72 hours), or recurs. pain lasts more than 5 days or gets worse. new symptoms occur. redness or swelling is present in the painful area. These may be signs of a serious condition."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. If swallowed or in case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical in case of overdose for adults and for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions this product does not contain directions or warnings for adult use do not use more than directed remove wrapper carefully insert suppository well up into the rectum Dosing Chart Age Dose under 3 years Do not use unless directed by a doctor 3 to 6 years Use 1 suppository every 4 to 6 hours (maximum of 5 doses in 24 hours)"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"50%\"><caption>Dosing Chart</caption><col width=\"40%\" align=\"left\" valign=\"top\"/><col width=\"60%\" align=\"left\" valign=\"top\"/><thead><tr><th styleCode=\"Lrule Rrule\">Age</th><th styleCode=\"Rrule\">Dose</th></tr></thead><tbody><tr styleCode=\"Botrule\"><td styleCode=\"Lrule Rrule\">under 3 years</td><td styleCode=\"Rrule\">Do not use unless directed by a doctor</td></tr><tr><td styleCode=\"Lrule Rrule\">3 to 6 years</td><td styleCode=\"Rrule\">Use 1 suppository every 4 to 6 hours (maximum of 5 doses in 24 hours)</td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information store at 2\u00b0-27\u00b0C (35\u00b0-80\u00b0F) do not use if imprinted suppository wrapper is opened or damaged"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients glycerol monostearate, hydrogenated vegetable oil, polyoxyethylene stearate, polysorbate 80"
+      ],
+      "questions": [
+        "Questions? call 1-866-923-4914"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - 120 mg Suppository Blister Pack Carton NDC 51672-2115-2 FeverAll \u00ae Children's ACETAMINOPHEN SUPPOSITORIES Carton"
+      ],
+      "set_id": "861e2987-5473-45b0-b2a6-f980a9b0e809",
+      "id": "59cc44c6-9464-1e04-e063-6394a90a7466",
+      "effective_time": "20260824",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "NDA018337"
+        ],
+        "brand_name": [
+          "Feverall Childrens"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "Sun Pharmaceutical Industries, Inc."
+        ],
+        "product_ndc": [
+          "51672-2115"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "RECTAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN"
+        ],
+        "rxcui": [
+          "198434",
+          "209353"
+        ],
+        "spl_id": [
+          "59cc44c6-9464-1e04-e063-6394a90a7466"
+        ],
+        "spl_set_id": [
+          "861e2987-5473-45b0-b2a6-f980a9b0e809"
+        ],
+        "package_ndc": [
+          "51672-2115-0",
+          "51672-2115-2",
+          "51672-2115-4"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Feverall Infants Acetaminophen ACETAMINOPHEN ACETAMINOPHEN GLYCERYL MONOSTEARATE HYDROGENATED PALM KERNEL OIL PEG-100 STEARATE POLYSORBATE 80"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts",
+        "Dist. by: Ohm Laboratories Inc. New Brunswick, NJ 08901"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each rectal suppository) Acetaminophen, USP 80 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever/fever reducer"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily reduces fever relieves minor aches, pains, and headache"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if your child takes more than 4 doses in 24 hours, which is the maximum daily amount for ages 6 to 11 months more than 5 doses in 24 hours, which is the maximum daily amount for ages 12 to 36 months with other drugs containing acetaminophen Allergy alert: acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. For rectal use only. Do not use if you are allergic to acetaminophen. with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if the child has liver disease. the child is taking the blood thinning drug warfarin. Stop use and ask a doctor if fever lasts more than 3 days (72 hours), or recurs. pain lasts more than 3 days or gets worse. new symptoms occur. redness or swelling is present in the painful area. These may be signs of a serious condition. Keep out of reach of children. If swallowed or in case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical in case of overdose for adults and for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use if you are allergic to acetaminophen. with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if the child has liver disease. the child is taking the blood thinning drug warfarin."
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if fever lasts more than 3 days (72 hours), or recurs. pain lasts more than 3 days or gets worse. new symptoms occur. redness or swelling is present in the painful area. These may be signs of a serious condition."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. If swallowed or in case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical in case of overdose for adults and for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions this product does not contain directions or warnings for adult use do not use more than directed remove wrapper carefully insert suppository well up into the rectum Dosing Chart Age Dose under 6 months Do not use unless directed by a doctor 6 to 11 months Use 1 suppository every 6 hours (maximum of 4 doses in 24 hours) 12 to 36 months Use 1 suppository every 4 to 6 hours (maximum of 5 doses in 24 hours)"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"60%\"><caption>Dosing Chart</caption><col width=\"20%\" align=\"left\" valign=\"top\"/><col width=\"80%\" align=\"left\" valign=\"top\"/><thead><tr><th styleCode=\"Lrule Rrule\">Age</th><th styleCode=\"Rrule\">Dose</th></tr></thead><tbody><tr styleCode=\"Botrule\"><td styleCode=\"Lrule Rrule\">under 6 months</td><td styleCode=\"Rrule\">Do not use unless directed by a doctor</td></tr><tr styleCode=\"Botrule\"><td styleCode=\"Lrule Rrule\">6 to 11 months</td><td styleCode=\"Rrule\">Use 1 suppository every 6 hours   (maximum of 4 doses in 24 hours) </td></tr><tr><td styleCode=\"Lrule Rrule\">12 to 36 months</td><td styleCode=\"Rrule\">Use 1 suppository every 4 to 6 hours   (maximum of 5 doses in 24 hours) </td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information store at 2\u00b0-27\u00b0C (35\u00b0-80\u00b0F) do not use if imprinted suppository wrapper is opened or damaged"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients glycerol monostearate, hydrogenated vegetable oil, polyoxyethylene stearate, polysorbate 80"
+      ],
+      "questions": [
+        "Questions? call 1-866-923-4914"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL - 6 Suppository Blister Pack Carton NDC 51672-2114-2 FeverAll \u00ae ACETAMINOPHEN SUPPOSITORIES Pain Reliever/Fever Reducer 6 Rectal Suppositories 80 mg each Carton"
+      ],
+      "set_id": "3ade895b-5dca-4d81-9415-8091923162ff",
+      "id": "575ce0e3-78a7-b636-e063-6294a90aba2d",
+      "effective_time": "20260724",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "NDA018337"
+        ],
+        "brand_name": [
+          "Feverall Infants"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "Sun Pharmaceutical Industries, Inc."
+        ],
+        "product_ndc": [
+          "51672-2114"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "RECTAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN"
+        ],
+        "rxcui": [
+          "198445",
+          "209531"
+        ],
+        "spl_id": [
+          "575ce0e3-78a7-b636-e063-6294a90aba2d"
+        ],
+        "spl_set_id": [
+          "3ade895b-5dca-4d81-9415-8091923162ff"
+        ],
+        "package_ndc": [
+          "51672-2114-0",
+          "51672-2114-2",
+          "51672-2114-4"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "ADVIL DUAL ACTION WITH ACETAMINOPHEN Ibuprofen, Acetaminophen CARNAUBA WAX SILICON DIOXIDE CROSCARMELLOSE SODIUM FERRIC OXIDE RED GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED STARCH, CORN TITANIUM DIOXIDE IBUPROFEN IBUPROFEN ACETAMINOPHEN ACETAMINOPHEN Advil;II"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Acetaminophen 250 mg Ibuprofen 125 mg (NSAID*) *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Pain reliever Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves minor aches and pains due to: headache toothache backache menstrual cramps muscular aches minor pain of arthritis"
+      ],
+      "warnings": [
+        "Warnings Acetaminophen liver damage warning: This product contains acetaminophen. Severe liver damage may occur if you take: with other drugs containing acetaminophen more than 6 caplets in 24 hours, which is the maximum daily amount for this product 3 or more alcoholic drinks every day while using this product Acetaminophen allergy alert: may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If skin reaction occurs, stop use and seek medical help right away. NSAID allergy alert: ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. NSAID stomach bleeding warning This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warning: NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist if you have ever had an allergic reaction to acetaminophen or any other pain reliever right before or after heart surgery Ask a doctor before use if you have liver disease stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic Ask a doctor or pharmacist before use if you are under a doctor's care for any serious condition taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug When using this product take with food or milk if stomach upset occurs Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days redness or swelling is present in the painful area any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist if you have ever had an allergic reaction to acetaminophen or any other pain reliever right before or after heart surgery"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are under a doctor's care for any serious condition taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug"
+      ],
+      "when_using": [
+        "When using this product take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days redness or swelling is present in the painful area any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed adults and children 12 years and over take 2 caplets every 8 hours while symptoms persist children under 12 years ask a doctor do not take more than 6 caplets in 24 hours, unless directed by a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"58.46%\"><col width=\"28%\"/><col width=\"30%\"/><tbody><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph>adults and children</paragraph><paragraph>12 years and over</paragraph></td><td styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><list listType=\"unordered\"><item><content styleCode=\"bold\">take 2 caplets every 8 hours</content>while symptoms persist </item></list></td></tr><tr><td styleCode=\"Rrule Botrule Lrule \" valign=\"top\"><paragraph>children under 12 years</paragraph></td><td styleCode=\"Rrule Botrule \" valign=\"top\"><list listType=\"unordered\"><item>ask a doctor</item></list></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information read all warnings and directions before use. Keep carton. store at 20-25\u00b0C (68-77\u00b0F) avoid excessive heat above 40\u00b0C (104\u00b0F)"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients carnauba wax, colloidal silicon dioxide, croscarmellose sodium, ferric oxides, glyceryl dibehenate, hypromellose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? call weekdays 9 AM to 5 PM at 1-800-88-ADVIL"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL 1886-1 1886-6"
+      ],
+      "set_id": "55cd65fc-91bf-4979-e063-6294a90ab9b7",
+      "id": "55cd6613-74f5-3d01-e063-6294a90a6cca",
+      "effective_time": "20260704",
+      "version": "1",
+      "openfda": {
+        "application_number": [
+          "NDA211733"
+        ],
+        "brand_name": [
+          "ADVIL DUAL ACTION WITH ACETAMINOPHEN"
+        ],
+        "generic_name": [
+          "IBUPROFEN, ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "Select Consumer Group"
+        ],
+        "product_ndc": [
+          "85237-1886"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "IBUPROFEN",
+          "ACETAMINOPHEN"
+        ],
+        "rxcui": [
+          "2387532"
+        ],
+        "spl_id": [
+          "55cd6613-74f5-3d01-e063-6294a90a6cca"
+        ],
+        "spl_set_id": [
+          "55cd65fc-91bf-4979-e063-6294a90ab9b7"
+        ],
+        "package_ndc": [
+          "85237-1886-0",
+          "85237-1886-1",
+          "85237-1886-2",
+          "85237-1886-7",
+          "85237-1886-4",
+          "85237-1886-6"
+        ],
+        "original_packager_product_ndc": [
+          "0573-0147"
+        ],
+        "upc": [
+          "0655708018866",
+          "0655708118863"
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "WK2XYI10QM",
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Excedrin Migraine Acetaminophen, Aspirin, and Caffeine BENZOIC ACID CARNAUBA WAX FD&C BLUE NO. 1 HYPROMELLOSE, UNSPECIFIED LIGHT MINERAL OIL HYDROXYPROPYL CELLULOSE, UNSPECIFIED MICROCRYSTALLINE CELLULOSE POLYSORBATE 20 POVIDONE, UNSPECIFIED PROPYLENE GLYCOL DIMETHICONE, UNSPECIFIED SORBITAN MONOLAURATE STEARIC ACID TITANIUM DIOXIDE ACETAMINOPHEN ACETAMINOPHEN ASPIRIN ASPIRIN CAFFEINE CAFFEINE Capsule-Shaped Tablet E"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Acetaminophen 250 mg Aspirin 250 mg (NSAID*) Caffeine 65 mg *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Pain reliever Pain reliever Pain reliever aid"
+      ],
+      "indications_and_usage": [
+        "Use treats migraine"
+      ],
+      "warnings": [
+        "Warnings Reye\u2019s syndrome: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product. When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye\u2019s syndrome, a rare but serious illness. Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Allergy alert: Aspirin may cause a severe allergic reaction which may include: hives facial swelling asthma (wheezing) shock Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take more than 2 caplets in 24 hours, which is the maximum daily amount with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Medication overuse headache warning: Headaches may worsen if this product is used for 10 or more days per month. Caffeine warning: The recommended dose of this product contains about as much caffeine as a cup of coffee. Limit the use of caffeine-containing medications, foods, or beverages while taking this product because too much caffeine may cause nervousness, irritability, sleeplessness, and, occasionally, rapid heart beat. Do not use if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if you have never had migraines diagnosed by a health professional you have a headache that is different from your usual migraines you have the worst headache of your life you have fever and stiff neck you have headaches beginning after or caused by head injury, exertion, coughing or bending you experienced your first headache after the age of 50 you have daily headaches you have a migraine so severe as to require bed rest you have liver disease stomach bleeding warning applies to you you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, or kidney disease you are taking a diuretic you have asthma you have problems or serious side effects from taking pain relievers or fever reducers you have vomiting with your migraine headache Ask a doctor or pharmacist before use if you are taking a prescription drug for: diabetes gout arthritis under a doctor\u2019s care for any serious condition taking any other drug taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if an allergic reaction occurs. Seek medical help right away. you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better your migraine is not relieved or worsens after first dose new or unexpected symptoms occur ringing in the ears or loss of hearing occurs If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have never had migraines diagnosed by a health professional you have a headache that is different from your usual migraines you have the worst headache of your life you have fever and stiff neck you have headaches beginning after or caused by head injury, exertion, coughing or bending you experienced your first headache after the age of 50 you have daily headaches you have a migraine so severe as to require bed rest you have liver disease stomach bleeding warning applies to you you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, or kidney disease you are taking a diuretic you have asthma you have problems or serious side effects from taking pain relievers or fever reducers you have vomiting with your migraine headache"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking a prescription drug for: diabetes gout arthritis under a doctor\u2019s care for any serious condition taking any other drug taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if an allergic reaction occurs. Seek medical help right away. you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better your migraine is not relieved or worsens after first dose new or unexpected symptoms occur ringing in the ears or loss of hearing occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if an allergic reaction occurs. Seek medical help right away. you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better your migraine is not relieved or worsens after first dose new or unexpected symptoms occur ringing in the ears or loss of hearing occurs"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions do not use more than directed adults: take 2 caplets with a glass of water if symptoms persist or worsen, ask your doctor do not take more than 2 caplets in 24 hours, unless directed by a doctor under 18 years of age: ask a doctor"
+      ],
+      "other_safety_information": [
+        "Other information store at controlled room temperature 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) close cap tightly after use read all product information before using. Keep this box for important information."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients benzoic acid, carnauba wax, FD&C blue no. 1, hypromellose, light mineral oil, low-substituted hydroxypropyl cellulose, microcrystalline cellulose, polysorbate 20, povidone, propylene glycol, simethicone, sorbitan monolaurate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions? 1-800-468-7746"
+      ],
+      "package_label_principal_display_panel": [
+        "1871-6"
+      ],
+      "set_id": "3caa4adf-abe3-67c3-e063-6294a90a87a4",
+      "id": "55bd0e62-bda4-cfcd-e063-6394a90afbb1",
+      "effective_time": "20260703",
+      "version": "3",
+      "openfda": {
+        "application_number": [
+          "NDA020802"
+        ],
+        "brand_name": [
+          "Excedrin Migraine"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, ASPIRIN, AND CAFFEINE"
+        ],
+        "manufacturer_name": [
+          "Select Consumer Group"
+        ],
+        "product_ndc": [
+          "85237-1871"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "ASPIRIN",
+          "CAFFEINE"
+        ],
+        "rxcui": [
+          "209468",
+          "308297"
+        ],
+        "spl_id": [
+          "55bd0e62-bda4-cfcd-e063-6394a90afbb1"
+        ],
+        "spl_set_id": [
+          "3caa4adf-abe3-67c3-e063-6294a90a87a4"
+        ],
+        "package_ndc": [
+          "85237-1871-1",
+          "85237-1871-2",
+          "85237-1871-3",
+          "85237-1871-4",
+          "85237-1871-0",
+          "85237-1871-7"
+        ],
+        "original_packager_product_ndc": [
+          "0067-2040"
+        ],
+        "upc": [
+          "0655708018712"
+        ],
+        "nui": [
+          "N0000000160",
+          "N0000008836",
+          "M0001335",
+          "N0000175722",
+          "N0000175578",
+          "N0000008832",
+          "N0000175739",
+          "N0000175729",
+          "N0000175790",
+          "M0023046"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Prostaglandin Production [PE]",
+          "Decreased Platelet Aggregation [PE]",
+          "Central Nervous System Stimulation [PE]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]",
+          "Xanthines [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]",
+          "Platelet Aggregation Inhibitor [EPC]",
+          "Central Nervous System Stimulant [EPC]",
+          "Methylxanthine [EPC]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "R16CO5Y76E",
+          "3G6A5W338E"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Excedrin Migraine Acetaminophen, Aspirin, and Caffeine BENZOIC ACID CARNAUBA WAX FD&C BLUE NO. 1 HYPROMELLOSE, UNSPECIFIED LIGHT MINERAL OIL HYDROXYPROPYL CELLULOSE, UNSPECIFIED MICROCRYSTALLINE CELLULOSE POLYSORBATE 20 POVIDONE, UNSPECIFIED PROPYLENE GLYCOL DIMETHICONE, UNSPECIFIED SORBITAN MONOLAURATE STEARIC ACID TITANIUM DIOXIDE ACETAMINOPHEN ACETAMINOPHEN ASPIRIN ASPIRIN CAFFEINE CAFFEINE Capsule-Shaped Tablet E"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Acetaminophen 250 mg Aspirin 250 mg (NSAID*) Caffeine 65 mg *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Pain reliever Pain reliever Pain reliever aid"
+      ],
+      "indications_and_usage": [
+        "Use treats migraine"
+      ],
+      "warnings": [
+        "Warnings Reye\u2019s syndrome: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product. When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye\u2019s syndrome, a rare but serious illness. Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Allergy alert: Aspirin may cause a severe allergic reaction which may include: hives facial swelling asthma (wheezing) shock Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take more than 2 caplets in 24 hours, which is the maximum daily amount with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Medication overuse headache warning: Headaches may worsen if this product is used for 10 or more days per month. Caffeine warning: The recommended dose of this product contains about as much caffeine as a cup of coffee. Limit the use of caffeine-containing medications, foods, or beverages while taking this product because too much caffeine may cause nervousness, irritability, sleeplessness, and, occasionally, rapid heart beat. Do not use if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if you have never had migraines diagnosed by a health professional you have a headache that is different from your usual migraines you have the worst headache of your life you have fever and stiff neck you have headaches beginning after or caused by head injury, exertion, coughing or bending you experienced your first headache after the age of 50 you have daily headaches you have a migraine so severe as to require bed rest you have liver disease stomach bleeding warning applies to you you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, or kidney disease you are taking a diuretic you have asthma you have problems or serious side effects from taking pain relievers or fever reducers you have vomiting with your migraine headache Ask a doctor or pharmacist before use if you are taking a prescription drug for: diabetes gout arthritis under a doctor\u2019s care for any serious condition taking any other drug taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if an allergic reaction occurs. Seek medical help right away. you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better your migraine is not relieved or worsens after first dose new or unexpected symptoms occur ringing in the ears or loss of hearing occurs If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have never had migraines diagnosed by a health professional you have a headache that is different from your usual migraines you have the worst headache of your life you have fever and stiff neck you have headaches beginning after or caused by head injury, exertion, coughing or bending you experienced your first headache after the age of 50 you have daily headaches you have a migraine so severe as to require bed rest you have liver disease stomach bleeding warning applies to you you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, or kidney disease you are taking a diuretic you have asthma you have problems or serious side effects from taking pain relievers or fever reducers you have vomiting with your migraine headache"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking a prescription drug for: diabetes gout arthritis under a doctor\u2019s care for any serious condition taking any other drug taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if an allergic reaction occurs. Seek medical help right away. you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better your migraine is not relieved or worsens after first dose new or unexpected symptoms occur ringing in the ears or loss of hearing occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if an allergic reaction occurs. Seek medical help right away. you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better your migraine is not relieved or worsens after first dose new or unexpected symptoms occur ringing in the ears or loss of hearing occurs"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions do not use more than directed adults: take 2 caplets with a glass of water if symptoms persist or worsen, ask your doctor do not take more than 2 caplets in 24 hours, unless directed by a doctor under 18 years of age: ask a doctor"
+      ],
+      "other_safety_information": [
+        "Other information store at controlled room temperature 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) close cap tightly after use read all product information before using. Keep this box for important information."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients benzoic acid, carnauba wax, FD&C blue no. 1, hypromellose, light mineral oil, low-substituted hydroxypropyl cellulose, microcrystalline cellulose, polysorbate 20, povidone, propylene glycol, simethicone, sorbitan monolaurate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions? 1-800-468-7746"
+      ],
+      "spl_unclassified_section": [
+        "Additional Information TAMPER-EVIDENT BOTTLE DO NOT USE IF INNER FOIL SEAL INPRINTED WITH \u201cSEALED for YOUR PROTECTION\u201d IS BROKEN OR MISSING Distributed by: GSK Consumer Healthcare, Warren, NJ 07059 \u00a92020 GSK or licensor. Trademarks are owned by or licensed to the GSK group of companies."
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel Excedrin Migraine"
+      ],
+      "set_id": "4efbd21b-92fe-96a7-e063-6294a90ac4ad",
+      "id": "4efbd22a-bc84-9547-e063-6294a90afe09",
+      "effective_time": "20260408",
+      "version": "1",
+      "openfda": {
+        "application_number": [
+          "NDA020802"
+        ],
+        "brand_name": [
+          "Excedrin Migraine"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, ASPIRIN, AND CAFFEINE"
+        ],
+        "manufacturer_name": [
+          "Navajo Manufacturing Company Inc."
+        ],
+        "product_ndc": [
+          "67751-243"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "ASPIRIN",
+          "CAFFEINE"
+        ],
+        "rxcui": [
+          "209468",
+          "308297"
+        ],
+        "spl_id": [
+          "4efbd22a-bc84-9547-e063-6294a90afe09"
+        ],
+        "spl_set_id": [
+          "4efbd21b-92fe-96a7-e063-6294a90ac4ad"
+        ],
+        "package_ndc": [
+          "67751-243-02"
+        ],
+        "original_packager_product_ndc": [
+          "0067-2040"
+        ],
+        "nui": [
+          "N0000000160",
+          "N0000008836",
+          "M0001335",
+          "N0000175722",
+          "N0000175578",
+          "N0000008832",
+          "N0000175739",
+          "N0000175729",
+          "N0000175790",
+          "M0023046"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Prostaglandin Production [PE]",
+          "Decreased Platelet Aggregation [PE]",
+          "Central Nervous System Stimulation [PE]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]",
+          "Xanthines [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]",
+          "Platelet Aggregation Inhibitor [EPC]",
+          "Central Nervous System Stimulant [EPC]",
+          "Methylxanthine [EPC]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "R16CO5Y76E",
+          "3G6A5W338E"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Advil Dual Action with Acetaminophen ibuprofen, acetaminophen tablet, film coated FERRIC OXIDE RED IBUPROFEN IBUPROFEN ACETAMINOPHEN ACETAMINOPHEN HYPROMELLOSE, UNSPECIFIED POLYETHYLENE GLYCOL, UNSPECIFIED TITANIUM DIOXIDE POLYDEXTROSE CARNAUBA WAX GLYCERYL DIBEHENATE SILICON DIOXIDE CROSCARMELLOSE SODIUM STARCH, CORN Advil;II Advil Dual Action with Acetaminophen, Travel BASIX ibuprofen, acetaminophen tablet, film coated FERRIC OXIDE RED IBUPROFEN IBUPROFEN ACETAMINOPHEN ACETAMINOPHEN HYPROMELLOSE, UNSPECIFIED POLYETHYLENE GLYCOL, UNSPECIFIED TITANIUM DIOXIDE POLYDEXTROSE CARNAUBA WAX GLYCERYL DIBEHENATE SILICON DIOXIDE CROSCARMELLOSE SODIUM STARCH, CORN Advil;II"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts \u200bDrug Facts",
+        "Other information \u200bOther information read all warnings and directions before use. Keep carton. store at 20-25\u00b0C (68-77\u00b0F) avoid excessive heat above 40\u00b0C (104\u00b0F)",
+        "Questions or comments? Questions or comments? call weekdays 9 AM to 5 PM at 1-800-88-ADVIL"
+      ],
+      "active_ingredient": [
+        "Active ingredients \u200bActive ingredients Acetaminophen 250 mg Ibuprofen 125 mg (NSAID*) *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Purposes Pain reliever Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses \u200bUses temporarily relieves minor aches and pains due to: headache toothache backache menstrual cramps muscular aches minor pain of arthritis"
+      ],
+      "warnings": [
+        "Warnings \u200bWarnings Acetaminophen liver damage warning Acetaminophen liver damage warning: This product contains acetaminophen. Severe liver damage may occur if you take: with other drugs containing acetaminophen more than 6 caplets in 24 hours, which is the maximum daily amount for this product 3 or more alcoholic drinks every day while using this product Acetaminophen allergy alert Acetaminophen allergy alert: may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If skin reaction occurs, stop use and seek medical help right away. NSAID allergy alert NSAID allergy alert: ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. NSAID stomach bleeding warning NSAID stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attackand stroke warning Heart attackand stroke warning: NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use \u200bDo not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist if you have ever had an allergic reaction to acetaminophen or any other pain reliever right before or after heart surgery Ask a doctor before use if Ask a doctor before use if you have liver disease stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic Ask a doctor or pharmacist before use if you are Ask a doctor or pharmacist before use if you are under a doctor\u2019s care for any serious condition taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug When using this product When using this product take with food or milk if stomach upset occurs Stop use and ask a doctor if Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days redness or swelling is present in the painful area any new symptoms appear If pregnant or breast-feeding If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use \u200bDo not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist if you have ever had an allergic reaction to acetaminophen or any other pain reliever right before or after heart surgery"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if Ask a doctor before use if you have liver disease stomach bleeding warning applies to you you have problems or serious side effects from taking pain relievers you have a history of stomach problems, such as heartburn you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke you are taking a diuretic"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are Ask a doctor or pharmacist before use if you are under a doctor\u2019s care for any serious condition taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin taking any other drug"
+      ],
+      "when_using": [
+        "When using this product When using this product take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if Stop use and ask a doctor if you experience any of the following signs of stomach bleeding: feel faint vomit blood have bloody or black stools have stomach pain that does not get better you have symptoms of heart problems or stroke: chest pain trouble breathing weakness in one part or side of body slurred speech leg swelling pain gets worse or lasts more than 10 days redness or swelling is present in the painful area any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u200bDirections Do not take more than directed adults and children 12 years and over take 2 caplets every 8 hours while symptoms persist children under 12 years ask a doctor do not take more than 6 caplets in 24 hours, unless directed by a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table border=\"0\" width=\"100%\"><tbody><tr><td>adults and children 12 years and over</td><td><list listType=\"unordered\" styleCode=\"Square\"><item><content styleCode=\"bold\">take 2 caplets every 8 hours</content> while symptoms persist </item></list></td></tr><tr><td>children under 12 years</td><td><list listType=\"unordered\" styleCode=\"Square\"><item>ask a doctor</item></list></td></tr></tbody></table>"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients \u200bInactive ingredients carnauba wax, colloidal silicon dioxide, croscarmellose sodium, ferric oxides, glyceryl dibehenate, hypromellose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, titanium dioxide"
+      ],
+      "recent_major_changes": [
+        ""
+      ],
+      "package_label_principal_display_panel": [
+        "Advil Dual Action with Acetaminophen, Lil' Drug Store Advil Dual Action with Acetaminophen [caplet image] Acetaminophen 250 mg and Ibuprofen (NSAID) 125 mg Tablets Pain Reliever 6 Caplets* *Capsule-Shaped Tablets [Lil' Drug Store logo] PDP/Package",
+        "Advil Dual Action with Acetaminophen, Travel BASIX Advil Dual Action with Acetaminophen [caplet image] Acetaminophen 250 mg and Ibuprofen (NSAID) 125 mg Tablets Pain Reliever 4 Caplets* *Capsule-Shaped Tablets [Travel BASIX logo] PDP/Package"
+      ],
+      "set_id": "030d9bca-a934-6ef9-e063-6394a90a8277",
+      "id": "44e71018-211d-caf8-e063-6394a90a06c9",
+      "effective_time": "20251201",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "NDA211733"
+        ],
+        "brand_name": [
+          "Advil Dual Action with Acetaminophen, Travel BASIX",
+          "Advil Dual Action with Acetaminophen"
+        ],
+        "generic_name": [
+          "IBUPROFEN, ACETAMINOPHEN TABLET, FILM COATED"
+        ],
+        "manufacturer_name": [
+          "Lil' Drug Store Products, Inc."
+        ],
+        "product_ndc": [
+          "66715-6401",
+          "66715-9601"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "IBUPROFEN",
+          "ACETAMINOPHEN"
+        ],
+        "rxcui": [
+          "2387532"
+        ],
+        "spl_id": [
+          "44e71018-211d-caf8-e063-6394a90a06c9"
+        ],
+        "spl_set_id": [
+          "030d9bca-a934-6ef9-e063-6394a90a8277"
+        ],
+        "package_ndc": [
+          "66715-9601-3",
+          "66715-9601-2",
+          "66715-6401-2"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "WK2XYI10QM"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "EXCEDRIN MIGRAINE Acetaminophen, Aspirin (NSAID) and Caffeine ACETAMINOPHEN ACETAMINOPHEN ASPIRIN ASPIRIN CAFFEINE CAFFEINE BENZOIC ACID CARNAUBA WAX MICROCRYSTALLINE CELLULOSE FD&C BLUE NO. 1 HYDROXYPROPYL CELLULOSE (1600000 WAMW) HYPROMELLOSE, UNSPECIFIED LIGHT MINERAL OIL POLYSORBATE 20 POVIDONE, UNSPECIFIED PROPYLENE GLYCOL SORBITAN MONOLAURATE STEARIC ACID TITANIUM DIOXIDE White Capsule shaped tablet"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Acetaminophen 250 mg Aspirin 250 mg (NSAID*) Caffeine 65 mg * nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purpose Pain reliever Pain reliever Pain reliever aid"
+      ],
+      "indications_and_usage": [
+        "Uses \u2022 treats migraine"
+      ],
+      "warnings": [
+        "Warnings Reye\u2019s syndrome: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product. When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye\u2019s syndrome, a rare but serious illness. Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: \u2022 skin reddening \u2022 blisters \u2022 rash If a skin reaction occurs, stop use and seek medical help right away. Allergy alert: Aspirin may cause a severe allergic reaction which may include: \u2022 hives \u2022 facial swelling \u2022 asthma (wheezing) \u2022 shock Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take \u2022 more than 2 caplets in 24 hours, which is the maximum daily amount \u2022 with other drugs containing acetaminophen \u2022 3 or more alcoholic drinks every day while using this product Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you \u2022 are age 60 or older \u2022 have had stomach ulcers or bleeding problems \u2022 take a blood thinning (anticoagulant) or steroid drug \u2022 take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 have 3 or more alcoholic drinks every day while using this product \u2022 take more or for a longer time than directed Medication overuse headache warning: Headaches may worsen if this product is used for 10 or more days per month. Caffeine warning : The recommended dose of this product contains about as much caffeine as a cup of coffee. Limit the use of caffeine-containing medications, foods, or beverages while taking this product because too much caffeine may cause nervousness, irritability, sleeplessness, and, occasionally, rapid heart beat. Do not use \u2022 if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist Ask doctor before use if \u2022 you have never had migraines diagnosed by a health professional \u2022 you have a headache that is different from your usual migraines \u2022 you have the worst headache of your life \u2022 you have fever and stiff neck \u2022 you have headaches beginning after or caused by head injury, exertion, coughing or bending \u2022 you experienced your first headache after the age of 50 \u2022 you have daily headaches \u2022 you have a migraine so severe as to require bed rest \u2022 you have liver disease \u2022 stomach bleeding warning applies to you \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, or kidney disease \u2022 you are taking a diuretic \u2022 you have asthma \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have vomiting with your migraine headache Ask a doctor or pharmacist before use if you are \u2022 taking a prescription drug for: \u2022 diabetes \u2022 gout \u2022 arthritis \u2022 under a doctor\u2019s care for any serious condition \u2022 taking any other drug \u2022 taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if \u2022 an allergic reaction occurs. Seek medical help right away. \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 your migraine is not relieved or worsens after first dose \u2022 new or unexpected symptoms occur \u2022 ringing in the ears or loss of hearing occurs If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use \u2022 if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist"
+      ],
+      "ask_doctor": [
+        "Ask doctor before use if \u2022 you have never had migraines diagnosed by a health professional \u2022 you have a headache that is different from your usual migraines \u2022 you have the worst headache of your life \u2022 you have fever and stiff neck \u2022 you have headaches beginning after or caused by head injury, exertion, coughing or bending \u2022 you experienced your first headache after the age of 50 \u2022 you have daily headaches \u2022 you have a migraine so severe as to require bed rest \u2022 you have liver disease \u2022 stomach bleeding warning applies to you \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, or kidney disease \u2022 you are taking a diuretic \u2022 you have asthma \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have vomiting with your migraine headache"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u2022 taking a prescription drug for: \u2022 diabetes \u2022 gout \u2022 arthritis \u2022 under a doctor\u2019s care for any serious condition \u2022 taking any other drug \u2022 taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u2022 an allergic reaction occurs. Seek medical help right away. \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 your migraine is not relieved or worsens after first dose \u2022 new or unexpected symptoms occur \u2022 ringing in the ears or loss of hearing occurs"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u2022 do not use more than directed \u2022 adults: take 2 caplets with a glass of water \u2022 if symptoms persist or worsen, ask your doctor \u2022 do not take more than 2 caplets in 24 hours, unless directed by a doctor \u2022 under 18 years of age: ask a doctor"
+      ],
+      "storage_and_handling": [
+        "Other information \u2022 store at controlled room temperature 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) \u2022 close cap tightly after use \u2022 read all product information before using. Keep this box for important information."
+      ],
+      "inactive_ingredient": [
+        "Inactive Ingredients benzoic acid, carnauba wax, FD&C blue #1, hydroxypropylcellulose, hypromellose, light mineral oil, microcrystalline cellulose, polysorbate 20, povidone, propylene glycol, simethicone emulsion, sorbitan monolaurate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? 1-800-468-7746"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel NDC 0067-2039-24 See new warnings information EXCEDRIN \u00ae MIGRAINE Acetaminophen, Aspirin (NSAID) and Caffeine Pain Reliever/Pain Reliever Aid 24 CAPLETS* * CAPSULE-SHAPED TABLETS TAMPER-EVIDENT BOTTLE DO NOT USE IF INNER FOIL SEAL IMPRINTED WITH \u201cSEALED for YOUR PROTECTION\u201d IS BROKEN OR MISSING Distributed by: GSK Consumer Healthcare, Warren, NJ 07059 \u00a92017 GSK or its licensor. Visit us at www.excedrin.com 62000000012933 62000000012933_Excedrin Migraine Caplets_24 ct.JPG"
+      ],
+      "set_id": "7ed841fb-a61c-4868-b4e5-4f2311a5e79c",
+      "id": "7386648a-3c0a-4586-9b61-fd824edfdfc1",
+      "effective_time": "20250625",
+      "version": "14",
+      "openfda": {
+        "application_number": [
+          "NDA020802"
+        ],
+        "brand_name": [
+          "EXCEDRIN MIGRAINE"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, ASPIRIN (NSAID) AND CAFFEINE"
+        ],
+        "manufacturer_name": [
+          "Haleon US Holdings LLC"
+        ],
+        "product_ndc": [
+          "0067-2039"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "ASPIRIN",
+          "CAFFEINE"
+        ],
+        "rxcui": [
+          "209468",
+          "308297"
+        ],
+        "spl_id": [
+          "7386648a-3c0a-4586-9b61-fd824edfdfc1"
+        ],
+        "spl_set_id": [
+          "7ed841fb-a61c-4868-b4e5-4f2311a5e79c"
+        ],
+        "package_ndc": [
+          "0067-2039-02",
+          "0067-2039-08",
+          "0067-2039-09",
+          "0067-2039-24",
+          "0067-2039-30",
+          "0067-2039-50",
+          "0067-2039-94",
+          "0067-2039-91",
+          "0067-2039-83",
+          "0067-2039-84",
+          "0067-2039-86",
+          "0067-2039-92",
+          "0067-2039-77",
+          "0067-2039-07",
+          "0067-2039-33"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "N0000008836",
+          "M0001335",
+          "N0000175722",
+          "N0000175578",
+          "N0000008832",
+          "N0000175739",
+          "N0000175729",
+          "N0000175790",
+          "M0023046"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Prostaglandin Production [PE]",
+          "Decreased Platelet Aggregation [PE]",
+          "Central Nervous System Stimulation [PE]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]",
+          "Xanthines [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]",
+          "Platelet Aggregation Inhibitor [EPC]",
+          "Central Nervous System Stimulant [EPC]",
+          "Methylxanthine [EPC]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "R16CO5Y76E",
+          "3G6A5W338E"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "ADVIL DUAL ACTION WITH ACETAMINOPHEN Ibuprofen, Acetaminophen IBUPROFEN IBUPROFEN ACETAMINOPHEN ACETAMINOPHEN CARNAUBA WAX SILICON DIOXIDE CROSCARMELLOSE SODIUM FERRIC OXIDE RED GLYCERYL DIBEHENATE HYPROMELLOSE, UNSPECIFIED POLYDEXTROSE POLYETHYLENE GLYCOL, UNSPECIFIED STARCH, CORN TITANIUM DIOXIDE Advil;II"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Acetaminophen 250 mg Ibuprofen 125 mg (NSAID*) *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Pain reliever Pain reliever"
+      ],
+      "indications_and_usage": [
+        "Uses \u2022 temporarily relieves minor aches and pains due to: o headache o toothache o backache o menstrual cramps o muscular aches o minor pain of arthritis"
+      ],
+      "warnings": [
+        "Warnings Acetaminophen liver damage warning: This product contains acetaminophen. Severe liver damage may occur if you take: \u2022 with other drugs containing acetaminophen \u2022 more than 6 caplets in 24 hours, which is the maximum daily amount for this product \u2022 3 or more alcoholic drinks every day while using this product Acetaminophen allergy alert: may cause severe skin reactions. Symptoms may include: \u2022 skin reddening \u2022 blisters \u2022 rash If skin reaction occurs, stop use and seek medical help right away. NSAID allergy alert: ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: \u2022 hives \u2022 facial swelling \u2022 asthma (wheezing) \u2022 shock \u2022 skin reddening \u2022 rash \u2022 blisters If an allergic reaction occurs, stop use and seek medical help right away. NSAID stomach bleeding warning This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you: \u2022 are age 60 or older \u2022 have had stomach ulcers or bleeding problems \u2022 take a blood thinning (anticoagulant) or steroid drug \u2022 take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] \u2022 have 3 or more alcoholic drinks every day while using this product \u2022 take more or for a longer time than directed Heart attack and stroke warning: NSAIDs, except aspirin, increase the risk of heart attack, heart failure, and stroke. These can be fatal. The risk is higher if you use more than directed or for longer than directed. Do not use \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist \u2022 if you have ever had an allergic reaction to acetaminophen or any other pain reliever \u2022 right before or after heart surgery Ask a doctor before use if \u2022 you have liver disease \u2022 stomach bleeding warning applies to you \u2022 you have problems or serious side effects from taking pain relievers \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke \u2022 you are taking a diuretic Ask a doctor or pharmacist before use if you are \u2022 under a doctor's care for any serious condition \u2022 taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin \u2022 taking any other drug When using this product \u2022 take with food or milk if stomach upset occurs Stop use and ask a doctor if \u2022 you experience any of the following signs of stomach bleeding: o feel faint o vomit blood o have bloody or black stools o have stomach pain that does not get better \u2022 you have symptoms of heart problems or stroke: o chest pain o trouble breathing o weakness in one part or side of body o slurred speech o leg swelling \u2022 pain gets worse or lasts more than 10 days \u2022 redness or swelling is present in the painful area \u2022 any new symptoms appear If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist \u2022 if you have ever had an allergic reaction to acetaminophen or any other pain reliever \u2022 right before or after heart surgery"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if \u2022 you have liver disease \u2022 stomach bleeding warning applies to you \u2022 you have problems or serious side effects from taking pain relievers \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, kidney disease, asthma, or had a stroke \u2022 you are taking a diuretic"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u2022 under a doctor's care for any serious condition \u2022 taking aspirin for heart attack or stroke, because ibuprofen may decrease this benefit of aspirin \u2022 taking any other drug"
+      ],
+      "when_using": [
+        "When using this product \u2022 take with food or milk if stomach upset occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u2022 you experience any of the following signs of stomach bleeding: o feel faint o vomit blood o have bloody or black stools o have stomach pain that does not get better \u2022 you have symptoms of heart problems or stroke: o chest pain o trouble breathing o weakness in one part or side of body o slurred speech o leg swelling \u2022 pain gets worse or lasts more than 10 days \u2022 redness or swelling is present in the painful area \u2022 any new symptoms appear"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use ibuprofen at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Prompt medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u2022 do not take more than directed adults and children 12 years and over \u2022 take 2 caplets every 8 hours while symptoms persist children under 12 years \u2022 ask a doctor \u2022 do not take more than 6 caplets in 24 hours, unless directed by a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"58.46%\"><col width=\"28%\"/><col width=\"30%\"/><tbody><tr><td styleCode=\"Rrule Botrule Lrule Toprule \" valign=\"top\"><paragraph>adults and children</paragraph><paragraph>12 years and over</paragraph></td><td styleCode=\"Rrule Botrule Toprule \" valign=\"top\"><list listType=\"unordered\"><item><caption>&#x2022;</caption><content styleCode=\"bold\">take 2 caplets every 8 hours</content> while symptoms persist</item></list></td></tr><tr><td styleCode=\"Rrule Botrule Lrule \" valign=\"top\"><paragraph>children under 12 years</paragraph></td><td styleCode=\"Rrule Botrule \" valign=\"top\"><list listType=\"unordered\"><item><caption>&#x2022;</caption>ask a doctor</item></list></td></tr></tbody></table>"
+      ],
+      "storage_and_handling": [
+        "Other information \u2022 read all warnings and directions before use. Keep carton. \u2022 store at 20-25\u00b0C (68-77\u00b0F) \u2022 avoid excessive heat above 40\u00b0C (104\u00b0F)"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients carnauba wax, colloidal silicon dioxide, croscarmellose sodium, ferric oxides, glyceryl dibehenate, hypromellose, pharmaceutical ink, polydextrose, polyethylene glycol, pregelatinized starch, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? call weekdays 9 AM to 5 PM at 1-800-88-ADVIL"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL Advil DUAL ACTION WITH Acetaminophen Acetaminophe n 250 mg and Ibuprofen (NSAID) 125 mg Tablets Pain Reliever 144 Caplets* *Capsule-Shaped Tablets 000067297 Front Carton Advil Dual Action Capsule-Shaped Tablets 144ct Carton"
+      ],
+      "set_id": "f5ea858e-76d9-4777-b3dc-5d614f66d485",
+      "id": "440b1444-9b6d-44c2-8ec4-dbb66ebb5025",
+      "effective_time": "20250421",
+      "version": "11",
+      "openfda": {
+        "application_number": [
+          "NDA211733"
+        ],
+        "brand_name": [
+          "ADVIL DUAL ACTION WITH ACETAMINOPHEN"
+        ],
+        "generic_name": [
+          "IBUPROFEN, ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "Haleon US Holdings LLC"
+        ],
+        "product_ndc": [
+          "0573-0147"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "IBUPROFEN",
+          "ACETAMINOPHEN"
+        ],
+        "rxcui": [
+          "2387532"
+        ],
+        "spl_id": [
+          "440b1444-9b6d-44c2-8ec4-dbb66ebb5025"
+        ],
+        "spl_set_id": [
+          "f5ea858e-76d9-4777-b3dc-5d614f66d485"
+        ],
+        "package_ndc": [
+          "0573-0147-18",
+          "0573-0147-36",
+          "0573-0147-72",
+          "0573-0147-86",
+          "0573-0147-94",
+          "0573-0147-95",
+          "0573-0147-09",
+          "0573-0147-91",
+          "0573-0147-93",
+          "0573-0147-90",
+          "0573-0147-97",
+          "0573-0147-24"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "M0001335",
+          "N0000175722"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]"
+        ],
+        "unii": [
+          "WK2XYI10QM",
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Excedrin Migraine Acetaminophen, Aspirin, and Caffeine ACETAMINOPHEN ACETAMINOPHEN ASPIRIN ASPIRIN CAFFEINE CAFFEINE BENZOIC ACID CARNAUBA WAX FD&C BLUE NO. 1 HYPROMELLOSE, UNSPECIFIED LIGHT MINERAL OIL HYDROXYPROPYL CELLULOSE, UNSPECIFIED MICROCRYSTALLINE CELLULOSE POLYSORBATE 20 POVIDONE, UNSPECIFIED PROPYLENE GLYCOL DIMETHICONE, UNSPECIFIED SORBITAN MONOLAURATE STEARIC ACID TITANIUM DIOXIDE Capsule-Shaped Tablet E"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Acetaminophen 250 mg Aspirin 250 mg (NSAID*) Caffeine 65 mg *nonsteroidal anti-inflammatory drug"
+      ],
+      "purpose": [
+        "Purposes Pain reliever Pain reliever Pain reliever aid"
+      ],
+      "indications_and_usage": [
+        "Use \u2022 treats migraine"
+      ],
+      "warnings": [
+        "Warnings Reye\u2019s syndrome: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product. When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye\u2019s syndrome, a rare but serious illness. Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: \u2022 skin reddening \u2022 blisters \u2022 rash If a skin reaction occurs, stop use and seek medical help right away. Allergy alert: Aspirin may cause a severe allergic reaction which may include: \u2022 hives \u2022 facial swelling \u2022 asthma (wheezing) \u2022 shock Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take \u2022 more than 2 caplets in 24 hours, which is the maximum daily amount \u2022 with other drugs containing acetaminophen \u2022 3 or more alcoholic drinks every day while using this product Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you \u2022 are age 60 or older \u2022 have had stomach ulcers or bleeding problems \u2022 take a blood thinning (anticoagulant) or steroid drug \u2022 take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 have 3 or more alcoholic drinks every day while using this product \u2022 take more or for a longer time than directed Medication overuse headache warning: Headaches may worsen if this product is used for 10 or more days per month. Caffeine warning: The recommended dose of this product contains about as much caffeine as a cup of coffee. Limit the use of caffeine-containing medications, foods, or beverages while taking this product because too much caffeine may cause nervousness, irritability, sleeplessness, and, occasionally, rapid heart beat. Do not use \u2022 if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. Ask a doctor before use if \u2022 you have never had migraines diagnosed by a health professional \u2022 you have a headache that is different from your usual migraines \u2022 you have the worst headache of your life \u2022 you have fever and stiff neck \u2022 you have headaches beginning after or caused by head injury, exertion, coughing or bending \u2022 you experienced your first headache after the age of 50 \u2022 you have daily headaches \u2022 you have a migraine so severe as to require bed rest \u2022 you have liver disease \u2022 stomach bleeding warning applies to you \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, or kidney disease \u2022 you are taking a diuretic \u2022 you have asthma \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have vomiting with your migraine headache Ask a doctor or pharmacist before use if you are \u2022 taking a prescription drug for: \u2022 diabetes \u2022 gout \u2022 arthritis \u2022 under a doctor\u2019s care for any serious condition \u2022 taking any other drug \u2022 taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if \u2022 an allergic reaction occurs. Seek medical help right away. \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 your migraine is not relieved or worsens after first dose \u2022 new or unexpected symptoms occur \u2022 ringing in the ears or loss of hearing occurs If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use \u2022 if you have ever had an allergic reaction to acetaminophen, aspirin or any other pain reliever/fever reducer \u2022 with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if \u2022 you have never had migraines diagnosed by a health professional \u2022 you have a headache that is different from your usual migraines \u2022 you have the worst headache of your life \u2022 you have fever and stiff neck \u2022 you have headaches beginning after or caused by head injury, exertion, coughing or bending \u2022 you experienced your first headache after the age of 50 \u2022 you have daily headaches \u2022 you have a migraine so severe as to require bed rest \u2022 you have liver disease \u2022 stomach bleeding warning applies to you \u2022 you have a history of stomach problems, such as heartburn \u2022 you have high blood pressure, heart disease, liver cirrhosis, or kidney disease \u2022 you are taking a diuretic \u2022 you have asthma \u2022 you have problems or serious side effects from taking pain relievers or fever reducers \u2022 you have vomiting with your migraine headache"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u2022 taking a prescription drug for: \u2022 diabetes \u2022 gout \u2022 arthritis \u2022 under a doctor\u2019s care for any serious condition \u2022 taking any other drug \u2022 taking any other product that contains aspirin, acetaminophen, or any other pain reliever/fever reducer Stop use and ask a doctor if \u2022 an allergic reaction occurs. Seek medical help right away. \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 your migraine is not relieved or worsens after first dose \u2022 new or unexpected symptoms occur \u2022 ringing in the ears or loss of hearing occurs"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u2022 an allergic reaction occurs. Seek medical help right away. \u2022 you experience any of the following signs of stomach bleeding: \u2022 feel faint \u2022 vomit blood \u2022 have bloody or black stools \u2022 have stomach pain that does not get better \u2022 your migraine is not relieved or worsens after first dose \u2022 new or unexpected symptoms occur \u2022 ringing in the ears or loss of hearing occurs"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use. It is especially important not to use aspirin at 20 weeks or later in pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u2022 do not use more than directed \u2022 adults: take 2 caplets with a glass of water \u2022 if symptoms persist or worsen, ask your doctor \u2022 do not take more than 2 caplets in 24 hours, unless directed by a doctor \u2022 under 18 years of age: ask a doctor"
+      ],
+      "other_safety_information": [
+        "Other information \u2022 store at controlled room temperature 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) \u2022 close cap tightly after use \u2022 read all product information before using. Keep this box for important information."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients benzoic acid, carnauba wax, FD&C blue no. 1, hypromellose, light mineral oil, low-substituted hydroxypropyl cellulose, microcrystalline cellulose, polysorbate 20, povidone, propylene glycol, simethicone, sorbitan monolaurate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions? 1-800-468-7746"
+      ],
+      "spl_unclassified_section": [
+        "Additional Information TAMPER-EVIDENT BOTTLE DO NOT USE IF INNER FOIL SEAL INPRINTED WITH \u201cSEALED for YOUR PROTECTION\u201d IS BROKEN OR MISSING Distributed by: GSK Consumer Healthcare, Warren, NJ 07059 \u00a92020 GSK or licensor. Trademarks are owned by or licensed to the GSK group of companies."
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel NDC 0067-2040-04 EXCEDRIN MIGRAINE Acetaminophen, Aspirin (NSAID) and Caffeine Pain Reliever/Pain Reliever Aid 50 CAPLETS *CAPSULE-SHAPED TABLETS 6414070 Front Carton Excedrin Migraine Caplet 2040"
+      ],
+      "set_id": "910d7254-d0f4-4c5c-a26e-7f8acecbe02d",
+      "id": "cc2a55d5-3c7f-4c59-a38a-cb51e693649d",
+      "effective_time": "20250311",
+      "version": "9",
+      "openfda": {
+        "application_number": [
+          "NDA020802"
+        ],
+        "brand_name": [
+          "Excedrin Migraine"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, ASPIRIN, AND CAFFEINE"
+        ],
+        "manufacturer_name": [
+          "Haleon US Holdings LLC"
+        ],
+        "product_ndc": [
+          "0067-2040"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "ASPIRIN",
+          "CAFFEINE"
+        ],
+        "rxcui": [
+          "209468",
+          "308297"
+        ],
+        "spl_id": [
+          "cc2a55d5-3c7f-4c59-a38a-cb51e693649d"
+        ],
+        "spl_set_id": [
+          "910d7254-d0f4-4c5c-a26e-7f8acecbe02d"
+        ],
+        "package_ndc": [
+          "0067-2040-02",
+          "0067-2040-03",
+          "0067-2040-04",
+          "0067-2040-05",
+          "0067-2040-06",
+          "0067-2040-07",
+          "0067-2040-08",
+          "0067-2040-09",
+          "0067-2040-01",
+          "0067-2040-11"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000000160",
+          "N0000008836",
+          "M0001335",
+          "N0000175722",
+          "N0000175578",
+          "N0000008832",
+          "N0000175739",
+          "N0000175729",
+          "N0000175790",
+          "M0023046"
+        ],
+        "pharm_class_moa": [
+          "Cyclooxygenase Inhibitors [MoA]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Prostaglandin Production [PE]",
+          "Decreased Platelet Aggregation [PE]",
+          "Central Nervous System Stimulation [PE]"
+        ],
+        "pharm_class_cs": [
+          "Anti-Inflammatory Agents, Non-Steroidal [CS]",
+          "Xanthines [CS]"
+        ],
+        "pharm_class_epc": [
+          "Nonsteroidal Anti-inflammatory Drug [EPC]",
+          "Platelet Aggregation Inhibitor [EPC]",
+          "Central Nervous System Stimulant [EPC]",
+          "Methylxanthine [EPC]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "R16CO5Y76E",
+          "3G6A5W338E"
+        ]
+      }
+    }
+  ]
+}
