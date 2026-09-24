@@ -33,6 +33,13 @@ public class RxNorm {
 	 */
 	private static final int MAX_ENTRIES = 20;
 
+	/**
+	 * What separates one Active Ingredient from the next in a normalised product name,
+	 * and the only thing in it that says a product is a Combination Product. A strength
+	 * writes its own slash without spaces — {@code 4 MG/ML} — so the two never collide.
+	 */
+	private static final String BETWEEN_INGREDIENTS = " / ";
+
 	private final RestClient http;
 
 	RxNorm(RestClient.Builder builder, @Value("${pillfacts.rxnorm.base-url}") String baseUrl) {
@@ -94,6 +101,52 @@ public class RxNorm {
 			}
 		}
 		return List.copyOf(ingredients.values());
+	}
+
+	/**
+	 * Every product RxNorm relates to an Active Ingredient: each strength and dosage form
+	 * it is made in, branded and unbranded alike, and the Combination Products it is one
+	 * ingredient of. Telling those apart is the caller's business and
+	 * {@link RxNormProduct#combinationProduct()} is what it reads.
+	 *
+	 * <p>The term type is asked for twice rather than as {@code SCD+SBD}: RxNorm rejects
+	 * the plus sign once a URL encoder has been near it, and answers a repeated parameter
+	 * with both.
+	 */
+	public List<RxNormProduct> productsOf(String rxcui) {
+		JsonNode groups = get(uri -> uri.path("/REST/rxcui/{rxcui}/related.json")
+				.queryParam("tty", "SCD", "SBD")
+				.build(rxcui))
+				.path("relatedGroup")
+				.path("conceptGroup");
+
+		// A product appears under its own term type only, but keying by RxCUI costs
+		// nothing and keeps the promise that each is here once.
+		Map<String, RxNormProduct> products = new LinkedHashMap<>();
+		for (JsonNode group : groups) {
+			for (JsonNode concept : group.path("conceptProperties")) {
+				String productRxcui = concept.path("rxcui").stringValue(null);
+				String name = concept.path("name").stringValue(null);
+				if (productRxcui != null && name != null) {
+					products.putIfAbsent(productRxcui, productFrom(productRxcui, name));
+				}
+			}
+		}
+		return List.copyOf(products.values());
+	}
+
+	/**
+	 * One product, read out of the name RxNorm generated for it. A Brand is the last
+	 * bracketed word of the name and belongs to the product rather than to its
+	 * composition, so it is lifted out; a name with no brackets is a product sold
+	 * without a Brand.
+	 */
+	private static RxNormProduct productFrom(String rxcui, String name) {
+		int bracket = name.lastIndexOf(" [");
+		boolean branded = bracket > 0 && name.endsWith("]");
+		String composition = branded ? name.substring(0, bracket) : name;
+		String brand = branded ? name.substring(bracket + 2, name.length() - 1) : null;
+		return new RxNormProduct(rxcui, composition, brand, composition.contains(BETWEEN_INGREDIENTS));
 	}
 
 	private static RxNormConcept conceptFrom(JsonNode node) {

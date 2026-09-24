@@ -17,6 +17,11 @@ import org.springframework.stereotype.Service;
  * what the FDA's Labels are found by (ADR-0004). One of them is then chosen to speak for
  * the Drug Concept in its Regulatory Class (ADR-0010), and rendered by the renderer that
  * knows that class's vocabulary (ADR-0008).
+ *
+ * <p>RxNorm also says what else that Active Ingredient is sold in, which is where the
+ * page's Alternatives and Combination Products come from. That is a claim about
+ * composition and not about the labelling, so it is asked of {@link RelatedProducts}
+ * whether the FDA publishes a Label or not.
  */
 @Service
 class Labelling {
@@ -29,11 +34,15 @@ class Labelling {
 
 	private final OtcRenderer otc;
 
-	Labelling(RxNorm rxNorm, OpenFda openFda, PrescriptionRenderer prescription, OtcRenderer otc) {
+	private final RelatedProducts relatedProducts;
+
+	Labelling(RxNorm rxNorm, OpenFda openFda, PrescriptionRenderer prescription, OtcRenderer otc,
+			RelatedProducts relatedProducts) {
 		this.rxNorm = rxNorm;
 		this.openFda = openFda;
 		this.prescription = prescription;
 		this.otc = otc;
+		this.relatedProducts = relatedProducts;
 	}
 
 	/**
@@ -57,7 +66,9 @@ class Labelling {
 						.map(label -> rendered(regulatoryClass, label))
 						.stream())
 				.toList();
-		return new DrugConceptPage(drugConcept.rxcui(), drugConcept.name(), blocks);
+		RelatedProducts.Products related = this.relatedProducts.of(drugConcept.rxcui());
+		return new DrugConceptPage(drugConcept.rxcui(), drugConcept.name(), blocks,
+				related.alternatives(), related.combinationProducts());
 	}
 
 	/**

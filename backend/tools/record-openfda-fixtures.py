@@ -48,6 +48,7 @@ INGREDIENTS = [
     "acetaminophen",    # both classes, with an OTC brand Label naming one Active Ingredient
     "ibuprofen",        # the same, and the drug ADR-0010 uses as its two-class example
     "diphenhydramine",  # OTC brand Labels that are every one a Combination Product, so the fallback runs
+    "sulbactam",        # sold only in combination, so no Label speaks for it and no page lists an Alternative
 ]
 
 

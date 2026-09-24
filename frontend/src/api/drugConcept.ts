@@ -31,6 +31,37 @@ export type RegulatoryClassBlock = {
   sections: SafetySection[]
 }
 
+/**
+ * One product with a Drug Concept's Active Ingredient, in one strength and one dosage
+ * form.
+ *
+ * It carries no prose, and none is written for it here either. An Alternative is a
+ * statement about what a product is made of, never that a reader may take it instead of
+ * what they looked up. See ADR-0005.
+ */
+export type Alternative = {
+  /** RxNorm's own name for the product less its Brand: ingredient, strength, dosage form. */
+  composition: string
+  /** The Brands sold in exactly that composition, empty where it is sold without one. */
+  brands: string[]
+}
+
+/**
+ * A product with the Active Ingredient and at least one other.
+ *
+ * Written out separately from an Alternative because it is never one: RxNorm lists
+ * Caduet, which is amlodipine as well as atorvastatin, among atorvastatin's brands. The
+ * two shapes are identical, so TypeScript will not stop one being passed where the other
+ * belongs — the backend sends them in two fields and the page renders them under two
+ * headings, and that is where the separation is kept.
+ */
+export type CombinationProduct = {
+  /** RxNorm's own name for the product less its Brand, naming every Active Ingredient in it. */
+  composition: string
+  /** The Brands sold in exactly that composition, empty where it is sold without one. */
+  brands: string[]
+}
+
 export type DrugConcept = {
   /** The ingredient-level RxCUI that identifies the Drug Concept. See ADR-0002. */
   rxcui: string
@@ -42,6 +73,13 @@ export type DrugConcept = {
    * placeholder. See ADR-0010.
    */
   labelling: RegulatoryClassBlock[]
+  /** Other products of this Active Ingredient alone, absent where there are none. */
+  alternatives?: Alternative[]
+  /**
+   * Products of this Active Ingredient and at least one other, absent where there are
+   * none. Never among the Alternatives, and never rendered as though they were.
+   */
+  combinationProducts?: CombinationProduct[]
 }
 
 /**

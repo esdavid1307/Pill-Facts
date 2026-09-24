@@ -93,3 +93,32 @@ h1 {
 .unlabelled {
   color: var(--muted);
 }
+
+.products {
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/*
+ * What these lists are, said before they are read rather than in a footer below them.
+ * See ADR-0005: the constraint is the wording, and a reader who skips the note still
+ * reads nothing that compares one product to another.
+ */
+.composition-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.compositions {
+  list-style: none;
+  padding: 0;
+}
+
+.compositions li {
+  border-top: 1px solid var(--border);
+  padding: 0.5rem 0;
+}
+
+.compositions span {
+  color: var(--muted);
+}

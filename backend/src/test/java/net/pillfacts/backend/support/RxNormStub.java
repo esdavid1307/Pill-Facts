@@ -26,6 +26,7 @@ final class RxNormStub {
 		stubApproximateTerm();
 		stubConcepts("properties", "/REST/rxcui/%s/properties.json", null);
 		stubConcepts("related-ingredient", "/REST/rxcui/%s/related.json", "IN");
+		stubProducts();
 		return server.baseUrl();
 	}
 
@@ -44,6 +45,21 @@ final class RxNormStub {
 				mapping = mapping.withQueryParam("tty", WireMock.equalTo(tty));
 			}
 			server.stubFor(mapping.willReturn(json(Fixtures.read(fixture))));
+		}
+	}
+
+	/**
+	 * The products related to an Active Ingredient, which {@code RxNorm} asks for by
+	 * repeating the term type rather than joining the two with a plus sign. Matching on
+	 * both values is what keeps this stub apart from the ingredient one above, which
+	 * answers the same path.
+	 */
+	private void stubProducts() {
+		for (Resource fixture : Fixtures.in("rxnorm/related-product")) {
+			server.stubFor(WireMock.get(WireMock
+					.urlPathEqualTo("/REST/rxcui/%s/related.json".formatted(Fixtures.stem(fixture))))
+					.withQueryParam("tty", WireMock.havingExactly("SCD", "SBD"))
+					.willReturn(json(Fixtures.read(fixture))));
 		}
 	}
 
