@@ -34,7 +34,7 @@ TERMS = [
 def get(path, **params):
     url = f"{BASE}{path}"
     if params:
-        url += "?" + urllib.parse.urlencode(params)
+        url += "?" + urllib.parse.urlencode(params, doseq=True)
     with urllib.request.urlopen(url, timeout=30) as response:
         return response.read().decode()
 
@@ -51,6 +51,18 @@ EXTRA_RXCUIS = [
     "999999999",  # no such concept: RxNorm answers 200 with an empty body
     "161",        # acetaminophen, the Active Ingredient ADR-0008 uses as its OTC example
     "3498",       # diphenhydramine, whose OTC brand Labels are all Combination Products
+    "10167",      # sulbactam, which RxNorm relates to no single-ingredient product at all
+]
+
+# The Active Ingredients the tests open a Drug Concept page for. A page lists the
+# products RxNorm relates to its ingredient, so each of these needs that list recorded.
+DRUG_CONCEPT_RXCUIS = [
+    "83367",  # atorvastatin, whose products include Caduet and the ezetimibe combinations
+    "11289",  # warfarin, which RxNorm relates to no Combination Product at all
+    "161",    # acetaminophen, related to hundreds, nearly all of them combinations
+    "5640",   # ibuprofen
+    "3498",   # diphenhydramine
+    "10167",  # sulbactam, sold only in combination
 ]
 
 
@@ -67,6 +79,12 @@ def main():
         write(f"properties/{rxcui}.json", get(f"/REST/rxcui/{rxcui}/properties.json"))
         if rxcui not in EXTRA_RXCUIS:
             write(f"related-ingredient/{rxcui}.json", get(f"/REST/rxcui/{rxcui}/related.json", tty="IN"))
+
+    # tty is repeated rather than "SCD+SBD": RxNorm rejects the plus sign once a URL
+    # encoder has had it, and answers both term types to two parameters just the same.
+    for rxcui in DRUG_CONCEPT_RXCUIS:
+        write(f"related-product/{rxcui}.json",
+              get(f"/REST/rxcui/{rxcui}/related.json", tty=["SCD", "SBD"]))
 
 
 if __name__ == "__main__":

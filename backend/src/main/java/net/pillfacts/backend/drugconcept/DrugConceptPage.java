@@ -19,6 +19,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @param name its Active Ingredient's name
  * @param labelling one block per Regulatory Class in which the FDA publishes a Label,
  * OTC first
+ * @param alternatives other products of this Active Ingredient alone, absent where there
+ * are none
+ * @param combinationProducts products of this Active Ingredient and at least one other,
+ * which are never Alternatives and are never in that list (ADR-0005)
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record DrugConceptPage(String rxcui, String name, List<RegulatoryClassBlock> labelling) {}
+public record DrugConceptPage(
+		String rxcui,
+		String name,
+		List<RegulatoryClassBlock> labelling,
+		List<Alternative> alternatives,
+		List<CombinationProduct> combinationProducts) {}

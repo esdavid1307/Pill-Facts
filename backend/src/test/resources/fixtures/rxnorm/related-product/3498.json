@@ -1,0 +1,1628 @@
+{
+  "relatedGroup": {
+    "rxcui": null,
+    "conceptGroup": [
+      {
+        "tty": "SBD",
+        "conceptProperties": [
+          {
+            "rxcui": "1020479",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Banophen]",
+            "synonym": "Banophen 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049176",
+            "name": "benzethonium chloride 0.0015 MG/MG / diphenhydramine hydrochloride 0.02 MG/MG / zinc acetate 0.00215 MG/MG Topical Gel [Calagel]",
+            "synonym": "Calagel (benzethonium chloride 0.15 % / diphenhydramine hydrochloride 2 % / zinc acetate 0.215 % ) Topical Gel",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049632",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Benadryl]",
+            "synonym": "Benadryl 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049882",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG Topical Gel [Benadryl]",
+            "synonym": "Benadryl 0.02 MG/MG Topical Gel",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049901",
+            "name": "diphenhydramine hydrochloride 12.5 MG Chewable Tablet [Benadryl]",
+            "synonym": "Benadryl 12.5 MG Chewable Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049908",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution [Benadryl]",
+            "synonym": "Benadryl 2.5 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049910",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Benadryl]",
+            "synonym": "Benadryl 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1050076",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Benadryl]",
+            "synonym": "Benadryl 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1052466",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 12.5 MG Oral Tablet [Percogesic Reformulated Jan 2011]",
+            "synonym": "APAP 325 MG / Diphenhydramine Hydrochloride 12.5 MG Oral Tablet [Percogesic Reformulated Jan 2011]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1052469",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 12.5 MG Oral Tablet [Percogesic Reformulated Jan 2011]",
+            "synonym": "APAP 500 MG / Diphenhydramine Hydrochloride 12.5 MG Oral Tablet [Percogesic Reformulated Jan 2011]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1053142",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Spray [Wal-Dryl]",
+            "synonym": "Wal-Dryl (diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % ) Topical Spray",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1085968",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Tablet [Compoz]",
+            "synonym": "Compoz 50 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1086723",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML / phenylephrine hydrochloride 1 MG/ML Oral Solution [Benadryl-D Allergy and Sinus]",
+            "synonym": "Benadryl Children's Allergy Plus Congestion 12.5 MG / 5 MG per 5 ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1086767",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution [Wal-Dryl Childrens]",
+            "synonym": "Wal-Dryl Childrens 2.5 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1086857",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Tablet [Sominex]",
+            "synonym": "Sominex 50 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1086859",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Tablet [Twilite]",
+            "synonym": "Twilite 50 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1086986",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Sominex]",
+            "synonym": "Sominex 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1087030",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Cream [Wal-Dryl]",
+            "synonym": "Wal-Dryl Anti-Itch (diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % ) Topical Cream",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1087037",
+            "name": "diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Oral Tablet [Wal-Dryl-D]",
+            "synonym": "Wal-Dryl-D (diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG) Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1087609",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 50 MG Oral Tablet [Legatrin PM]",
+            "synonym": "APAP 500 MG / Diphenhydramine Hydrochloride 50 MG Oral Tablet [Legatrin PM]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1090076",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Wal-Dryl Allergy]",
+            "synonym": "Wal-Dryl Allergy 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1090078",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Wal-Dryl Allergy]",
+            "synonym": "Wal-Dryl Allergy 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1090456",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Wal-Som Maximum Strength]",
+            "synonym": "Wal-Som Maximum Strength 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092375",
+            "name": "acetaminophen 33.3 MG/ML / diphenhydramine hydrochloride 1.67 MG/ML Oral Solution [Tylenol PM]",
+            "synonym": "APAP 33.3 MG/ML / Diphenhydramine Hydrochloride 1.67 MG/ML Oral Solution [Tylenol PM]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092378",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG Oral Tablet [Tylenol PM]",
+            "synonym": "APAP 500 MG / Diphenhydramine Hydrochloride 25 MG Oral Tablet [Tylenol PM]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092416",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Nytol]",
+            "synonym": "Nytol 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092419",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Nytol]",
+            "synonym": "Nytol 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092421",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Banophen]",
+            "synonym": "Banophen 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092422",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Banophen]",
+            "synonym": "Banophen 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092424",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution [Banophen]",
+            "synonym": "Banophen 2.5 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092428",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Cream [Banophen Cream]",
+            "synonym": "Banophen Cream (diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % ) Topical Cream",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092447",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Diphenhist]",
+            "synonym": "Diphenhist 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092461",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Genahist]",
+            "synonym": "Genahist 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092466",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Simply Sleep]",
+            "synonym": "Simply Sleep 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093077",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 50 MG Oral Tablet [Unisom with Pain Relief]",
+            "synonym": "APAP 325 MG / Diphenhydramine Hydrochloride 50 MG Oral Tablet [Unisom with Pain Relief]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093102",
+            "name": "diphenhydramine hydrochloride 25 MG Disintegrating Oral Tablet [Unisom Sleep]",
+            "synonym": "Unisom Sleep 25 MG Disintegrating Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093113",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Unisom Sleep]",
+            "synonym": "Unisom Sleep 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093377",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Diphedryl]",
+            "synonym": "Diphedryl 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1094188",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution [Diphedryl]",
+            "synonym": "Diphedryl 2.5 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1094338",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Sleepinal]",
+            "synonym": "Sleepinal 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1094393",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution [Siladryl]",
+            "synonym": "Siladryl 2.5 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1094451",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution [Scot-Tussin Allergy]",
+            "synonym": "Scot-Tussin Allergy 2.5 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1094718",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG Oral Tablet [Panadol PM]",
+            "synonym": "APAP 500 MG / Diphenhydramine Hydrochloride 25 MG Oral Tablet [Panadol PM]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1101111",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Rest Simply]",
+            "synonym": "Rest Simply 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1111095",
+            "name": "diphenhydramine hydrochloride 12.5 MG Chewable Tablet [Kids-Eeze Allergy]",
+            "synonym": "Kids-Eeze Allergy 12.5 MG Chewable Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1111764",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Cream [Benadryl Itch Stopping]",
+            "synonym": "Benadryl Itch Stopping, Extra Strength (diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % ) Topical Cream",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1116532",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG Oral Tablet [Acetadryl]",
+            "synonym": "APAP 500 MG / Diphenhydramine Hydrochloride 25 MG Oral Tablet [Acetadryl]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1117539",
+            "name": "acetaminophen 500 MG / diphenhydramine citrate 38 MG Oral Tablet [Excedrin PM]",
+            "synonym": "APAP 500 MG / Diphenhydramine Citrate 38 MG Oral Tablet [Excedrin PM]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1146883",
+            "name": "diphenhydramine hydrochloride 20 MG/ML Topical Cream [Dermamycin]",
+            "synonym": "Dermamycin 2 % Topical Cream",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1233662",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Compoz]",
+            "synonym": "Compoz 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1235322",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG / levomenthol 0.01 MG/MG Topical Gel [Tact]",
+            "synonym": "Tact (diphenhydramine HCl 2 % / l-menthol 1 % ) Topical Gel",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1245403",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / levomenthol 10 MG/ML Topical Cream [Tact]",
+            "synonym": "Tact (diphenhydramine HCl 2 % / l-menthol 1 % ) Topical Cream",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1248356",
+            "name": "diphenhydramine hydrochloride 1.67 MG/ML Oral Solution [Zzzquil]",
+            "synonym": "Zzzquil 1.67 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1248360",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Zzzquil]",
+            "synonym": "Zzzquil 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1293717",
+            "name": "diphenhydramine hydrochloride 10 MG/ML / zinc acetate 1 MG/ML Topical Cream [Benadryl Itch Stopping]",
+            "synonym": "Benadryl Itch Stopping (diphenhydramine HCl 1 % / zinc acetate 0.1 % ) Topical Cream",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294591",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Solution [Benadryl Itch Stopping]",
+            "synonym": "Benadryl Extra Strength (diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % ) Topical Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294592",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Spray [Benadryl Itch Stopping]",
+            "synonym": "Benadryl Itch Cooling (diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % ) Topical Spray",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294596",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML / menthol 4.4 MG/ML Oral Suspension [Buckley's Bedtime Formula]",
+            "synonym": "Buckley's Bedtime Formula (diphenhydramine hydrochloride 12.5 MG / menthol 22 MG) per 5 ML Oral Suspension",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1297519",
+            "name": "diphenhydramine hydrochloride 25 MG / magnesium salicylate 580 MG Oral Tablet [Doans PM]",
+            "synonym": "Doan's PM Back Pain Relief (diphenhydramine hydrochloride 25 MG / magnesium salicylate 580 MG) Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1310481",
+            "name": "diphenhydramine hydrochloride 10 MG Oral Tablet [Vetadryl]",
+            "synonym": "Vetadryl 10 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1310485",
+            "name": "diphenhydramine hydrochloride 30 MG Oral Tablet [Vetadryl]",
+            "synonym": "Vetadryl 30 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1363475",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Wal-Sleep Z]",
+            "synonym": "Wal-Sleep Z 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1437306",
+            "name": "diphenhydramine hydrochloride 1.67 MG/ML Oral Solution [ZZZ Sleep]",
+            "synonym": "ZZZ Sleep 1.67 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1437725",
+            "name": "diphenhydramine hydrochloride 25 MG Disintegrating Oral Tablet [Wal-Som]",
+            "synonym": "Wal-Som 25 MG Disintegrating Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1437774",
+            "name": "diphenhydramine hydrochloride 1.67 MG/ML Oral Solution [Wal-Sleep Z]",
+            "synonym": "Wal-Sleep Z 1.67 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1483617",
+            "name": "diphenhydramine hydrochloride 12.5 MG Disintegrating Oral Tablet [Wal-Dryl Allergy]",
+            "synonym": "Wal-Dryl Allergy 12.5 MG Disintegrating Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1494599",
+            "name": "diphenhydramine hydrochloride 1.67 MG/ML Oral Solution [Z-Sleep]",
+            "synonym": "Z-Sleep 1.67 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1549559",
+            "name": "diphenhydramine hydrochloride 25 MG Disintegrating Oral Tablet [Wal-Sleep Z]",
+            "synonym": "Wal-Sleep Z 25 MG Disintegrating Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1550963",
+            "name": "diphenhydramine hydrochloride 25 MG / naproxen sodium 220 MG Oral Tablet [Aleve PM]",
+            "synonym": "Aleve PM (diphenhydramine hydrochloride 25 MG / naproxen sodium 220 MG) Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1593116",
+            "name": "acetaminophen 250 MG / aspirin 250 MG / diphenhydramine citrate 38 MG Oral Tablet [Excedrin PM Triple Action]",
+            "synonym": "APAP 250 MG / ASA 250 MG / Diphenhydramine Citrate 38 MG Oral Tablet [Excedrin PM Triple Action]",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1609070",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Tablet [Somnapure]",
+            "synonym": "Somnapure 50 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1648369",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Unisom Sleep]",
+            "synonym": "Unisom Sleep 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1658757",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet [Wal-Sleep Z]",
+            "synonym": "Wal-Sleep Z 25 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1724486",
+            "name": "diphenhydramine hydrochloride 20 MG/ML Topical Spray [The Itch Eraser]",
+            "synonym": "The Itch Eraser 2 % Topical Spray",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1789746",
+            "name": "diphenhydramine hydrochloride 6.25 MG/ML Oral Solution [Vanamine]",
+            "synonym": "Vanamine 6.25 MG/ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1919073",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule [Dormin]",
+            "synonym": "Dormin 25 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1926221",
+            "name": "diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Oral Tablet [Benadryl Allergy Plus Congestion]",
+            "synonym": "Benadryl Allergy Plus Congestion (diphenhydramine HCl 25 MG / phenylephrine HCl 10 MG) Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1992526",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML / phenylephrine hydrochloride 1 MG/ML Oral Solution [Wal-Dryl PE]",
+            "synonym": "Wal-Dryl PE 12.5 MG / 5 MG per 5 ML Oral Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2174801",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG Topical Gel [Calagel Reformulated Jun 2019]",
+            "synonym": "Calagel Reformulated Jun 2019 2 % Topical Gel",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2200123",
+            "name": "diphenhydramine hydrochloride 6.25 MG/ML Oral Solution [Pediaclear Cough]",
+            "synonym": "Pediaclear Cough 6.25 MG/ML Oral Drops",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2396897",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG Topical Gel [The Itch Eraser]",
+            "synonym": "The Itch Eraser 2 % Topical Gel",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2605033",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Tablet [Benadryl]",
+            "synonym": "Benadryl 50 MG Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2609926",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule [Sleep-Eze]",
+            "synonym": "Sleep-Eze 50 MG Oral Capsule",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "882506",
+            "name": "diphenhydramine hydrochloride 12.5 MG Disintegrating Oral Tablet [Benadryl]",
+            "synonym": "Benadryl 12.5 MG Disintegrating Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "895666",
+            "name": "diphenhydramine citrate 38 MG / ibuprofen 200 MG Oral Tablet [Motrin PM]",
+            "synonym": "Motrin PM (diphenhydramine citrate 38 MG / ibuprofen 200 MG) Oral Tablet",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          }
+        ]
+      },
+      {
+        "tty": "SCD",
+        "conceptProperties": [
+          {
+            "rxcui": "1020477",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Capsule",
+            "synonym": "diphenhydramine HCl 50 MG Oral Capsule",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1046751",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 5 MG Oral Tablet",
+            "synonym": "APAP 325 MG / diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 5 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049091",
+            "name": "benzethonium chloride 0.0015 MG/MG / diphenhydramine hydrochloride 0.02 MG/MG / zinc acetate 0.00215 MG/MG Topical Gel",
+            "synonym": "benzethonium chloride 0.15 % / diphenhydramine HCl 2 % / zinc acetate 0.215 % Topical Gel",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049289",
+            "name": "1 ML diphenhydramine hydrochloride 50 MG/ML Prefilled Syringe",
+            "synonym": "diphenhydramine HCl 50 MG per 1 ML Prefilled Syringe",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049630",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049633",
+            "name": "diphenhydramine hydrochloride 50 MG/ML Injectable Solution",
+            "synonym": "diphenhydramine HCl 50 MG/ML Injectable Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049880",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG Topical Gel",
+            "synonym": "diphenhydramine hydrochloride 2 % Topical Gel",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049884",
+            "name": "diphenhydramine hydrochloride 1.25 MG/ML Oral Solution",
+            "synonym": "diphenhydramine hydrochloride 50 MG per 40 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049888",
+            "name": "diphenhydramine hydrochloride 10 MG/ML Topical Cream",
+            "synonym": "diphenhydramine hydrochloride 1 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049898",
+            "name": "diphenhydramine hydrochloride 10 MG/ML Topical Spray",
+            "synonym": "diphenhydramine HCl 1 % Topical Spray",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049900",
+            "name": "diphenhydramine hydrochloride 12.5 MG Chewable Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049906",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML Oral Solution",
+            "synonym": "diphenhydramine HCl 12.5 MG per 5 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1049909",
+            "name": "diphenhydramine hydrochloride 25 MG Oral Capsule",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1050077",
+            "name": "diphenhydramine hydrochloride 20 MG/ML Topical Cream",
+            "synonym": "diphenhydramine hydrochloride 2 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1050080",
+            "name": "diphenhydramine hydrochloride 20 MG/ML Topical Spray",
+            "synonym": "diphenhydramine HCl 2 % Topical Spray",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1050385",
+            "name": "acetaminophen 32 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML / phenylephrine hydrochloride 0.5 MG/ML Oral Solution",
+            "synonym": "APAP 160 MG / diphenhydramine HCl 6.25 MG / phenylephrine HCl 2.5 MG per 5 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1052462",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 12.5 MG Oral Tablet",
+            "synonym": "APAP 325 MG / diphenhydramine hydrochloride 12.5 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1052467",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 12.5 MG Oral Tablet",
+            "synonym": "APAP 500 MG / diphenhydramine hydrochloride 12.5 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1052928",
+            "name": "diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1053138",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Spray",
+            "synonym": "diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % Topical Spray",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1085945",
+            "name": "diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1086720",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML / phenylephrine hydrochloride 1 MG/ML Oral Solution",
+            "synonym": "diphenhydramine HCl 12.5 MG / phenylephrine HCl 5 MG per 5 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1087026",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Cream",
+            "synonym": "diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1087607",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "synonym": "APAP 500 MG / diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092189",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG Oral Tablet",
+            "synonym": "APAP 500 MG / diphenhydramine hydrochloride 25 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092373",
+            "name": "acetaminophen 33.3 MG/ML / diphenhydramine hydrochloride 1.67 MG/ML Oral Solution",
+            "synonym": "APAP 33.3 MG/ML / Diphenhydramine Hydrochloride 1.67 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1092398",
+            "name": "aspirin 500 MG / diphenhydramine hydrochloride 25 MG Oral Tablet",
+            "synonym": "ASA 500 MG / Diphenhydramine Hydrochloride 25 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093075",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "synonym": "APAP 325 MG / diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093083",
+            "name": "acetaminophen 650 MG / diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "synonym": "APAP 650 MG / diphenhydramine hydrochloride 50 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1093098",
+            "name": "diphenhydramine hydrochloride 25 MG Disintegrating Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1094131",
+            "name": "acetaminophen 65 MG/ML / dextromethorphan hydrobromide 2 MG/ML / diphenhydramine hydrochloride 2.5 MG/ML Oral Solution",
+            "synonym": "APAP 65 MG/ML / Dextromethorphan Hydrobromide 2 MG/ML / Diphenhydramine Hydrochloride 2.5 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1099872",
+            "name": "acetaminophen 500 MG / diphenhydramine citrate 38 MG Oral Tablet",
+            "synonym": "APAP 500 MG / Diphenhydramine Citrate 38 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1117245",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG Oral Capsule",
+            "synonym": "APAP 500 MG / diphenhydramine hydrochloride 25 MG Oral Capsule",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1145951",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG / menthol 0.01 MG/MG Topical Gel",
+            "synonym": "diphenhydramine hydrochloride 2 % / menthol 1 % Topical Gel",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1147619",
+            "name": "acetaminophen 650 MG / diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Oral Tablet",
+            "synonym": "APAP 650 MG / diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1232642",
+            "name": "calamine 140 MG/ML / diphenhydramine hydrochloride 20 MG/ML Topical Cream",
+            "synonym": "calamine 14 % / diphenhydramine hydrochloride 2 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1233575",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 12.5 MG / phenylephrine hydrochloride 5 MG Oral Tablet",
+            "synonym": "acetaminophen 325 MG / diphenhydramine HCl 12.5 MG / phenylephrine HCl 5 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1235317",
+            "name": "diphenhydramine hydrochloride 0.02 MG/MG / levomenthol 0.01 MG/MG Topical Gel",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1236048",
+            "name": "diphenhydramine hydrochloride 1.25 MG/ML / phenylephrine hydrochloride 0.5 MG/ML Oral Solution",
+            "synonym": "diphenhydramine HCl 12.5 MG / phenylephrine HCl 5 MG per 10 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1245398",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / levomenthol 10 MG/ML Topical Cream",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1248354",
+            "name": "diphenhydramine hydrochloride 1.67 MG/ML Oral Solution",
+            "synonym": "diphenhydramine HCl 1.667 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1249715",
+            "name": "diphenhydramine hydrochloride 0.5 MG/ML Injectable Solution",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1249717",
+            "name": "diphenhydramine hydrochloride 1 MG/ML Injectable Solution",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1250907",
+            "name": "aspirin 500 MG / diphenhydramine citrate 38.3 MG Oral Tablet",
+            "synonym": "ASA 500 MG / Diphenhydramine Citrate 38.3 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1251783",
+            "name": "diphenhydramine hydrochloride 2 MG/ML Oral Solution",
+            "synonym": "diphenhydramine hydrochloride 10 MG per 5 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1251787",
+            "name": "diphenhydramine tannate 25 MG Chewable Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1291711",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG / pseudoephedrine hydrochloride 30 MG Oral Tablet",
+            "synonym": "APAP 500 MG / Diphenhydramine Hydrochloride 25 MG / Pseudoephedrine Hydrochloride 30 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1291868",
+            "name": "aspirin 325 MG / diphenhydramine citrate 38 MG Oral Tablet",
+            "synonym": "ASA 325 MG / Diphenhydramine Citrate 38 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1291948",
+            "name": "acetaminophen 24 MG/ML / diphenhydramine hydrochloride 2.5 MG/ML Oral Solution",
+            "synonym": "APAP 24 MG/ML / Diphenhydramine Hydrochloride 2.5 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1292313",
+            "name": "diphenhydramine hydrochloride 10 MG/ML / zinc acetate 1 MG/ML Topical Cream",
+            "synonym": "diphenhydramine hydrochloride 1 % / zinc acetate 0.1 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1292321",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / pramoxine hydrochloride 10 MG/ML Topical Lotion",
+            "synonym": "diphenhydramine hydrochloride 2 % / pramoxine hydrochloride 1 % Topical Lotion",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294589",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / zinc acetate 1 MG/ML Topical Solution",
+            "synonym": "diphenhydramine hydrochloride 2 % / zinc acetate 0.1 % Topical Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294594",
+            "name": "diphenhydramine hydrochloride 2.5 MG/ML / menthol 4.4 MG/ML Oral Suspension",
+            "synonym": "diphenhydramine hydrochloride 12.5 MG / menthol 22 MG per 5 ML Oral Suspension",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294607",
+            "name": "acetaminophen 21.7 MG/ML / diphenhydramine hydrochloride 0.833 MG/ML Oral Solution",
+            "synonym": "APAP 21.7 MG/ML / Diphenhydramine Hydrochloride 0.833 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1294614",
+            "name": "diphenhydramine hydrochloride 0.01 MG/MG / tripelennamine hydrochloride 0.005 MG/MG Topical Gel",
+            "synonym": "diphenhydramine HCl 1 % / tripelennamine HCl 0.5 % Topical Gel",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1297514",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / menthol 10 MG/ML Topical Spray",
+            "synonym": "diphenhydramine hydrochloride 2 % / menthol 1 % Topical Spray",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1297517",
+            "name": "diphenhydramine hydrochloride 25 MG / magnesium salicylate 580 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1297947",
+            "name": "acetaminophen 500 MG / diphenhydramine citrate 38 MG Oral Powder",
+            "synonym": "APAP 500 MG / Diphenhydramine Citrate 38 MG Oral Powder",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1298287",
+            "name": "diphenhydramine hydrochloride 20 MG/ML / menthol 10 MG/ML Topical Solution",
+            "synonym": "diphenhydramine hydrochloride 2 % / menthol 1 % Topical Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1298288",
+            "name": "acetaminophen 650 MG / dextromethorphan hydrobromide 30 MG / diphenhydramine hydrochloride 50 MG / pseudoephedrine hydrochloride 60 MG Oral Tablet",
+            "synonym": "APAP 650 MG / Dextromethorphan Hydrobromide 30 MG / Diphenhydramine Hydrochloride 50 MG / Pseudoephedrine Hydrochloride 60 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1298348",
+            "name": "acetaminophen 21.7 MG/ML / diphenhydramine hydrochloride 0.833 MG/ML / phenylephrine hydrochloride 0.333 MG/ML Oral Solution",
+            "synonym": "acetaminophen 650 MG / diphenhydramine HCl 25 MG / phenylephrine HCl 10 MG per 30 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1298467",
+            "name": "benzyl alcohol 0.105 ML/ML / calamine 140 MG/ML / diphenhydramine hydrochloride 20 MG/ML Topical Cream",
+            "synonym": "benzyl alcohol 10.5 % / calamine 14 % / diphenhydramine hydrochloride 2 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1310475",
+            "name": "diphenhydramine hydrochloride 10 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1310483",
+            "name": "diphenhydramine hydrochloride 30 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1375932",
+            "name": "acetaminophen 32.5 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML / phenylephrine hydrochloride 0.5 MG/ML Oral Solution",
+            "synonym": "acetaminophen 650 MG / diphenhydramine HCl 25 MG / phenylephrine HCl 10 MG per 20 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1420992",
+            "name": "allantoin 5 MG/ML / diphenhydramine hydrochloride 20 MG/ML Topical Cream",
+            "synonym": "allatoin 0.5 % / diphenhydramine hydrochloride 2 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1535702",
+            "name": "diphenhydramine hydrochloride 1.25 MG/ML / phenylephrine hydrochloride 0.5 MG/ML Oral Suspension",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1537194",
+            "name": "benzethonium chloride 0.5 MG/ML / diphenhydramine hydrochloride 5 MG/ML / hydrocortisone 0.5 MG/ML Topical Spray",
+            "synonym": "benzethonium Cl 0.05 % / diphenhydramine HCl 0.5 % / hydrocortisone 0.05 % Topical Spray",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1550957",
+            "name": "diphenhydramine hydrochloride 25 MG / naproxen sodium 220 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1593110",
+            "name": "acetaminophen 250 MG / aspirin 250 MG / diphenhydramine citrate 38 MG Oral Tablet",
+            "synonym": "APAP 250 MG / ASA 250 MG / Diphenhydramine Citrate 38 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1659175",
+            "name": "acetaminophen 500 MG / diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Powder for Oral Solution",
+            "synonym": "acetaminophen 500 MG / diphenhydramine HCl 25 MG / phenylephrine HCl 10 MG Packet for Oral",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1659960",
+            "name": "acetaminophen 650 MG / diphenhydramine hydrochloride 25 MG / phenylephrine hydrochloride 10 MG Granules for Oral Solution",
+            "synonym": "acetaminophen 650 MG / diphenhydramine HCl 25 MG / phenylephrine HCl 10 MG Packet for Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1723740",
+            "name": "1 ML diphenhydramine hydrochloride 50 MG/ML Injection",
+            "synonym": "diphenhydramine HCl 50 MG per 1 ML Injection",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1789740",
+            "name": "diphenhydramine hydrochloride 6.25 MG/ML Oral Solution",
+            "synonym": "diphenhydramine HCl 6.25 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1942340",
+            "name": "diphenhydramine hydrochloride 10 MG/ML / pramoxine hydrochloride 10 MG/ML Topical Spray",
+            "synonym": "diphenhydramine hydrochloride 1 % / pramoxine hydrochloride 1 % Topical Spray",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1996098",
+            "name": "acetaminophen 32.5 MG/ML / dextromethorphan hydrobromide 1 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML / phenylephrine hydrochloride 0.5 MG/ML Oral Solution",
+            "synonym": "APAP 32.5 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / Diphenhydramine Hydrochloride 1.25 MG/ML / Phenylephrine Hydrochloride 0.5 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2046528",
+            "name": "diphenhydramine hydrochloride 25 MG Chewable Tablet",
+            "synonym": "diphenhydramine HCl 25 MG Chewable Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2166129",
+            "name": "diphenhydramine hydrochloride 0.833 MG/ML / phenylephrine hydrochloride 0.333 MG/ML Oral Solution",
+            "synonym": "diphenhydramine hydrochloride 12.5 MG / phenylephrine hydrochloride 5 MG per 15 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2263170",
+            "name": "camphor 0.001 MG/MG / diphenhydramine hydrochloride 0.02 MG/MG / zinc acetate 0.01 MG/MG Topical Gel",
+            "synonym": "camphor 0.1 % / diphenhydramine HCl 2 % / zinc acetate 1 % Topical Gel",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2374554",
+            "name": "acetaminophen 32.5 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML Oral Solution",
+            "synonym": "APAP 32.5 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2564015",
+            "name": "diphenhydramine hydrochloride 10 MG/ML / pramoxine hydrochloride 10 MG/ML Medicated Shampoo",
+            "synonym": "diphenhydramine HCl 1 % / pramoxine HCl 1 % Medicated Shampoo",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2627299",
+            "name": "diphenhydramine hydrochloride 10 MG/ML / hydrocortisone 5 MG/ML / pramoxine hydrochloride 10 MG/ML Medicated Pad",
+            "synonym": "diphenhydramine hydrochloride 1 % / hydrocortisone 0.5 % / pramoxine hydrochloride 1 % Medicated Pad",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2670677",
+            "name": "acetaminophen 650 MG / diphenhydramine hydrochloride 25 MG Powder for Oral Solution",
+            "synonym": "acetaminophen 650 MG / diphenhydramine HCl 25 MG Packet for Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2671699",
+            "name": "diphenhydramine hydrochloride 16.7 MG/ML Oral Solution",
+            "synonym": "diphenhydramine HCl 50 MG per 3 ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2679425",
+            "name": "acetaminophen 650 MG / diphenhydramine hydrochloride 25 MG Granules for Oral Solution",
+            "synonym": "APAP 650 MG / diphenhydramine hydrochloride 25 MG Granules for Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2683420",
+            "name": "acetaminophen 32 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML Oral Solution",
+            "synonym": "APAP 32 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2685488",
+            "name": "diphenhydramine hydrochloride 0.833 MG/ML Oral Solution",
+            "synonym": "diphenhydramine hydrochloride 12.5 MG per 15 mL Oral Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2691689",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 12.5 MG Chewable Tablet",
+            "synonym": "APAP 325 MG / diphenhydramine hydrochloride 12.5 MG Chewable Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2693775",
+            "name": "acetaminophen 32.5 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML Oral Suspension",
+            "synonym": "APAP 32.5 MG/ML / diphenhydramine hydrochloride 1.25 MG/ML Oral Suspension",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2727332",
+            "name": "calamine 100 MG/ML / diphenhydramine hydrochloride 20 MG/ML Topical Cream",
+            "synonym": "calamine 10 % / diphenhydramine hydrochloride 2 % Topical Cream",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2729789",
+            "name": "acetaminophen 325 MG / diphenhydramine hydrochloride 25 MG Oral Tablet",
+            "synonym": "APAP 325 MG / diphenhydramine hydrochloride 25 MG Oral Tablet",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "882504",
+            "name": "diphenhydramine hydrochloride 12.5 MG Disintegrating Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "895664",
+            "name": "diphenhydramine citrate 38 MG / ibuprofen 200 MG Oral Tablet",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "901814",
+            "name": "diphenhydramine hydrochloride 25 MG / ibuprofen 200 MG Oral Capsule",
+            "synonym": "",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          }
+        ]
+      }
+    ]
+  }
+}

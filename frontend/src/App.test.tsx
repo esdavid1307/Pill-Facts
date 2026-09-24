@@ -395,3 +395,105 @@ describe('a Drug Concept sold in both Regulatory Classes', () => {
     expect(screen.getByText('Cardiovascular thrombotic events.')).toBeInTheDocument()
   })
 })
+
+/**
+ * ADR-0005: an Alternative is a statement about what a product is made of, and the page
+ * is where that constraint is enforced. Most of what these assert is therefore an
+ * absence — of Caduet from the Alternatives, and of any sentence a reader could take as
+ * permission to switch.
+ */
+describe('the other products an Active Ingredient is sold in', () => {
+  const LIPITOR_10 = { composition: 'atorvastatin 10 MG Oral Tablet', brands: ['Lipitor'] }
+  const LIPITOR_20 = { composition: 'atorvastatin 20 MG Oral Tablet', brands: ['Lipitor'] }
+  const CADUET = {
+    composition: 'amlodipine 10 MG / atorvastatin 10 MG Oral Tablet',
+    brands: ['Caduet'],
+  }
+
+  async function openAtorvastatin(overrides: Partial<DrugConcept>) {
+    await openPage(
+      drugConcept({
+        labelling: [prescription([section('Adverse Reactions', 'Myalgia, diarrhea.')])],
+        ...overrides,
+      }),
+    )
+  }
+
+  it('lists each strength and dosage form on its own line, with the Brands sold in it', async () => {
+    await openAtorvastatin({ alternatives: [LIPITOR_10, LIPITOR_20] })
+
+    const list = within(
+      await screen.findByRole('region', { name: /other products made with atorvastatin/i }),
+    )
+    expect(list.getAllByRole('listitem').map((item) => item.textContent)).toEqual([
+      'atorvastatin 10 MG Oral Tablet — sold as Lipitor',
+      'atorvastatin 20 MG Oral Tablet — sold as Lipitor',
+    ])
+  })
+
+  it('names a product sold without a Brand by its composition alone', async () => {
+    await openAtorvastatin({
+      alternatives: [{ composition: 'atorvastatin 30 MG Oral Tablet', brands: [] }],
+    })
+
+    expect(await screen.findByText('atorvastatin 30 MG Oral Tablet')).toBeInTheDocument()
+  })
+
+  /**
+   * The list a reader scans for "another atorvastatin" must not contain a drug that is
+   * also amlodipine. Caduet arrives in its own field and is shown under its own heading,
+   * which says what it is.
+   */
+  it('keeps a Combination Product out of the Alternatives and under its own heading', async () => {
+    await openAtorvastatin({ alternatives: [LIPITOR_10], combinationProducts: [CADUET] })
+
+    const alternatives = within(
+      await screen.findByRole('region', { name: /other products made with atorvastatin/i }),
+    )
+    expect(alternatives.queryByText(/Caduet/)).toBeNull()
+
+    const combinations = within(
+      screen.getByRole('region', { name: /combine atorvastatin with another medication/i }),
+    )
+    expect(combinations.getByText(/Caduet/)).toBeInTheDocument()
+  })
+
+  /** No rendered sentence may be readable as "you can take this instead". */
+  it('says nothing that reads as permission to take one product in place of another', async () => {
+    await openAtorvastatin({ alternatives: [LIPITOR_10, LIPITOR_20], combinationProducts: [CADUET] })
+
+    await screen.findByRole('region', { name: /other products made with atorvastatin/i })
+    expect(document.body.textContent).not.toMatch(
+      /\b(substitut|equivalent|interchangeable|generic version|the same as)/i,
+    )
+  })
+
+  it('shows no heading for a list the Drug Concept has none of', async () => {
+    await openAtorvastatin({ alternatives: [LIPITOR_10] })
+
+    expect(await screen.findByRole('heading', { name: /other products made with atorvastatin/i }))
+      .toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: /combine atorvastatin/i })).toBeNull()
+  })
+
+  it('shows neither heading for a Drug Concept RxNorm relates to no other product', async () => {
+    await openAtorvastatin({})
+
+    expect(await screen.findByRole('heading', { name: 'Adverse Reactions' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: /other products made with/i })).toBeNull()
+    expect(screen.queryByRole('heading', { name: /combine atorvastatin/i })).toBeNull()
+  })
+
+  /**
+   * Composition is a fact about the drug and the FDA's labelling is a fact about one
+   * Label, so a Drug Concept with nothing to show from a Label still has its products
+   * listed — which is the whole page for a drug sold only in combination.
+   */
+  it('lists Combination Products for a Drug Concept with no labelling at all', async () => {
+    await openPage(
+      drugConcept({ rxcui: '10167', name: 'sulbactam', labelling: [], combinationProducts: [CADUET] }),
+    )
+
+    expect(await screen.findByRole('heading', { name: /combine sulbactam/i })).toBeInTheDocument()
+  })
+})

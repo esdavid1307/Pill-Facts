@@ -8,6 +8,7 @@ import {
   type RegulatoryClassBlock,
 } from '../api/drugConcept'
 import type { Candidate } from '../api/search'
+import { RelatedProducts } from './RelatedProducts'
 import { LabelProvenance, SafetySections } from './SafetySections'
 
 /**
@@ -82,7 +83,17 @@ export function DrugConceptPage() {
         <p role="alert">We don&rsquo;t have a medication at this address. Try searching again.</p>
       )}
 
-      {answer?.state === 'loaded' && <Labelling drugConcept={answer.drugConcept} />}
+      {answer?.state === 'loaded' && (
+        <>
+          <Labelling drugConcept={answer.drugConcept} />
+          {/*
+            * What else the Active Ingredient is sold in is a claim about composition
+            * rather than about the labelling, so it is shown whether the FDA publishes a
+            * Label or not.
+            */}
+          <RelatedProducts drugConcept={answer.drugConcept} />
+        </>
+      )}
 
       <Link to="/">Search for another medication</Link>
     </article>

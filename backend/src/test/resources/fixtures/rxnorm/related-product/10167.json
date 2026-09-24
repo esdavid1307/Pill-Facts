@@ -1,0 +1,89 @@
+{
+  "relatedGroup": {
+    "rxcui": null,
+    "conceptGroup": [
+      {
+        "tty": "SBD",
+        "conceptProperties": [
+          {
+            "rxcui": "1659595",
+            "name": "ampicillin 1000 MG / sulbactam 500 MG Injection [Unasyn]",
+            "synonym": "Unasyn (ampicillin / sulbactam) 1.5 GM Injection",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1659600",
+            "name": "ampicillin 2000 MG / sulbactam 1000 MG Injection [Unasyn]",
+            "synonym": "Unasyn (ampicillin / sulbactam) 3 GM Injection",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "205843",
+            "name": "ampicillin 100 MG/ML / sulbactam 50 MG/ML Injectable Solution [Unasyn]",
+            "synonym": "Unasyn (ampicillin 100 MG / sulbactam 50 MG) per ML Injectable Solution",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2665017",
+            "name": "durlobactam 1000 MG / sulbactam 1000 MG Injection [Xacduro]",
+            "synonym": "Xacduro 1 GM / 1 GM Injection Kit",
+            "tty": "SBD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          }
+        ]
+      },
+      {
+        "tty": "SCD",
+        "conceptProperties": [
+          {
+            "rxcui": "1659592",
+            "name": "ampicillin 1000 MG / sulbactam 500 MG Injection",
+            "synonym": "ampicillin 1 GM / sulbactam 0.5 GM Injection",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "1659598",
+            "name": "ampicillin 2000 MG / sulbactam 1000 MG Injection",
+            "synonym": "ampicillin 2 GM / sulbactam 1 GM Injection",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "240984",
+            "name": "ampicillin 100 MG/ML / sulbactam 50 MG/ML Injectable Solution",
+            "synonym": "ampicillin (as ampicillin sodium) 100 MG/ML / sulbactam (as sulbactam sodium) 50 MG/ML Injectable Solution",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          },
+          {
+            "rxcui": "2665012",
+            "name": "durlobactam 1000 MG / sulbactam 1000 MG Injection",
+            "synonym": "durlobactam 1 GM / sulbactam 1 GM Injection Kit",
+            "tty": "SCD",
+            "language": "ENG",
+            "suppress": "N",
+            "umlscui": ""
+          }
+        ]
+      }
+    ]
+  }
+}
