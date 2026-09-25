@@ -22,10 +22,20 @@ Resolving to a single Candidate replaces the `/search` entry in history rather t
 pushing onto it, so Back from a Drug Concept lands on the landing instead of on a page
 that would immediately resolve and bounce the reader forward again.
 
-Below 900px the composition is abandoned entirely for document flow — the same content,
-laid out normally. It is not the drawing squeezed: scaling a 1440px stage into a 390px
-phone renders 11px body copy at 3px, and this is a site people read on a phone because
-they are worried about a medication. The two layouts are maintained as two layouts.
+Below 900px a second composition takes over: a drawing authored at 390px, not the wide one
+squeezed. Scaling a 1440px stage down to a phone renders 11px body copy at 3px, and this is
+a site people read on a phone because they are worried about a medication. What we rejected
+was the squeeze, not the drawing — the narrow layout was document flow for one commit, and
+a doorway that is a technical drawing on a desktop and a stack of paragraphs on a phone is
+two different promises about what this site is.
+
+The two scale by different means, which is the reason they are two compositions rather than
+one with a breakpoint. The wide stage is fixed at 1440x860 and only ever scales down, so
+`transform: scale` is fine. The phone drawing is 390px and scales up, where resampling text
+would be visible, so it uses `zoom` and text reflows at its final size. The phone
+composition fixes only its width: phone width barely varies, phone height varies a lot, so
+the fixed axis is the one that does not move, and the phone landing scrolls where the wide
+one never does. The two layouts are still maintained as two layouts.
 
 The masthead moved out of the root component into a shell that wraps `/search` and a Drug
 Concept's page. The landing carries its own brand, headline and footer as part of the

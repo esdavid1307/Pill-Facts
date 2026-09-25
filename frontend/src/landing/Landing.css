@@ -1,21 +1,40 @@
 /*
- * The landing page: a technical-drawing composition, written mobile-first.
+ * The landing page: two technical-drawing compositions, written mobile-first.
  *
- * Below 900px this is an ordinary document-flow page. Above it, the whole thing becomes a
- * fixed 1440x860 stage scaled to fit the window, which is the composition the design was
- * drawn at. The two are genuinely different layouts rather than one layout squeezed,
- * because a 390px-wide phone scales that stage by 0.27 and renders 11px body copy at 3px.
+ * The base layer is the phone composition, drawn at 390px wide and fluid in height, scaled
+ * up with `zoom`. Above 900px it is replaced by the wide one: a fixed 1440x860 stage scaled
+ * to fit the window. They are genuinely two layouts rather than one layout squeezed, because
+ * a 390px phone scales that stage by 0.27 and renders 11px body copy at 3px — and they are
+ * two drawings, because the phone is the majority case and a plain page is not a design.
+ * See ADR-0014.
  *
  * Colours come from the palette in index.css. Nothing here declares a token.
  */
 
+/*
+ * The grid rules run thousands of pixels past the composition so they carry on to the window
+ * edges either side of it: the drawing's grid should read as the page's grid. This is what
+ * clips the far ends of them, and on the phone it is `clip` rather than `hidden` so the page
+ * still scrolls on the body when the composition is taller than the window.
+ */
+.landing {
+  overflow: clip;
+  background: var(--bg);
+}
+
 .hero {
   position: relative;
-  padding: 1rem 1rem 2rem;
+  width: 390px;
+  margin: 0 auto;
+  /* A floor, replaced by JS with the window's height over the zoom factor. */
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.35;
   text-transform: uppercase;
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -30,13 +49,54 @@
   text-transform: inherit;
 }
 
+/* ---------- The grid ---------- */
+
+.hero .grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .grid i {
+  position: absolute;
+  background: var(--grid);
+}
+
+/* The percentage offsets still resolve against the composition, so they stay in register. */
+.hero .grid .v {
+  top: -4000px;
+  bottom: -4000px;
+  width: 1px;
+}
+
+.hero .grid .h {
+  left: -4000px;
+  right: -4000px;
+  height: 1px;
+}
+
+/* Crosshair marks at the intersections. The phone renders none: see LandingPage. */
+.hero .grid b {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  margin: -4px 0 0 -4px;
+  background:
+    linear-gradient(var(--grid), var(--grid)) center / 1px 100% no-repeat,
+    linear-gradient(var(--grid), var(--grid)) center / 100% 1px no-repeat;
+}
+
 /* ---------- Top bar ---------- */
 
 .hero .top {
+  position: relative;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
+  padding: 12px 14px 0;
 }
 
 .hero .brand {
@@ -58,24 +118,43 @@
 
 /* ---------- Headline ---------- */
 
+/* Sized by JS to fill the composition's width; the declared size is where the drawing began. */
 .hero h1 {
-  margin: 1.5rem 0;
+  position: relative;
+  z-index: 4;
+  margin: 22px 14px 0;
   font-family: var(--sans);
   font-weight: 400;
-  font-size: clamp(2rem, 11vw, 3.5rem);
-  line-height: 0.95;
+  font-size: 58px;
+  line-height: 0.9;
   letter-spacing: -0.035em;
 }
 
-/* ---------- The pill ---------- */
+/* Two lines on the phone, one on the stage. Inline-block so each can be measured. */
+.hero h1 .line {
+  display: inline-block;
+  white-space: nowrap;
+}
 
+/* ---------- The drawing: the pill, its leaders and its annotations ---------- */
+
+/*
+ * The phone's hero takes the slack the window has spare, down to a floor. That floor is what
+ * makes the page scroll on the shortest phones, which is the trade taken over shrinking the
+ * text: it is one number.
+ */
 .hero .pill {
   position: relative;
-  height: 220px;
-  margin: 1.5rem 0;
+  flex: 1;
+  min-height: 450px;
+  margin-top: 6px;
+  /* The capsule tracks the pointer, so a drag on it has to stay a scroll. */
+  touch-action: pan-y;
 }
 
 .hero .pill canvas {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -83,19 +162,19 @@
 }
 
 /*
- * The pill without three.js: what a phone gets, and what a desktop without WebGL or with
- * a failed chunk fetch falls back to. One element, one code path, no 3D dependency.
+ * The pill without three.js: what a browser with no WebGL, or a chunk that never arrived,
+ * falls back to. One element, one code path, no 3D dependency.
  */
 .hero .pill-flat {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 84px;
+  width: 112px;
   aspect-ratio: 1 / 2.4;
   transform: translate(-50%, -50%) rotate(-34deg);
   border-radius: 999px;
   overflow: hidden;
-  box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 30px 50px -24px rgba(0, 0, 0, 0.35);
   background: linear-gradient(90deg, #b9b5ae, #fbfaf7 38%, #fff 46%, #d8d4cd 80%, #a9a59e);
 }
 
@@ -109,15 +188,88 @@
   background: linear-gradient(90deg, #6e140b, var(--accent) 35%, #ef6b52 45%, #b52a19 75%, #5a0f07);
 }
 
-/* ---------- Callouts ---------- */
-
-.hero .callout {
+.hero .leaders {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 320px;
-  margin: 1.25rem 0;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero .leaders path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+/* Positioned by the frame loop, and hidden until it has run: see leaders.ts. */
+.hero .node {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  background: var(--bg);
+  border: 1px solid var(--ink);
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+}
+
+.hero .node::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--ink);
+}
+
+/*
+ * On the phone these two are not a layout: the frame loop overwrites both vertical positions
+ * on its first tick, to keep them clear of the turning capsule. What is declared here only
+ * has to avoid a flash before that tick.
+ */
+.hero .callout {
+  position: absolute;
+  z-index: 4;
+  width: 150px;
+  margin: 0;
+  right: 14px;
+  bottom: 8px;
   border: 1px solid var(--ink);
   background: var(--bg);
-  padding: 6px 8px 10px;
+  padding: 4px 6px 7px;
+}
+
+/* The bracket that makes each box read as a dimensioned annotation. */
+.hero .callout::after {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  bottom: 12px;
+  width: 14px;
+  border: 1px solid var(--ink);
+  border-left: 0;
+  border-bottom: 0;
+}
+
+/* The same box mirrored, on the other side of the pill. */
+.hero .callout.flipped {
+  right: auto;
+  left: 14px;
+  bottom: auto;
+  top: 4px;
+  text-align: right;
+}
+
+.hero .callout.flipped::after {
+  right: auto;
+  left: -7px;
+  border-left: 1px solid var(--ink);
+  border-right: 0;
 }
 
 .hero .callout header {
@@ -126,16 +278,17 @@
   align-items: baseline;
   gap: 8px;
   background: var(--panel);
-  margin: 0 -2px 8px;
-  padding: 4px 6px;
+  margin: 0 -2px 6px;
+  padding: 3px 5px;
 }
 
 .hero .callout header strong {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--accent);
+  white-space: nowrap;
 }
 
 .hero .callout header small {
@@ -144,16 +297,22 @@
 
 .hero .callout p {
   margin: 0;
-  font-size: 11px;
+  font-size: 8.5px;
 }
 
 .hero .callout hr {
   border: 0;
   border-top: 1px solid var(--ink);
-  margin: 8px 0;
+  margin: 5px 0;
 }
 
 /* ---------- The disclaimer bar and the search box ---------- */
+
+.hero .about {
+  position: relative;
+  z-index: 4;
+  padding: 10px 14px 0;
+}
 
 .hero .about .bar {
   display: flex;
@@ -163,24 +322,26 @@
   background: var(--ink);
   color: var(--bg);
   padding: 4px 8px;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .hero .about .body {
   border: 1px solid var(--ink);
-  padding: 16px;
+  background: var(--bg);
+  padding: 14px;
   text-transform: none;
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .hero .about p {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
+  text-wrap: pretty;
 }
 
 .hero .about form {
   display: flex;
-  margin-top: 4px;
+  margin: 0;
 }
 
 .hero .about label {
@@ -192,27 +353,36 @@
   white-space: nowrap;
 }
 
+/*
+ * 16px, because below that iOS zooms the viewport when the field takes focus, which would
+ * fight the composition's own scaling and leave a reader pinching back out.
+ */
 .hero .about input {
   flex: 1;
   min-width: 0;
   border: 1px solid var(--ink);
   border-right: 0;
-  padding: 12px 10px;
+  border-radius: 0;
+  padding: 14px 12px;
   font-size: 16px;
   background: var(--bg);
   outline: none;
   text-transform: none;
+  -webkit-appearance: none;
 }
 
 .hero .about input::placeholder {
   color: #8a8a8a;
 }
 
+/* 48px of button, so a thumb lands on it rather than beside it. */
 .hero .about form button {
   border: 1px solid var(--ink);
+  border-radius: 0;
   background: var(--ink);
   color: var(--bg);
   padding: 0 18px;
+  min-height: 48px;
   cursor: pointer;
   text-transform: uppercase;
   font-size: 12px;
@@ -226,6 +396,7 @@
 .hero .chips {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-top: 12px;
 }
@@ -234,9 +405,10 @@
   border: 1px solid var(--ink);
   border-radius: 999px;
   background: var(--bg);
-  padding: 6px 14px;
+  padding: 0 14px;
+  min-height: 36px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .hero .chips button:hover {
@@ -245,29 +417,32 @@
 }
 
 .hero .foot {
+  position: relative;
+  z-index: 4;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 18px 14px 12px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
 }
 
-/* The drawing furniture belongs to the composition and has nothing to scale to here. */
-.hero .grid,
-.hero .leaders,
-.hero .node {
-  display: none;
+.hero .foot span:first-child {
+  max-width: 220px;
 }
 
-/* ---------- The composition ---------- */
+.hero .foot span:last-child {
+  white-space: nowrap;
+}
+
+/* ---------- The wide composition ---------- */
 
 @media (min-width: 900px) {
   .landing {
     position: fixed;
     inset: 0;
     overflow: hidden;
-    background: var(--bg);
   }
 
   /* Left, top and scale are set from JS, which fits 1440x860 into the window. */
@@ -277,49 +452,10 @@
     top: 0;
     width: 1440px;
     height: 860px;
-    padding: 0;
-    margin: 0;
+    min-height: 0;
+    display: block;
     font-size: 11px;
     transform-origin: 0 0;
-  }
-
-  .hero .grid {
-    display: block;
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-
-  .hero .grid i {
-    position: absolute;
-    background: var(--grid);
-  }
-
-  /*
-   * The rules run well past the composition so they carry on through the letterbox either
-   * side of the scaled stage: the drawing's grid should read as the page's grid. The
-   * percentage offsets still resolve against the composition, so they stay in register.
-   */
-  .hero .grid .v {
-    top: -4000px;
-    bottom: -4000px;
-    width: 1px;
-  }
-
-  .hero .grid .h {
-    left: -4000px;
-    right: -4000px;
-    height: 1px;
-  }
-
-  .hero .grid b {
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    margin: -4px 0 0 -4px;
-    background:
-      linear-gradient(var(--grid), var(--grid)) center / 1px 100% no-repeat,
-      linear-gradient(var(--grid), var(--grid)) center / 100% 1px no-repeat;
   }
 
   .hero .top {
@@ -328,25 +464,29 @@
     left: 0;
     right: 0;
     padding: 12px 14px;
-    z-index: 5;
   }
 
-  /* Sized by JS to the composition's full width; 118px is the drawn starting point. */
   .hero h1 {
     position: absolute;
     left: 14px;
     top: 60px;
     margin: 0;
-    z-index: 4;
     white-space: nowrap;
     font-size: 118px;
-    line-height: 0.9;
+  }
+
+  .hero h1 .line {
+    display: inline;
+  }
+
+  .hero h1 br {
+    display: none;
   }
 
   .hero .pill {
     position: absolute;
     inset: 0;
-    height: auto;
+    min-height: 0;
     margin: 0;
   }
 
@@ -356,45 +496,33 @@
   }
 
   .hero .callout {
-    position: absolute;
-    z-index: 4;
     width: 236px;
-    max-width: none;
-    margin: 0;
     right: 8%;
     top: 50%;
+    bottom: auto;
+    padding: 6px 8px 10px;
   }
 
-  /* The bracket that makes each box read as a dimensioned annotation. */
-  .hero .callout::after {
-    content: '';
-    position: absolute;
-    right: -7px;
-    top: -7px;
-    bottom: 12px;
-    width: 14px;
-    border: 1px solid var(--ink);
-    border-left: 0;
-    border-bottom: 0;
-  }
-
-  /* The same box mirrored, on the other side of the pill. */
   .hero .callout.flipped {
-    right: auto;
     left: 8%;
     top: 30%;
-    text-align: right;
   }
 
-  .hero .callout.flipped::after {
-    right: auto;
-    left: -7px;
-    border-left: 1px solid var(--ink);
-    border-right: 0;
+  .hero .callout header {
+    margin: 0 -2px 8px;
+    padding: 4px 6px;
+  }
+
+  .hero .callout header strong {
+    font-size: 15px;
   }
 
   .hero .callout p {
     font-size: 10.5px;
+  }
+
+  .hero .callout hr {
+    margin: 8px 0;
   }
 
   @keyframes landing-float {
@@ -407,46 +535,23 @@
     }
   }
 
+  /*
+   * The wide annotations float where they were drawn rather than dodging the capsule. They
+   * are placed by hand against the grid and moving them would break the register the whole
+   * composition is built on, which is why the silhouette the capsule reports is ignored here.
+   */
   .hero .callout {
     animation: landing-float 5s ease-in-out infinite;
   }
 
-  .hero .leaders {
-    display: block;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .hero .leaders path {
-    fill: none;
-    stroke: var(--ink);
-    stroke-width: 1;
-  }
-
   .hero .node {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
     width: 14px;
     height: 14px;
     margin: -7px 0 0 -7px;
-    background: var(--bg);
-    border: 1px solid var(--ink);
-    z-index: 3;
-    pointer-events: none;
-    will-change: transform;
   }
 
   .hero .node::after {
-    content: '';
-    position: absolute;
     inset: 3px;
-    background: var(--ink);
   }
 
   .hero .about {
@@ -454,12 +559,26 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 40px;
-    z-index: 4;
     width: 900px;
+    padding: 0;
+  }
+
+  .hero .about .bar span {
+    font-size: 11px;
   }
 
   .hero .about .body {
+    padding: 16px;
     font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .hero .about p {
+    margin: 0 0 14px;
+  }
+
+  .hero .about form {
+    margin-top: 4px;
   }
 
   .hero .about input {
@@ -471,23 +590,22 @@
     font-size: 13px;
   }
 
-  .hero .chips {
-    justify-content: center;
-  }
-
   .hero .foot {
     position: absolute;
     left: 14px;
     right: 14px;
     bottom: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
+    padding: 0;
     font-size: 9px;
+  }
+
+  .hero .foot span:first-child {
+    max-width: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* The preference costs the animation, not the drawing. */
   .hero .callout {
     animation: none;
   }

@@ -1,14 +1,20 @@
 import { useEffect, useRef } from 'react'
-import { HEIGHT, WIDTH } from './composition'
+import { HEIGHT, PHONE_MAX, PHONE_WIDTH, WIDTH } from './composition'
 
 /**
- * Centres the 1440x860 composition in the window and scales it to fit.
+ * Fits whichever composition the window has room for, and hands back the refs to attach.
  *
- * It owns the two refs it needs and hands them back for the caller to attach, because the
- * fitting is entirely this hook's business: nothing else sets the composition's geometry.
- * The scale comes back in a ref rather than as state because it is read inside an animation
- * frame, sixty times a second, to turn element boxes back into composition coordinates.
- * Re-rendering React for it would be a waste and would lag the drawing.
+ * It owns the refs it needs because the fitting is entirely this hook's business: nothing
+ * else sets either composition's geometry. The scale comes back in a ref rather than as
+ * state because it is read inside an animation frame, sixty times a second, to turn element
+ * boxes back into composition coordinates; re-rendering React for it would be a waste and
+ * would lag the drawing.
+ *
+ * The two layouts scale by different means. The wide one centres a fixed 1440x860 stage with
+ * `transform: scale`, which resamples its text — acceptable, because it only ever scales
+ * down. The phone one is 390px wide and scales up, so it uses `zoom`, which reflows text at
+ * the scaled size rather than resampling it. That is the whole reason a phone composition
+ * exists rather than the wide one shrunk. See ADR-0014.
  */
 export function useStageFit(drawn: boolean) {
   const stage = useRef<HTMLDivElement>(null)
@@ -22,16 +28,14 @@ export function useStageFit(drawn: boolean) {
       return
     }
 
-    // Flow layout owns its own geometry, so hand back anything this hook set.
-    if (!drawn) {
-      composition.style.left = ''
-      composition.style.top = ''
-      composition.style.transform = ''
-      scale.current = 1
-      return
-    }
+    // Neither layout inherits the other's geometry, so hand back everything first.
+    composition.style.left = ''
+    composition.style.top = ''
+    composition.style.transform = ''
+    composition.style.removeProperty('zoom')
+    composition.style.minHeight = ''
 
-    const fit = () => {
+    const fitWide = () => {
       const width = board.clientWidth
       const height = board.clientHeight
       if (!width || !height) {
@@ -44,14 +48,33 @@ export function useStageFit(drawn: boolean) {
       composition.style.transform = `scale(${factor})`
     }
 
-    fit()
-    if (typeof ResizeObserver !== 'function') {
-      addEventListener('resize', fit)
-      return () => removeEventListener('resize', fit)
+    /*
+     * Capped at PHONE_MAX so the drawing stops growing before its line weights coarsen; past
+     * that it sits centred with the grid bleeding into the window either side. The height is
+     * a floor rather than a size: the hero takes the slack, and the page scrolls when there
+     * is not enough of it.
+     */
+    const fitPhone = () => {
+      const factor = Math.min(innerWidth, PHONE_MAX) / PHONE_WIDTH
+      if (!factor) {
+        return
+      }
+      scale.current = factor
+      composition.style.setProperty('zoom', `${factor}`)
+      composition.style.minHeight = `${innerHeight / factor}px`
     }
-    const observer = new ResizeObserver(fit)
-    observer.observe(board)
-    return () => observer.disconnect()
+
+    const fit = drawn ? fitWide : fitPhone
+    fit()
+
+    // The wide stage is sized by its board; the phone composition by the window itself.
+    if (drawn && typeof ResizeObserver === 'function') {
+      const observer = new ResizeObserver(fit)
+      observer.observe(board)
+      return () => observer.disconnect()
+    }
+    addEventListener('resize', fit)
+    return () => removeEventListener('resize', fit)
   }, [drawn])
 
   return { stage, hero, scale }

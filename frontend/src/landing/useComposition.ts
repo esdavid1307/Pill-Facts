@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import { COMPOSITION } from './composition'
 
 /**
- * Whether the window is wide enough for the drawn composition.
+ * Which of the two compositions the window has room for.
  *
- * This gates the stage, the leader lines and the 3D pill alike, so a narrow window never
- * pays for a scene it does not render. In jsdom no media query matches, which is why the
- * tests exercise the flow layout — the same one a phone gets, not a test-only branch.
+ * This picks the wide drawing's stage, grid and hand-placed annotations over the phone
+ * drawing's; it does not gate the drawing itself, because both layouts are drawings. See
+ * ADR-0014. In jsdom no media query matches unless a test says otherwise, so the suite's
+ * default is the phone — which is the majority of readers.
  */
 export function useComposition(): boolean {
   const [drawn, setDrawn] = useState(() => matchMedia?.(COMPOSITION).matches ?? false)
