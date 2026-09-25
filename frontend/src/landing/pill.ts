@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
-import type { Point } from './composition'
+import type { Point, Silhouette } from './composition'
 
 /**
  * The capsule at the centre of the landing composition.
@@ -8,7 +8,7 @@ import type { Point } from './composition'
  * This module is the only thing in the app that imports three.js, and it is only ever
  * reached through a dynamic import, so the ~150KB it costs lands in a chunk that the
  * landing paints without waiting for. Nothing outside it knows three.js exists; the caller
- * gets two projected points per frame and a way to tear the scene down.
+ * gets the capsule's projected silhouette once a frame and a way to tear the scene down.
  */
 export type Pill = { dispose(): void }
 
@@ -123,16 +123,30 @@ const NEAR = 110
 const FAR = 260
 const STRENGTH = 0.35
 
+/** The most of its box, down and across, the capsule is allowed to take. */
+const TALLEST = 0.5
+const WIDEST = 0.62
+
+/** Points sampled around each end cap, to find the silhouette's top and bottom. */
+const RING = 24
+
 /**
  * Builds the scene and starts rendering. Throws where WebGL is unavailable, which the
  * caller treats as "show the flat pill instead".
  *
- * @param onAnchors called each frame with the two silhouette points the leader lines
- *   attach to, in composition coordinates.
+ * @param onFrame called each frame with the capsule's projected silhouette, in the canvas'
+ *   own coordinates.
+ * @param scaleOf the factor the composition around the canvas is scaled by. The canvas is
+ *   laid out in composition pixels, so without this the phone layout — which scales up
+ *   rather than down — would render the capsule into a backing store smaller than the
+ *   pixels it is painted across.
  */
-export function mountPill(canvas: HTMLCanvasElement, onAnchors: (points: [Point, Point]) => void): Pill {
+export function mountPill(
+  canvas: HTMLCanvasElement,
+  onFrame: (silhouette: Silhouette) => void,
+  scaleOf: () => number,
+): Pill {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
   renderer.outputColorSpace = THREE.SRGBColorSpace
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   renderer.toneMappingExposure = 1.05
@@ -205,10 +219,17 @@ export function mountPill(canvas: HTMLCanvasElement, onAnchors: (points: [Point,
     width = Math.max(1, canvas.clientWidth)
     height = Math.max(1, canvas.clientHeight)
     renderer.setSize(width, height, false)
+    renderer.setPixelRatio(Math.min(devicePixelRatio * scaleOf(), 3))
     camera.aspect = width / height
     const half = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
     const size = 2.4
-    const distance = Math.max(size / 0.5 / 2 / half, size / 0.36 / 2 / half / camera.aspect)
+    /*
+     * Far enough back that the capsule keeps within both fractions of the box it is drawn
+     * in. The wide composition is a landscape box, where height is what binds and the width
+     * fraction never comes into it; the phone's is a portrait one, where the width fraction
+     * is the whole framing and a tighter one would leave the capsule a speck.
+     */
+    const distance = Math.max(size / TALLEST / 2 / half, size / WIDEST / 2 / half / camera.aspect)
     camera.position.set(0, 0.5, distance)
     camera.lookAt(0, -0.05, 0)
     camera.updateProjectionMatrix()
@@ -263,6 +284,32 @@ export function mountPill(canvas: HTMLCanvasElement, onAnchors: (points: [Point,
     return { x: (projected.x * 0.5 + 0.5) * width, y: (-projected.y * 0.5 + 0.5) * height }
   }
 
+  /*
+   * The capsule's projected top and bottom, from a ring of points around each end cap. The
+   * phone annotations dodge this; the wide composition ignores it and keeps its annotations
+   * where they were drawn.
+   */
+  const around = new THREE.Vector3()
+  const caps = [
+    [0.62, CAP_RADIUS],
+    [-0.62, RADIUS],
+  ] as const
+  const extent = () => {
+    let top = Infinity
+    let bottom = -Infinity
+    for (const [centre, radius] of caps) {
+      for (let i = 0; i < RING; i++) {
+        const angle = (i / RING) * Math.PI * 2
+        const y = project(
+          around.set(Math.cos(angle) * radius, centre + Math.sin(angle) * radius, 0),
+        ).y
+        top = Math.min(top, y)
+        bottom = Math.max(bottom, y)
+      }
+    }
+    return { top, bottom }
+  }
+
   const started = performance.now()
   let dodge = 0
   let running = true
@@ -276,7 +323,7 @@ export function mountPill(canvas: HTMLCanvasElement, onAnchors: (points: [Point,
     spin.rotation.y = time * 0.35
     tilt.updateMatrixWorld()
     renderer.render(scene, camera)
-    onAnchors([project(anchors[0]), project(anchors[1])])
+    onFrame({ anchors: [project(anchors[0]), project(anchors[1])], extent: extent() })
     if (running && !still) {
       pending = requestAnimationFrame(frame)
     }

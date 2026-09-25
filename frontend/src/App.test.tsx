@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import type { DrugConcept, RegulatoryClassBlock, SafetySection } from './api/drugConcept'
+import { viewportIs } from './test/viewport'
 
 /**
  * The frontend's one test seam: a component rendered in jsdom with the backend stubbed
@@ -11,6 +12,10 @@ import type { DrugConcept, RegulatoryClassBlock, SafetySection } from './api/dru
  * Routes are keyed by the path they answer, because resolving a search and then opening
  * the Drug Concept it resolved to is two calls, and a stub that answered both with the
  * same body would let a page pass on the other page's payload.
+ *
+ * The other knob is `viewportIs`, which every test gets set to the phone by the shared
+ * setup. The cases below reach every page through the landing's search form, so they are
+ * also the regression test for that form staying reachable on a phone.
  */
 function backendReturns(routes: Record<string, unknown>) {
   vi.stubGlobal(
@@ -76,6 +81,93 @@ async function search(query: string) {
 }
 
 afterEach(() => vi.unstubAllGlobals())
+
+/**
+ * The landing is a drawing either side of 900px, and the point of testing it is that being
+ * two drawings costs a reader nothing: the same content, the same controls under the same
+ * names, the same search. What the geometry computed is not asserted — jsdom measures every
+ * box as zero, so an assertion about the zoom factor, the dodging annotations, the leader
+ * paths or the fitted headline would be an assertion about the stub. Those are verified in a
+ * browser. What running both layouts here does catch is that none of that code throws or
+ * produces a NaN when every measurement is zero, because the page has to render at all for
+ * anything below to pass.
+ */
+describe('the landing a reader arrives on', () => {
+  for (const viewport of ['phone', 'desktop'] as const) {
+    describe(`at ${viewport} width`, () => {
+      function arrive() {
+        viewportIs(viewport)
+        return render(<App />)
+      }
+
+      it('says whose words these are, and that they are not advice', () => {
+        arrive()
+
+        expect(screen.getByRole('link', { name: 'PILL-FACTS' })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: 'Your pills. Your facts.' })).toBeInTheDocument()
+        expect(screen.getByText('FDA drug labels')).toBeInTheDocument()
+        expect(screen.getByText(/not medical advice/i)).toBeInTheDocument()
+        expect(screen.getByText(/talk to a pharmacist or doctor/i)).toBeInTheDocument()
+      })
+
+      it('annotates the drawing with what a Drug Concept page renders', () => {
+        arrive()
+
+        const effects = within(screen.getByRole('complementary', { name: 'Side effects' }))
+        expect(effects.getByText(/in the FDA/i)).toBeInTheDocument()
+
+        // A statement of composition and nothing more. See ADR-0005.
+        const products = within(screen.getByRole('complementary', { name: 'Other products' }))
+        expect(products.getByText('Atorvastatin 10 MG Oral Tablet')).toBeInTheDocument()
+        expect(document.body.textContent).not.toMatch(
+          /\b(substitut|equivalent|interchangeable|generic version)/i,
+        )
+      })
+
+      it('offers a search field and a button, both named', () => {
+        arrive()
+
+        expect(screen.getByRole('searchbox', { name: /medication/i })).toBeInTheDocument()
+        expect(screen.getByRole('button', { name: /^search$/i })).toBeInTheDocument()
+      })
+
+      it('leaves for Resolution when a medication is searched for', async () => {
+        backendReturns({
+          '/api/search': { candidates: [{ rxcui: '83367', name: 'atorvastatin', brand: 'Lipitor' }] },
+          '/api/drug-concepts/83367': drugConcept(),
+        })
+        const user = userEvent.setup()
+        arrive()
+
+        await user.type(screen.getByRole('searchbox', { name: /medication/i }), 'lipitor')
+        await user.click(screen.getByRole('button', { name: /^search$/i }))
+
+        expect(
+          await screen.findByRole('heading', { name: 'Lipitor (atorvastatin)' }),
+        ).toBeInTheDocument()
+      })
+
+      it('searches for an example when one is tapped', async () => {
+        backendReturns({
+          '/api/search': { candidates: [{ rxcui: '6809', name: 'metformin' }] },
+          '/api/drug-concepts/6809': drugConcept({ rxcui: '6809', name: 'metformin' }),
+        })
+        const user = userEvent.setup()
+        arrive()
+
+        for (const example of ['Lipitor', 'Ibuprofen', 'Metformin']) {
+          expect(screen.getByRole('button', { name: example })).toBeInTheDocument()
+        }
+        await user.click(screen.getByRole('button', { name: 'Metformin' }))
+
+        expect(await screen.findByRole('heading', { name: 'metformin' })).toBeInTheDocument()
+        // The stub answers any query, so what proves the chip searched for its own example
+        // is the query Resolution was asked for.
+        expect(vi.mocked(fetch).mock.calls[0][0]).toContain('q=Metformin')
+      })
+    })
+  }
+})
 
 describe('resolving a search to a Drug Concept', () => {
   it('lands on the Drug Concept when one candidate is clearly right', async () => {
