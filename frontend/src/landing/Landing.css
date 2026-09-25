@@ -281,8 +281,6 @@
     margin: 0;
     font-size: 11px;
     transform-origin: 0 0;
-    overflow: hidden;
-    border: 1px solid var(--ink);
   }
 
   .hero .grid {
@@ -297,15 +295,20 @@
     background: var(--grid);
   }
 
+  /*
+   * The rules run well past the composition so they carry on through the letterbox either
+   * side of the scaled stage: the drawing's grid should read as the page's grid. The
+   * percentage offsets still resolve against the composition, so they stay in register.
+   */
   .hero .grid .v {
-    top: 0;
-    bottom: 0;
+    top: -4000px;
+    bottom: -4000px;
     width: 1px;
   }
 
   .hero .grid .h {
-    left: 0;
-    right: 0;
+    left: -4000px;
+    right: -4000px;
     height: 1px;
   }
 
