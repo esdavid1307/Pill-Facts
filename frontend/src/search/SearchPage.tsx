@@ -1,34 +1,29 @@
 import { useState, type FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router'
-import { searchDrugConcepts, type Candidate } from '../api/search'
+import { Link, useNavigate, useSearchParams } from 'react-router'
 import { drugConceptPath } from '../drugconcept/drugConceptPath'
+import { searchPath } from './searchPath'
+import { useResolution } from './useResolution'
 
-type Idle = { state: 'idle' }
-type Searching = { state: 'searching' }
-type Choices = { state: 'choices'; candidates: Candidate[] }
-type Failed = { state: 'failed' }
-type Search = Idle | Searching | Choices | Failed
-
+/**
+ * The shortlist a reader sees only when their query was genuinely ambiguous — "hydroxy"
+ * matching two different substances, say.
+ *
+ * It is plain, scrollable, document-flow text at a readable size on purpose. Choosing
+ * between two medications is the moment a reader can least afford a composition scaled
+ * to fit a window. See ADR-0014.
+ */
 export function SearchPage() {
-  const [query, setQuery] = useState('')
-  const [search, setSearch] = useState<Search>({ state: 'idle' })
+  const [params] = useSearchParams()
+  const query = params.get('q') ?? ''
+  const resolution = useResolution(query)
   const navigate = useNavigate()
+  const [refined, setRefined] = useState(query)
 
-  async function submit(event: FormEvent) {
+  function submit(event: FormEvent) {
     event.preventDefault()
-    setSearch({ state: 'searching' })
-    try {
-      const { candidates } = await searchDrugConcepts(query)
-      // One candidate means Resolution found one Drug Concept, so there is no choice to
-      // present. Several means there is, and guessing between them would be sending
-      // someone to the wrong medication.
-      if (candidates.length === 1) {
-        navigate(drugConceptPath(candidates[0]), { state: { candidate: candidates[0] } })
-        return
-      }
-      setSearch({ state: 'choices', candidates })
-    } catch {
-      setSearch({ state: 'failed' })
+    const next = refined.trim()
+    if (next) {
+      navigate(searchPath(next))
     }
   }
 
@@ -39,29 +34,28 @@ export function SearchPage() {
         <input
           id="q"
           type="search"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          value={refined}
+          onChange={(event) => setRefined(event.target.value)}
           placeholder="Lipitor, ibuprofen&hellip;"
-          autoFocus
         />
         <button type="submit">Search</button>
       </form>
 
-      {search.state === 'searching' && <p>Searching&hellip;</p>}
+      {resolution.state === 'searching' && <p className="pending">Searching&hellip;</p>}
 
-      {search.state === 'failed' && (
+      {resolution.state === 'failed' && (
         <p role="alert">We couldn&rsquo;t reach the backend. Please try again.</p>
       )}
 
-      {search.state === 'choices' && search.candidates.length === 0 && (
+      {resolution.state === 'choices' && resolution.candidates.length === 0 && (
         <p>Nothing matched &ldquo;{query}&rdquo;. Try another spelling.</p>
       )}
 
-      {search.state === 'choices' && search.candidates.length > 0 && (
+      {resolution.state === 'choices' && resolution.candidates.length > 0 && (
         <section aria-label="Search results">
           <h2>Did you mean&hellip;</h2>
           <ul className="candidates">
-            {search.candidates.map((candidate) => (
+            {resolution.candidates.map((candidate) => (
               <li key={candidate.rxcui}>
                 <Link to={drugConceptPath(candidate)} state={{ candidate }}>
                   {candidate.brand ? (

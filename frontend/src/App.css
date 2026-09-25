@@ -1,68 +1,73 @@
-main {
+/*
+ * The pages inside the shell: the search results and a Drug Concept's labelling. Every
+ * selector is scoped to .page because the landing is a separate composition with its own
+ * stylesheet, and an unscoped `main` or `[role='search']` rule here would reach into it.
+ */
+.page {
   max-width: 40rem;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-h1 {
+.page h1 {
   margin-bottom: 0.25rem;
 }
 
-.tagline {
+.page .tagline {
   margin-top: 0;
   color: var(--muted);
 }
 
-.masthead a {
+.page .masthead a {
   color: inherit;
   text-decoration: none;
 }
 
-[role='search'] {
+.page [role='search'] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 2rem 0;
 }
 
-[role='search'] label {
+.page [role='search'] label {
   flex-basis: 100%;
   color: var(--muted);
 }
 
-[role='search'] input {
+.page [role='search'] input {
   flex: 1 1 14rem;
   padding: 0.5rem;
 }
 
-.candidates {
+.page .candidates {
   list-style: none;
   padding: 0;
 }
 
-.candidates li {
+.page .candidates li {
   border-top: 1px solid var(--border);
   padding: 0.75rem 0;
 }
 
-.candidates span {
+.page .candidates span {
   color: var(--muted);
 }
 
-.pending {
+.page .pending {
   color: var(--muted);
 }
 
-[role='alert'] {
+.page [role='alert'] {
   color: var(--alert);
 }
 
-.safety {
+.page .safety {
   border-top: 1px solid var(--border);
   margin: 2rem 0;
 }
 
-.safety h3 {
+.page .safety h3 {
   font-size: 1.1rem;
 }
 
@@ -71,30 +76,30 @@ h1 {
  * a drug without one shows nothing here at all, so this styling is never a reassurance
  * by its absence.
  */
-.boxed-warning {
+.page .boxed-warning {
   border: 2px solid var(--alert);
   border-radius: 4px;
   padding: 0 1rem 0.5rem;
 }
 
-.boxed-warning h3 {
+.page .boxed-warning h3 {
   color: var(--alert);
 }
 
-.regulatory-class {
+.page .regulatory-class {
   margin: 2.5rem 0;
 }
 
-.provenance {
+.page .provenance {
   color: var(--muted);
   font-size: 0.85rem;
 }
 
-.unlabelled {
+.page .unlabelled {
   color: var(--muted);
 }
 
-.products {
+.page .products {
   margin: 2.5rem 0;
   border-top: 1px solid var(--border);
 }
@@ -104,21 +109,21 @@ h1 {
  * See ADR-0005: the constraint is the wording, and a reader who skips the note still
  * reads nothing that compares one product to another.
  */
-.composition-note {
+.page .composition-note {
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.compositions {
+.page .compositions {
   list-style: none;
   padding: 0;
 }
 
-.compositions li {
+.page .compositions li {
   border-top: 1px solid var(--border);
   padding: 0.5rem 0;
 }
 
-.compositions span {
+.page .compositions span {
   color: var(--muted);
 }
