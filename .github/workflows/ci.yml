@@ -41,6 +41,9 @@ jobs:
       - name: Test
         working-directory: backend
         run: ./mvnw -B verify
+      - name: Test upstream contract checker with local stand-ins
+        working-directory: backend
+        run: python3 -m unittest tools/test_check_upstream_contracts.py
 
   frontend:
     needs: changes

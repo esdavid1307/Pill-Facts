@@ -80,6 +80,15 @@ cd frontend && npm test
 
 CI runs both on every pull request, each only when its own directory changed.
 
+The live upstream contract check is deliberately separate from CI. GitHub Actions runs
+it nightly (or manually through `workflow_dispatch`) against RxNorm and openFDA, and its
+failure names the upstream and JSON field that changed. Pull requests run only its local
+stand-in tests and never call either third party:
+
+```sh
+python3 -m unittest backend/tools/test_check_upstream_contracts.py
+```
+
 ## Configuration
 
 No credential or API key belongs in this repository. The backend reads everything it
