@@ -9,6 +9,7 @@ import {
 } from '../api/drugConcept'
 import type { Candidate } from '../api/search'
 import { RelatedProducts } from './RelatedProducts'
+import { SafetyFraming } from './SafetyFraming'
 import { LabelProvenance, SafetySections } from './SafetySections'
 
 /**
@@ -67,6 +68,12 @@ export function DrugConceptPage() {
     <article>
       {/* Arriving via a Brand leads with that Brand, per ADR-0002. */}
       <h1>{title(resolved?.brand, name) ?? `RxCUI ${rxcui}`}</h1>
+
+      {/*
+        * Above everything, and before the fetch has answered. What this page is and is
+        * not holds whatever came back, so it is not conditional on anything.
+        */}
+      <SafetyFraming />
 
       {answer === null && <p className="pending">Looking up the FDA&rsquo;s labelling&hellip;</p>}
 

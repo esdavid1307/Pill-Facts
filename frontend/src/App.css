@@ -62,6 +62,35 @@
   color: var(--alert);
 }
 
+/*
+ * What the page is and is not, sized to be read rather than skipped, and bounded so it
+ * reads as the page talking about itself rather than as labelling.
+ *
+ * The border is --border and not --alert. ADR-0015 leaves the app one red, and the Boxed
+ * Warning is the only thing that wears it as a box; a second red box standing above it
+ * would tell a reader the two carry comparable weight. There are no fixed widths or
+ * heights here, so on a phone it wraps into the 40rem column like every other block and
+ * nothing it contains can overflow.
+ *
+ * Neither line is set in --muted. The second one is the whole reason this ticket exists —
+ * that a gap in the page is not a reassurance — and styling it as fine print would file
+ * it under the disclaimers readers have learned to skip.
+ */
+.page .framing {
+  margin: 1.5rem 0 2rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.page .framing p {
+  margin: 0.5rem 0;
+}
+
+.page .framing .not-exhaustive {
+  font-size: 0.95rem;
+}
+
 .page .safety {
   border-top: 1px solid var(--border);
   margin: 2rem 0;
