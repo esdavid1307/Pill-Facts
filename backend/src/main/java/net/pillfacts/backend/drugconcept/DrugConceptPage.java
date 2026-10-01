@@ -1,5 +1,6 @@
 package net.pillfacts.backend.drugconcept;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -23,6 +24,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * are none
  * @param combinationProducts products of this Active Ingredient and at least one other,
  * which are never Alternatives and are never in that list (ADR-0005)
+ * @param fetchedDate the date Pill-Facts last retrieved this from the FDA — a fact about
+ * us, and not to be confused with any Provenance's Effective Date, which is a fact about
+ * the FDA. A page may be up to a week old, and says so rather than hiding it (ADR-0003).
+ * Absent only in the cached copy of a page, where the row carrying it holds the date
+ * instead, and {@link #fetchedOn} puts it back on the way out
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record DrugConceptPage(
@@ -30,4 +36,12 @@ public record DrugConceptPage(
 		String name,
 		List<RegulatoryClassBlock> labelling,
 		List<Alternative> alternatives,
-		List<CombinationProduct> combinationProducts) {}
+		List<CombinationProduct> combinationProducts,
+		LocalDate fetchedDate) {
+
+	/** The same page, dated by the retrieval it actually came from. */
+	DrugConceptPage fetchedOn(LocalDate date) {
+		return new DrugConceptPage(this.rxcui, this.name, this.labelling, this.alternatives,
+				this.combinationProducts, date);
+	}
+}

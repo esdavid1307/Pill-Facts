@@ -3,6 +3,7 @@ package net.pillfacts.backend.drugconcept;
 import java.util.List;
 import java.util.Optional;
 
+import net.pillfacts.backend.cache.Cache;
 import net.pillfacts.backend.openfda.Label;
 import net.pillfacts.backend.openfda.OpenFda;
 import net.pillfacts.backend.openfda.RegulatoryClass;
@@ -22,9 +23,18 @@ import org.springframework.stereotype.Service;
  * page's Alternatives and Combination Products come from. That is a claim about
  * composition and not about the labelling, so it is asked of {@link RelatedProducts}
  * whether the FDA publishes a Label or not.
+ *
+ * <p>A page is built from four upstream searches and two RxNorm walks, so it is built
+ * once a week rather than once a request: the whole of it goes through the {@link Cache},
+ * which is also what keeps the page up when the FDA is down (ADR-0003).
  */
 @Service
 class Labelling {
+
+	/** What a cached page's key says it is, keeping it clear of the resolutions. */
+	private static final String DRUG_CONCEPT = "drug-concept:";
+
+	private final Cache cache;
 
 	private final RxNorm rxNorm;
 
@@ -36,8 +46,9 @@ class Labelling {
 
 	private final RelatedProducts relatedProducts;
 
-	Labelling(RxNorm rxNorm, OpenFda openFda, PrescriptionRenderer prescription, OtcRenderer otc,
-			RelatedProducts relatedProducts) {
+	Labelling(Cache cache, RxNorm rxNorm, OpenFda openFda, PrescriptionRenderer prescription,
+			OtcRenderer otc, RelatedProducts relatedProducts) {
+		this.cache = cache;
 		this.rxNorm = rxNorm;
 		this.openFda = openFda;
 		this.prescription = prescription;
@@ -48,8 +59,17 @@ class Labelling {
 	/**
 	 * The page for a Drug Concept, or empty where the RxCUI identifies no Drug Concept —
 	 * which is a different thing from a Drug Concept the FDA publishes no Label for.
+	 *
+	 * <p>The Fetched Date is stamped on here rather than built in, because it belongs to
+	 * the retrieval and not to the page: a page served from a week-old row carries that
+	 * row's date and says so.
 	 */
 	Optional<DrugConceptPage> page(String rxcui) {
+		return this.cache.servedFrom(DRUG_CONCEPT + rxcui, DrugConceptPage.class, () -> build(rxcui))
+				.map(fetched -> fetched.payload().fetchedOn(fetched.date()));
+	}
+
+	private Optional<DrugConceptPage> build(String rxcui) {
 		return this.rxNorm.concept(rxcui)
 				.filter(RxNormConcept::isActiveIngredient)
 				.map(this::pageFor);
@@ -67,8 +87,9 @@ class Labelling {
 						.stream())
 				.toList();
 		RelatedProducts.Products related = this.relatedProducts.of(drugConcept.rxcui());
+		// Undated: page() stamps the Fetched Date on from the row this is stored in.
 		return new DrugConceptPage(drugConcept.rxcui(), drugConcept.name(), blocks,
-				related.alternatives(), related.combinationProducts());
+				related.alternatives(), related.combinationProducts(), null);
 	}
 
 	/**

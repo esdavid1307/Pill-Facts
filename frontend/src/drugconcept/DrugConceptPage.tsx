@@ -99,11 +99,26 @@ export function DrugConceptPage() {
             * Label or not.
             */}
           <RelatedProducts drugConcept={answer.drugConcept} />
+          <FetchedDate on={answer.drugConcept.fetchedDate} />
         </>
       )}
 
       <Link to="/">Search for another medication</Link>
     </article>
+  )
+}
+
+/**
+ * When we last went and got this, which is a different fact from when any of the FDA's
+ * labelling took effect and is worded so that the two can never be read as one. The
+ * backend serves a page up to a week old, and an older one still while the FDA is
+ * unreachable, so a reader is always told how old what they are reading is. See ADR-0003.
+ */
+function FetchedDate({ on }: { on: string }) {
+  return (
+    <p className="fetched">
+      Pill-Facts retrieved this from the FDA on <time dateTime={on}>{on}</time>.
+    </p>
   )
 }
 

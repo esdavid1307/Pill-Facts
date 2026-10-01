@@ -2,9 +2,7 @@ package net.pillfacts.backend.support;
 
 import java.util.Map;
 
-import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import org.springframework.core.io.Resource;
 
 /**
@@ -20,7 +18,7 @@ import org.springframework.core.io.Resource;
  * fixture answering 404 would read as a Drug Concept the FDA publishes no Label for, and
  * a test would quietly pass having reached somewhere it shouldn't.
  */
-final class OpenFdaStub {
+final class OpenFdaStub extends UpstreamStub {
 
 	/**
 	 * Kept in step with {@code OpenFda}, which builds the expression, with
@@ -36,10 +34,8 @@ final class OpenFdaStub {
 	private static final Map<String, String> CLASSES =
 			Map.of("otc", "HUMAN OTC DRUG", "prescription", "HUMAN PRESCRIPTION DRUG");
 
-	private final WireMockServer server = new WireMockServer(WireMockConfiguration.options().dynamicPort());
-
-	String start() {
-		server.start();
+	@Override
+	void stubFixtures() {
 		server.stubFor(WireMock.any(WireMock.anyUrl())
 				.atPriority(10)
 				.willReturn(WireMock.aResponse().withStatus(500)
@@ -48,7 +44,6 @@ final class OpenFdaStub {
 			stubSearches(directory, productType, "");
 			stubSearches(directory + "-brand", productType, BRAND_ONLY);
 		});
-		return server.baseUrl();
 	}
 
 	private void stubSearches(String directory, String productType, String restriction) {
@@ -56,7 +51,7 @@ final class OpenFdaStub {
 			String body = Fixtures.read(fixture);
 			String search = BY_CLASS.formatted(Fixtures.stem(fixture), productType) + restriction;
 			server.stubFor(WireMock.get(WireMock.urlPathEqualTo("/drug/label.json"))
-					.atPriority(1)
+					.atPriority(WHEN_REACHABLE)
 					.withQueryParam("search", WireMock.equalTo(search))
 					.willReturn(WireMock.aResponse()
 							// openFDA answers a search that matched nothing with 404, and
