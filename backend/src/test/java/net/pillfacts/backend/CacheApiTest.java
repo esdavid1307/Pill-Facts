@@ -26,6 +26,11 @@ class CacheApiTest extends ApiTest {
 
 	private static final String LIPITOR = "a60cc18b-0631-4cf0-b021-9f52224ece65";
 
+	/** Either side of the seven days, so that both halves of the TTL are pinned. */
+	private static final int WITHIN_THE_WEEK = 6;
+
+	private static final int PAST_THE_WEEK = 8;
+
 	@BeforeEach
 	void coldCache() {
 		theCacheIsEmpty();
@@ -63,12 +68,30 @@ class CacheApiTest extends ApiTest {
 
 	/**
 	 * A Label changes on the order of months, so a week-old one is still true — and a
-	 * week-old one is as old as this system will serve without asking again.
+	 * week-old one is as old as this system will serve without asking again. Both sides of
+	 * that line are pinned, because only the pair of them says seven: a test that asserted
+	 * expiry alone would pass just as well with a TTL of one day.
 	 */
+	@Test
+	void keeps_serving_a_drug_concept_until_its_entry_is_seven_days_old() {
+		api().get().uri(ATORVASTATIN).exchange().expectStatus().isOk();
+		daysPass(WITHIN_THE_WEEK);
+
+		forgetUpstreamRequests();
+		api().get().uri(ATORVASTATIN)
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.fetchedDate")
+				.isEqualTo(LocalDate.now().minusDays(WITHIN_THE_WEEK).toString());
+
+		assertThat(upstreamRequests()).isZero();
+	}
+
 	@Test
 	void refetches_a_drug_concept_once_its_entry_is_older_than_seven_days() {
 		api().get().uri(ATORVASTATIN).exchange().expectStatus().isOk();
-		aWeekPasses();
+		daysPass(PAST_THE_WEEK);
 
 		forgetUpstreamRequests();
 		api().get().uri(ATORVASTATIN)
@@ -85,26 +108,26 @@ class CacheApiTest extends ApiTest {
 	 * when they were fetched. Staleness is shown, never hidden.
 	 */
 	@Test
-	void serves_the_expired_payload_with_its_fetched_date_when_the_upstreams_are_down() {
+	void serves_the_expired_payload_with_its_fetched_date_while_the_upstreams_are_unreachable() {
 		api().get().uri(ATORVASTATIN).exchange().expectStatus().isOk();
-		aWeekPasses();
+		daysPass(PAST_THE_WEEK);
 
-		whileTheUpstreamsAreDown(() -> api().get().uri(ATORVASTATIN)
+		whileTheUpstreamsAreUnreachable(() -> api().get().uri(ATORVASTATIN)
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
 				.jsonPath("$.name").isEqualTo("atorvastatin")
 				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(LIPITOR)
 				.jsonPath("$.fetchedDate")
-				.isEqualTo(LocalDate.now().minusDays(DAYS_SINCE_FETCHING).toString()));
+				.isEqualTo(LocalDate.now().minusDays(PAST_THE_WEEK).toString()));
 	}
 
 	@Test
-	void serves_an_expired_resolution_when_the_upstreams_are_down() {
+	void serves_an_expired_resolution_while_the_upstreams_are_unreachable() {
 		api().get().uri("/api/search?q=lipitor").exchange().expectStatus().isOk();
-		aWeekPasses();
+		daysPass(PAST_THE_WEEK);
 
-		whileTheUpstreamsAreDown(() -> api().get().uri("/api/search?q=lipitor")
+		whileTheUpstreamsAreUnreachable(() -> api().get().uri("/api/search?q=lipitor")
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
@@ -116,10 +139,28 @@ class CacheApiTest extends ApiTest {
 	 * Wording that as Unreachable rather than as a fact about the drug is #9's work.
 	 */
 	@Test
-	void fails_when_the_upstreams_are_down_and_nothing_was_ever_fetched() {
-		whileTheUpstreamsAreDown(() -> api().get().uri(ATORVASTATIN)
+	void answers_nothing_while_the_upstreams_are_unreachable_and_nothing_was_ever_fetched() {
+		whileTheUpstreamsAreUnreachable(() -> api().get().uri(ATORVASTATIN)
 				.exchange()
 				.expectStatus().is5xxServerError());
+	}
+
+	/**
+	 * A payload's shape changes with the API it was built for, and a deploy leaves behind
+	 * rows written against the shape before it. Those are a miss and not a failure, so the
+	 * page is fetched again rather than erroring on everything cached.
+	 */
+	@Test
+	void refetches_a_drug_concept_whose_cached_payload_no_longer_fits_its_shape() {
+		api().get().uri(ATORVASTATIN).exchange().expectStatus().isOk();
+		theCachedPayloadsStopFittingTheirShape();
+
+		api().get().uri(ATORVASTATIN)
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(LIPITOR)
+				.jsonPath("$.fetchedDate").isEqualTo(LocalDate.now().toString());
 	}
 
 	/**

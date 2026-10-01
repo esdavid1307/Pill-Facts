@@ -17,6 +17,12 @@ import org.testcontainers.containers.PostgreSQLContainer;
  * boundary into services or repositories, so any refactor that leaves the API contract
  * intact leaves them passing.
  *
+ * <p>Two arrangements below do touch the database, and neither asserts anything there.
+ * The cache is the one piece of behaviour whose inputs are a shared table and the clock,
+ * and a test can reach neither through HTTP: it cannot empty a table every other class
+ * also writes to, and it cannot wait a week. Both are therefore set up in SQL and then
+ * observed through the API like everything else.
+ *
  * <p>Postgres and the upstream stubs are all static, so one of each is shared by every
  * test class that extends this. None may be stopped in a per-class {@code @AfterAll}, or
  * the first class to finish leaves them dead for all the rest; they live until the JVM
@@ -24,9 +30,6 @@ import org.testcontainers.containers.PostgreSQLContainer;
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class ApiTest {
-
-	/** Comfortably past the TTL, and the Fetched Date a stale page is then expected to show. */
-	protected static final int DAYS_SINCE_FETCHING = 8;
 
 	private static final PostgreSQLContainer<?> POSTGRES =
 			new PostgreSQLContainer<>("postgres:18-alpine");
@@ -80,42 +83,46 @@ public abstract class ApiTest {
 	}
 
 	/**
-	 * Runs the body with both upstreams answering every path as though they were down,
-	 * and brings them back whatever the body does.
+	 * Runs the body with both upstreams Unreachable on every path, and reachable again
+	 * whatever the body does.
 	 */
-	protected void whileTheUpstreamsAreDown(Runnable body) {
-		RXNORM.goesDown();
-		OPENFDA.goesDown();
+	protected void whileTheUpstreamsAreUnreachable(Runnable body) {
+		RXNORM.becomesUnreachable();
+		OPENFDA.becomesUnreachable();
 		try {
 			body.run();
 		}
 		finally {
-			RXNORM.comesBack();
-			OPENFDA.comesBack();
+			RXNORM.becomesReachable();
+			OPENFDA.becomesReachable();
 		}
 	}
 
 	/**
 	 * Empties the cache, so the next request is the first one ever made for what it asks
-	 * for. Postgres is shared by every test class, and class order is not guaranteed, so
-	 * a test about a cold cache has to make itself one.
+	 * for. Postgres is shared by every test class and nothing orders them, so a test
+	 * about a cold cache has to make itself one.
 	 */
 	protected void theCacheIsEmpty() {
 		this.jdbc.sql("delete from cached_payload").update();
 	}
 
 	/**
-	 * Ages every cache entry past its seven-day TTL.
-	 *
-	 * <p>The one arrangement here that reaches past HTTP, because only the database can
-	 * represent a week going by: the TTL is measured against {@code now()} in Postgres,
-	 * so moving the rows back is the only way to let a week pass without waiting one. It
-	 * asserts nothing, and what it arranges is then observed through the API like
-	 * everything else.
+	 * Ages every cache entry by some days, which is how a test reaches either side of the
+	 * TTL. It is measured against {@code now()} in Postgres, so moving the rows back is
+	 * the only way to let days pass without waiting them.
 	 */
-	protected void aWeekPasses() {
+	protected void daysPass(int days) {
 		this.jdbc.sql("update cached_payload set fetched_at = fetched_at - make_interval(days => :days)")
-				.param("days", DAYS_SINCE_FETCHING)
+				.param("days", days)
 				.update();
+	}
+
+	/**
+	 * Replaces every cached payload with one that fits no shape the application knows, as
+	 * a deploy that changes a payload does to every row written before it.
+	 */
+	protected void theCachedPayloadsStopFittingTheirShape() {
+		this.jdbc.sql("update cached_payload set payload = '[\"not a payload\"]'::jsonb").update();
 	}
 }

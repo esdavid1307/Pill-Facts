@@ -25,8 +25,14 @@ import org.springframework.stereotype.Service;
  *
  * <p>Walking a dozen matches to their ingredients costs a dozen RxNorm calls, and the
  * queries people type repeat, so a resolution is remembered for a week (ADR-0003). It is
- * remembered under the query as typed less its case and its spaces, because that is the
- * part of a query that changes the answer; the upstream still sees what was typed.
+ * remembered under the query less its case and the spaces around it, since neither
+ * changes what RxNorm answers; the upstream still sees what was typed. A query that
+ * matched nothing is remembered too — that is RxNorm's answer about a word, and it will
+ * be the same answer next week.
+ *
+ * <p>What comes back carries a Fetched Date, and nothing is done with it: a Candidate is
+ * a name and an RxCUI, and carries no claim for a date to qualify. Fetched Date belongs
+ * to a Label, and it is a Drug Concept's page that shows one.
  */
 @Service
 class Resolution {

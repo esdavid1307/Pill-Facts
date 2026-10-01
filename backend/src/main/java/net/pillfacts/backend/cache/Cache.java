@@ -51,10 +51,12 @@ public class Cache {
 	 * stored as it goes by; and, where the upstream failed, the expired payload that is
 	 * still better than nothing.
 	 *
-	 * <p>An upstream answering "there is no such thing" is not stored. That is an answer
-	 * about an address rather than a payload with a shelf life, and caching it would put
-	 * a seven-day memory behind a typo. A failure with nothing stored is rethrown,
-	 * because there is then nothing honest to serve.
+	 * <p>An upstream with no payload to give at all — there is no such thing at this
+	 * address — is not stored, because an absent payload has nothing to go stale and the
+	 * caller is going to answer 404 either way. An answer that is merely empty is a
+	 * payload like any other and is kept; a search that matched nothing matched nothing
+	 * last week too. A failure with nothing stored is rethrown, because there is then
+	 * nothing honest to serve.
 	 *
 	 * @param key what this payload is for, prefixed by the kind of thing it is so that
 	 * the two kinds the cache holds cannot collide

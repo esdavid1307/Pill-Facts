@@ -101,8 +101,8 @@
 
 /*
  * The one date on the page that is ours rather than the FDA's. It sits below everything
- * it dates and is set apart from the per-Label attributions above it, so that "we
- * fetched this on" and "the label took effect on" cannot be read as the same claim.
+ * it dates and is set apart from the per-Label Provenance above it, so that "we fetched
+ * this on" and "the Label took effect on" cannot be read as the same claim.
  */
 .page .fetched {
   border-top: 1px solid var(--border);
