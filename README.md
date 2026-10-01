@@ -2,8 +2,7 @@
 
 [pillfacts.net](https://pillfacts.net)
 
-Pill-Facts answers one question for people in the United States: what are the known side
-effects and safety warnings of a medication? It presents FDA-published drug labelling
+Pill-Facts presents FDA-published drug labelling
 verbatim, attributed to its source, and authors no medical content of its own.
 
 See [`docs/adr/`](docs/adr) for the decisions behind it.
