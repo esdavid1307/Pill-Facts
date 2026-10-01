@@ -412,9 +412,10 @@ describe('the framing a Drug Concept page carries', () => {
   })
 
   /**
-   * CONTEXT.md: "side effect" is the phrase a reader searches for and so it earns its
-   * place in landing copy, but it is never the name of a Safety Section and never appears
-   * on a page that renders one. A notice is the easiest place to forget that.
+   * docs/domain-language.md: "side effect" is the phrase a reader searches for and so
+   * it earns its place in landing copy, but it is never the name of a Safety Section and
+   * never appears on a page that renders one. A notice is the easiest place to forget
+   * that.
    *
    * Scoped to the notice rather than to the page, because the page is not all ours. A
    * Drug Facts panel really does say "if side effects occur", and ADR-0006 renders the
