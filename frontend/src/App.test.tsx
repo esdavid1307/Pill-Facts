@@ -37,6 +37,15 @@ const LIPITOR = {
   url: 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a60cc18b',
 }
 
+/** A second Label, so a page can carry two sources at once the way ADR-0010 lets it. */
+const FEVERALL = {
+  labelId: '3561bbc3-53b0-4857-8b71-39e165ed95ce',
+  label: 'Feverall Jr. Strength',
+  manufacturer: 'Sun Pharmaceutical Industries, Inc.',
+  effectiveDate: '2026-09-03',
+  url: 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3561bbc3',
+}
+
 function section(heading: string, text: string): SafetySection {
   return { heading, text, provenance: LIPITOR }
 }
@@ -71,6 +80,17 @@ async function openPage(page: DrugConcept) {
     [`/api/drug-concepts/${page.rxcui}`]: page,
   })
   await search(page.name)
+}
+
+/**
+ * Arriving at a Drug Concept's page cold: the URL pasted, shared or followed from a
+ * search engine, with no search before it and so nothing in router state. Everything the
+ * page must say about itself has to survive this.
+ */
+function deepLinkTo(page: DrugConcept) {
+  backendReturns({ [`/api/drug-concepts/${page.rxcui}`]: page })
+  window.history.pushState({}, '', `/drug-concepts/${page.rxcui}`)
+  render(<App />)
 }
 
 async function search(query: string) {
@@ -209,6 +229,217 @@ describe('resolving a search to a Drug Concept', () => {
     await search('zzzqqqnotadrug')
 
     expect(await screen.findByText(/nothing matched/i)).toBeInTheDocument()
+  })
+})
+
+/**
+ * What stops this page being read as medical advice.
+ *
+ * Two things a reader must be told before they read a word of labelling: that none of it
+ * is advice, and that what is here is not everything there is. Both are asserted in every
+ * state the page has, because a notice that only shows up once the labelling loads is a
+ * notice the slowest connections and the deepest links do without.
+ *
+ * Most of these arrive by deep link rather than through the search form. That is the case
+ * the ticket is about, and it is also the cheaper one: a search starts on the landing,
+ * whose composition is the most expensive thing this suite renders. One case below still
+ * comes through the form, to hold that the notices are not something the search route
+ * supplies.
+ *
+ * Document order is the whole of what jsdom can say about "without scrolling" — it
+ * measures every box as zero. That the notices come first in the article is the part a
+ * test can hold; that they fit on a phone screen is held by the stylesheet having no
+ * fixed heights or widths to overflow one.
+ */
+describe('the framing a Drug Concept page carries', () => {
+  const LABELLED = drugConcept({
+    labelling: [prescription([section('Contraindications', 'Acute liver failure.')])],
+  })
+
+  function framing() {
+    return screen.getByRole('complementary', { name: /what this page is/i })
+  }
+
+  /** Deep-linked, then settled, so no fetch is still in flight when the test ends. */
+  async function arriveCold() {
+    deepLinkTo(LABELLED)
+    await screen.findByRole('heading', { name: 'Contraindications' })
+  }
+
+  it('says this is not medical advice, and where advice comes from instead', async () => {
+    await arriveCold()
+
+    expect(within(framing()).getByText(/not medical advice/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/pharmacist or doctor/i)).toBeInTheDocument()
+  })
+
+  it('says the page is not a complete account of the risks', async () => {
+    await arriveCold()
+
+    expect(within(framing()).getByText(/not a complete account/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/no label lists everything/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/absence from this page is not evidence of safety/i))
+      .toBeInTheDocument()
+  })
+
+  it('puts both notices above the labelling they frame', async () => {
+    await arriveCold()
+
+    const heading = screen.getByRole('heading', { name: 'Contraindications' })
+    expect(framing().compareDocumentPosition(heading)).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
+  })
+
+  /**
+   * CONTEXT.md: "side effect" is the phrase a reader searches for and so it earns its
+   * place in landing copy, but it is never the name of a Safety Section and never appears
+   * on a page that renders one. A notice is the easiest place to forget that.
+   *
+   * Scoped to the notice rather than to the page, because the page is not all ours. A
+   * Drug Facts panel really does say "if side effects occur", and ADR-0006 renders the
+   * FDA's words verbatim — a page-wide assertion would be this rule overruling that one
+   * the first time it met a real OTC Label.
+   */
+  it('names the risks without calling them side effects', async () => {
+    await arriveCold()
+
+    expect(framing().textContent).not.toMatch(/side.effect/i)
+  })
+
+  it('carries both notices before any labelling has arrived', async () => {
+    deepLinkTo(LABELLED)
+
+    expect(screen.getByText(/Looking up/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/not medical advice/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/not a complete account/i)).toBeInTheDocument()
+
+    await screen.findByRole('heading', { name: 'Contraindications' })
+  })
+
+  it('carries both notices where there is no labelling to show', async () => {
+    deepLinkTo(drugConcept())
+
+    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/not medical advice/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/not a complete account/i)).toBeInTheDocument()
+  })
+
+  it('carries both notices when the FDA could not be reached', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('network down'))))
+    window.history.pushState({}, '', '/drug-concepts/83367')
+    render(<App />)
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/couldn’t reach the FDA/i)
+    expect(within(framing()).getByText(/not medical advice/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/not a complete account/i)).toBeInTheDocument()
+  })
+
+  it('carries both notices on a page reached through the search form', async () => {
+    await openPage(LABELLED)
+
+    expect(await screen.findByRole('heading', { name: 'Contraindications' })).toBeInTheDocument()
+    expect(within(framing()).getByText(/not medical advice/i)).toBeInTheDocument()
+    expect(within(framing()).getByText(/not a complete account/i)).toBeInTheDocument()
+  })
+
+  /** The masthead's own tagline is not this notice, and does not stand in for it. */
+  it('is not what the search page wears', async () => {
+    backendReturns({ '/api/search': { candidates: [] } })
+
+    await search('not a drug')
+
+    expect(screen.queryByRole('complementary', { name: /what this page is/i })).toBeNull()
+  })
+})
+
+/**
+ * Provenance presented rather than merely stored: every claim on the page checkable at
+ * its origin.
+ *
+ * A Drug Concept in both Regulatory Classes has a Representative Label for each
+ * (ADR-0010), so the page carries two sources at once and a section attributed to the
+ * other one is a reader sent to the wrong document. Each section is therefore read on its
+ * own and asked who said it, rather than the page being asked how many attributions it
+ * has in total.
+ */
+describe('the source every Safety Section names', () => {
+  /** The section a heading belongs to, which is the unit Provenance attaches to. */
+  function sectionNamed(heading: string) {
+    return within(screen.getByRole('heading', { name: heading }).closest('section')!)
+  }
+
+  async function openBothClasses() {
+    deepLinkTo(
+      drugConcept({
+        rxcui: '5640',
+        name: 'ibuprofen',
+        labelling: [
+          {
+            regulatoryClass: 'OVER_THE_COUNTER',
+            provenance: FEVERALL,
+            sections: [{ heading: 'Warnings', text: 'Stomach bleeding warning.', provenance: FEVERALL }],
+          },
+          prescription([section('Warnings and Precautions', 'Cardiovascular thrombotic events.')]),
+        ],
+      }),
+    )
+    await screen.findByRole('heading', { name: 'Warnings' })
+  }
+
+  it('names the Label, its manufacturer and its Effective Date in each section', async () => {
+    await openBothClasses()
+
+    expect(sectionNamed('Warnings').getByText(/From the FDA label for/)).toHaveTextContent(
+      'From the FDA label for Feverall Jr. Strength, published by Sun Pharmaceutical Industries, Inc., effective 2026-09-03.',
+    )
+    expect(
+      sectionNamed('Warnings and Precautions').getByText(/From the FDA label for/),
+    ).toHaveTextContent(
+      'From the FDA label for Lipitor, published by Viatris Specialty LLC, effective 2024-04-15.',
+    )
+  })
+
+  it('links each section to the Label it came from and not to the page’s other one', async () => {
+    await openBothClasses()
+
+    expect(sectionNamed('Warnings').getByRole('link', { name: /read the full label/i }))
+      .toHaveAttribute('href', FEVERALL.url)
+    expect(
+      sectionNamed('Warnings and Precautions').getByRole('link', { name: /read the full label/i }),
+    ).toHaveAttribute('href', LIPITOR.url)
+  })
+
+  /** An Effective Date is a date, and marked up as one so it is not read as a version. */
+  it('marks the Effective Date up as a date', async () => {
+    await openBothClasses()
+
+    const effective = sectionNamed('Warnings').getByText(FEVERALL.effectiveDate)
+    expect(effective.tagName).toBe('TIME')
+    expect(effective).toHaveAttribute('datetime', FEVERALL.effectiveDate)
+  })
+
+  /** A Label naming no manufacturer leaves it out, rather than attributing it to nobody. */
+  it('names only what the Label says where it names no manufacturer', async () => {
+    const anonymous = { ...FEVERALL, manufacturer: undefined }
+    deepLinkTo(
+      drugConcept({
+        labelling: [
+          {
+            regulatoryClass: 'PRESCRIPTION',
+            provenance: anonymous,
+            sections: [
+              { heading: 'Contraindications', text: 'Acute liver failure.', provenance: anonymous },
+            ],
+          },
+        ],
+      }),
+    )
+    await screen.findByRole('heading', { name: 'Contraindications' })
+
+    const attribution = sectionNamed('Contraindications').getByText(/From the FDA label for/)
+    expect(attribution).toHaveTextContent(
+      'From the FDA label for Feverall Jr. Strength, effective 2026-09-03.',
+    )
+    expect(attribution.textContent).not.toMatch(/published by/)
   })
 })
 
@@ -375,14 +606,6 @@ describe("a prescription Drug Concept's page", () => {
  * assert is that nothing in it is keyed to the prescription vocabulary.
  */
 describe("an over-the-counter Drug Concept's page", () => {
-  const FEVERALL = {
-    labelId: '3561bbc3-53b0-4857-8b71-39e165ed95ce',
-    label: 'Feverall Jr. Strength',
-    manufacturer: 'Sun Pharmaceutical Industries, Inc.',
-    effectiveDate: '2026-09-03',
-    url: 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3561bbc3',
-  }
-
   /** The sections the FDA's own Drug Facts panel prints, as the backend sends them. */
   function acetaminophen(): DrugConcept {
     const panel: [string, string][] = [
