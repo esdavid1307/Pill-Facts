@@ -99,6 +99,18 @@
   color: var(--muted);
 }
 
+/*
+ * The one date on the page that is ours rather than the FDA's. It sits below everything
+ * it dates and is set apart from the per-Label attributions above it, so that "we
+ * fetched this on" and "the label took effect on" cannot be read as the same claim.
+ */
+.page .fetched {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding-top: 1rem;
+}
+
 .page .products {
   margin: 2.5rem 0;
   border-top: 1px solid var(--border);

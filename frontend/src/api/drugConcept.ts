@@ -80,6 +80,15 @@ export type DrugConcept = {
    * none. Never among the Alternatives, and never rendered as though they were.
    */
   combinationProducts?: CombinationProduct[]
+  /**
+   * The date Pill-Facts last retrieved this page from the FDA, as an ISO date.
+   *
+   * A fact about us, where a Provenance's effectiveDate is a fact about the FDA. The
+   * backend serves a page up to a week old, and an older one still while the FDA is
+   * unreachable, so this is always rendered rather than only when it is old: staleness is
+   * shown and never hidden. See ADR-0003.
+   */
+  fetchedDate: string
 }
 
 /**

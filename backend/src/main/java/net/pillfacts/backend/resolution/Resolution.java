@@ -2,8 +2,10 @@ package net.pillfacts.backend.resolution;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
+import net.pillfacts.backend.cache.Cache;
 import net.pillfacts.backend.rxnorm.RxNorm;
 import net.pillfacts.backend.rxnorm.RxNormConcept;
 import org.springframework.stereotype.Service;
@@ -20,13 +22,24 @@ import org.springframework.stereotype.Service;
  *
  * <p>Matches keep RxNorm's ranking, so the best match is the first candidate and a lone
  * candidate is the one the searcher meant.
+ *
+ * <p>Walking a dozen matches to their ingredients costs a dozen RxNorm calls, and the
+ * queries people type repeat, so a resolution is remembered for a week (ADR-0003). It is
+ * remembered under the query as typed less its case and its spaces, because that is the
+ * part of a query that changes the answer; the upstream still sees what was typed.
  */
 @Service
 class Resolution {
 
+	/** What a cached resolution's key says it is, keeping it clear of the pages. */
+	private static final String RESOLUTION = "resolution:";
+
+	private final Cache cache;
+
 	private final RxNorm rxNorm;
 
-	Resolution(RxNorm rxNorm) {
+	Resolution(Cache cache, RxNorm rxNorm) {
+		this.cache = cache;
 		this.rxNorm = rxNorm;
 	}
 
@@ -36,6 +49,15 @@ class Resolution {
 			return List.of();
 		}
 
+		String key = RESOLUTION + query.strip().toLowerCase(Locale.ROOT);
+		return this.cache
+				.servedFrom(key, SearchResults.class, () -> Optional.of(new SearchResults(walk(query))))
+				.map(fetched -> fetched.payload().candidates())
+				.orElseGet(List::of);
+	}
+
+	/** Every match RxNorm offers, collapsed onto the Drug Concepts they belong to. */
+	private List<Candidate> walk(String query) {
 		List<Candidate> candidates = new ArrayList<>();
 		for (String matched : this.rxNorm.approximateMatches(query)) {
 			drugConceptOf(matched).ifPresent(ingredient -> merge(candidates, matched, ingredient));

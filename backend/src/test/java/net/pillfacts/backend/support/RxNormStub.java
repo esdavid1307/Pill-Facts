@@ -1,9 +1,7 @@
 package net.pillfacts.backend.support;
 
-import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import org.springframework.core.io.Resource;
 
 /**
@@ -17,22 +15,20 @@ import org.springframework.core.io.Resource;
  * the point: a test must never quietly pass because it reached somewhere it shouldn't,
  * and the fix is to record the fixture rather than to tolerate the gap.
  */
-final class RxNormStub {
+final class RxNormStub extends UpstreamStub {
 
-	private final WireMockServer server = new WireMockServer(WireMockConfiguration.options().dynamicPort());
-
-	String start() {
-		server.start();
+	@Override
+	void stubFixtures() {
 		stubApproximateTerm();
 		stubConcepts("properties", "/REST/rxcui/%s/properties.json", null);
 		stubConcepts("related-ingredient", "/REST/rxcui/%s/related.json", "IN");
 		stubProducts();
-		return server.baseUrl();
 	}
 
 	private void stubApproximateTerm() {
 		for (Resource fixture : Fixtures.in("rxnorm/approximate-term")) {
 			server.stubFor(WireMock.get(WireMock.urlPathEqualTo("/REST/approximateTerm.json"))
+					.atPriority(WHEN_REACHABLE)
 					.withQueryParam("term", WireMock.equalTo(Fixtures.stem(fixture)))
 					.willReturn(json(Fixtures.read(fixture))));
 		}
@@ -40,7 +36,8 @@ final class RxNormStub {
 
 	private void stubConcepts(String directory, String pathTemplate, String tty) {
 		for (Resource fixture : Fixtures.in("rxnorm/" + directory)) {
-			var mapping = WireMock.get(WireMock.urlPathEqualTo(pathTemplate.formatted(Fixtures.stem(fixture))));
+			var mapping = WireMock.get(WireMock.urlPathEqualTo(pathTemplate.formatted(Fixtures.stem(fixture))))
+					.atPriority(WHEN_REACHABLE);
 			if (tty != null) {
 				mapping = mapping.withQueryParam("tty", WireMock.equalTo(tty));
 			}
@@ -58,6 +55,7 @@ final class RxNormStub {
 		for (Resource fixture : Fixtures.in("rxnorm/related-product")) {
 			server.stubFor(WireMock.get(WireMock
 					.urlPathEqualTo("/REST/rxcui/%s/related.json".formatted(Fixtures.stem(fixture))))
+					.atPriority(WHEN_REACHABLE)
 					.withQueryParam("tty", WireMock.havingExactly("SCD", "SBD"))
 					.willReturn(json(Fixtures.read(fixture))));
 		}

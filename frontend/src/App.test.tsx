@@ -42,7 +42,13 @@ function section(heading: string, text: string): SafetySection {
 }
 
 function drugConcept(overrides: Partial<DrugConcept> = {}): DrugConcept {
-  return { rxcui: '83367', name: 'atorvastatin', labelling: [], ...overrides }
+  return {
+    rxcui: '83367',
+    name: 'atorvastatin',
+    labelling: [],
+    fetchedDate: '2026-10-01',
+    ...overrides,
+  }
 }
 
 function prescription(
@@ -290,6 +296,32 @@ describe("a prescription Drug Concept's page", () => {
     )
   })
 
+  /**
+   * Two dates, two facts: when the FDA's labelling took effect, and when we last went and
+   * got it. A page may be a week old, or older while the FDA is unreachable, and says so
+   * rather than reading as though it were fetched just now. See ADR-0003.
+   */
+  it('says when Pill-Facts retrieved the page, apart from when the labelling took effect', async () => {
+    await openPage(
+      drugConcept({
+        labelling: [prescription([section('Contraindications', 'Acute liver failure.')])],
+        fetchedDate: '2026-09-24',
+      }),
+    )
+
+    expect(await screen.findByText(/retrieved this from the FDA/i)).toHaveTextContent(
+      'Pill-Facts retrieved this from the FDA on 2026-09-24.',
+    )
+    expect(screen.getByText(/From the FDA label for/)).toHaveTextContent('effective 2024-04-15')
+  })
+
+  it('says when it retrieved a page it found no labelling on', async () => {
+    await openPage(drugConcept({ fetchedDate: '2026-09-24' }))
+
+    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
+    expect(screen.getByText(/retrieved this from the FDA/i)).toHaveTextContent('2026-09-24')
+  })
+
   it('shows the strengths a drug is made in', async () => {
     await openPage(
       drugConcept({
@@ -353,6 +385,8 @@ describe("a prescription Drug Concept's page", () => {
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/couldn’t reach the FDA/i)
     expect(document.body.textContent).not.toMatch(/no labelling to show/i)
+    // Nothing arrived, so there is no retrieval to date and none is claimed.
+    expect(document.body.textContent).not.toMatch(/retrieved this from the FDA/i)
   })
 
   /** No such Drug Concept is a fact about the address, and never worded as an outage. */
@@ -394,6 +428,7 @@ describe("an over-the-counter Drug Concept's page", () => {
     return {
       rxcui: '161',
       name: 'acetaminophen',
+      fetchedDate: '2026-10-01',
       labelling: [
         overTheCounter(
           panel.map(([heading, text]) => ({ heading, text, provenance: FEVERALL })),
