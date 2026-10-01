@@ -4,7 +4,8 @@
 Pill-Facts presents FDA-published drug labelling
 verbatim, attributed to its source, and authors no medical content of its own.
 
-See [`docs/adr/`](docs/adr) for the decisions behind it.
+See [`docs/domain-language.md`](docs/domain-language.md) for the words it uses, and
+[`docs/adr/`](docs/adr) for the decisions behind it.
 
 ## Layout
 
