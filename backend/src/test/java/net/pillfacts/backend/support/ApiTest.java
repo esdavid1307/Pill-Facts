@@ -125,4 +125,20 @@ public abstract class ApiTest {
 	protected void theCachedPayloadsStopFittingTheirShape() {
 		this.jdbc.sql("update cached_payload set payload = '[\"not a payload\"]'::jsonb").update();
 	}
+
+	/**
+	 * Puts a payload in the cache under a key of the test's choosing, which is how a test
+	 * reaches a row some past deploy would have written. A payload that still parses but
+	 * has since grown a field cannot be had by asking this application for one.
+	 */
+	protected void theCacheHolds(String key, String payload) {
+		this.jdbc.sql("""
+				insert into cached_payload (cache_key, payload, fetched_at)
+				values (:key, cast(:payload as jsonb), now())
+				on conflict (cache_key) do update set payload = excluded.payload
+				""")
+				.param("key", key)
+				.param("payload", payload)
+				.update();
+	}
 }

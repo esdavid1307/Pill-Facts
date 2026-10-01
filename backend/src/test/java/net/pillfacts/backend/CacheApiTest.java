@@ -67,6 +67,50 @@ class CacheApiTest extends ApiTest {
 	}
 
 	/**
+	 * The shape of a cached resolution changed when Resolution began reporting the
+	 * Combination Products it drops, and Jackson fills a record component the stored JSON
+	 * never mentions with null rather than refusing the row. Read back, such a row would
+	 * say "tylenol pm" dropped nothing, and the reader would be sent straight to
+	 * acetaminophen for as long as it lived. The key carries the shape's version so the
+	 * row is never read at all.
+	 */
+	@Test
+	void never_serves_a_resolution_stored_before_it_could_report_a_dropped_product() {
+		theCacheHolds("resolution:tylenol pm",
+				"{\"candidates\":[{\"rxcui\":\"161\",\"name\":\"acetaminophen\",\"brand\":\"Tylenol\"}]}");
+
+		api().get().uri("/api/search?q=tylenol pm")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.droppedCombinationProducts.length()").isEqualTo(1)
+				.jsonPath("$.droppedCombinationProducts[0].name").isEqualTo("Tylenol PM");
+	}
+
+	/**
+	 * A dropped Combination Product is part of the cached payload, not something recomputed
+	 * per request, so the second search has to say everything the first did. Were it lost,
+	 * "tylenol pm" would come back as a lone Candidate and navigate the reader straight to
+	 * acetaminophen for a week — the exact failure ADR-0012 records and #23 closes.
+	 */
+	@Test
+	void keeps_a_dropped_combination_product_across_a_cached_search() {
+		api().get().uri("/api/search?q=tylenol pm").exchange().expectStatus().isOk();
+
+		forgetUpstreamRequests();
+		api().get().uri("/api/search?q=tylenol pm")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.droppedCombinationProducts.length()").isEqualTo(1)
+				.jsonPath("$.droppedCombinationProducts[0].name").isEqualTo("Tylenol PM")
+				.jsonPath("$.droppedCombinationProducts[0].activeIngredientsWithNoCandidate[0]")
+						.isEqualTo("diphenhydramine");
+
+		assertThat(upstreamRequests()).isZero();
+	}
+
+	/**
 	 * A Label changes on the order of months, so a week-old one is still true — and a
 	 * week-old one is as old as this system will serve without asking again. Both sides of
 	 * that line are pinned, because only the pair of them says seven: a test that asserted

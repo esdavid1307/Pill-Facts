@@ -24,7 +24,8 @@ class ResolutionApiTest extends ApiTest {
 				.jsonPath("$.candidates.length()").isEqualTo(1)
 				.jsonPath("$.candidates[0].rxcui").isEqualTo("5640")
 				.jsonPath("$.candidates[0].name").isEqualTo("ibuprofen")
-				.jsonPath("$.candidates[0].brand").doesNotExist();
+				.jsonPath("$.candidates[0].brand").doesNotExist()
+				.jsonPath("$.droppedCombinationProducts").isEmpty();
 
 		api().get().uri("/api/search?q=advil")
 				.exchange()
@@ -63,10 +64,12 @@ class ResolutionApiTest extends ApiTest {
 	 * one and cannot be a candidate. Searching "tylenol pm" matches the Combination
 	 * Product itself and several of its packagings, all of which carry acetaminophen and
 	 * diphenhydramine together; only plain Tylenol resolves to a Drug Concept. Neither
-	 * constituent may be offered on its own behalf, per ADR-0012.
+	 * constituent may be offered on its own behalf, per ADR-0012. What the search must
+	 * not do is land on acetaminophen without saying so, which is what a lone candidate
+	 * used to do.
 	 */
 	@Test
-	void never_offers_a_combination_product_as_a_drug_concept() {
+	void names_a_combination_product_instead_of_silently_resolving_to_one_ingredient() {
 		api().get().uri("/api/search?q=tylenol pm")
 				.exchange()
 				.expectStatus().isOk()
@@ -74,7 +77,49 @@ class ResolutionApiTest extends ApiTest {
 				.jsonPath("$.candidates.length()").isEqualTo(1)
 				.jsonPath("$.candidates[0].rxcui").isEqualTo("161")
 				.jsonPath("$.candidates[0].name").isEqualTo("acetaminophen")
-				.jsonPath("$.candidates[0].brand").isEqualTo("Tylenol");
+				.jsonPath("$.candidates[0].brand").isEqualTo("Tylenol")
+				.jsonPath("$.droppedCombinationProducts.length()").isEqualTo(1)
+				.jsonPath("$.droppedCombinationProducts[0].name").isEqualTo("Tylenol PM")
+				.jsonPath("$.droppedCombinationProducts[0].activeIngredients[0]")
+						.isEqualTo("acetaminophen")
+				.jsonPath("$.droppedCombinationProducts[0].activeIngredients[1]")
+						.isEqualTo("diphenhydramine");
+	}
+
+	/**
+	 * Naming both of Tylenol PM's Active Ingredients is not enough: acetaminophen is the
+	 * candidate below and diphenhydramine is the one the reader gets nothing for, and it
+	 * is diphenhydramine's warnings — drowsiness, driving, alcohol — that are the reason
+	 * the product differs from plain Tylenol.
+	 */
+	@Test
+	void says_which_active_ingredients_a_dropped_combination_product_leaves_uncovered() {
+		api().get().uri("/api/search?q=tylenol pm")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.droppedCombinationProducts[0].activeIngredientsWithNoCandidate.length()")
+						.isEqualTo(1)
+				.jsonPath("$.droppedCombinationProducts[0].activeIngredientsWithNoCandidate[0]")
+						.isEqualTo("diphenhydramine");
+	}
+
+	/**
+	 * Eight of the matches for "tylenol pm" are acetaminophen with diphenhydramine: the
+	 * Brand, three branded dose-form groups and four packaged products. They are one
+	 * combination and Pill-Facts has no page for it once, so the reader is told once
+	 * rather than eight times over.
+	 */
+	@Test
+	void reports_one_dropped_combination_product_per_combination_of_active_ingredients() {
+		api().get().uri("/api/search?q=tylenol pm")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.droppedCombinationProducts.length()").isEqualTo(1)
+				.jsonPath("$.droppedCombinationProducts[0].activeIngredients.length()").isEqualTo(2)
+				.jsonPath("$.droppedCombinationProducts[*].name").value(names ->
+						assertThat((List<?>) names).doesNotHaveDuplicates());
 	}
 
 	/** RxNorm rejects an empty term outright, so an empty search must not reach it. */
@@ -84,7 +129,8 @@ class ResolutionApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.candidates").isEmpty();
+				.jsonPath("$.candidates").isEmpty()
+				.jsonPath("$.droppedCombinationProducts").isEmpty();
 	}
 
 	@Test

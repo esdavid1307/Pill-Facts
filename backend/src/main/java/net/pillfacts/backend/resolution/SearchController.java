@@ -15,6 +15,6 @@ class SearchController {
 
 	@GetMapping("/api/search")
 	SearchResults search(@RequestParam String q) {
-		return new SearchResults(this.resolution.resolve(q));
+		return this.resolution.resolve(q);
 	}
 }

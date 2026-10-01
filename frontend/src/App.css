@@ -58,6 +58,21 @@
   color: var(--muted);
 }
 
+/*
+ * A Combination Product Pill-Facts has no page for. Deliberately not --alert: that red
+ * carries the Boxed Warning and nothing else, and a gap in coverage is not a safety
+ * warning the FDA published. The rule is set out in index.css.
+ */
+.page .combination-product {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  margin: 2rem 0;
+}
+
+.page .combination-product h2 {
+  margin-bottom: 0.5rem;
+}
+
 .page [role='alert'] {
   color: var(--alert);
 }

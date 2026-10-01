@@ -7,8 +7,18 @@ export type Candidate = {
   brand?: string
 }
 
+export type DroppedCombinationProduct = {
+  /** RxNorm's name for the Combination Product that matched. */
+  name: string
+  /** Every Active Ingredient in the Combination Product. */
+  activeIngredients: string[]
+  /** Those of them the search offers no Candidate for. */
+  activeIngredientsWithNoCandidate: string[]
+}
+
 export type SearchResults = {
   candidates: Candidate[]
+  droppedCombinationProducts: DroppedCombinationProduct[]
 }
 
 /**
