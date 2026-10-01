@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import type { DrugConcept, RegulatoryClassBlock, SafetySection } from './api/drugConcept'
+import type { Candidate, DroppedCombinationProduct, SearchResults } from './api/search'
 import { viewportIs } from './test/viewport'
 
 /**
@@ -50,6 +51,18 @@ function section(heading: string, text: string): SafetySection {
   return { heading, text, provenance: LIPITOR }
 }
 
+/**
+ * A search response. The backend always sends both lists, so the stub does too: a test
+ * that left the dropped Combination Products out would be stubbing a contract the backend
+ * does not have, and the straight-through path would pass on a shape it never sees.
+ */
+function searchResults(
+  candidates: Candidate[],
+  droppedCombinationProducts: DroppedCombinationProduct[] = [],
+): SearchResults {
+  return { candidates, droppedCombinationProducts }
+}
+
 function drugConcept(overrides: Partial<DrugConcept> = {}): DrugConcept {
   return {
     rxcui: '83367',
@@ -82,7 +95,7 @@ function overTheCounter(sections: SafetySection[]): RegulatoryClassBlock {
  */
 async function openPage(page: DrugConcept) {
   backendReturns({
-    '/api/search': { candidates: [{ rxcui: page.rxcui, name: page.name }] },
+    '/api/search': searchResults([{ rxcui: page.rxcui, name: page.name }]),
     [`/api/drug-concepts/${page.rxcui}`]: page,
   })
   await search(page.name)
@@ -159,7 +172,7 @@ describe('the landing a reader arrives on', () => {
 
       it('leaves for Resolution when a medication is searched for', async () => {
         backendReturns({
-          '/api/search': { candidates: [{ rxcui: '83367', name: 'atorvastatin', brand: 'Lipitor' }] },
+          '/api/search': searchResults([{ rxcui: '83367', name: 'atorvastatin', brand: 'Lipitor' }]),
           '/api/drug-concepts/83367': drugConcept(),
         })
         const user = userEvent.setup()
@@ -175,7 +188,7 @@ describe('the landing a reader arrives on', () => {
 
       it('searches for an example when one is tapped', async () => {
         backendReturns({
-          '/api/search': { candidates: [{ rxcui: '6809', name: 'metformin' }] },
+          '/api/search': searchResults([{ rxcui: '6809', name: 'metformin' }]),
           '/api/drug-concepts/6809': drugConcept({ rxcui: '6809', name: 'metformin' }),
         })
         const user = userEvent.setup()
@@ -198,7 +211,7 @@ describe('the landing a reader arrives on', () => {
 describe('resolving a search to a Drug Concept', () => {
   it('lands on the Drug Concept when one candidate is clearly right', async () => {
     backendReturns({
-      '/api/search': { candidates: [{ rxcui: '83367', name: 'atorvastatin', brand: 'Lipitor' }] },
+      '/api/search': searchResults([{ rxcui: '83367', name: 'atorvastatin', brand: 'Lipitor' }]),
       '/api/drug-concepts/83367': drugConcept(),
     })
 
@@ -212,12 +225,10 @@ describe('resolving a search to a Drug Concept', () => {
 
   it('offers a choice when several Drug Concepts are plausible', async () => {
     backendReturns({
-      '/api/search': {
-        candidates: [
-          { rxcui: '236797', name: 'alpha hydroxy acids' },
-          { rxcui: '1541733', name: '4-hydroxy acetophenone' },
-        ],
-      },
+      '/api/search': searchResults([
+        { rxcui: '236797', name: 'alpha hydroxy acids' },
+        { rxcui: '1541733', name: '4-hydroxy acetophenone' },
+      ]),
     })
 
     await search('hydroxy')
@@ -227,10 +238,115 @@ describe('resolving a search to a Drug Concept', () => {
     expect(choices).toHaveLength(2)
     expect(choices[0]).toHaveTextContent('alpha hydroxy acids')
     expect(screen.queryByRole('heading', { name: /alpha hydroxy acids \(/ })).toBeNull()
+
+    // Nothing was dropped, so the shortlist is still a question rather than a caveat.
+    expect(within(results).getByRole('heading', { name: 'Did you mean…' })).toBeInTheDocument()
+    expect(results).not.toHaveTextContent('also matched')
+  })
+
+  const TYLENOL_PM: DroppedCombinationProduct = {
+    name: 'Tylenol PM',
+    activeIngredients: ['acetaminophen', 'diphenhydramine'],
+    activeIngredientsWithNoCandidate: ['diphenhydramine'],
+  }
+
+  it('names a dropped Combination Product instead of navigating to one ingredient', async () => {
+    backendReturns({
+      '/api/search': searchResults(
+        [{ rxcui: '161', name: 'acetaminophen', brand: 'Tylenol' }],
+        [TYLENOL_PM],
+      ),
+    })
+
+    await search('tylenol pm')
+
+    const combination = await screen.findByRole('region', {
+      name: 'Combination Product: Tylenol PM',
+    })
+    expect(within(combination).getByRole('heading', { name: 'Tylenol PM is a Combination Product' }))
+      .toBeInTheDocument()
+    expect(combination).toHaveTextContent('acetaminophen and diphenhydramine')
+    expect(combination).toHaveTextContent('Pill-Facts has no page')
+
+    // The dropped ingredient, named. It is the whole reason the product differs.
+    expect(combination).toHaveTextContent('This search offers nothing for diphenhydramine')
+
+    const results = screen.getByRole('region', { name: 'Search results' })
+    expect(within(results).getByRole('heading', { name: 'Another Drug Concept' })).toBeInTheDocument()
+    expect(results).toHaveTextContent('Its page does not cover Tylenol PM')
+    expect(within(results).getByRole('link', { name: /Tylenol.*acetaminophen/ })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Tylenol (acetaminophen)' })).toBeNull()
+  })
+
+  it('still names the Combination Product when nothing else matched at all', async () => {
+    // Nothing resolved, so both ingredients are ones the reader gets nothing for.
+    backendReturns({
+      '/api/search': searchResults([], [
+        { ...TYLENOL_PM, activeIngredientsWithNoCandidate: TYLENOL_PM.activeIngredients },
+      ]),
+    })
+
+    await search('tylenol pm')
+
+    const combination = await screen.findByRole('region', {
+      name: 'Combination Product: Tylenol PM',
+    })
+    expect(combination).toHaveTextContent('Pill-Facts has no page')
+    expect(combination).toHaveTextContent(
+      'This search offers nothing for acetaminophen and diphenhydramine',
+    )
+
+    // "Nothing matched" would be a lie: something matched, and it has just been named.
+    expect(screen.queryByText(/Nothing matched/)).toBeNull()
+    expect(screen.queryByRole('region', { name: 'Search results' })).toBeNull()
+  })
+
+  /**
+   * Obsolete and suppressed concepts publish no properties, so the backend names those
+   * Combination Products by their Active Ingredients instead. Saying what such a product
+   * contains would then just repeat its name back.
+   */
+  it('does not list the ingredients twice where they are the product name', async () => {
+    backendReturns({
+      '/api/search': searchResults([{ rxcui: '161', name: 'acetaminophen', brand: 'Tylenol' }], [
+        {
+          name: 'acetaminophen / diphenhydramine',
+          activeIngredients: ['acetaminophen', 'diphenhydramine'],
+          activeIngredientsWithNoCandidate: ['diphenhydramine'],
+        },
+      ]),
+    })
+
+    await search('tylenol pm')
+
+    const combination = await screen.findByRole('region', {
+      name: 'Combination Product: acetaminophen / diphenhydramine',
+    })
+    expect(combination).toHaveTextContent('Pill-Facts has no page')
+    expect(combination).toHaveTextContent('This search offers nothing for diphenhydramine')
+    expect(combination).not.toHaveTextContent('contains the Active Ingredients')
+  })
+
+  it('speaks of several Candidates in the plural where one was dropped', async () => {
+    backendReturns({
+      '/api/search': searchResults(
+        [
+          { rxcui: '161', name: 'acetaminophen', brand: 'Tylenol' },
+          { rxcui: '3498', name: 'diphenhydramine' },
+        ],
+        [{ ...TYLENOL_PM, activeIngredientsWithNoCandidate: [] }],
+      ),
+    })
+
+    await search('tylenol pm')
+
+    const results = await screen.findByRole('region', { name: 'Search results' })
+    expect(within(results).getByRole('heading', { name: 'Other Drug Concepts' })).toBeInTheDocument()
+    expect(results).toHaveTextContent('Their pages do not cover Tylenol PM')
   })
 
   it('says nothing matched when the query is not a drug', async () => {
-    backendReturns({ '/api/search': { candidates: [] } })
+    backendReturns({ '/api/search': searchResults([]) })
 
     await search('zzzqqqnotadrug')
 
@@ -349,7 +465,7 @@ describe('the framing a Drug Concept page carries', () => {
 
   /** The masthead's own tagline is not this notice, and does not stand in for it. */
   it('is not what the search page wears', async () => {
-    backendReturns({ '/api/search': { candidates: [] } })
+    backendReturns({ '/api/search': searchResults([]) })
 
     await search('not a drug')
 
@@ -607,7 +723,7 @@ describe("a prescription Drug Concept's page", () => {
       'fetch',
       vi.fn(async (url: string) =>
         url.startsWith('/api/search')
-          ? new Response(JSON.stringify({ candidates: [{ rxcui: '83367', name: 'atorvastatin' }] }))
+          ? new Response(JSON.stringify(searchResults([{ rxcui: '83367', name: 'atorvastatin' }])))
           : Promise.reject(new TypeError('network down')),
       ),
     )
@@ -623,7 +739,7 @@ describe("a prescription Drug Concept's page", () => {
   /** No such Drug Concept is a fact about the address, and never worded as an outage. */
   it('says there is no medication at the address when the RxCUI is not one', async () => {
     backendReturns({
-      '/api/search': { candidates: [{ rxcui: '153165', name: 'atorvastatin' }] },
+      '/api/search': searchResults([{ rxcui: '153165', name: 'atorvastatin' }]),
       // and no /api/drug-concepts route, so the stub answers 404
     })
 
@@ -715,7 +831,7 @@ describe("an over-the-counter Drug Concept's page", () => {
 describe('a Drug Concept sold in both Regulatory Classes', () => {
   it('shows both classes under clear headings, with over-the-counter labelling first', async () => {
     backendReturns({
-      '/api/search': { candidates: [{ rxcui: '5640', name: 'ibuprofen' }] },
+      '/api/search': searchResults([{ rxcui: '5640', name: 'ibuprofen' }]),
       '/api/drug-concepts/5640': {
         rxcui: '5640',
         name: 'ibuprofen',

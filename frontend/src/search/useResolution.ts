@@ -1,20 +1,33 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
-import { searchDrugConcepts, type Candidate } from '../api/search'
+import {
+  searchDrugConcepts,
+  type Candidate,
+  type DroppedCombinationProduct,
+} from '../api/search'
 import { drugConceptPath } from '../drugconcept/drugConceptPath'
 
 type Searching = { state: 'searching'; query: string }
-type Choices = { state: 'choices'; query: string; candidates: Candidate[] }
+type Choices = {
+  state: 'choices'
+  query: string
+  candidates: Candidate[]
+  droppedCombinationProducts: DroppedCombinationProduct[]
+}
 type Failed = { state: 'failed'; query: string }
 export type Resolution = Searching | Choices | Failed
 
 /**
  * Resolving one query to one Drug Concept.
  *
- * A single Candidate means Resolution found the answer rather than a shortlist, so there
- * is no choice to present and the reader goes straight to the medication. That navigation
- * replaces the results entry in history: Back from a Drug Concept belongs on the landing,
- * not on a page that would immediately resolve and bounce them forward again.
+ * A single Candidate means Resolution found the answer rather than a shortlist only when
+ * no Combination Product was dropped. Then there is no choice to present and the reader
+ * goes straight to the Drug Concept. A dropped Combination Product keeps the Resolution
+ * page visible even beside one Candidate, so the reader can see what that page omits.
+ *
+ * Straight-through navigation replaces the results entry in history: Back from a Drug
+ * Concept belongs on the landing, not on a page that would immediately resolve and bounce
+ * the reader forward again.
  */
 export function useResolution(query: string): Resolution {
   const navigate = useNavigate()
@@ -23,18 +36,18 @@ export function useResolution(query: string): Resolution {
   useEffect(() => {
     let current = true
     searchDrugConcepts(query)
-      .then(({ candidates }) => {
+      .then(({ candidates, droppedCombinationProducts }) => {
         if (!current) {
           return
         }
-        if (candidates.length === 1) {
+        if (candidates.length === 1 && droppedCombinationProducts.length === 0) {
           navigate(drugConceptPath(candidates[0]), {
             replace: true,
             state: { candidate: candidates[0] },
           })
           return
         }
-        setResolution({ state: 'choices', query, candidates })
+        setResolution({ state: 'choices', query, candidates, droppedCombinationProducts })
       })
       .catch(() => current && setResolution({ state: 'failed', query }))
     return () => {
