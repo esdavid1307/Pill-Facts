@@ -1,6 +1,5 @@
 # Pill-Facts
 
-[pillfacts.net](https://pillfacts.net)
 
 Pill-Facts presents FDA-published drug labelling
 verbatim, attributed to its source, and authors no medical content of its own.
