@@ -14,8 +14,12 @@ type Choices = {
   candidates: Candidate[]
   droppedCombinationProducts: DroppedCombinationProduct[]
 }
-type Failed = { state: 'failed'; query: string }
-export type Resolution = Searching | Choices | Failed
+/**
+ * The data behind the search could not be retrieved and the backend had no earlier answer
+ * cached. A fact about an outage, and never about what was typed.
+ */
+type Unreachable = { state: 'unreachable'; query: string }
+export type Resolution = Searching | Choices | Unreachable
 
 /**
  * Resolving one query to one Drug Concept.
@@ -49,7 +53,7 @@ export function useResolution(query: string): Resolution {
         }
         setResolution({ state: 'choices', query, candidates, droppedCombinationProducts })
       })
-      .catch(() => current && setResolution({ state: 'failed', query }))
+      .catch(() => current && setResolution({ state: 'unreachable', query }))
     return () => {
       current = false
     }

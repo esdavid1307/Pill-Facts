@@ -19,7 +19,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @param rxcui the ingredient-level RxCUI identifying the Drug Concept (ADR-0002)
  * @param name its Active Ingredient's name
  * @param labelling one block per Regulatory Class in which the FDA publishes a Label,
- * OTC first
+ * OTC first. Empty where it publishes none, which is what Unlabelled is: a fact about the
+ * drug, answered as a page like any other, and distinct from a block whose Label carries
+ * none of the Safety Sections Pill-Facts reads
  * @param alternatives other products of this Active Ingredient alone, absent where there
  * are none
  * @param combinationProducts products of this Active Ingredient and at least one other,

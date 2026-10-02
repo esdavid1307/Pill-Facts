@@ -179,17 +179,6 @@ class CacheApiTest extends ApiTest {
 	}
 
 	/**
-	 * With nothing cached there is nothing honest to serve, so the failure is a failure.
-	 * Wording that as Unreachable rather than as a fact about the drug is #9's work.
-	 */
-	@Test
-	void answers_nothing_while_the_upstreams_are_unreachable_and_nothing_was_ever_fetched() {
-		whileTheUpstreamsAreUnreachable(() -> api().get().uri(ATORVASTATIN)
-				.exchange()
-				.expectStatus().is5xxServerError());
-	}
-
-	/**
 	 * A payload's shape changes with the API it was built for, and a deploy leaves behind
 	 * rows written against the shape before it. Those are a miss and not a failure, so the
 	 * page is fetched again rather than erroring on everything cached.

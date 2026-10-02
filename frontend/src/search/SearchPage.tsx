@@ -45,8 +45,16 @@ export function SearchPage() {
 
       {resolution.state === 'searching' && <p className="pending">Searching&hellip;</p>}
 
-      {resolution.state === 'failed' && (
-        <p role="alert">We couldn&rsquo;t reach the backend. Please try again.</p>
+      {/*
+        * Unreachable and No match are different facts, and only one of them is about what
+        * was typed. Worded alike, an outage would send the reader off to respell a name
+        * that was right all along.
+        */}
+      {resolution.state === 'unreachable' && (
+        <p role="alert">
+          Pill-Facts couldn&rsquo;t reach the drug databases it searches just now, and has no
+          earlier answer saved for this search. Please come back later.
+        </p>
       )}
 
       {resolution.state === 'choices' &&
