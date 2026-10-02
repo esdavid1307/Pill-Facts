@@ -15,8 +15,14 @@ import org.springframework.context.annotation.Configuration;
  * <p>The FDA allows a keyed caller 240 requests a minute and 120,000 a day, and the site
  * spends that on everyone's behalf. The burst is generous so that someone reading never
  * meets it; the rate after it is what bounds a script. At one request every ten seconds,
- * a single address left running all day cannot spend more than a fraction of the day's
- * quota, even when nothing it asks for is cached.
+ * one address left running all day makes 8,640 requests, and even uncached, at up to
+ * four FDA calls each, that is under a third of the day's quota. A handful of addresses
+ * together could still spend it. This stops one visitor with a script, which is what it
+ * is for, and not a distributed one.
+ *
+ * <p>Everyone behind one address — a campus, an office, a carrier's NAT — shares one
+ * allowance. The burst is sized with that in mind, and is configurable for the day it
+ * turns out too small.
  */
 @Configuration(proxyBeanMethods = false)
 class RateLimitConfiguration {

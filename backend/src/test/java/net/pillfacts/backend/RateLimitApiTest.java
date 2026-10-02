@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * The per-reader limit in front of both endpoints, which keeps one visitor with a script
+ * The per-address limit in front of both endpoints, which keeps one visitor with a script
  * from spending the FDA quota every other visitor depends on.
  *
  * <p>These run under the limits production runs with: a burst of sixty requests, then one
@@ -41,21 +41,21 @@ class RateLimitApiTest extends ApiTest {
 
 	/** What protects ordinary browsing from a script is that the script spends only its own. */
 	@Test
-	void never_refuses_one_reader_for_what_another_has_spent() {
+	void never_refuses_one_address_for_what_another_has_spent() {
 		spendTheBurst();
 
-		apiForwardedFor(aNewReader()).get().uri(LIPITOR).exchange().expectStatus().isOk();
+		apiForwardedFor(aNewAddress()).get().uri(LIPITOR).exchange().expectStatus().isOk();
 	}
 
 	/**
 	 * The proxy appends the address it saw, so anything before it is the client's to
-	 * invent. A script that invents a new one each time is still one reader.
+	 * invent. A script that invents a new one each time is still one address.
 	 */
 	@Test
-	void counts_a_reader_by_the_address_the_proxy_saw_not_one_the_client_claims() {
+	void counts_requests_by_the_address_the_proxy_saw_not_one_the_client_claims() {
 		spendTheBurst();
 
-		apiForwardedFor(aNewReader() + ", " + reader())
+		apiForwardedFor(aNewAddress() + ", " + address())
 				.get().uri(LIPITOR)
 				.exchange()
 				.expectStatus().isEqualTo(HttpStatus.TOO_MANY_REQUESTS);

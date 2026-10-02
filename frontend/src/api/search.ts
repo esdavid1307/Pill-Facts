@@ -1,3 +1,4 @@
+import { refuseIfTooMany } from './tooManyRequests'
 import { isUnreachable, Unreachable } from './unreachable'
 
 export type Candidate = {
@@ -30,6 +31,7 @@ export type SearchResults = {
  */
 export async function searchDrugConcepts(query: string): Promise<SearchResults> {
   const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`)
+  refuseIfTooMany(response)
   if (await isUnreachable(response)) {
     throw new Unreachable(query)
   }

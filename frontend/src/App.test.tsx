@@ -49,6 +49,26 @@ const UNREACHABLE = Symbol('unreachable')
  */
 const SAFETY_WORDING = /safe|risk|side effect|harm|no known/i
 
+/**
+ * Every route answering as the backend does a reader past the rate limit: a 429 problem
+ * that says how many seconds to wait.
+ */
+function backendRefusesFor(seconds: number) {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify({ type: 'about:blank', title: 'Too many requests', status: 429 }),
+          {
+            status: 429,
+            headers: { 'Content-Type': 'application/problem+json', 'Retry-After': `${seconds}` },
+          },
+        ),
+    ),
+  )
+}
+
 const LIPITOR = {
   labelId: 'a60cc18b-0631-4cf0-b021-9f52224ece65',
   label: 'Lipitor',
@@ -362,6 +382,19 @@ describe('resolving a search to a Drug Concept', () => {
     const results = await screen.findByRole('region', { name: 'Search results' })
     expect(within(results).getByRole('heading', { name: 'Other Drug Concepts' })).toBeInTheDocument()
     expect(results).toHaveTextContent('Their pages do not cover Tylenol PM')
+  })
+
+  /**
+   * A refusal is a fact about how often this reader asked, so it says when to come back
+   * and is never worded as the backend or the FDA being down.
+   */
+  it('says when to search again when the backend has refused too many requests', async () => {
+    backendRefusesFor(10)
+
+    await search('lipitor')
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/try again in 10 seconds/i)
+    expect(document.body.textContent).not.toMatch(/couldn’t reach/i)
   })
 
   /** No match is a fact about what was typed, and is worded as one. */
@@ -837,6 +870,15 @@ describe("a prescription Drug Concept's page", () => {
     const alert = await screen.findByRole('alert')
     expect(alert).toHaveTextContent(/couldn’t load this page/i)
     expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
+  })
+
+  it('says when to try again when the backend has refused too many requests', async () => {
+    backendRefusesFor(10)
+    window.history.pushState({}, '', '/drug-concepts/83367')
+    render(<App />)
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(/try again in 10 seconds/i)
+    expect(document.body.textContent).not.toMatch(/couldn’t reach the FDA/i)
   })
 
   /** No such Drug Concept is a fact about the address, and never worded as an outage. */

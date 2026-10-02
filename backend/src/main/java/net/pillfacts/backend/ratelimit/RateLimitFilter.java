@@ -17,10 +17,10 @@ import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * Refuses a reader who has spent their allowance, with a 429 that says so and says when
+ * Refuses an address that has spent its allowance, with a 429 that says so and says when
  * to come back, before the request reaches anything that could call an upstream.
  *
- * <p>The refusal is an RFC 9457 problem, so it reads as what it is — this reader asked
+ * <p>The refusal is an RFC 9457 problem, so it reads as what it is — this address asked
  * too often — rather than as the site having failed.
  */
 final class RateLimitFilter extends OncePerRequestFilter {
@@ -37,7 +37,7 @@ final class RateLimitFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		var refusal = this.limit.refusal(Reader.of(request));
+		var refusal = this.limit.refusal(ClientAddress.of(request));
 		if (refusal.isPresent()) {
 			refuse(response, refusal.get());
 			return;
@@ -52,8 +52,8 @@ final class RateLimitFilter extends OncePerRequestFilter {
 		problem.put("type", "about:blank");
 		problem.put("title", "Too many requests");
 		problem.put("status", HttpStatus.TOO_MANY_REQUESTS.value());
-		problem.put("detail", "This connection has made more requests than Pill-Facts serves to one "
-				+ "visitor at a time. Please try again in " + seconds + " seconds.");
+		problem.put("detail", "There have been more requests from this connection than Pill-Facts "
+				+ "serves to one in a short time. Please try again in " + seconds + " seconds.");
 
 		response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
 		response.setHeader(HttpHeaders.RETRY_AFTER, Long.toString(seconds));

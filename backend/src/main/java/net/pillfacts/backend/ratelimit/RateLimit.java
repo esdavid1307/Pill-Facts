@@ -7,22 +7,22 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.LongSupplier;
 
 /**
- * How many requests each reader may make: a burst, then one more per interval.
+ * How many requests each address may make: a burst, then one more per interval.
  *
- * <p>Each reader is a single number, the moment their allowance would be whole again.
+ * <p>Each address is a single number, the moment its allowance would be whole again.
  * A request moves it one interval later, and a request that would move it further than
  * the burst allows is refused. That is the generic cell rate algorithm, a token bucket
  * that keeps one timestamp where a bucket keeps a count and a refill time.
  *
- * <p>A reader whose moment has passed has a whole allowance, which is the same as never
- * having been seen, so they are forgotten. That bounds memory by the readers active in
+ * <p>An address whose moment has passed has a whole allowance, which is the same as never
+ * having been seen, so it is forgotten. That bounds memory by the addresses active in
  * the last few minutes rather than by everyone who ever visited.
  */
 final class RateLimit {
 
 	private final long interval;
 
-	/** How far ahead of now a reader's moment may run and still be served. */
+	/** How far ahead of now an address's moment may run and still be served. */
 	private final long tolerance;
 
 	private final LongSupplier nanoTime;
@@ -42,24 +42,26 @@ final class RateLimit {
 	}
 
 	/**
-	 * Spends one request of this reader's allowance, or says how long until there is one
-	 * to spend.
+	 * Spends one request of this address's allowance, or says how long until there is
+	 * one to spend.
 	 */
-	Optional<Duration> refusal(String reader) {
+	Optional<Duration> refusal(String address) {
 		long now = this.nanoTime.getAsLong();
 		sweep(now);
 
-		long[] wait = {0};
-		this.wholeAgainAt.compute(reader, (key, previous) -> {
+		// compute() is what makes the read and the write one step per address; the array
+		// is only how the lambda hands back the wait it found.
+		long[] refusedFor = {0};
+		this.wholeAgainAt.compute(address, (key, previous) -> {
 			long from = (previous == null || previous - now < 0) ? now : previous;
 			long ahead = from - now;
 			if (ahead > this.tolerance) {
-				wait[0] = ahead - this.tolerance;
+				refusedFor[0] = ahead - this.tolerance;
 				return previous;
 			}
 			return from + this.interval;
 		});
-		return (wait[0] > 0) ? Optional.of(Duration.ofNanos(wait[0])) : Optional.empty();
+		return (refusedFor[0] > 0) ? Optional.of(Duration.ofNanos(refusedFor[0])) : Optional.empty();
 	}
 
 	private void sweep(long now) {

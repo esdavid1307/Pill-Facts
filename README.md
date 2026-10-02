@@ -118,8 +118,10 @@ put it in a `.env` beside `compose.yaml`, which is gitignored and which compose 
 echo 'PILLFACTS_OPENFDA_API_KEY=your-key' > .env
 ```
 
-Each visitor gets a burst of 60 requests to `/api/search` and `/api/drug-concepts`,
-then one more every 10 seconds. Past that they get a `429` that says when to try again.
-The visitor is the last address in `X-Forwarded-For`, the one the proxy in front of the
-backend appended (ADR-0011). Any proxy that forwards to the backend has to set that
-header, or every visitor is counted as one.
+Each address gets a burst of 60 requests to `/api/search` and `/api/drug-concepts`,
+then one more every 10 seconds. Past that it gets a `429` that says when to try again.
+That address is the last one in `X-Forwarded-For`, the one the proxy in front of the
+backend appended (ADR-0011). Any proxy that forwards to the backend has to append to
+that header itself, or every visitor is counted as one address — or, if it passes the
+client's header through, a script picks its own. A backend reachable without the proxy
+can be sent any header at all, which is why production's is reachable only through it.

@@ -29,6 +29,12 @@ import org.testcontainers.containers.PostgreSQLContainer;
  * also writes to, and it cannot wait a week. Both are therefore set up in SQL and then
  * observed through the API like everything else.
  *
+ * <p>Two assertions also look past a response, each because what it is about has no
+ * response to show it in. The FDA API key travels on the requests the application makes
+ * rather than the ones it answers, so {@link #openFdaRequests()} is how a test sees it
+ * sent; and an application started without one says so in its startup log, which is
+ * where whoever runs it looks.
+ *
  * <p>Postgres and the upstream stubs are all static, so one of each is shared by every
  * test class that extends this. None may be stopped in a per-class {@code @AfterAll}, or
  * the first class to finish leaves them dead for all the rest; they live until the JVM
@@ -70,47 +76,47 @@ public abstract class ApiTest {
 	}
 
 	/** Hands each test instance an address no other test has used. */
-	private static final AtomicInteger READERS = new AtomicInteger();
+	private static final AtomicInteger ADDRESSES = new AtomicInteger();
 
 	@LocalServerPort
 	private int port;
 
 	/**
-	 * Who this test is, as the proxy in front of the backend would report it.
+	 * The address this test's requests arrive from, as the proxy in front of the backend
+	 * would report it.
 	 *
-	 * <p>The rate limit is per reader, and its state outlives any one test because the
+	 * <p>The rate limit is per address, and its state outlives any one test because the
 	 * application does. Were every test to arrive from the same address, they would spend
 	 * one shared allowance and the suite would start being refused part way through. Each
-	 * test is a reader of its own instead, browsing under the limits production runs with,
-	 * and so every test in the suite is also a check that ordinary browsing is never
-	 * refused.
+	 * test arrives from an address of its own instead, browsing under the limits
+	 * production runs with, and so every test in the suite is also a check that ordinary
+	 * browsing is never refused.
 	 */
-	private final String reader = aNewReader();
+	private final String address = aNewAddress();
 
-	/** The address this test's requests arrive from. */
-	protected String reader() {
-		return this.reader;
+	protected String address() {
+		return this.address;
 	}
 
 	/** An address from the range reserved for benchmarking (RFC 2544), never a real visitor's. */
-	protected static String aNewReader() {
-		int n = READERS.incrementAndGet();
+	protected static String aNewAddress() {
+		int n = ADDRESSES.incrementAndGet();
 		return "198.18.%d.%d".formatted(n / 250, n % 250 + 1);
 	}
 
 	@Autowired
 	private JdbcClient jdbc;
 
-	/** A client pointed at the running application, as this test's reader. */
+	/** A client pointed at the running application, from this test's address. */
 	protected RestTestClient api() {
-		return apiForwardedFor(this.reader);
+		return apiForwardedFor(this.address);
 	}
 
 	/**
 	 * A client pointed at the running application, arriving through the proxy with this
 	 * {@code X-Forwarded-For}. The proxy appends the address it saw to whatever the client
-	 * sent, so the last entry is the reader and anything before it is the client's own
-	 * claim.
+	 * sent, so the last entry is the client's address and anything before it is the
+	 * client's own claim.
 	 */
 	protected RestTestClient apiForwardedFor(String forwardedFor) {
 		return RestTestClient.bindToServer()
