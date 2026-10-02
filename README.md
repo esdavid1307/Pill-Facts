@@ -144,10 +144,13 @@ can be sent any header at all, which is why production's is reachable only throu
 Four wizards set production up, run once each, in this order. Each walks you through the
 console steps only a person can take, and is safe to run again:
 
-1. [`deploy/setup-billing.sh`](deploy/setup-billing.sh): billing alerts and the free-tier end date
-2. [`deploy/setup-backend.sh`](deploy/setup-backend.sh): the database, and the backend on EC2
+1. [`deploy/setup-billing.sh`](deploy/setup-billing.sh): billing alerts and the
+   free-tier end date
+2. [`deploy/setup-backend.sh`](deploy/setup-backend.sh): the database, and the backend
+   on EC2
 3. [`deploy/setup-ci.sh`](deploy/setup-ci.sh): the backend deployed from CI
-4. [`deploy/setup-frontend.sh`](deploy/setup-frontend.sh): the frontend on Cloudflare Pages, which makes the site public
+4. [`deploy/setup-frontend.sh`](deploy/setup-frontend.sh): the frontend on Cloudflare
+   Pages, which makes the site public
 
 No secret is in this repository or in a build log. Each value lives in one place:
 
@@ -229,8 +232,11 @@ deploys the frontend after every backend rollout, with `wrangler pages deploy` f
 [`deploy/smoke-check.py`](deploy/smoke-check.py) searches through the public URL, and
 loads a deep link, which Pages serves `index.html` for. A deploy whose `/api` doesn't
 reach the backend fails the workflow, rather than failing in a reader's browser
-(ADR-0011). The job is skipped until the wizard has set `PILLFACTS_PAGES_PROJECT`.
-Moving the backend off the free tier means changing `PILLFACTS_ORIGIN` and nothing else.
+(ADR-0011). It's already live by then, so deploy a fix, or roll back to the last good
+deployment from the Pages project's Deployments tab. wrangler is locked on its own in
+`deploy/wrangler/`, so the frontend's `npm ci` doesn't download it. The job is skipped
+until the wizard has set `PILLFACTS_PAGES_PROJECT` and `PILLFACTS_SITE_URL`. Moving the
+backend off the free tier means changing `PILLFACTS_ORIGIN` and nothing else.
 
 GitHub pauses scheduled workflows in a public repository after 60 days without activity,
 and a paused one warns nobody. If the Actions tab says the schedule is disabled, enable

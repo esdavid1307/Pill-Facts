@@ -16,7 +16,7 @@ import unittest
 
 
 SCRIPT = pathlib.Path(__file__).with_name("smoke-check.py")
-SEARCH = "/api/search"
+SEARCH_PATH = "/api/search"
 DEEP_LINK = "/drug-concepts/5640"
 
 
@@ -64,67 +64,77 @@ class Site:
         self.server.server_close()
 
 
+def run(url, poll_limit=3):
+    env = {**os.environ, "PILLFACTS_POLL_SECONDS": "0", "PILLFACTS_POLL_LIMIT": str(poll_limit)}
+    return subprocess.run(
+        [sys.executable, str(SCRIPT), url],
+        capture_output=True, text=True, env=env, timeout=30, check=False,
+    )
+
+
 class SmokeCheck(unittest.TestCase):
     def check(self, answers, url_suffix=""):
         site = Site(answers)
         self.addCleanup(site.close)
-        env = {**os.environ, "PILLFACTS_POLL_SECONDS": "0", "PILLFACTS_POLL_LIMIT": "3"}
-        result = subprocess.run(
-            [sys.executable, str(SCRIPT), site.url + url_suffix],
-            capture_output=True, text=True, env=env, timeout=30, check=False,
-        )
-        return result, site.requests
+        return run(site.url + url_suffix), site.requests
 
     def test_passes_when_the_backend_answers_search_and_the_app_answers_a_deep_link(self):
-        result, requests = self.check({SEARCH: [backend_json()], DEEP_LINK: [index_html()]})
+        result, requests = self.check({SEARCH_PATH: [backend_json()], DEEP_LINK: [index_html()]})
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertTrue(any(p.startswith(SEARCH + "?q=") for p in requests), requests)
+        self.assertTrue(any(p.startswith(SEARCH_PATH + "?q=") for p in requests), requests)
         self.assertIn(DEEP_LINK, requests)
 
     def test_a_site_url_with_a_trailing_slash_is_the_same_site(self):
-        result, requests = self.check({SEARCH: [backend_json()], DEEP_LINK: [index_html()]}, "/")
+        result, requests = self.check({SEARCH_PATH: [backend_json()], DEEP_LINK: [index_html()]}, "/")
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn(DEEP_LINK, requests)
 
+    def test_passes_when_the_backend_refuses_search_for_too_many_requests(self):
+        # A 429 is the backend's own answer, so the chain to it works.
+        refused = (429, "application/problem+json", json.dumps({"status": 429}))
+        result, _ = self.check({SEARCH_PATH: [refused], DEEP_LINK: [index_html()]})
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_fails_when_search_is_answered_by_the_app_instead_of_the_backend(self):
         # A deploy without functions/ serves index.html for /api/search, with a 200.
-        result, _ = self.check({SEARCH: [index_html()], DEEP_LINK: [index_html()]})
+        result, _ = self.check({SEARCH_PATH: [index_html()], DEEP_LINK: [index_html()]})
 
         self.assertEqual(result.returncode, 1)
         self.assertIn("::error::", result.stdout)
         self.assertIn("index.html", result.stdout)
 
     def test_fails_when_the_function_cannot_reach_the_backend(self):
-        result, _ = self.check({SEARCH: [status(502)], DEEP_LINK: [index_html()]})
+        result, _ = self.check({SEARCH_PATH: [status(502)], DEEP_LINK: [index_html()]})
 
         self.assertEqual(result.returncode, 1)
         self.assertIn("::error::", result.stdout)
         self.assertIn("PILLFACTS_ORIGIN", result.stdout)
 
     def test_fails_naming_the_status_when_the_backend_answers_with_an_error(self):
-        result, _ = self.check({SEARCH: [status(500)], DEEP_LINK: [index_html()]})
+        result, _ = self.check({SEARCH_PATH: [status(500)], DEEP_LINK: [index_html()]})
 
         self.assertEqual(result.returncode, 1)
         self.assertIn("500", result.stdout)
 
     def test_waits_for_a_deploy_still_reaching_the_public_url(self):
         result, requests = self.check(
-            {SEARCH: [index_html(), status(502), backend_json()], DEEP_LINK: [index_html()]}
+            {SEARCH_PATH: [index_html(), status(502), backend_json()], DEEP_LINK: [index_html()]}
         )
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertEqual(sum(p.startswith(SEARCH) for p in requests), 3)
+        self.assertEqual(sum(p.startswith(SEARCH_PATH) for p in requests), 3)
 
     def test_gives_up_after_the_poll_limit(self):
-        result, requests = self.check({SEARCH: [status(502)], DEEP_LINK: [index_html()]})
+        result, requests = self.check({SEARCH_PATH: [status(502)], DEEP_LINK: [index_html()]})
 
         self.assertEqual(result.returncode, 1)
-        self.assertEqual(sum(p.startswith(SEARCH) for p in requests), 3)
+        self.assertEqual(sum(p.startswith(SEARCH_PATH) for p in requests), 3)
 
     def test_fails_when_a_deep_link_is_not_the_app(self):
-        result, _ = self.check({SEARCH: [backend_json()], DEEP_LINK: [status(404)]})
+        result, _ = self.check({SEARCH_PATH: [backend_json()], DEEP_LINK: [status(404)]})
 
         self.assertEqual(result.returncode, 1)
         self.assertIn("::error::", result.stdout)
@@ -134,11 +144,7 @@ class SmokeCheck(unittest.TestCase):
         site = Site({})
         url = site.url
         site.close()
-        env = {**os.environ, "PILLFACTS_POLL_SECONDS": "0", "PILLFACTS_POLL_LIMIT": "2"}
-        result = subprocess.run(
-            [sys.executable, str(SCRIPT), url],
-            capture_output=True, text=True, env=env, timeout=30, check=False,
-        )
+        result = run(url, poll_limit=2)
 
         self.assertEqual(result.returncode, 1)
         self.assertIn("::error::", result.stdout)

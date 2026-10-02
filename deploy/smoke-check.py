@@ -32,7 +32,7 @@ def get(url):
             return response.status, response.headers.get_content_type()
     except urllib.error.HTTPError as error:
         return error.code, error.headers.get_content_type()
-    except (urllib.error.URLError, OSError) as error:
+    except OSError as error:  # URLError among them
         return None, str(getattr(error, "reason", error))
 
 
@@ -41,6 +41,11 @@ def search_problem(site):
     if status is None:
         return f"Couldn't reach {site}: {content_type}."
     if status == 200 and content_type == "application/json":
+        return None
+    if status == 429 and content_type == "application/problem+json":
+        # The backend's own refusal, so the chain to it works. A runner's address can
+        # share a bucket with whatever else ran from it.
+        print(f"{SEARCH} was refused for too many requests, by the backend.")
         return None
     if status == 200 and content_type == "text/html":
         # Pages serves index.html for any path it has no file or route for.
@@ -58,6 +63,8 @@ def search_problem(site):
 
 def deep_link_problem(site):
     status, content_type = get(site + DEEP_LINK)
+    if status is None:
+        return f"Couldn't reach {site}: {content_type}."
     if status == 200 and content_type == "text/html":
         return None
     return (
@@ -69,7 +76,7 @@ def deep_link_problem(site):
 def main():
     site = sys.argv[1].rstrip("/")
     poll_seconds = float(os.environ.get("PILLFACTS_POLL_SECONDS", "10"))
-    poll_limit = int(os.environ.get("PILLFACTS_POLL_LIMIT", "18"))
+    poll_limit = max(1, int(os.environ.get("PILLFACTS_POLL_LIMIT", "18")))
 
     for attempt in range(poll_limit):
         if attempt:

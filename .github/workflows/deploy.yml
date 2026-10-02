@@ -122,7 +122,7 @@ jobs:
     name: Deploy the frontend to Cloudflare Pages
     needs: [commit, rollout]
     # Until deploy/setup-frontend.sh has made the Pages project, there's nowhere to deploy.
-    if: vars.PILLFACTS_PAGES_PROJECT != ''
+    if: vars.PILLFACTS_PAGES_PROJECT != '' && vars.PILLFACTS_SITE_URL != ''
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -139,13 +139,18 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: |
+            frontend/package-lock.json
+            deploy/wrangler/package-lock.json
       - run: npm ci
       - run: npm run build
+      # Locked apart from the frontend, so its npm ci doesn't download wrangler's runtime,
+      # and installed before the token is in the environment, with no install scripts.
+      - run: npm ci --ignore-scripts --prefix ../deploy/wrangler
       # From frontend/, so functions/ is bundled with dist: the Function is what forwards
       # /api to the backend. Its PILLFACTS_ORIGIN is set on the Pages project and never
-      # here. wrangler is pinned here rather than in package.json, where every npm ci
-      # would download its runtime for nothing. deploy/setup-frontend.sh pins the same one.
+      # here. This publishes to production before the check below, so a failed check
+      # leaves the broken build live until a fix is deployed or it's rolled back.
       - name: Deploy ${{ needs.commit.outputs.sha }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -153,7 +158,7 @@ jobs:
           PROJECT: ${{ vars.PILLFACTS_PAGES_PROJECT }}
           SHA: ${{ needs.commit.outputs.sha }}
         run: |
-          npx --yes wrangler@4.146.0 pages deploy dist --project-name "$PROJECT" \
+          ../deploy/wrangler/node_modules/.bin/wrangler pages deploy dist --project-name "$PROJECT" \
             --branch main --commit-hash "$SHA" --commit-message "Deploy $SHA"
       - name: Search through ${{ vars.PILLFACTS_SITE_URL }}
         env:
