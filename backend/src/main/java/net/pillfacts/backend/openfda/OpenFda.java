@@ -14,6 +14,8 @@ import java.util.stream.StreamSupport;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.node.MissingNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
@@ -84,10 +86,36 @@ public class OpenFda {
 
 	private static final DateTimeFormatter EFFECTIVE_TIME = DateTimeFormatter.BASIC_ISO_DATE;
 
+	private static final Logger logger = LoggerFactory.getLogger(OpenFda.class);
+
 	private final RestClient http;
 
-	OpenFda(RestClient.Builder builder, @Value("${pillfacts.openfda.base-url}") String baseUrl) {
-		this.http = builder.baseUrl(baseUrl).build();
+	/**
+	 * The API key comes from the environment and never from this repository, which is
+	 * public. It is sent as a basic-auth username, which openFDA accepts in place of the
+	 * {@code api_key} parameter, so that it is never part of a URL: URLs end up in
+	 * exception messages and logs.
+	 *
+	 * <p>Without one the site still works, on openFDA's unkeyed quota of a thousand
+	 * requests a day for the whole server. That is enough to develop against and nowhere
+	 * near enough to be public on, so the absence is said once, loudly, at startup.
+	 */
+	OpenFda(RestClient.Builder builder,
+			@Value("${pillfacts.openfda.base-url}") String baseUrl,
+			@Value("${pillfacts.openfda.api-key}") String apiKey) {
+		builder.baseUrl(baseUrl);
+		if (apiKey.isBlank()) {
+			logger.warn("""
+					No openFDA API key is configured, so Pill-Facts is running on openFDA's \
+					unkeyed quota of 1,000 requests a day for this whole server. That is enough \
+					for development and not for a public site. Request a key at \
+					https://open.fda.gov/apis/authentication/ and supply it as \
+					PILLFACTS_OPENFDA_API_KEY.""");
+		}
+		else {
+			builder.defaultHeaders(headers -> headers.setBasicAuth(apiKey.strip(), ""));
+		}
+		this.http = builder.build();
 	}
 
 	/**

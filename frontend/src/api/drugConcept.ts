@@ -1,3 +1,4 @@
+import { refuseIfTooMany } from './tooManyRequests'
 import { isUnreachable, Unreachable } from './unreachable'
 
 /** The source, publisher and date behind one rendered claim. */
@@ -103,6 +104,7 @@ export class NoSuchDrugConcept extends Error {}
 /** Same-origin, like every other call the frontend makes. See ADR-0011. */
 export async function fetchDrugConcept(rxcui: string): Promise<DrugConcept> {
   const response = await fetch(`/api/drug-concepts/${encodeURIComponent(rxcui)}`)
+  refuseIfTooMany(response)
   if (response.status === 404) {
     throw new NoSuchDrugConcept(rxcui)
   }

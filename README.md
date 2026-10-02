@@ -102,6 +102,26 @@ needs from the environment:
 | `PILLFACTS_DB_PASSWORD` | `pillfacts`                                  |
 | `PILLFACTS_RXNORM_BASE_URL` | `https://rxnav.nlm.nih.gov`              |
 | `PILLFACTS_OPENFDA_BASE_URL` | `https://api.fda.gov`                   |
+| `PILLFACTS_OPENFDA_API_KEY` | none                                     |
+| `PILLFACTS_RATE_LIMIT_BURST` | `60`                                    |
+| `PILLFACTS_RATE_LIMIT_INTERVAL` | `10s`                                |
 
 The defaults describe the local compose stack. Production values are supplied by the
 deployment environment.
+
+Without `PILLFACTS_OPENFDA_API_KEY` the backend starts anyway and says so in its log,
+running on openFDA's unkeyed quota of 1,000 requests a day. That is fine for development
+and not for a public site. [Request a key](https://open.fda.gov/apis/authentication/) and
+put it in a `.env` beside `compose.yaml`, which is gitignored and which compose reads:
+
+```sh
+echo 'PILLFACTS_OPENFDA_API_KEY=your-key' > .env
+```
+
+Each address gets a burst of 60 requests to `/api/search` and `/api/drug-concepts`,
+then one more every 10 seconds. Past that it gets a `429` that says when to try again.
+That address is the last one in `X-Forwarded-For`, the one the proxy in front of the
+backend appended (ADR-0011). Any proxy that forwards to the backend has to append to
+that header itself, or every visitor is counted as one address — or, if it passes the
+client's header through, a script picks its own. A backend reachable without the proxy
+can be sent any header at all, which is why production's is reachable only through it.

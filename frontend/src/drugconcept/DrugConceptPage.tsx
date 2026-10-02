@@ -8,6 +8,7 @@ import {
   type RegulatoryClassBlock,
 } from '../api/drugConcept'
 import type { Candidate } from '../api/search'
+import { TooManyRequests, tooManyRequestsMessage } from '../api/tooManyRequests'
 import { Unreachable } from '../api/unreachable'
 import { RelatedProducts } from './RelatedProducts'
 import { SafetyFraming } from './SafetyFraming'
@@ -22,14 +23,16 @@ import { LabelProvenance, SafetySections } from './SafetySections'
  * this drug", "there is no such drug" and "we couldn't reach the FDA" mean entirely
  * different things to someone looking up their medication. The backend tells them apart
  * in its response — Unlabelled is a page with no labelling, no such Drug Concept a 404,
- * and Unreachable a 503 — and this keeps them apart on the way to the reader.
+ * and Unreachable a 503 — and this keeps them apart on the way to the reader. A refusal
+ * for asking too often is a fact about the reader's requests rather than any of those.
  */
 type Loaded = { state: 'loaded'; rxcui: string; drugConcept: DrugConcept }
 type NoSuchConcept = { state: 'no-such-concept'; rxcui: string }
 type Outage = { state: 'unreachable'; rxcui: string }
 /** The backend out of reach, or a fault of its own: not known to be Unreachable. */
 type NotLoaded = { state: 'not-loaded'; rxcui: string }
-type Fetched = Loaded | NoSuchConcept | Outage | NotLoaded
+type Refused = { state: 'refused'; rxcui: string; refusal: TooManyRequests }
+type Fetched = Loaded | NoSuchConcept | Outage | NotLoaded | Refused
 
 /**
  * A Drug Concept's page: what the FDA says about the risks of one medication.
@@ -52,6 +55,10 @@ export function DrugConceptPage() {
       .then((drugConcept) => current && setFetched({ state: 'loaded', rxcui, drugConcept }))
       .catch((error: unknown) => {
         if (!current) {
+          return
+        }
+        if (error instanceof TooManyRequests) {
+          setFetched({ state: 'refused', rxcui, refusal: error })
           return
         }
         setFetched({
@@ -101,6 +108,8 @@ export function DrugConceptPage() {
       {answer?.state === 'not-loaded' && (
         <p role="alert">Pill-Facts couldn&rsquo;t load this page. Please try again.</p>
       )}
+
+      {answer?.state === 'refused' && <p role="alert">{tooManyRequestsMessage(answer.refusal)}</p>}
 
       {/* Nor is "we have never heard of this" a fact about the drug. */}
       {answer?.state === 'no-such-concept' && (

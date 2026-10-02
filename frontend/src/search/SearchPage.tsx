@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router'
 import type { Candidate, DroppedCombinationProduct } from '../api/search'
+import { tooManyRequestsMessage } from '../api/tooManyRequests'
 import { drugConceptPath } from '../drugconcept/drugConceptPath'
 import { searchPath } from './searchPath'
 import { useResolution } from './useResolution'
@@ -59,6 +60,10 @@ export function SearchPage() {
 
       {resolution.state === 'not-loaded' && (
         <p role="alert">Pill-Facts couldn&rsquo;t load this search. Please try again.</p>
+      )}
+
+      {resolution.state === 'refused' && (
+        <p role="alert">{tooManyRequestsMessage(resolution.refusal)}</p>
       )}
 
       {resolution.state === 'choices' &&

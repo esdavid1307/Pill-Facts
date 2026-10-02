@@ -11,3 +11,8 @@ pillfacts:
     base-url: ${PILLFACTS_RXNORM_BASE_URL:https://rxnav.nlm.nih.gov}
   openfda:
     base-url: ${PILLFACTS_OPENFDA_BASE_URL:https://api.fda.gov}
+    # Never committed: the repository is public. Absent, the app starts and says so.
+    api-key: ${PILLFACTS_OPENFDA_API_KEY:}
+  rate-limit:
+    burst: ${PILLFACTS_RATE_LIMIT_BURST:60}
+    interval: ${PILLFACTS_RATE_LIMIT_INTERVAL:10s}

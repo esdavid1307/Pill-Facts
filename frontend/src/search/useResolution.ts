@@ -5,6 +5,7 @@ import {
   type Candidate,
   type DroppedCombinationProduct,
 } from '../api/search'
+import { TooManyRequests } from '../api/tooManyRequests'
 import { Unreachable } from '../api/unreachable'
 import { drugConceptPath } from '../drugconcept/drugConceptPath'
 
@@ -25,7 +26,9 @@ type Outage = { state: 'unreachable'; query: string }
  * says whether an answer is cached, so neither is worded as Unreachable.
  */
 type NotLoaded = { state: 'not-loaded'; query: string }
-export type Resolution = Searching | Choices | Outage | NotLoaded
+/** Refused for asking too often: a fact about the reader's requests, and about nothing else. */
+type Refused = { state: 'refused'; query: string; refusal: TooManyRequests }
+export type Resolution = Searching | Choices | Outage | NotLoaded | Refused
 
 /**
  * Resolving one query to one Drug Concept.
@@ -60,9 +63,14 @@ export function useResolution(query: string): Resolution {
         setResolution({ state: 'choices', query, candidates, droppedCombinationProducts })
       })
       .catch((error: unknown) => {
-        if (current) {
-          setResolution({ state: error instanceof Unreachable ? 'unreachable' : 'not-loaded', query })
+        if (!current) {
+          return
         }
+        setResolution(
+          error instanceof TooManyRequests
+            ? { state: 'refused', query, refusal: error }
+            : { state: error instanceof Unreachable ? 'unreachable' : 'not-loaded', query },
+        )
       })
     return () => {
       current = false
