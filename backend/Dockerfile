@@ -1,4 +1,7 @@
-FROM eclipse-temurin:21-jdk AS build
+# The build runs on the builder's own CPU whatever the target, since a JAR is the same on
+# every one. Built for the x86 t3.micro on an Apple-silicon Mac, Maven would otherwise run
+# under emulation, which is slow and fails outright unpacking the Maven wrapper.
+FROM --platform=$BUILDPLATFORM eclipse-temurin:21-jdk AS build
 WORKDIR /build
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
