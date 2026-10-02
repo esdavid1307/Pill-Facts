@@ -1,8 +1,10 @@
 package net.pillfacts.backend.support;
 
+import java.util.List;
 import java.util.Map;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.verification.LoggedRequest;
 import org.springframework.core.io.Resource;
 
 /**
@@ -33,6 +35,11 @@ final class OpenFdaStub extends UpstreamStub {
 	/** Each Regulatory Class, as its fixtures are filed and as openFDA names it. */
 	private static final Map<String, String> CLASSES =
 			Map.of("otc", "HUMAN OTC DRUG", "prescription", "HUMAN PRESCRIPTION DRUG");
+
+	/** What reached openFDA since requests were last forgotten, as it arrived. */
+	List<LoggedRequest> requestsReceived() {
+		return server.findAll(WireMock.anyRequestedFor(WireMock.anyUrl()));
+	}
 
 	@Override
 	void stubFixtures() {

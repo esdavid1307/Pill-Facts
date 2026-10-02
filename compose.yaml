@@ -23,6 +23,8 @@ services:
       PILLFACTS_DB_URL: jdbc:postgresql://db:5432/pillfacts
       PILLFACTS_DB_USERNAME: pillfacts
       PILLFACTS_DB_PASSWORD: pillfacts
+      # From the shell or a gitignored .env, never from this file. Optional locally.
+      PILLFACTS_OPENFDA_API_KEY: ${PILLFACTS_OPENFDA_API_KEY:-}
     ports:
       - "${PILLFACTS_API_PORT:-8080}:8080"
     depends_on:

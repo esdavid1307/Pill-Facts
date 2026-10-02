@@ -102,6 +102,24 @@ needs from the environment:
 | `PILLFACTS_DB_PASSWORD` | `pillfacts`                                  |
 | `PILLFACTS_RXNORM_BASE_URL` | `https://rxnav.nlm.nih.gov`              |
 | `PILLFACTS_OPENFDA_BASE_URL` | `https://api.fda.gov`                   |
+| `PILLFACTS_OPENFDA_API_KEY` | none                                     |
+| `PILLFACTS_RATE_LIMIT_BURST` | `60`                                    |
+| `PILLFACTS_RATE_LIMIT_INTERVAL` | `10s`                                |
 
 The defaults describe the local compose stack. Production values are supplied by the
 deployment environment.
+
+Without `PILLFACTS_OPENFDA_API_KEY` the backend starts anyway and says so in its log,
+running on openFDA's unkeyed quota of 1,000 requests a day. That is fine for development
+and not for a public site. [Request a key](https://open.fda.gov/apis/authentication/) and
+put it in a `.env` beside `compose.yaml`, which is gitignored and which compose reads:
+
+```sh
+echo 'PILLFACTS_OPENFDA_API_KEY=your-key' > .env
+```
+
+Each visitor gets a burst of 60 requests to `/api/search` and `/api/drug-concepts`,
+then one more every 10 seconds. Past that they get a `429` that says when to try again.
+The visitor is the last address in `X-Forwarded-For`, the one the proxy in front of the
+backend appended (ADR-0011). Any proxy that forwards to the backend has to set that
+header, or every visitor is counted as one.

@@ -1,11 +1,17 @@
 package net.pillfacts.backend.support;
 
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import com.github.tomakehurst.wiremock.verification.LoggedRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.client.RestTestClient;
 import org.testcontainers.containers.PostgreSQLContainer;
 
@@ -29,7 +35,15 @@ import org.testcontainers.containers.PostgreSQLContainer;
  * does.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestPropertySource(properties = "pillfacts.openfda.api-key=" + ApiTest.OPENFDA_API_KEY)
 public abstract class ApiTest {
+
+	/**
+	 * The key the application is configured with, as production's is. A property rather
+	 * than part of the dynamic sources below, so a test class can configure itself without
+	 * one.
+	 */
+	protected static final String OPENFDA_API_KEY = "test-openfda-key";
 
 	private static final PostgreSQLContainer<?> POSTGRES =
 			new PostgreSQLContainer<>("postgres:18-alpine");
@@ -55,15 +69,54 @@ public abstract class ApiTest {
 		registry.add("pillfacts.openfda.base-url", () -> OPENFDA_BASE_URL);
 	}
 
+	/** Hands each test instance an address no other test has used. */
+	private static final AtomicInteger READERS = new AtomicInteger();
+
 	@LocalServerPort
 	private int port;
+
+	/**
+	 * Who this test is, as the proxy in front of the backend would report it.
+	 *
+	 * <p>The rate limit is per reader, and its state outlives any one test because the
+	 * application does. Were every test to arrive from the same address, they would spend
+	 * one shared allowance and the suite would start being refused part way through. Each
+	 * test is a reader of its own instead, browsing under the limits production runs with,
+	 * and so every test in the suite is also a check that ordinary browsing is never
+	 * refused.
+	 */
+	private final String reader = aNewReader();
+
+	/** The address this test's requests arrive from. */
+	protected String reader() {
+		return this.reader;
+	}
+
+	/** An address from the range reserved for benchmarking (RFC 2544), never a real visitor's. */
+	protected static String aNewReader() {
+		int n = READERS.incrementAndGet();
+		return "198.18.%d.%d".formatted(n / 250, n % 250 + 1);
+	}
 
 	@Autowired
 	private JdbcClient jdbc;
 
-	/** A client pointed at the running application. */
+	/** A client pointed at the running application, as this test's reader. */
 	protected RestTestClient api() {
-		return RestTestClient.bindToServer().baseUrl("http://localhost:" + port).build();
+		return apiForwardedFor(this.reader);
+	}
+
+	/**
+	 * A client pointed at the running application, arriving through the proxy with this
+	 * {@code X-Forwarded-For}. The proxy appends the address it saw to whatever the client
+	 * sent, so the last entry is the reader and anything before it is the client's own
+	 * claim.
+	 */
+	protected RestTestClient apiForwardedFor(String forwardedFor) {
+		return RestTestClient.bindToServer()
+				.baseUrl("http://localhost:" + port)
+				.defaultHeader("X-Forwarded-For", forwardedFor)
+				.build();
 	}
 
 	/**
@@ -75,6 +128,11 @@ public abstract class ApiTest {
 	 */
 	protected int upstreamRequests() {
 		return RXNORM.requests() + OPENFDA.requests();
+	}
+
+	/** The requests that have reached openFDA since {@link #forgetUpstreamRequests()}. */
+	protected List<LoggedRequest> openFdaRequests() {
+		return OPENFDA.requestsReceived();
 	}
 
 	protected void forgetUpstreamRequests() {
