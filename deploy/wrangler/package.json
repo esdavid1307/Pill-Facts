@@ -1,0 +1,8 @@
+{
+  "name": "pill-facts-wrangler",
+  "private": true,
+  "description": "The wrangler the Deploy workflow and deploy/setup-frontend.sh deploy with, locked apart from the frontend so its npm ci doesn't download workerd.",
+  "devDependencies": {
+    "wrangler": "4.146.0"
+  }
+}

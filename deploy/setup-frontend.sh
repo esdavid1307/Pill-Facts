@@ -195,7 +195,6 @@ finish() {
 TOTAL_STAGES=9
 REGION=us-east-1 # where setup-billing.sh put the stack
 STACK=pillfacts
-WRANGLER=wrangler@4.146.0 # the version deploy.yml deploys with
 SEARCH="/api/search?q=ibuprofen"
 cd "$(dirname "$0")/.."
 
@@ -224,16 +223,29 @@ succeeded() {
   python3 -c 'import json, sys; sys.exit(0 if json.load(sys.stdin).get("success") else 1)' 2>/dev/null
 }
 
-# wrangler ARGS... runs the pinned wrangler against the account, with the token from the
-# environment.
+# wrangler ARGS... runs the wrangler deploy.yml deploys with against the account, with
+# the token from the environment.
 wrangler() {
   CLOUDFLARE_API_TOKEN="$CLOUDFLARE_API_TOKEN" CLOUDFLARE_ACCOUNT_ID="$ACCOUNT_ID" \
-    npx --yes "$WRANGLER" "$@"
+    deploy/wrangler/node_modules/.bin/wrangler "$@"
 }
 
 # status_of FAMILY prints the status /api/search answers over IPv4 (4) or IPv6 (6), or 000.
 status_of() {
   curl "-$1" -s -o /dev/null -w '%{http_code}' --max-time 15 "$SITE_URL$SEARCH" || true
+}
+
+# rerun_failed reruns the run's failed jobs and waits until they've started, since until
+# then gh run watch reports the failure being rerun.
+rerun_failed() {
+  gh run rerun "$RUN" --failed
+  until [[ "$(gh run view "$RUN" --json status --jq .status)" != completed ]]; do sleep 3; done
+}
+
+# show_failure prints the end of the failed step's log, then asks whether to rerun.
+show_failure() {
+  gh run view "$RUN" --log-failed | tail -n 40 | sed 's/^/    /'
+  confirm "Fixed it? Rerun the failed jobs?" || stop
 }
 
 # watch_run shows the run until it ends, prints its summary if it failed, and succeeds if it passed.
@@ -259,11 +271,12 @@ until gh auth status >/dev/null 2>&1; do
 done
 REPO=$(gh repo view --json nameWithOwner --jq .nameWithOwner)
 say "gh is signed in for $REPO."
-until command -v npx >/dev/null 2>&1; do
-  warn "npx isn't installed. Install Node.js 24, which comes with it."
+until command -v npm >/dev/null 2>&1; do
+  warn "npm isn't installed. Install Node.js 24, which comes with it."
   pause "Press Enter to check again"
 done
-say "node $(node --version) is installed."
+npm ci --ignore-scripts --silent --prefix deploy/wrangler
+say "wrangler $(wrangler --version) is installed."
 until [[ -n "$(gh variable get PILLFACTS_BACKEND_INSTANCE 2>/dev/null)" ]]; do
   warn "The backend isn't deployed from CI yet. Run deploy/setup-ci.sh first."
   pause "Press Enter to check again"
@@ -321,10 +334,19 @@ if cloudflare "/accounts/$ACCOUNT_ID/pages/projects/$PROJECT" | succeeded; then
 else
   say "This creates the Pages project $PROJECT. CI deploys main to it as production."
   confirm "Create it now?" || stop
-  wrangler pages project create "$PROJECT" --production-branch main
+  wrangler pages project create "$PROJECT" --production-branch main || stop
 fi
-SITE_URL=https://$(cloudflare "/accounts/$ACCOUNT_ID/pages/projects/$PROJECT" |
-  python3 -c 'import json, sys; print(json.load(sys.stdin)["result"]["subdomain"])')
+# CI deploys with --branch main, which is a preview on a project whose production is
+# another branch, and then the check would test the old production.
+read -r SUBDOMAIN PRODUCTION_BRANCH < <(cloudflare "/accounts/$ACCOUNT_ID/pages/projects/$PROJECT" |
+  python3 -c 'import json, sys; r = json.load(sys.stdin)["result"]; print(r["subdomain"], r["production_branch"])' \
+  2>/dev/null) || { warn "Cloudflare didn't return the project $PROJECT. Check it in the dashboard."; stop; }
+if [[ "$PRODUCTION_BRANCH" != main ]]; then
+  warn "$PROJECT deploys $PRODUCTION_BRANCH to production, and CI deploys main."
+  note "Change it under Settings → Builds & deployments → Production branch, then run this again."
+  stop
+fi
+SITE_URL=https://$SUBDOMAIN
 say "The site's public URL is $SITE_URL."
 note "Cloudflare picks the subdomain, adding a suffix if $PROJECT.pages.dev is taken."
 pause "Press Enter to continue"
@@ -375,10 +397,9 @@ done
 (( RUN > before )) || { warn "The run hasn't appeared after two minutes. Check the Actions tab."; stop; }
 say "Watching $(gh run view "$RUN" --json url --jq .url)"
 until watch_run; do
-  gh run view "$RUN" --log-failed | tail -n 40 | sed 's/^/    /'
-  confirm "Fixed it? Rerun the failed jobs?" || stop
-  gh run rerun "$RUN" --failed
-  until [[ "$(gh run view "$RUN" --json status --jq .status)" != completed ]]; do sleep 3; done
+  show_failure
+  rerun_failed
+  say "Watching the rerun."
 done
 if [[ "$(gh run view "$RUN" --json jobs --jq '.jobs[] | select(.name | startswith("Deploy the frontend")) | .conclusion')" != success ]]; then
   warn "The run passed without deploying the frontend. It's skipped while"
@@ -396,7 +417,8 @@ say "every reader would share one bucket. This spends this machine's burst over 
 say "checks a second address isn't refused."
 confirm "Run the check?" || stop
 sent=0
-until [[ "$(status_of 4)" == 429 ]]; do
+until status=$(status_of 4); [[ "$status" == 429 ]]; do
+  [[ "$status" != 000 ]] || { warn "$SITE_URL can't be reached over IPv4."; stop; }
   (( ++sent < 200 )) || { warn "200 searches over IPv4 and no 429. Is the rate limit on?"; stop; }
 done
 say "Refused over IPv4 after $sent searches."
@@ -412,12 +434,14 @@ if [[ "$second" == 000 ]]; then
   say "searching over IPv4, so a shared bucket stays empty."
   while true; do status_of 4 >/dev/null; sleep 1; done &
   draining=$!
+  trap 'kill "$draining" 2>/dev/null' EXIT
   step "Turn Wi-Fi off on your phone, so it uses mobile data."
   step "Open $SITE_URL on it and search for ibuprofen."
   if confirm "Did results load, rather than 'a lot of requests from your connection'?"; then
     second=200
   fi
   kill "$draining"
+  trap - EXIT
 fi
 if [[ "$second" == 200 ]]; then
   say "A second address isn't refused, so each reader gets a bucket of their own."
