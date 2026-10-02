@@ -11,6 +11,7 @@ jobs:
     outputs:
       backend: ${{ steps.filter.outputs.backend }}
       frontend: ${{ steps.filter.outputs.frontend }}
+      deploy: ${{ steps.filter.outputs.deploy }}
     steps:
       - uses: actions/checkout@v5
       - uses: dorny/paths-filter@v3
@@ -24,6 +25,9 @@ jobs:
             frontend:
               - 'frontend/**'
               - 'compose.yaml'
+              - '.github/workflows/ci.yml'
+            deploy:
+              - 'deploy/**'
               - '.github/workflows/ci.yml'
 
   backend:
@@ -64,3 +68,21 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+
+  deploy:
+    needs: changes
+    if: needs.changes.outputs.deploy == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+      - name: Test the free-tier expiry check
+        run: python3 -m unittest deploy/test_check_free_tier_expiry.py
+      # SC2034 is excluded because the wizard library above the STAGES marker defines a
+      # colour no stage uses, and that library is shared, not edited per wizard.
+      - name: Check the wizard's syntax
+        run: bash -n deploy/setup-billing.sh && shellcheck -e SC2034 deploy/setup-billing.sh
+      - name: Lint the CloudFormation template
+        run: pipx run cfn-lint deploy/aws.yaml

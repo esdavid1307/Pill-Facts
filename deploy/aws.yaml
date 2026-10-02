@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Pill-Facts on AWS (ADR-0009). Deployed to us-east-1, the only region that publishes
+  billing metrics. For now it holds only the $1 billing alarm; later slices add the
+  backend's resources here. Run deploy/setup-billing.sh rather than deploying by hand.
+
+Parameters:
+  AlertEmail:
+    Type: String
+    Description: Where the billing alarm is sent. Confirm the subscription email AWS sends.
+    AllowedPattern: '[^@\s]+@[^@\s]+'
+
+Resources:
+  BillingAlerts:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: pillfacts-billing
+
+  BillingAlertEmail:
+    Type: AWS::SNS::Subscription
+    Properties:
+      TopicArn: !Ref BillingAlerts
+      Protocol: email
+      Endpoint: !Ref AlertEmail
+
+  # Anything over a dollar means something left the free tier. The metric only exists
+  # once billing alerts are turned on in Billing preferences, and AWS publishes it a few
+  # times a day, so a 6-hour period with missing data treated as fine is the right shape.
+  BillingAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: pillfacts-billing-over-1-usd
+      AlarmDescription: Pill-Facts is costing money. ADR-0009 says it must cost nothing.
+      Namespace: AWS/Billing
+      MetricName: EstimatedCharges
+      Dimensions:
+        - Name: Currency
+          Value: USD
+      Statistic: Maximum
+      Period: 21600
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref BillingAlerts
+
+Outputs:
+  BillingAlarmName:
+    Value: !Ref BillingAlarm
+  BillingAlertsTopic:
+    Value: !Ref BillingAlerts
