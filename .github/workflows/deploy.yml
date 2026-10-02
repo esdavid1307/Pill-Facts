@@ -1,9 +1,10 @@
 name: Deploy
 
-# The backend, from every commit on main that CI has passed: an image on GHCR, then a
+# Every commit on main that CI has passed. The backend first: an image on GHCR, then a
 # rollout to the EC2 instance over SSM Run Command. AWS is reached through
 # GitHub's OIDC tokens and a role only main can assume, so no AWS key exists anywhere.
-# deploy/setup-ci.sh sets the variables this reads.
+# Then the frontend, to Cloudflare Pages, checked end to end through its public URL.
+# deploy/setup-ci.sh and deploy/setup-frontend.sh set the variables and secret this reads.
 on:
   workflow_run:
     workflows: [CI]
@@ -116,3 +117,50 @@ jobs:
           PILLFACTS_BACKEND_INSTANCE: ${{ vars.PILLFACTS_BACKEND_INSTANCE }}
           TAG: ${{ needs.commit.outputs.sha }}
         run: python3 deploy/run-rollout.py "$IMAGE:$TAG"
+
+  frontend:
+    name: Deploy the frontend to Cloudflare Pages
+    needs: [commit, rollout]
+    # Until deploy/setup-frontend.sh has made the Pages project, there's nowhere to deploy.
+    if: vars.PILLFACTS_PAGES_PROJECT != '' && vars.PILLFACTS_SITE_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.commit.outputs.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            frontend/package-lock.json
+            deploy/wrangler/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      # Locked apart from the frontend, so its npm ci doesn't download wrangler's runtime,
+      # and installed before the token is in the environment, with no install scripts.
+      - run: npm ci --ignore-scripts --prefix ../deploy/wrangler
+      # From frontend/, so functions/ is bundled with dist: the Function is what forwards
+      # /api to the backend. Its PILLFACTS_ORIGIN is set on the Pages project and never
+      # here. This publishes to production before the check below, so a failed check
+      # leaves the broken build live until a fix is deployed or it's rolled back.
+      - name: Deploy ${{ needs.commit.outputs.sha }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: ${{ vars.PILLFACTS_PAGES_PROJECT }}
+          SHA: ${{ needs.commit.outputs.sha }}
+        run: |
+          ../deploy/wrangler/node_modules/.bin/wrangler pages deploy dist --project-name "$PROJECT" \
+            --branch main --commit-hash "$SHA" --commit-message "Deploy $SHA"
+      - name: Search through ${{ vars.PILLFACTS_SITE_URL }}
+        env:
+          SITE_URL: ${{ vars.PILLFACTS_SITE_URL }}
+        run: python3 ../deploy/smoke-check.py "$SITE_URL"
