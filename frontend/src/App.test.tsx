@@ -7,7 +7,7 @@ import type { Candidate, DroppedCombinationProduct, SearchResults } from './api/
 import { viewportIs } from './test/viewport'
 
 /**
- * The frontend's one test seam: a component rendered in jsdom with the backend stubbed
+ * The app's one test seam: a component rendered in jsdom with the backend stubbed
  * at fetch. Later tickets add cases here rather than a second harness.
  *
  * Routes are keyed by the path they answer, because resolving a search and then opening

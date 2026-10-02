@@ -17,9 +17,26 @@ export default defineConfig({
     },
   },
   test: {
-    environment: 'jsdom',
     globals: true,
-    setupFiles: ['./src/test/setup.ts'],
-    css: true,
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: 'app',
+          include: ['src/**/*.test.{ts,tsx}'],
+          environment: 'jsdom',
+          setupFiles: ['./src/test/setup.ts'],
+          css: true,
+        },
+      },
+      {
+        // The Pages Function runs in a Worker, not a browser, so it is tested without one.
+        test: {
+          name: 'proxy',
+          include: ['proxy/**/*.test.ts'],
+          environment: 'node',
+        },
+      },
+    ],
   },
 })

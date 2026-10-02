@@ -40,7 +40,7 @@ cd backend && ./mvnw spring-boot:run
 ### Working on the frontend
 
 Vite proxies `/api` to `http://localhost:8080`, nginx does the same in the built image,
-and a Pages Function will do it in production, so the app is same-origin everywhere —
+and a Pages Function (`frontend/functions/api/[[path]].ts`) does it in production, so the app is same-origin everywhere —
 there is no API URL to configure and no CORS anywhere. See
 [ADR-0011](docs/adr/0011-the-frontend-proxies-api-to-the-backend.md).
 
@@ -73,7 +73,8 @@ test that needs a new drug adds it to that script's list rather than hand-writin
 cd backend && ./mvnw verify
 ```
 
-The frontend has one component-test seam, in jsdom with the backend stubbed at `fetch`.
+The frontend has two test seams, both with the backend stubbed at `fetch`: the app's
+components in jsdom, and the Pages Function's `forward` in node.
 
 ```sh
 cd frontend && npm test
@@ -108,6 +109,10 @@ needs from the environment:
 
 The defaults describe the local compose stack. Production values are supplied by the
 deployment environment.
+
+The Pages Function reads one variable of its own, `PILLFACTS_ORIGIN`: the backend it
+forwards `/api` to, such as `http://203.0.113.10:8080`. It has no default and is set in
+the Pages project, not here.
 
 Without `PILLFACTS_OPENFDA_API_KEY` the backend starts anyway and says so in its log,
 running on openFDA's unkeyed quota of 1,000 requests a day. That is fine for development
