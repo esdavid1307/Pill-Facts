@@ -1,0 +1,118 @@
+name: Deploy
+
+# The backend, from every commit on main that CI has passed: an image on GHCR, then a
+# rollout to the EC2 instance over SSM Run Command. AWS is reached through
+# GitHub's OIDC tokens and a role only main can assume, so no AWS key exists anywhere.
+# deploy/setup-ci.sh sets the variables this reads.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+# One rollout at a time. A t3.micro has no room for two JVMs.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  IMAGE: ghcr.io/esdavid1307/pill-facts-backend
+
+jobs:
+  commit:
+    name: Pick main's head, if CI passed
+    # Pushes only: a fork's pull request from a branch it calls main matches the branch
+    # filter too, and its code must never reach the instance.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      sha: ${{ steps.head.outputs.sha }}
+    # Whatever triggered it, a run deploys main as it is now. CI runs finish out of order,
+    # and the concurrency group drops a waiting run when another queues, so deploying the
+    # triggering commit could roll the instance back or leave main's head undeployed.
+    steps:
+      - id: head
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "$GITHUB_REF" != refs/heads/main ]]; then
+            echo "::error::Deploy from main. Only main can assume the AWS deploy role."
+            exit 1
+          fi
+          head=$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq .sha)
+          passed=$(gh run list -R "$GITHUB_REPOSITORY" --workflow ci.yml --commit "$head" \
+            --event push --status success --json databaseId --jq length)
+          if [[ "$passed" == 0 ]]; then
+            # Its own CI run triggers this workflow again when it passes.
+            echo "::notice::CI hasn't passed for main's head, $head, so nothing is deployed."
+            exit 0
+          fi
+          echo "sha=$head" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build and push the image
+    needs: commit
+    if: needs.commit.outputs.sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.commit.outputs.sha }}
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      # The package is public, so the instance pulls with no credentials. The image holds
+      # no secret: rollout.sh reads those from Parameter Store on the instance.
+      - uses: docker/build-push-action@v7
+        with:
+          context: backend
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ needs.commit.outputs.sha }}
+            ${{ env.IMAGE }}:latest
+          labels: org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  rollout:
+    name: Roll it out to EC2
+    needs: [commit, build]
+    runs-on: ubuntu-latest
+    # run-rollout.py gives up on Run Command after 15 minutes.
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.commit.outputs.sha }}
+          persist-credentials: false
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.PILLFACTS_AWS_DEPLOY_ROLE }}
+          aws-region: ${{ vars.PILLFACTS_AWS_REGION }}
+      - name: Roll out ${{ needs.commit.outputs.sha }}
+        env:
+          PILLFACTS_AWS_REGION: ${{ vars.PILLFACTS_AWS_REGION }}
+          PILLFACTS_BACKEND_INSTANCE: ${{ vars.PILLFACTS_BACKEND_INSTANCE }}
+          TAG: ${{ needs.commit.outputs.sha }}
+        run: python3 deploy/run-rollout.py "$IMAGE:$TAG"

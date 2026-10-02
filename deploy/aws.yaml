@@ -2,7 +2,8 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: >
   Pill-Facts on AWS (ADR-0009). Deployed to us-east-1, the only region that publishes
   billing metrics: the $1 billing alarm, and the EC2 t3.micro the backend runs on.
-  Run deploy/setup-billing.sh, then deploy/setup-backend.sh, rather than deploying by hand.
+  Run deploy/setup-billing.sh, deploy/setup-backend.sh, then deploy/setup-ci.sh, rather
+  than deploying by hand.
 
 Parameters:
   AlertEmail:
@@ -15,6 +16,16 @@ Parameters:
   BackendAmi:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
     Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+
+  # An account holds one OIDC provider per issuer, so a GitHub one made for another project
+  # is reused rather than duplicated. Blank creates it here. deploy/setup-ci.sh decides.
+  GitHubOidcProviderArn:
+    Type: String
+    Default: ''
+    Description: The account's existing token.actions.githubusercontent.com provider, if any.
+
+Conditions:
+  CreateGitHubOidcProvider: !Equals [!Ref GitHubOidcProviderArn, '']
 
 Resources:
   BillingAlerts:
@@ -165,6 +176,49 @@ Resources:
         - Key: Name
           Value: pillfacts-backend
 
+  # ── Deploying from CI ───────────────────────────────────────────────────────────────
+  # .github/workflows/deploy.yml assumes this role through GitHub's OIDC tokens, so no AWS
+  # key exists to leak. Only a workflow on main can assume it, and all it can do is run a
+  # shell script on the instance, which is exactly a rollout (deploy/run-rollout.py).
+
+  GitHubOidcProvider:
+    Type: AWS::IAM::OIDCProvider
+    Condition: CreateGitHubOidcProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList:
+        - sts.amazonaws.com
+
+  DeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Description: Rolls the backend out from GitHub Actions on main (deploy.yml)
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !If [CreateGitHubOidcProvider, !Ref GitHubOidcProvider, !Ref GitHubOidcProviderArn]
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+                token.actions.githubusercontent.com:sub: repo:esdavid1307/Pill-Facts:ref:refs/heads/main
+      Policies:
+        - PolicyName: roll-out-the-backend
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: ssm:SendCommand
+                Resource:
+                  - !Sub arn:${AWS::Partition}:ec2:${AWS::Region}:${AWS::AccountId}:instance/${BackendInstance}
+                  - !Sub arn:${AWS::Partition}:ssm:${AWS::Region}::document/AWS-RunShellScript
+              # GetCommandInvocation takes no resource narrower than this.
+              - Effect: Allow
+                Action: ssm:GetCommandInvocation
+                Resource: '*'
+
 Outputs:
   BillingAlarmName:
     Value: !Ref BillingAlarm
@@ -174,3 +228,5 @@ Outputs:
     Value: !Ref BackendInstance
   BackendAddress:
     Value: !Ref BackendAddress
+  DeployRoleArn:
+    Value: !GetAtt DeployRole.Arn
