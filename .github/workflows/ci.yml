@@ -82,7 +82,11 @@ jobs:
         run: python3 -m unittest deploy/test_check_free_tier_expiry.py
       # SC2034 is excluded because the wizard library above the STAGES marker defines a
       # colour no stage uses, and that library is shared, not edited per wizard.
-      - name: Check the wizard's syntax
-        run: bash -n deploy/setup-billing.sh && shellcheck -e SC2034 deploy/setup-billing.sh
+      - name: Check the scripts' syntax
+        run: |
+          for script in deploy/setup-billing.sh deploy/setup-backend.sh deploy/ec2/rollout.sh; do
+            bash -n "$script"
+          done
+          shellcheck -e SC2034 deploy/setup-billing.sh deploy/setup-backend.sh deploy/ec2/rollout.sh
       - name: Lint the CloudFormation template
         run: pipx run cfn-lint deploy/aws.yaml

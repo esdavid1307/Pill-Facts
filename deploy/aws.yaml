@@ -1,14 +1,20 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: >
   Pill-Facts on AWS (ADR-0009). Deployed to us-east-1, the only region that publishes
-  billing metrics. For now it holds only the $1 billing alarm; later slices add the
-  backend's resources here. Run deploy/setup-billing.sh rather than deploying by hand.
+  billing metrics: the $1 billing alarm, and the EC2 t3.micro the backend runs on.
+  Run deploy/setup-billing.sh, then deploy/setup-backend.sh, rather than deploying by hand.
 
 Parameters:
   AlertEmail:
     Type: String
     Description: Where the billing alarm is sent. Confirm the subscription email AWS sends.
     AllowedPattern: '[^@\s]+@[^@\s]+'
+
+  # Resolved again on every stack update, so a newer AMI replaces the instance. The new
+  # one boots with Docker and nothing else: roll the backend out to it again.
+  BackendAmi:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
 
 Resources:
   BillingAlerts:
@@ -45,8 +51,126 @@ Resources:
       AlarmActions:
         - !Ref BillingAlerts
 
+  # ── The backend ─────────────────────────────────────────────────────────────────────
+  # No key pair and no port 22. Every way in is SSM: Session Manager for a shell, Run
+  # Command for a rollout (deploy/ec2/rollout.sh).
+
+  BackendRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+      Policies:
+        # The rollout reads the backend's secrets from here into the container's env file.
+        - PolicyName: read-pillfacts-parameters
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: ssm:GetParameters
+                Resource: !Sub arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter/pillfacts/*
+
+  BackendInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref BackendRole
+
+  # Port 80 from Cloudflare and nothing else. The backend trusts the last X-Forwarded-For
+  # entry because only the Pages Function can reach it (ADR-0011), so this list is a
+  # security boundary, not a convenience. It is https://www.cloudflare.com/ips-v4, which
+  # deploy/setup-backend.sh checks against before every deploy.
+  BackendSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Pill-Facts backend, port 80 from Cloudflare only
+      SecurityGroupIngress:
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 173.245.48.0/20 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 103.21.244.0/22 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 103.22.200.0/22 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 103.31.4.0/22 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 141.101.64.0/18 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 108.162.192.0/18 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 190.93.240.0/20 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 188.114.96.0/20 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 197.234.240.0/22 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 198.41.128.0/17 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 162.158.0.0/15 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 104.16.0.0/13 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 104.24.0.0/14 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 172.64.0.0/13 }
+        - { IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 131.0.72.0/22 }
+
+  # A launch template because AWS::EC2::Instance can't require IMDSv2 by itself. A hop
+  # limit of 1 keeps the instance role's credentials away from the container, which sits
+  # one network hop further out on Docker's bridge.
+  BackendLaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateData:
+        MetadataOptions:
+          HttpTokens: required
+          HttpPutResponseHopLimit: 1
+          HttpEndpoint: enabled
+
+  BackendInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: !Ref BackendAmi
+      IamInstanceProfile: !Ref BackendInstanceProfile
+      SecurityGroupIds:
+        - !GetAtt BackendSecurityGroup.GroupId
+      LaunchTemplate:
+        LaunchTemplateId: !Ref BackendLaunchTemplate
+        Version: !GetAtt BackendLaunchTemplate.LatestVersionNumber
+      # T3 defaults to unlimited, which bills for CPU past the baseline. Standard throttles
+      # instead, which is the right failure for a site that must cost nothing.
+      CreditSpecification:
+        CPUCredits: standard
+      Tags:
+        - Key: Name
+          Value: pillfacts-backend
+      # Docker and swap, nothing of the app's: that arrives with a rollout. The swap gives
+      # the 1GB box room to absorb a spike rather than kill the container.
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          set -euxo pipefail
+          dnf install -y docker
+          systemctl enable --now docker
+          if [ ! -f /swapfile ]; then
+            dd if=/dev/zero of=/swapfile bs=1M count=1024
+            chmod 600 /swapfile
+            mkswap /swapfile
+            echo '/swapfile none swap defaults 0 0' >> /etc/fstab
+          fi
+          swapon -a
+
+  # A stable address, so the EC2 public DNS name the Pages Function fetches stays the same
+  # across stops and starts. A replaced instance gets the same one.
+  BackendAddress:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref BackendInstance
+      Tags:
+        - Key: Name
+          Value: pillfacts-backend
+
 Outputs:
   BillingAlarmName:
     Value: !Ref BillingAlarm
   BillingAlertsTopic:
     Value: !Ref BillingAlerts
+  BackendInstanceId:
+    Value: !Ref BackendInstance
+  BackendAddress:
+    Value: !Ref BackendAddress

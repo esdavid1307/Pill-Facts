@@ -117,7 +117,7 @@ The defaults describe the local compose stack. Production values are supplied by
 deployment environment.
 
 The Pages Function reads one variable of its own, `PILLFACTS_ORIGIN`: the backend it
-forwards `/api` to, such as `http://203.0.113.10:8080`. It has no default and is set in
+forwards `/api` to, such as `http://ec2-203-0-113-10.compute-1.amazonaws.com`. It has no default and is set in
 the Pages project, not here.
 
 Without `PILLFACTS_OPENFDA_API_KEY` the backend starts anyway and says so in its log,
@@ -153,6 +153,24 @@ records the free-tier end date in the repo variable `PILLFACTS_FREE_TIER_EXPIRES
 a calendar reminder. A weekly workflow then fails, and so emails the repo owner, from
 30 days before that date or whenever no date is recorded. Its message names the way
 out: move the backend to Koyeb and repoint `PILLFACTS_ORIGIN` at it (ADR-0011).
+
+Then the backend, [`deploy/setup-backend.sh`](deploy/setup-backend.sh):
+
+```sh
+deploy/setup-backend.sh
+```
+
+It creates the Neon database in us-east-1 and stores its credentials and the openFDA
+key in SSM Parameter Store under `/pillfacts/`, the only place they live. Then it adds
+the backend to the stack and rolls it out once. The backend is an EC2 t3.micro with an
+Elastic IP, no key pair and no port 22, and port 80 open to
+[Cloudflare's ranges](https://www.cloudflare.com/ips-v4) and nothing else. You reach it
+through SSM: `aws ssm start-session --target <instance>` for a shell. A rollout is
+[`deploy/ec2/rollout.sh`](deploy/ec2/rollout.sh) run there through Run Command. It writes
+the parameters to a root-only env file, then replaces the container with the JVM, Tomcat
+and connection pool sized for 1GB. A stack update can replace the instance when Amazon
+Linux publishes a new AMI. The replacement comes up with Docker and nothing else, so the
+backend has to be rolled out again.
 
 GitHub pauses scheduled workflows in a public repository after 60 days without activity,
 and a paused one warns nobody. If the Actions tab says the schedule is disabled, enable
