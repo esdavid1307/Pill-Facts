@@ -188,6 +188,8 @@ that, every commit on main that passes CI is pushed to
 [`deploy/run-rollout.py`](deploy/run-rollout.py). It sends `rollout.sh` over Run
 Command, waits for it, and prints its output. The workflow fails if the rollout does. To
 deploy main again without a new commit, run the Deploy workflow from the Actions tab.
+A stack update that replaces the instance changes its ID, so run `deploy/setup-ci.sh`
+again afterwards: it updates `PILLFACTS_BACKEND_INSTANCE` and deploys to the new one.
 
 GitHub pauses scheduled workflows in a public repository after 60 days without activity,
 and a paused one warns nobody. If the Actions tab says the schedule is disabled, enable

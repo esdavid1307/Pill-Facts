@@ -220,11 +220,24 @@ anonymous_pull() {
     "https://ghcr.io/v2/$OWNER/$PACKAGE/manifests/$1"
 }
 
-# watch_run prints the run's progress until it ends, and succeeds if it passed.
+# watch_run waits for the run to end, then prints its summary and succeeds if it passed.
 watch_run() {
   gh run watch "$RUN" --exit-status --interval 10 >/dev/null 2>&1 && return 0
   gh run view "$RUN" | sed 's/^/    /'
   return 1
+}
+
+# rerun_failed reruns the run's failed jobs and waits until they've started, since until
+# then gh run watch reports the failure being rerun.
+rerun_failed() {
+  gh run rerun "$RUN" --failed
+  until [[ "$(gh run view "$RUN" --json status --jq .status)" != completed ]]; do sleep 3; done
+}
+
+# show_failure prints the end of the failed step's log, then asks whether to rerun.
+show_failure() {
+  gh run view "$RUN" --log-failed | tail -n 40 | sed 's/^/    /'
+  confirm "Fixed it? Rerun the failed jobs?" || stop
 }
 
 banner "Pill-Facts backend deployed from CI"
@@ -262,10 +275,10 @@ say "This updates the '$STACK' stack with a role GitHub Actions on main can assu
 say "GitHub's OIDC tokens. All it can do is run a shell script on the backend instance."
 # An account holds one provider per issuer. Keep the stack's own, else reuse the account's.
 OIDC_PROVIDER=""
-owned=$(aws cloudformation list-stack-resources --region "$REGION" --stack-name "$STACK" \
+stack_provider=$(aws cloudformation list-stack-resources --region "$REGION" --stack-name "$STACK" \
   --query "StackResourceSummaries[?LogicalResourceId=='GitHubOidcProvider'].PhysicalResourceId" \
   --output text)
-if [[ -n "$owned" && "$owned" != None ]]; then
+if [[ -n "$stack_provider" && "$stack_provider" != None ]]; then
   note "The stack already holds GitHub's OIDC provider."
 else
   OIDC_PROVIDER=$(aws iam list-open-id-connect-providers \
@@ -273,6 +286,14 @@ else
     --output text)
   if [[ -n "$OIDC_PROVIDER" ]]; then
     note "The account already has GitHub's OIDC provider, so the stack reuses it."
+    # Made for another project, it may not accept the audience configure-aws-credentials sends.
+    if ! aws iam get-open-id-connect-provider --open-id-connect-provider-arn "$OIDC_PROVIDER" \
+      --query ClientIDList --output text | tr '\t' '\n' | grep -qx sts.amazonaws.com; then
+      warn "It doesn't accept the audience sts.amazonaws.com, which the workflow's tokens carry."
+      confirm "Add sts.amazonaws.com to it? Whatever else uses it is unaffected." || stop
+      aws iam add-client-id-to-open-id-connect-provider \
+        --open-id-connect-provider-arn "$OIDC_PROVIDER" --client-id sts.amazonaws.com
+    fi
   else
     note "The account has no GitHub OIDC provider yet, so the stack creates one."
   fi
@@ -312,15 +333,27 @@ fi
 stage "Run the first deploy"
 say "This runs the Deploy workflow on main's latest commit: it checks CI passed, builds and"
 say "pushes the image, then rolls it out. A Spring start on the t3.micro takes a few minutes."
-confirm "Run it now?" || stop
-started=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-gh workflow run deploy.yml --ref main
-RUN=""
-until [[ -n "$RUN" ]]; do
-  sleep 3
-  RUN=$(gh run list --workflow deploy.yml --event workflow_dispatch --limit 5 \
-    --json databaseId,createdAt --jq "map(select(.createdAt >= \"$started\")) | .[-1].databaseId // empty")
+head=$(gh api "repos/$REPO/commits/main" --jq .sha)
+until [[ "$(gh run list --workflow ci.yml --commit "$head" --event push --status success \
+  --json databaseId --jq length)" != 0 ]]; do
+  warn "CI hasn't passed for main's head, ${head:0:7}, and the workflow deploys nothing else."
+  pause "Press Enter once it has passed"
 done
+confirm "Run it now?" || stop
+# The new run is the first with a higher ID than the last before it.
+last_dispatch() {
+  gh run list --workflow deploy.yml --event workflow_dispatch --limit 1 \
+    --json databaseId --jq '.[0].databaseId // 0'
+}
+before=$(last_dispatch)
+gh workflow run deploy.yml --ref main
+RUN=$before
+for _ in $(seq 1 40); do
+  sleep 3
+  RUN=$(last_dispatch)
+  (( RUN > before )) && break
+done
+(( RUN > before )) || { warn "The run hasn't appeared after two minutes. Check the Actions tab."; stop; }
 say "Watching $(gh run view "$RUN" --json url --jq .url)"
 if watch_run; then
   DEPLOYED=true
@@ -334,28 +367,24 @@ pause "Press Enter to continue"
 stage "Make the image public and finish the deploy"
 TAG=$(gh run view "$RUN" --json headSha --jq .headSha)
 until $DEPLOYED; do
-  if ! anonymous_pull "$TAG"; then
-    if ! anonymous_pull latest; then
-      say "The instance pulls without credentials, so the package must be public. The image"
-      say "holds no secret; those are read from Parameter Store on the instance."
-      open_url "https://github.com/users/$OWNER/packages/container/$PACKAGE/settings"
-      step "Under 'Danger Zone', click 'Change visibility', choose Public."
-      step "Type $PACKAGE to confirm, then click the button."
-      until { pause "Press Enter once it's public"; anonymous_pull latest; }; do
-        warn "It still can't be pulled without signing in."
-      done
-    else
-      warn "The image for $TAG wasn't pushed. The failed step's log:"
-      gh run view "$RUN" --log-failed | tail -n 30 | sed 's/^/    /'
-      confirm "Fixed it? Rerun the failed jobs?" || stop
-    fi
+  failed=$(gh run view "$RUN" --json jobs --jq '[.jobs[] | select(.conclusion == "failure") | .name] | join(", ")')
+  if [[ "$failed" == *Build* ]]; then
+    warn "The image wasn't pushed. If it says permission_denied, redo stage 4. The log:"
+    show_failure
+  elif [[ "$failed" == *"Roll it out"* ]] && ! anonymous_pull "$TAG"; then
+    say "The instance pulls without credentials, so the package must be public. The image"
+    say "holds no secret; those are read from Parameter Store on the instance."
+    open_url "https://github.com/users/$OWNER/packages/container/$PACKAGE/settings"
+    step "Under 'Danger Zone', click 'Change visibility', choose Public."
+    step "Type $PACKAGE to confirm, then click the button."
+    until { pause "Press Enter once it's public"; anonymous_pull "$TAG"; }; do
+      warn "It still can't be pulled without signing in."
+    done
   else
-    warn "The rollout itself failed. The failed step's log:"
-    gh run view "$RUN" --log-failed | tail -n 40 | sed 's/^/    /'
-    confirm "Fixed it? Rerun the failed jobs?" || stop
+    warn "${failed:-The run} failed. The failed step's log:"
+    show_failure
   fi
-  gh run rerun "$RUN" --failed
-  sleep 5
+  rerun_failed
   say "Watching the rerun."
   if watch_run; then DEPLOYED=true; fi
 done

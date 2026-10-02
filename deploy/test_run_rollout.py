@@ -114,7 +114,11 @@ class RunRollout(unittest.TestCase):
 
     def test_waits_for_an_invocation_that_does_not_exist_yet(self):
         # Run Command takes a moment to register a command it has just accepted.
-        result = self.rollout(not_registered_yet(), not_registered_yet(), {"Status": "Success", "StandardOutputContent": "answering"})
+        result = self.rollout(
+            not_registered_yet(),
+            not_registered_yet(),
+            {"Status": "Success", "StandardOutputContent": "answering"},
+        )
 
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("answering", result.stdout)

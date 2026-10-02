@@ -46,6 +46,7 @@ def main():
     ]
     sent = aws(
         "ssm", "send-command", "--region", region, "--instance-ids", instance,
+        # Run Command refuses a comment over 100 characters.
         "--document-name", "AWS-RunShellScript", "--comment", f"Deploy {image}"[:100],
         "--parameters", json.dumps({"commands": commands}),
         "--query", "Command.CommandId", "--output", "text",
