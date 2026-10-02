@@ -23,12 +23,31 @@ function backendReturns(routes: Record<string, unknown>) {
     'fetch',
     vi.fn(async (url: string) => {
       const route = Object.keys(routes).find((path) => url.startsWith(path))
-      return route
-        ? new Response(JSON.stringify(routes[route]))
-        : new Response('no such route', { status: 404 })
+      if (!route) {
+        return new Response('no such route', { status: 404 })
+      }
+      return routes[route] === UNREACHABLE
+        ? new Response(JSON.stringify({ status: 503, title: 'Unreachable' }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/problem+json' },
+          })
+        : new Response(JSON.stringify(routes[route]))
     }),
   )
 }
+
+/**
+ * A route's answer while the data behind it cannot be retrieved and nothing is cached:
+ * the backend's 503, titled as the domain names it.
+ */
+const UNREACHABLE = Symbol('unreachable')
+
+/**
+ * Wording that could be read as a claim about whether a drug is safe. The framing above
+ * every page talks about risk on purpose; an empty state never does, because whatever it
+ * says is read as the answer to the question the reader came with.
+ */
+const SAFETY_WORDING = /safe|risk|side effect|harm|no known/i
 
 const LIPITOR = {
   labelId: 'a60cc18b-0631-4cf0-b021-9f52224ece65',
@@ -345,12 +364,43 @@ describe('resolving a search to a Drug Concept', () => {
     expect(results).toHaveTextContent('Their pages do not cover Tylenol PM')
   })
 
+  /** No match is a fact about what was typed, and is worded as one. */
   it('says nothing matched when the query is not a drug', async () => {
     backendReturns({ '/api/search': searchResults([]) })
 
     await search('zzzqqqnotadrug')
 
-    expect(await screen.findByText(/nothing matched/i)).toBeInTheDocument()
+    const noMatch = await screen.findByText(/nothing matched/i)
+    expect(noMatch).toHaveTextContent('Nothing matched “zzzqqqnotadrug”')
+    expect(noMatch.textContent).not.toMatch(SAFETY_WORDING)
+    expect(screen.queryByRole('alert')).toBeNull()
+  })
+
+  /**
+   * Unreachable is a fact about an outage. It must not read as "nothing matched", which
+   * would send the reader off to respell a name that was right all along.
+   */
+  it('asks the reader to come back later when the search is Unreachable', async () => {
+    backendReturns({ '/api/search': UNREACHABLE })
+
+    await search('lipitor')
+
+    const unreachable = await screen.findByRole('alert')
+    expect(unreachable).toHaveTextContent(/couldn’t reach/i)
+    expect(unreachable).toHaveTextContent(/come back later/i)
+    expect(unreachable.textContent).not.toMatch(SAFETY_WORDING)
+    expect(screen.queryByText(/nothing matched/i)).toBeNull()
+  })
+
+  /** Unreachable is read from the backend's answer, never assumed from any failure. */
+  it('does not claim the search is Unreachable when the backend never answers', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('network down'))))
+
+    await search('lipitor')
+
+    const alert = await screen.findByRole('alert')
+    expect(alert).toHaveTextContent(/couldn’t load this search/i)
+    expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
   })
 })
 
@@ -438,16 +488,16 @@ describe('the framing a Drug Concept page carries', () => {
     await screen.findByRole('heading', { name: 'Contraindications' })
   })
 
-  it('carries both notices where there is no labelling to show', async () => {
+  it('carries both notices where the drug is Unlabelled', async () => {
     deepLinkTo(drugConcept())
 
-    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
+    expect(await screen.findByText(/FDA publishes no Label/i)).toBeInTheDocument()
     expect(within(framing()).getByText(/not medical advice/i)).toBeInTheDocument()
     expect(within(framing()).getByText(/not a complete account/i)).toBeInTheDocument()
   })
 
   it('carries both notices when the FDA could not be reached', async () => {
-    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('network down'))))
+    backendReturns({ '/api/drug-concepts/83367': UNREACHABLE })
     window.history.pushState({}, '', '/drug-concepts/83367')
     render(<App />)
 
@@ -666,7 +716,7 @@ describe("a prescription Drug Concept's page", () => {
   it('says when it retrieved a page it found no labelling on', async () => {
     await openPage(drugConcept({ fetchedDate: '2026-09-24' }))
 
-    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
+    expect(await screen.findByText(/FDA publishes no Label/i)).toBeInTheDocument()
     expect(screen.getByText(/retrieved this from the FDA/i)).toHaveTextContent('2026-09-24')
   })
 
@@ -688,21 +738,25 @@ describe("a prescription Drug Concept's page", () => {
   })
 
   /**
-   * Having nothing to show is stated as a fact about Pill-Facts, never as the claim that
-   * the FDA publishes nothing, and above all never as a claim about the drug. Which of
-   * the three empty states this actually is stays #9's work.
+   * Unlabelled is a fact about the drug: resolution succeeded and the FDA publishes no
+   * Label for it. The absence is the FDA's, and the page says so rather than letting it
+   * read as a gap in the site — or, worse, as a claim about the drug.
    */
-  it('says the gap is ours when there is nothing to show', async () => {
-    await openPage(drugConcept())
+  it('says the FDA publishes no Label, and that the absence is the FDA’s', async () => {
+    await openPage(drugConcept({ rxcui: '10167', name: 'sulbactam' }))
 
-    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
-    expect(screen.getByText(/not a statement that this medication has no known risks/i))
-      .toBeInTheDocument()
-    expect(document.body.textContent).not.toMatch(/publishes no/i)
+    const unlabelled = await screen.findByText(/FDA publishes no Label/i)
+    expect(unlabelled).toHaveTextContent('The FDA publishes no Label for sulbactam')
+    expect(unlabelled).toHaveTextContent(/absence is the FDA’s, not Pill-Facts’/)
+    expect(unlabelled.textContent).not.toMatch(SAFETY_WORDING)
     expect(screen.queryByRole('alert')).toBeNull()
   })
 
-  it('keeps the same empty state when a Label has no supported Safety Sections', async () => {
+  /**
+   * A Label carrying none of the sections Pill-Facts reads is not Unlabelled: the FDA
+   * does publish one, and the reader can go and read it whole.
+   */
+  it('tells a Label with no Safety Sections Pill-Facts reads apart from Unlabelled', async () => {
     await openPage(
       drugConcept({
         labelling: [
@@ -711,15 +765,46 @@ describe("a prescription Drug Concept's page", () => {
       }),
     )
 
-    expect(await screen.findByText(/no labelling to show/i)).toBeInTheDocument()
-    expect(screen.getByText(/not a statement that this medication has no known risks/i))
-      .toBeInTheDocument()
+    const note = await screen.findByText(/carries none of the sections/i)
+    expect(note).toHaveTextContent(
+      'The FDA’s Label for atorvastatin carries none of the sections Pill-Facts shows.',
+    )
+    expect(note.textContent).not.toMatch(SAFETY_WORDING)
+    expect(screen.getByRole('link', { name: 'Read the full label' })).toHaveAttribute(
+      'href',
+      LIPITOR.url,
+    )
+    expect(document.body.textContent).not.toMatch(/publishes no Label/i)
     expect(screen.queryByRole('heading', { name: 'Prescription labelling' })).toBeNull()
-    expect(screen.queryByRole('heading', { name: 'Strengths' })).toBeNull()
   })
 
-  /** Unreachable is a fact about an outage, and never worded as the other two are. */
-  it('says the FDA could not be reached when the request fails', async () => {
+  /**
+   * Unreachable is a fact about an outage, and never worded as the other two are. The
+   * backend answers it only when it has no copy of the page at all; any copy it has is
+   * served and dated instead.
+   */
+  it('asks the reader to come back later when the page is Unreachable', async () => {
+    backendReturns({
+      '/api/search': searchResults([{ rxcui: '83367', name: 'atorvastatin' }]),
+      '/api/drug-concepts/83367': UNREACHABLE,
+    })
+
+    await search('atorvastatin')
+
+    const unreachable = await screen.findByRole('alert')
+    expect(unreachable).toHaveTextContent(/couldn’t reach the FDA/i)
+    expect(unreachable).toHaveTextContent(/come back later/i)
+    expect(unreachable.textContent).not.toMatch(SAFETY_WORDING)
+    expect(document.body.textContent).not.toMatch(/publishes no Label/i)
+    // Nothing arrived, so there is no retrieval to date and none is claimed.
+    expect(document.body.textContent).not.toMatch(/retrieved this from the FDA/i)
+  })
+
+  /**
+   * A request that never reached the backend says nothing about what it has cached, so
+   * it is not worded as Unreachable: "no copy saved" would be a claim nobody checked.
+   */
+  it('does not claim Unreachable when the request never reaches the backend', async () => {
     vi.stubGlobal(
       'fetch',
       vi.fn(async (url: string) =>
@@ -731,10 +816,27 @@ describe("a prescription Drug Concept's page", () => {
 
     await search('atorvastatin')
 
-    expect(await screen.findByRole('alert')).toHaveTextContent(/couldn’t reach the FDA/i)
-    expect(document.body.textContent).not.toMatch(/no labelling to show/i)
-    // Nothing arrived, so there is no retrieval to date and none is claimed.
-    expect(document.body.textContent).not.toMatch(/retrieved this from the FDA/i)
+    const alert = await screen.findByRole('alert')
+    expect(alert).toHaveTextContent(/couldn’t load this page/i)
+    expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
+  })
+
+  /** A fault of the backend's own is not an outage either, and is not worded as one. */
+  it('does not claim Unreachable when the backend answers with a fault of its own', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (url: string) =>
+        url.startsWith('/api/search')
+          ? new Response(JSON.stringify(searchResults([{ rxcui: '83367', name: 'atorvastatin' }])))
+          : new Response('{}', { status: 500 }),
+      ),
+    )
+
+    await search('atorvastatin')
+
+    const alert = await screen.findByRole('alert')
+    expect(alert).toHaveTextContent(/couldn’t load this page/i)
+    expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
   })
 
   /** No such Drug Concept is a fact about the address, and never worded as an outage. */

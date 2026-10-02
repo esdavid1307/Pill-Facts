@@ -139,7 +139,8 @@
   font-size: 0.85rem;
 }
 
-.page .unlabelled {
+.page .unlabelled,
+.page .no-sections-read {
   color: var(--muted);
 }
 

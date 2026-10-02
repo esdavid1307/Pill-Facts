@@ -10,6 +10,7 @@ import tools.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 
 /**
  * The week-long memory that lets this site survive both its traffic and its outages
@@ -55,8 +56,8 @@ public class Cache {
 	 * address — is not stored, because an absent payload has nothing to go stale and the
 	 * caller is going to answer 404 either way. An answer that is merely empty is a
 	 * payload like any other and is kept; a search that matched nothing matched nothing
-	 * last week too. A failure with nothing stored is rethrown, because there is then
-	 * nothing honest to serve.
+	 * last week too. A failure with nothing stored is {@link Unreachable}, because there is
+	 * then nothing honest to serve.
 	 *
 	 * @param key what this payload is for, prefixed by the kind of thing it is so that
 	 * the two kinds the cache holds cannot collide
@@ -76,7 +77,7 @@ public class Cache {
 		}
 		catch (RuntimeException ex) {
 			if (cached.isEmpty()) {
-				throw ex;
+				throw unreachableOr(key, ex);
 			}
 			logger.warn("Upstream failed for {}, so serving the payload fetched on {}: {}",
 					key, cached.get().date(), ex.toString());
@@ -84,6 +85,15 @@ public class Cache {
 		}
 		return fetched.map(payload ->
 				new Fetched<>(payload, this.payloads.save(key, this.json.writeValueAsString(payload))));
+	}
+
+	/**
+	 * An upstream that could not be reached is Unreachable. Anything else that went wrong
+	 * on the way is ours, and is left to fail as itself rather than be worded as an
+	 * outage.
+	 */
+	private static RuntimeException unreachableOr(String key, RuntimeException ex) {
+		return (ex instanceof RestClientException) ? new Unreachable(key, ex) : ex;
 	}
 
 	/**

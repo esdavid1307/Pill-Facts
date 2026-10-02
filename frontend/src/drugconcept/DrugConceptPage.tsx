@@ -8,6 +8,7 @@ import {
   type RegulatoryClassBlock,
 } from '../api/drugConcept'
 import type { Candidate } from '../api/search'
+import { Unreachable } from '../api/unreachable'
 import { RelatedProducts } from './RelatedProducts'
 import { SafetyFraming } from './SafetyFraming'
 import { LabelProvenance, SafetySections } from './SafetySections'
@@ -17,15 +18,18 @@ import { LabelProvenance, SafetySections } from './SafetySections'
  * Concept to another keeps this component mounted, and an answer to the previous RxCUI
  * must never render under the new one's heading.
  *
- * The three failures are kept apart all the way down, because "the FDA publishes nothing
- * for this drug", "there is no such drug" and "we couldn't reach the FDA" mean entirely
- * different things to someone looking up their medication. ADR-0007. Telling them apart
- * in the API response rather than only here is #9's work.
+ * Nothing to show is kept apart all the way down, because "the FDA publishes nothing for
+ * this drug", "there is no such drug" and "we couldn't reach the FDA" mean entirely
+ * different things to someone looking up their medication. The backend tells them apart
+ * in its response — Unlabelled is a page with no labelling, no such Drug Concept a 404,
+ * and Unreachable a 503 — and this keeps them apart on the way to the reader.
  */
 type Loaded = { state: 'loaded'; rxcui: string; drugConcept: DrugConcept }
 type NoSuchConcept = { state: 'no-such-concept'; rxcui: string }
-type Unreachable = { state: 'unreachable'; rxcui: string }
-type Fetched = Loaded | NoSuchConcept | Unreachable
+type Outage = { state: 'unreachable'; rxcui: string }
+/** The backend out of reach, or a fault of its own: not known to be Unreachable. */
+type NotLoaded = { state: 'not-loaded'; rxcui: string }
+type Fetched = Loaded | NoSuchConcept | Outage | NotLoaded
 
 /**
  * A Drug Concept's page: what the FDA says about the risks of one medication.
@@ -51,7 +55,12 @@ export function DrugConceptPage() {
           return
         }
         setFetched({
-          state: error instanceof NoSuchDrugConcept ? 'no-such-concept' : 'unreachable',
+          state:
+            error instanceof NoSuchDrugConcept
+              ? 'no-such-concept'
+              : error instanceof Unreachable
+                ? 'unreachable'
+                : 'not-loaded',
           rxcui,
         })
       })
@@ -77,12 +86,20 @@ export function DrugConceptPage() {
 
       {answer === null && <p className="pending">Looking up the FDA&rsquo;s labelling&hellip;</p>}
 
-      {/* An outage is a fact about us, and never worded as a fact about the drug. */}
+      {/*
+        * An outage is a fact about us, and never worded as a fact about the drug. The
+        * backend serves any copy it has, however old, so this is only ever reached with
+        * none to serve.
+        */}
       {answer?.state === 'unreachable' && (
         <p role="alert">
-          We couldn&rsquo;t reach the FDA&rsquo;s labelling just now, so there is nothing to show
-          yet. Please try again.
+          Pill-Facts couldn&rsquo;t reach the FDA just now, and has no copy of this page saved.
+          Please come back later.
         </p>
+      )}
+
+      {answer?.state === 'not-loaded' && (
+        <p role="alert">Pill-Facts couldn&rsquo;t load this page. Please try again.</p>
       )}
 
       {/* Nor is "we have never heard of this" a fact about the drug. */}
@@ -124,20 +141,37 @@ function FetchedDate({ on }: { on: string }) {
 
 function Labelling({ drugConcept }: { drugConcept: DrugConcept }) {
   /*
-   * Nothing to show is not the same as nothing to know, and must never read as though it
-   * were. Both Regulatory Classes now have a renderer, so an empty list no longer means
-   * "we don't render this kind of drug" — but it still runs two facts together, because
-   * a Drug Concept the FDA publishes no Label for and a Label carrying none of the
-   * sections we read arrive here identically. Until #9 gives the API the vocabulary to
-   * tell them apart, this says only what is true of both: that the gap is ours to
-   * explain, and that it is not a claim about the medication.
+   * Unlabelled: the Drug Concept resolved, and the FDA publishes no Label for it. That
+   * is a fact about the drug, and the absence is the FDA's rather than ours, so the
+   * sentence says whose it is. It says nothing about safety either way — the framing
+   * above already says absence is not evidence of it, and anything said here would be
+   * read as the answer to the question the reader came with.
+   */
+  if (drugConcept.labelling.length === 0) {
+    return (
+      <p className="unlabelled">
+        The FDA publishes no Label for {drugConcept.name}, so there is no labelling here to
+        show. That absence is the FDA&rsquo;s, not Pill-Facts&rsquo;.
+      </p>
+    )
+  }
+
+  /*
+   * Not Unlabelled: the FDA does publish a Label, it just carries none of the Safety
+   * Sections Pill-Facts reads. The reader is pointed at the Label itself rather than told
+   * there is nothing.
    */
   if (drugConcept.labelling.every((block) => block.sections.length === 0)) {
     return (
-      <p className="unlabelled">
-        Pill-Facts has no labelling to show for {drugConcept.name}. That is a gap in what we have,
-        and not a statement that this medication has no known risks.
-      </p>
+      <>
+        <p className="no-sections-read">
+          The FDA&rsquo;s Label for {drugConcept.name} carries none of the sections Pill-Facts
+          shows.
+        </p>
+        {drugConcept.labelling.map((block) => (
+          <LabelProvenance key={block.regulatoryClass} provenance={block.provenance} />
+        ))}
+      </>
     )
   }
 

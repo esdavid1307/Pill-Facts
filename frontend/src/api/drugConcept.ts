@@ -1,3 +1,5 @@
+import { isUnreachable, Unreachable } from './unreachable'
+
 /** The source, publisher and date behind one rendered claim. */
 export type Provenance = {
   /** The Label the words come from, named as it is published. */
@@ -103,6 +105,9 @@ export async function fetchDrugConcept(rxcui: string): Promise<DrugConcept> {
   const response = await fetch(`/api/drug-concepts/${encodeURIComponent(rxcui)}`)
   if (response.status === 404) {
     throw new NoSuchDrugConcept(rxcui)
+  }
+  if (await isUnreachable(response)) {
+    throw new Unreachable(rxcui)
   }
   if (!response.ok) {
     throw new Error(`GET /api/drug-concepts/${rxcui} returned ${response.status}`)

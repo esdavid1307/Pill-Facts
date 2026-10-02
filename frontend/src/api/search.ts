@@ -1,3 +1,5 @@
+import { isUnreachable, Unreachable } from './unreachable'
+
 export type Candidate = {
   /** The ingredient-level RxCUI that identifies the Drug Concept. See ADR-0002. */
   rxcui: string
@@ -28,6 +30,9 @@ export type SearchResults = {
  */
 export async function searchDrugConcepts(query: string): Promise<SearchResults> {
   const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`)
+  if (await isUnreachable(response)) {
+    throw new Unreachable(query)
+  }
   if (!response.ok) {
     throw new Error(`GET /api/search returned ${response.status}`)
   }
