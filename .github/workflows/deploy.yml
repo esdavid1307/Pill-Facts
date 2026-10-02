@@ -1,0 +1,125 @@
+name: Deploy
+
+# The backend, from every commit on main that CI has passed: an image on GHCR, then a
+# rollout to the EC2 instance over SSM Run Command (ADR-0009). AWS is reached through
+# GitHub's OIDC tokens and a role only main can assume, so no AWS key exists anywhere.
+# deploy/setup-ci.sh sets the variables this reads.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+# One rollout at a time. A t3.micro has no room for two JVMs.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  IMAGE: ghcr.io/esdavid1307/pill-facts-backend
+
+jobs:
+  tested:
+    name: Check CI passed
+    # Pushes only: a fork's pull request from a branch it calls main matches the branch
+    # filter too, and its code must never reach the instance.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+      latest: ${{ steps.commit.outputs.latest }}
+    steps:
+      - id: commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+        run: |
+          if [[ "$GITHUB_REF" != refs/heads/main ]]; then
+            echo "::error::Deploy from main. Only main can assume the AWS deploy role."
+            exit 1
+          fi
+          if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+            passed=$(gh run list -R "$GITHUB_REPOSITORY" --workflow ci.yml --commit "$SHA" \
+              --event push --status success --json databaseId --jq length)
+            if [[ "$passed" == 0 ]]; then
+              echo "::error::CI hasn't passed for $SHA on main, so it isn't deployed."
+              exit 1
+            fi
+          fi
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          # CI runs finish out of order. One for a commit main has since moved past would
+          # roll the instance back, so it stands aside for the newer commit's own run.
+          head=$(gh api "repos/$GITHUB_REPOSITORY/commits/main" --jq .sha)
+          if [[ "$head" == "$SHA" ]]; then
+            echo "latest=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::main has moved on to $head, so $SHA isn't deployed."
+          fi
+
+  build:
+    name: Build and push the image
+    needs: tested
+    if: needs.tested.outputs.latest == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.tested.outputs.sha }}
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      # The package is public, so the instance pulls with no credentials. The image holds
+      # no secret: rollout.sh reads those from Parameter Store on the instance.
+      - uses: docker/build-push-action@v7
+        with:
+          context: backend
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ needs.tested.outputs.sha }}
+            ${{ env.IMAGE }}:latest
+          labels: org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  rollout:
+    name: Roll it out to EC2
+    needs: [tested, build]
+    runs-on: ubuntu-latest
+    # run-rollout.py gives up on Run Command after 15 minutes.
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.tested.outputs.sha }}
+          persist-credentials: false
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.PILLFACTS_AWS_DEPLOY_ROLE }}
+          aws-region: ${{ vars.PILLFACTS_AWS_REGION }}
+      - name: Roll out ${{ needs.tested.outputs.sha }}
+        env:
+          PILLFACTS_AWS_REGION: ${{ vars.PILLFACTS_AWS_REGION }}
+          PILLFACTS_BACKEND_INSTANCE: ${{ vars.PILLFACTS_BACKEND_INSTANCE }}
+          TAG: ${{ needs.tested.outputs.sha }}
+        run: python3 deploy/run-rollout.py "$IMAGE:$TAG"

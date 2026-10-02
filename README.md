@@ -82,10 +82,10 @@ cd frontend && npm test
 ```
 
 CI runs both on every pull request, each only when its own directory changed. The same
-goes for `deploy/`, whose free-tier expiry check has tests of its own:
+goes for `deploy/`, whose free-tier expiry check and CI rollout have tests of their own:
 
 ```sh
-python3 -m unittest deploy/test_check_free_tier_expiry.py
+python3 -m unittest deploy/test_check_free_tier_expiry.py deploy/test_run_rollout.py
 ```
 
 The live upstream contract check is deliberately separate from CI. GitHub Actions runs
@@ -171,6 +171,23 @@ the parameters to a root-only env file, then replaces the container with the JVM
 and connection pool sized for 1GB. A stack update can replace the instance when Amazon
 Linux publishes a new AMI. The replacement comes up with Docker and nothing else, so the
 backend has to be rolled out again.
+
+From then on CI deploys it. Once `.github/workflows/deploy.yml` is on main, run
+[`deploy/setup-ci.sh`](deploy/setup-ci.sh):
+
+```sh
+deploy/setup-ci.sh
+```
+
+It adds a deploy role to the stack that only a workflow on main can assume, through
+GitHub's OIDC tokens, so no AWS key exists. It copies the role, instance and region into
+the repo variables `PILLFACTS_AWS_DEPLOY_ROLE`, `PILLFACTS_BACKEND_INSTANCE` and
+`PILLFACTS_AWS_REGION`, then runs the first deploy and makes the image public. After
+that, every commit on main that passes CI is pushed to
+`ghcr.io/esdavid1307/pill-facts-backend` as `:<sha>` and `:latest` and rolled out by
+[`deploy/run-rollout.py`](deploy/run-rollout.py). It sends `rollout.sh` over Run
+Command, waits for it, and prints its output. The workflow fails if the rollout does. To
+deploy main again without a new commit, run the Deploy workflow from the Actions tab.
 
 GitHub pauses scheduled workflows in a public repository after 60 days without activity,
 and a paused one warns nobody. If the Actions tab says the schedule is disabled, enable
