@@ -82,10 +82,12 @@ cd frontend && npm test
 ```
 
 CI runs both on every pull request, each only when its own directory changed. The same
-goes for `deploy/`, whose free-tier expiry check and CI rollout have tests of their own:
+goes for `deploy/`, whose free-tier expiry check, CI rollout and smoke check have tests
+of their own:
 
 ```sh
-python3 -m unittest deploy/test_check_free_tier_expiry.py deploy/test_run_rollout.py
+python3 -m unittest deploy/test_check_free_tier_expiry.py deploy/test_run_rollout.py \
+  deploy/test_smoke_check.py
 ```
 
 The live upstream contract check is deliberately separate from CI. GitHub Actions runs
@@ -118,7 +120,7 @@ deployment environment.
 
 The Pages Function reads one variable of its own, `PILLFACTS_ORIGIN`: the backend it
 forwards `/api` to, such as `http://ec2-203-0-113-10.compute-1.amazonaws.com`. It has no default and is set in
-the Pages project, not here.
+the Pages project, as a secret, not here.
 
 Without `PILLFACTS_OPENFDA_API_KEY` the backend starts anyway and says so in its log,
 running on openFDA's unkeyed quota of 1,000 requests a day. That is fine for development
@@ -139,9 +141,28 @@ can be sent any header at all, which is why production's is reachable only throu
 
 ## Deploying
 
+Four wizards set production up, run once each, in this order. Each walks you through the
+console steps only a person can take, and is safe to run again:
+
+1. [`deploy/setup-billing.sh`](deploy/setup-billing.sh): billing alerts and the free-tier end date
+2. [`deploy/setup-backend.sh`](deploy/setup-backend.sh): the database, and the backend on EC2
+3. [`deploy/setup-ci.sh`](deploy/setup-ci.sh): the backend deployed from CI
+4. [`deploy/setup-frontend.sh`](deploy/setup-frontend.sh): the frontend on Cloudflare Pages, which makes the site public
+
+No secret is in this repository or in a build log. Each value lives in one place:
+
+| Value | Where it lives | Set by |
+| ----- | -------------- | ------ |
+| Neon credentials, openFDA key | SSM Parameter Store, under `/pillfacts/` | `setup-backend.sh` |
+| `PILLFACTS_FREE_TIER_EXPIRES` | GitHub variable | `setup-billing.sh` |
+| `PILLFACTS_AWS_DEPLOY_ROLE`, `PILLFACTS_BACKEND_INSTANCE`, `PILLFACTS_AWS_REGION` | GitHub variables | `setup-ci.sh` |
+| `CLOUDFLARE_API_TOKEN` | GitHub secret | `setup-frontend.sh` |
+| `CLOUDFLARE_ACCOUNT_ID`, `PILLFACTS_PAGES_PROJECT`, `PILLFACTS_SITE_URL` | GitHub variables | `setup-frontend.sh` |
+| `PILLFACTS_ORIGIN` | Secret on the Pages project | `setup-frontend.sh` |
+
 Production follows ADR-0009: the backend on an AWS free tier that ends, so two things
-are set up before anything can cost money. Run the wizard, which walks you through the
-console steps only a person can take, [`deploy/setup-billing.sh`](deploy/setup-billing.sh):
+are set up before anything can cost money. Run
+[`deploy/setup-billing.sh`](deploy/setup-billing.sh):
 
 ```sh
 deploy/setup-billing.sh
@@ -190,6 +211,26 @@ Command, waits for it, and prints its output. The workflow fails if the rollout 
 deploy main again without a new commit, run the Deploy workflow from the Actions tab.
 A stack update that replaces the instance changes its ID, so run `deploy/setup-ci.sh`
 again afterwards: it updates `PILLFACTS_BACKEND_INSTANCE` and deploys to the new one.
+
+Then the frontend, [`deploy/setup-frontend.sh`](deploy/setup-frontend.sh), once the
+Deploy workflow's frontend job is on main:
+
+```sh
+deploy/setup-frontend.sh
+```
+
+It has you create a Cloudflare API token that can edit Pages and nothing else, then
+creates the Pages project and sets its `PILLFACTS_ORIGIN` to the instance's public DNS
+name. A Worker can't fetch a bare IP address. It stores the token as a GitHub secret
+and the account, project and public URL as variables, runs the first deploy, and checks
+that one reader's rate limit doesn't refuse another. From then on the Deploy workflow
+deploys the frontend after every backend rollout, with `wrangler pages deploy` from
+`frontend/`, so the Pages Function is bundled with the built app. Then
+[`deploy/smoke-check.py`](deploy/smoke-check.py) searches through the public URL, and
+loads a deep link, which Pages serves `index.html` for. A deploy whose `/api` doesn't
+reach the backend fails the workflow, rather than failing in a reader's browser
+(ADR-0011). The job is skipped until the wizard has set `PILLFACTS_PAGES_PROJECT`.
+Moving the backend off the free tier means changing `PILLFACTS_ORIGIN` and nothing else.
 
 GitHub pauses scheduled workflows in a public repository after 60 days without activity,
 and a paused one warns nobody. If the Actions tab says the schedule is disabled, enable
