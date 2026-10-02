@@ -192,9 +192,10 @@ finish() {
 # Run deploy/setup-ci.sh first, and run this once deploy.yml's frontend job is on main.
 # Run from anywhere; it works from the repo root.
 
-TOTAL_STAGES=9
+TOTAL_STAGES=10
 REGION=us-east-1 # where setup-billing.sh put the stack
 STACK=pillfacts
+DOMAIN=pillfacts.net # bought through Cloudflare, so its DNS is already there
 SEARCH="/api/search?q=ibuprofen"
 cd "$(dirname "$0")/.."
 
@@ -346,12 +347,37 @@ if [[ "$PRODUCTION_BRANCH" != main ]]; then
   note "Change it under Settings → Builds & deployments → Production branch, then run this again."
   stop
 fi
-SITE_URL=https://$SUBDOMAIN
-say "The site's public URL is $SITE_URL."
-note "Cloudflare picks the subdomain, adding a suffix if $PROJECT.pages.dev is taken."
+say "The project is at https://$SUBDOMAIN."
 pause "Press Enter to continue"
 
 # ── 5 ─────────────────────────────────────────────────────────────────────
+stage "Put the site on $DOMAIN"
+# domain_status prints the custom domain's status on the project: active once its DNS
+# record and certificate are in place.
+domain_status() {
+  cloudflare "/accounts/$ACCOUNT_ID/pages/projects/$PROJECT/domains/$DOMAIN" |
+    python3 -c 'import json, sys; print(json.load(sys.stdin)["result"]["status"])' 2>/dev/null ||
+    echo missing
+}
+if [[ "$(domain_status)" == active ]]; then
+  say "$DOMAIN already serves the project."
+else
+  say "The dashboard adds the DNS record for $DOMAIN itself, since its zone is in this account."
+  open_url "https://dash.cloudflare.com/$ACCOUNT_ID/workers-and-pages"
+  step "Open $PROJECT, then its 'Custom domains' tab."
+  step "Click 'Set up a custom domain', enter $DOMAIN, and click Continue."
+  step "Click 'Activate domain'."
+  note "Its certificate can take a few minutes."
+  until [[ "$(domain_status)" == active ]]; do
+    pause "Press Enter once the dashboard says Active"
+    warn "Cloudflare says $DOMAIN is $(domain_status)."
+  done
+fi
+SITE_URL=https://$DOMAIN
+say "The site's public URL is $SITE_URL. https://$SUBDOMAIN keeps working too."
+pause "Press Enter to continue"
+
+# ── 6 ─────────────────────────────────────────────────────────────────────
 stage "Point the Function at the backend"
 say "The Pages Function forwards /api to PILLFACTS_ORIGIN. Workers can't fetch a bare IP"
 say "address, so it's the instance's public DNS name. Moving the backend off the free tier"
@@ -363,10 +389,10 @@ ORIGIN=http://$(aws ec2 describe-instances --region "$REGION" \
 say "The backend is at $ORIGIN."
 confirm "Set it on the Pages project, as a secret?" || stop
 printf '%s' "$ORIGIN" | wrangler pages secret put PILLFACTS_ORIGIN --project-name "$PROJECT"
-note "It applies from the next deploy, which stage 7 runs."
+note "It applies from the next deploy, which stage 8 runs."
 pause "Press Enter to continue"
 
-# ── 6 ─────────────────────────────────────────────────────────────────────
+# ── 7 ─────────────────────────────────────────────────────────────────────
 stage "Tell the workflow where to deploy"
 say "The token is a GitHub secret. The rest isn't secret, so it goes in GitHub variables."
 set_secret CLOUDFLARE_API_TOKEN "$CLOUDFLARE_API_TOKEN"
@@ -376,7 +402,7 @@ set_var PILLFACTS_SITE_URL "$SITE_URL"
 (( ${#SKIPPED[@]} == 0 )) || { warn "gh couldn't set them. Set them by hand, then run this again."; stop; }
 pause "Press Enter to continue"
 
-# ── 7 ─────────────────────────────────────────────────────────────────────
+# ── 8 ─────────────────────────────────────────────────────────────────────
 stage "Run the first deploy"
 say "This runs the Deploy workflow on main's latest commit. It rolls the backend out again,"
 say "then deploys the frontend and searches through $SITE_URL. It takes a few minutes."
@@ -409,7 +435,7 @@ fi
 say "The frontend is deployed, and $SITE_URL searches through the backend."
 pause "Press Enter to continue"
 
-# ── 8 ─────────────────────────────────────────────────────────────────────
+# ── 9 ─────────────────────────────────────────────────────────────────────
 stage "Check readers don't share a rate limit"
 say "The backend counts its rate limit by the last X-Forwarded-For entry, which the Function"
 say "sets to the reader's address. If Cloudflare appended one of its own on the way out,"
@@ -453,7 +479,7 @@ else
 fi
 pause "Press Enter to continue"
 
-# ── 9 ─────────────────────────────────────────────────────────────────────
+# ── 10 ────────────────────────────────────────────────────────────────────
 stage "Open the site"
 open_url "$SITE_URL/drug-concepts/5640"
 step "Check a deep link loads: ibuprofen's page, with its labelling."

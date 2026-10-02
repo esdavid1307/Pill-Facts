@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check the site at SITE_URL is up end to end, through its public URL.
 
-    smoke-check.py https://pill-facts.pages.dev
+    smoke-check.py https://pillfacts.net
 
 The deploy workflow runs this after the frontend is deployed. It searches through
 /api/search, which only passes if the Pages Function forwarded it to the backend and the

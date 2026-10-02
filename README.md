@@ -223,8 +223,8 @@ deploy/setup-frontend.sh
 ```
 
 It has you create a Cloudflare API token that can edit Pages and nothing else, then
-creates the Pages project and sets its `PILLFACTS_ORIGIN` to the instance's public DNS
-name. A Worker can't fetch a bare IP address. It stores the token as a GitHub secret
+creates the Pages project, has you put it on <https://pillfacts.net>, and sets its
+`PILLFACTS_ORIGIN` to the instance's public DNS name. A Worker can't fetch a bare IP address. It stores the token as a GitHub secret
 and the account, project and public URL as variables, runs the first deploy, and checks
 that one reader's rate limit doesn't refuse another. From then on the Deploy workflow
 deploys the frontend after every backend rollout, with `wrangler pages deploy` from
