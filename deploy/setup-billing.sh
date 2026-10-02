@@ -285,8 +285,10 @@ step "Find the date your free tier ends. On an account opened after 15 July 2025
 step "the end of the free plan; on an older one, 12 months after the account was created."
 while true; do
   ask PILLFACTS_FREE_TIER_EXPIRES "End date, as YYYY-MM-DD:"
+  PILLFACTS_FREE_TIER_EXPIRES=$(printf '%s' "$PILLFACTS_FREE_TIER_EXPIRES" | tr -d '[:space:]')
   reminder=$(days_before "$PILLFACTS_FREE_TIER_EXPIRES" 30) && break
-  warn "That isn't a date like 2027-04-01."
+  # %q shows what was actually read, including any arrow-key or pasted control characters.
+  warn "$(printf '%q' "$PILLFACTS_FREE_TIER_EXPIRES") isn't a date like 2027-04-01. Type it fresh."
 done
 set_var PILLFACTS_FREE_TIER_EXPIRES "$PILLFACTS_FREE_TIER_EXPIRES"
 say "The weekly Free-tier expiry workflow fails from 30 days out, and emails you when it does."
