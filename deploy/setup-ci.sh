@@ -220,9 +220,9 @@ anonymous_pull() {
     "https://ghcr.io/v2/$OWNER/$PACKAGE/manifests/$1"
 }
 
-# watch_run waits for the run to end, then prints its summary and succeeds if it passed.
+# watch_run shows the run until it ends, prints its summary if it failed, and succeeds if it passed.
 watch_run() {
-  gh run watch "$RUN" --exit-status --interval 10 >/dev/null 2>&1 && return 0
+  gh run watch "$RUN" --exit-status --interval 10 && return 0
   gh run view "$RUN" | sed 's/^/    /'
   return 1
 }
@@ -267,6 +267,14 @@ until gh api "repos/$REPO/contents/.github/workflows/deploy.yml?ref=main" >/dev/
   pause "Press Enter to check again"
 done
 say "deploy.yml is on main."
+# The role trusts one subject claim. A token whose sub differs is refused with nothing but
+# "Not authorized to perform sts:AssumeRoleWithWebIdentity", so check it here instead.
+SUBJECT=$(gh api "repos/$REPO/actions/oidc/customization/sub" --jq .sub_claim_prefix):ref:refs/heads/main
+if ! grep -qF "sub: $SUBJECT" deploy/aws.yaml; then
+  warn "GitHub's tokens for this repo carry the subject $SUBJECT,"
+  warn "and deploy/aws.yaml's DeployRole trusts something else. Fix the template first."
+  exit 1
+fi
 confirm "Is that the AWS account Pill-Facts runs in, and the right repo?" || stop
 
 # ── 2 ─────────────────────────────────────────────────────────────────────

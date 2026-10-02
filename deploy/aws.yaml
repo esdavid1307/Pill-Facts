@@ -200,10 +200,13 @@ Resources:
             Principal:
               Federated: !If [CreateGitHubOidcProvider, !Ref GitHubOidcProvider, !Ref GitHubOidcProviderArn]
             Action: sts:AssumeRoleWithWebIdentity
+            # The repo uses GitHub's immutable subject claims, which name the owner and repo
+            # by ID as well, so a deleted repo recreated under the same name can't assume this.
+            # deploy/setup-ci.sh checks it against the repo's OIDC settings before deploying.
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
-                token.actions.githubusercontent.com:sub: repo:esdavid1307/Pill-Facts:ref:refs/heads/main
+                token.actions.githubusercontent.com:sub: repo:esdavid1307@231351152/Pill-Facts@1380937992:ref:refs/heads/main
       Policies:
         - PolicyName: roll-out-the-backend
           PolicyDocument:
