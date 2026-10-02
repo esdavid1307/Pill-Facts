@@ -27,7 +27,10 @@ function backendReturns(routes: Record<string, unknown>) {
         return new Response('no such route', { status: 404 })
       }
       return routes[route] === UNREACHABLE
-        ? new Response(JSON.stringify({ status: 503, title: 'Unreachable' }), { status: 503 })
+        ? new Response(JSON.stringify({ status: 503, title: 'Unreachable' }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/problem+json' },
+          })
         : new Response(JSON.stringify(routes[route]))
     }),
   )
@@ -388,6 +391,17 @@ describe('resolving a search to a Drug Concept', () => {
     expect(unreachable.textContent).not.toMatch(SAFETY_WORDING)
     expect(screen.queryByText(/nothing matched/i)).toBeNull()
   })
+
+  /** Unreachable is read from the backend's answer, never assumed from any failure. */
+  it('does not claim the search is Unreachable when the backend never answers', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('network down'))))
+
+    await search('lipitor')
+
+    const alert = await screen.findByRole('alert')
+    expect(alert).toHaveTextContent(/couldn’t load this search/i)
+    expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
+  })
 })
 
 /**
@@ -483,7 +497,7 @@ describe('the framing a Drug Concept page carries', () => {
   })
 
   it('carries both notices when the FDA could not be reached', async () => {
-    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('network down'))))
+    backendReturns({ '/api/drug-concepts/83367': UNREACHABLE })
     window.history.pushState({}, '', '/drug-concepts/83367')
     render(<App />)
 
@@ -786,8 +800,11 @@ describe("a prescription Drug Concept's page", () => {
     expect(document.body.textContent).not.toMatch(/retrieved this from the FDA/i)
   })
 
-  /** The backend itself out of reach reads to a visitor exactly as the FDA being so. */
-  it('says the FDA could not be reached when the request never arrives', async () => {
+  /**
+   * A request that never reached the backend says nothing about what it has cached, so
+   * it is not worded as Unreachable: "no copy saved" would be a claim nobody checked.
+   */
+  it('does not claim Unreachable when the request never reaches the backend', async () => {
     vi.stubGlobal(
       'fetch',
       vi.fn(async (url: string) =>
@@ -799,7 +816,27 @@ describe("a prescription Drug Concept's page", () => {
 
     await search('atorvastatin')
 
-    expect(await screen.findByRole('alert')).toHaveTextContent(/couldn’t reach the FDA/i)
+    const alert = await screen.findByRole('alert')
+    expect(alert).toHaveTextContent(/couldn’t load this page/i)
+    expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
+  })
+
+  /** A fault of the backend's own is not an outage either, and is not worded as one. */
+  it('does not claim Unreachable when the backend answers with a fault of its own', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (url: string) =>
+        url.startsWith('/api/search')
+          ? new Response(JSON.stringify(searchResults([{ rxcui: '83367', name: 'atorvastatin' }])))
+          : new Response('{}', { status: 500 }),
+      ),
+    )
+
+    await search('atorvastatin')
+
+    const alert = await screen.findByRole('alert')
+    expect(alert).toHaveTextContent(/couldn’t load this page/i)
+    expect(alert.textContent).not.toMatch(/couldn’t reach|saved/i)
   })
 
   /** No such Drug Concept is a fact about the address, and never worded as an outage. */

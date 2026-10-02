@@ -57,6 +57,10 @@ export function SearchPage() {
         </p>
       )}
 
+      {resolution.state === 'not-loaded' && (
+        <p role="alert">Pill-Facts couldn&rsquo;t load this search. Please try again.</p>
+      )}
+
       {resolution.state === 'choices' &&
         resolution.droppedCombinationProducts.map((product) => (
           // Keyed by the combination, which is what identifies the record; two products

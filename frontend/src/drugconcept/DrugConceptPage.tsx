@@ -8,6 +8,7 @@ import {
   type RegulatoryClassBlock,
 } from '../api/drugConcept'
 import type { Candidate } from '../api/search'
+import { Unreachable } from '../api/unreachable'
 import { RelatedProducts } from './RelatedProducts'
 import { SafetyFraming } from './SafetyFraming'
 import { LabelProvenance, SafetySections } from './SafetySections'
@@ -25,8 +26,10 @@ import { LabelProvenance, SafetySections } from './SafetySections'
  */
 type Loaded = { state: 'loaded'; rxcui: string; drugConcept: DrugConcept }
 type NoSuchConcept = { state: 'no-such-concept'; rxcui: string }
-type Unreachable = { state: 'unreachable'; rxcui: string }
-type Fetched = Loaded | NoSuchConcept | Unreachable
+type Outage = { state: 'unreachable'; rxcui: string }
+/** The backend out of reach, or a fault of its own: not known to be Unreachable. */
+type NotLoaded = { state: 'not-loaded'; rxcui: string }
+type Fetched = Loaded | NoSuchConcept | Outage | NotLoaded
 
 /**
  * A Drug Concept's page: what the FDA says about the risks of one medication.
@@ -52,7 +55,12 @@ export function DrugConceptPage() {
           return
         }
         setFetched({
-          state: error instanceof NoSuchDrugConcept ? 'no-such-concept' : 'unreachable',
+          state:
+            error instanceof NoSuchDrugConcept
+              ? 'no-such-concept'
+              : error instanceof Unreachable
+                ? 'unreachable'
+                : 'not-loaded',
           rxcui,
         })
       })
@@ -88,6 +96,10 @@ export function DrugConceptPage() {
           Pill-Facts couldn&rsquo;t reach the FDA just now, and has no copy of this page saved.
           Please come back later.
         </p>
+      )}
+
+      {answer?.state === 'not-loaded' && (
+        <p role="alert">Pill-Facts couldn&rsquo;t load this page. Please try again.</p>
       )}
 
       {/* Nor is "we have never heard of this" a fact about the drug. */}
@@ -152,7 +164,7 @@ function Labelling({ drugConcept }: { drugConcept: DrugConcept }) {
   if (drugConcept.labelling.every((block) => block.sections.length === 0)) {
     return (
       <>
-        <p className="unlabelled">
+        <p className="no-sections-read">
           The FDA&rsquo;s Label for {drugConcept.name} carries none of the sections Pill-Facts
           shows.
         </p>

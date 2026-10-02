@@ -127,7 +127,13 @@ A Drug Concept that resolves in RxNorm but for which the FDA publishes no Label.
 about the drug.
 _Avoid_: not found, no results, missing
 
+**No match**:
+A search whose query resolves to no Drug Concept and drops no Combination Product. A
+fact about the query, and never worded as Unlabelled or Unreachable.
+_Avoid_: not found, no results, nothing found
+
 **Unreachable**:
-A state in which FDA data cannot currently be retrieved. A fact about an outage, and
-never worded the same way as Unlabelled.
+A state in which the data behind a request cannot currently be retrieved — the FDA's
+Labels for a page, or RxNorm for a search — and nothing is cached to serve instead. A
+fact about an outage, and never worded the same way as Unlabelled.
 _Avoid_: error, failed, unavailable

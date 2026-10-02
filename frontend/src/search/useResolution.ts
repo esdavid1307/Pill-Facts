@@ -5,6 +5,7 @@ import {
   type Candidate,
   type DroppedCombinationProduct,
 } from '../api/search'
+import { Unreachable } from '../api/unreachable'
 import { drugConceptPath } from '../drugconcept/drugConceptPath'
 
 type Searching = { state: 'searching'; query: string }
@@ -18,8 +19,13 @@ type Choices = {
  * The data behind the search could not be retrieved and the backend had no earlier answer
  * cached. A fact about an outage, and never about what was typed.
  */
-type Unreachable = { state: 'unreachable'; query: string }
-export type Resolution = Searching | Choices | Unreachable
+type Outage = { state: 'unreachable'; query: string }
+/**
+ * Anything else that went wrong: the backend out of reach, or a fault of its own. Neither
+ * says whether an answer is cached, so neither is worded as Unreachable.
+ */
+type NotLoaded = { state: 'not-loaded'; query: string }
+export type Resolution = Searching | Choices | Outage | NotLoaded
 
 /**
  * Resolving one query to one Drug Concept.
@@ -53,7 +59,11 @@ export function useResolution(query: string): Resolution {
         }
         setResolution({ state: 'choices', query, candidates, droppedCombinationProducts })
       })
-      .catch(() => current && setResolution({ state: 'unreachable', query }))
+      .catch((error: unknown) => {
+        if (current) {
+          setResolution({ state: error instanceof Unreachable ? 'unreachable' : 'not-loaded', query })
+        }
+      })
     return () => {
       current = false
     }
