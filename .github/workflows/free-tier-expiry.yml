@@ -1,0 +1,28 @@
+name: Free-tier expiry
+
+# ADR-0009: the AWS free tier ends. This fails 30 days before it does, or whenever no end
+# date is recorded, and a failed scheduled run emails whoever last edited the schedule.
+# GitHub disables schedules in a public repo after 60 days without activity, so this can
+# go quiet; the calendar reminder deploy/setup-billing.sh opens is the backstop.
+on:
+  schedule:
+    - cron: '17 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: AWS free-tier expiry
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+      - name: Check the recorded expiry
+        env:
+          PILLFACTS_FREE_TIER_EXPIRES: ${{ vars.PILLFACTS_FREE_TIER_EXPIRES }}
+        run: python3 deploy/check-free-tier-expiry.py

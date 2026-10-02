@@ -13,6 +13,7 @@ See [`docs/domain-language.md`](docs/domain-language.md) for the words it uses, 
 | ----------- | ------------------------------------------------------ |
 | `backend/`  | Spring Boot API, Postgres for caching, Flyway migrations |
 | `frontend/` | React single-page app, built with Vite                 |
+| `deploy/`   | AWS CloudFormation and the setup wizards for production |
 
 ## Running it
 
@@ -80,7 +81,12 @@ components in jsdom, and the Pages Function's `forward` in node.
 cd frontend && npm test
 ```
 
-CI runs both on every pull request, each only when its own directory changed.
+CI runs both on every pull request, each only when its own directory changed. The same
+goes for `deploy/`, whose free-tier expiry check has tests of its own:
+
+```sh
+python3 -m unittest deploy/test_check_free_tier_expiry.py
+```
 
 The live upstream contract check is deliberately separate from CI. GitHub Actions runs
 it nightly (or manually through `workflow_dispatch`) against RxNorm and openFDA, and its
@@ -130,3 +136,24 @@ backend appended (ADR-0011). Any proxy that forwards to the backend has to appen
 that header itself, or every visitor is counted as one address — or, if it passes the
 client's header through, a script picks its own. A backend reachable without the proxy
 can be sent any header at all, which is why production's is reachable only through it.
+
+## Deploying
+
+Production follows ADR-0009: the backend on an AWS free tier that ends, so two things
+are set up before anything can cost money. Run the wizard, which walks you through the
+console steps only a person can take, [`deploy/setup-billing.sh`](deploy/setup-billing.sh):
+
+```sh
+deploy/setup-billing.sh
+```
+
+It turns on billing alerts, deploys `deploy/aws.yaml` to us-east-1 with an alarm that
+emails you once charges pass $1, fires that alarm once so you see it arrive, and
+records the free-tier end date in the repo variable `PILLFACTS_FREE_TIER_EXPIRES` with
+a calendar reminder. A weekly workflow then fails, and so emails the repo owner, from
+30 days before that date or whenever no date is recorded. Its message names the way
+out: move the backend to Koyeb and repoint `PILLFACTS_ORIGIN` at it (ADR-0011).
+
+GitHub pauses scheduled workflows in a public repository after 60 days without activity,
+and a paused one warns nobody. If the Actions tab says the schedule is disabled, enable
+it again; the calendar reminder covers the gap.
