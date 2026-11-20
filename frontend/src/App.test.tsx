@@ -1036,7 +1036,7 @@ describe('a Drug Concept sold in both Regulatory Classes', () => {
     expect(screen.getByText('Cardiovascular thrombotic events.')).toBeInTheDocument()
   })
 
-  it('lists each class’s sections on this page, linked to where they are', async () => {
+  it('lists both classes’ sections on this page, linked to where they are', async () => {
     backendReturns({
       '/api/search': searchResults([{ rxcui: '5640', name: 'ibuprofen' }]),
       '/api/drug-concepts/5640': {
@@ -1061,9 +1061,7 @@ describe('a Drug Concept sold in both Regulatory Classes', () => {
 
     const contents = await screen.findByRole('navigation', { name: 'On this page' })
     expect(within(contents).getAllByRole('listitem').map((item) => item.textContent)).toEqual([
-      'Over-the-counter labelling',
       'Warnings',
-      'Prescription labelling',
       'Warnings and Precautions',
     ])
     for (const link of within(contents).getAllByRole('link')) {

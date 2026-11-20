@@ -541,18 +541,12 @@
   border-bottom: 1px solid #e6e6e6;
 }
 
-.page .on-this-page li:not(.class-name) {
+.page .on-this-page li {
   counter-increment: entry;
 }
 
-.page .on-this-page li:not(.class-name)::before {
+.page .on-this-page li::before {
   content: '/' counter(entry, decimal-leading-zero);
-  color: var(--muted);
-}
-
-.page .on-this-page li.class-name {
-  padding-top: 20px;
-  font-size: 11px;
   color: var(--muted);
 }
 

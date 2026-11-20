@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router'
 import {
   fetchDrugConcept,
@@ -229,8 +229,7 @@ function classId(block: RegulatoryClassBlock): string {
 
 /**
  * The page's contents, in the order they are read: each Safety Section, then the product
- * lists. A Drug Concept in both Regulatory Classes can carry two sections of one name, so
- * each class's are listed under that class.
+ * lists.
  *
  * Links scroll rather than navigate: a new history entry would drop the router state that
  * carries the Brand the page is titled by.
@@ -267,16 +266,11 @@ function OnThisPage({ drugConcept }: { drugConcept: DrugConcept }) {
       {/* Not a heading: the page's outline is its labelling, and this is a way through it. */}
       <p id="on-this-page">On this page</p>
       <ol>
-        {labelling.map((block) => (
-          <Fragment key={block.regulatoryClass}>
-            {labelling.length > 1 && block.sections.length > 0 && (
-              <li className="class-name">{CLASS_HEADINGS[block.regulatoryClass]}</li>
-            )}
-            {block.sections.map((section, index) =>
-              link({ id: safetySectionId(classId(block), index), label: section.heading }),
-            )}
-          </Fragment>
-        ))}
+        {labelling.flatMap((block) =>
+          block.sections.map((section, index) =>
+            link({ id: safetySectionId(classId(block), index), label: section.heading }),
+          ),
+        )}
         {entries.map(link)}
       </ol>
     </nav>
