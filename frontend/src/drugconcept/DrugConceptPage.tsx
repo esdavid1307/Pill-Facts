@@ -253,7 +253,10 @@ function OnThisPage({ drugConcept }: { drugConcept: DrugConcept }) {
         href={`#${id}`}
         onClick={(event) => {
           event.preventDefault()
-          document.getElementById(id)?.scrollIntoView()
+          const target = document.getElementById(id)
+          target?.scrollIntoView()
+          // So the next Tab goes on from the section, and a screen reader announces it.
+          target?.focus({ preventScroll: true })
         }}
       >
         {label}

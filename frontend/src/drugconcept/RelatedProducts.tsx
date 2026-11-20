@@ -51,7 +51,7 @@ function Alternatives({
 }) {
   return (
     <section className="products" aria-labelledby="alternatives">
-      <h2 id="alternatives">
+      <h2 tabIndex={-1} id="alternatives">
         {alternatives.length} other {alternatives.length === 1 ? 'product' : 'products'} made
         with {name}
       </h2>
@@ -75,7 +75,7 @@ function CombinationProducts({
 }) {
   return (
     <section className="products" aria-labelledby="combination-products">
-      <h2 id="combination-products">
+      <h2 tabIndex={-1} id="combination-products">
         {combinationProducts.length === 1
           ? '1 product that combines'
           : `${combinationProducts.length} products that combine`}{' '}

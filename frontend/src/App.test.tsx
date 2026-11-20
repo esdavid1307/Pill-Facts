@@ -693,7 +693,7 @@ describe("a prescription Drug Concept's page", () => {
 
   it('opens a long section with View more, and never asks for the Boxed Warning to be opened', async () => {
     // jsdom lays nothing out, so every section's text reads as longer than its box.
-    vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(500)
+    vi.spyOn(HTMLElement.prototype, 'offsetHeight', 'get').mockReturnValue(500)
     vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(144)
     await openPage(
       drugConcept({
@@ -708,14 +708,14 @@ describe("a prescription Drug Concept's page", () => {
 
     const toggle = await screen.findByRole('button', { name: 'View more' })
     expect(screen.getAllByRole('button', { name: /view/i })).toHaveLength(1)
-    expect(screen.getByText('WARNING: BLEEDING RISK').parentElement).not.toHaveClass('collapsed')
-    expect(screen.getByText('Pregnancy.').parentElement).toHaveClass('collapsed')
+    expect(screen.getByText('WARNING: BLEEDING RISK').closest('.safety-text')).not.toHaveClass('collapsed')
+    expect(screen.getByText('Pregnancy.').closest('.safety-text')).toHaveClass('collapsed')
 
     await userEvent.click(toggle)
 
     expect(toggle).toHaveAttribute('aria-expanded', 'true')
     expect(toggle).toHaveTextContent('View less')
-    expect(screen.getByText('Pregnancy.').parentElement).not.toHaveClass('collapsed')
+    expect(screen.getByText('Pregnancy.').closest('.safety-text')).not.toHaveClass('collapsed')
   })
 
   /**

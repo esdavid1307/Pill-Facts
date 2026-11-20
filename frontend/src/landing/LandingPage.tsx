@@ -3,10 +3,6 @@
  * on the first page anyone sees, for a font, is a bad trade, and it puts every visitor's IP
  * in front of a third party. Latin subsets only, in the four weights the composition uses.
  */
-import '@fontsource/ibm-plex-mono/latin-400.css'
-import '@fontsource/ibm-plex-mono/latin-500.css'
-import '@fontsource/inter-tight/latin-400.css'
-import '@fontsource/inter-tight/latin-600.css'
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { searchPath } from '../search/searchPath'

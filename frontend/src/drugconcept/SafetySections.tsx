@@ -20,6 +20,7 @@ export function SafetySections({ sections, idPrefix }: { sections: SafetySection
         <section
           key={section.heading}
           id={safetySectionId(idPrefix, index)}
+          tabIndex={-1}
           className={section.heading === BOXED_WARNING ? 'safety boxed-warning' : 'safety'}
         >
           <h3>{section.heading}</h3>
@@ -37,36 +38,53 @@ export function SafetySections({ sections, idPrefix }: { sections: SafetySection
 
 /**
  * A section's text, opening with its first few lines so the page reads as a list of
- * sections rather than one long scroll. Nothing is cut: the rest is there to open, and
- * to find-in-page and screen readers it is there already.
+ * sections rather than one long scroll. Nothing is cut: the rest is there to open, screen
+ * readers read it already, and find-in-page opens it by scrolling the clipped box to a
+ * match.
  *
  * Not a Boxed Warning, which stays open: a warning that has to be opened is not one that
  * cannot be missed. See ADR-0007.
  */
 function SafetyText({ id, text, collapsible }: { id: string; text: string; collapsible: boolean }) {
-  const ref = useRef<HTMLDivElement>(null)
+  const box = useRef<HTMLDivElement>(null)
+  const content = useRef<HTMLDivElement>(null)
   const [overflows, setOverflows] = useState(false)
   const [open, setOpen] = useState(false)
 
-  // shortcut: measured once on mount, so a resize that changes whether it overflows is missed; use a ResizeObserver if that matters.
+  // Re-measured as the text reflows (a narrower window, a late font, zoom), so it is never cut without a way to open it.
   useLayoutEffect(() => {
-    const element = ref.current
-    setOverflows(collapsible && !!element && element.scrollHeight > element.clientHeight + 1)
-  }, [collapsible, text])
+    const outer = box.current
+    const inner = content.current
+    if (!collapsible || open || !outer || !inner) {
+      return
+    }
+    const measure = () => setOverflows(inner.offsetHeight > outer.clientHeight + 1)
+    measure()
+    if (typeof ResizeObserver === 'undefined') {
+      return
+    }
+    const observer = new ResizeObserver(measure)
+    observer.observe(inner)
+    observer.observe(outer)
+    return () => observer.disconnect()
+  }, [collapsible, open, text])
 
   return (
     <>
       <div
-        ref={ref}
+        ref={box}
         id={id}
         className={
           collapsible && !open ? `safety-text collapsed${overflows ? ' cut' : ''}` : 'safety-text'
         }
+        onScroll={() => setOpen(true)}
       >
-        {/* Verbatim, per ADR-0006: the FDA's paragraphs, not ours. */}
-        {text.split('\n\n').map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
+        <div ref={content}>
+          {/* Verbatim, per ADR-0006: the FDA's paragraphs, not ours. */}
+          {text.split('\n\n').map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
       </div>
       {overflows && (
         <button
