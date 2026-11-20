@@ -2,8 +2,6 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: >
   Pill-Facts on AWS (ADR-0009). Deployed to us-east-1, the only region that publishes
   billing metrics: the $1 billing alarm, and the EC2 t3.micro the backend runs on.
-  Run deploy/setup-billing.sh, deploy/setup-backend.sh, then deploy/setup-ci.sh, rather
-  than deploying by hand.
 
 Parameters:
   AlertEmail:
@@ -18,7 +16,7 @@ Parameters:
     Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
 
   # An account holds one OIDC provider per issuer, so a GitHub one made for another project
-  # is reused rather than duplicated. Blank creates it here. deploy/setup-ci.sh decides.
+  # is reused rather than duplicated. Blank creates it here.
   GitHubOidcProviderArn:
     Type: String
     Default: ''
@@ -96,8 +94,8 @@ Resources:
 
   # Port 80 from Cloudflare and nothing else. The backend trusts the last X-Forwarded-For
   # entry because only the Pages Function can reach it (ADR-0011), so this list is a
-  # security boundary, not a convenience. It is https://www.cloudflare.com/ips-v4, which
-  # deploy/setup-backend.sh checks against before every deploy.
+  # security boundary, not a convenience. It is https://www.cloudflare.com/ips-v4; check it
+  # against that list before every deploy.
   BackendSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -202,7 +200,7 @@ Resources:
             Action: sts:AssumeRoleWithWebIdentity
             # The repo uses GitHub's immutable subject claims, which name the owner and repo
             # by ID as well, so a deleted repo recreated under the same name can't assume this.
-            # deploy/setup-ci.sh checks it against the repo's OIDC settings before deploying.
+            # Check it against the repo's OIDC settings before deploying.
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com

@@ -85,15 +85,9 @@ jobs:
         run: python3 -m unittest deploy/test_run_rollout.py
       - name: Test the smoke check
         run: python3 -m unittest deploy/test_smoke_check.py
-      # SC2034 is excluded because the wizard library above the STAGES marker defines a
-      # colour no stage uses, and that library is shared, not edited per wizard.
-      - name: Check the scripts' syntax
+      - name: Check the script's syntax
         run: |
-          for script in deploy/setup-billing.sh deploy/setup-backend.sh deploy/setup-ci.sh \
-            deploy/setup-frontend.sh deploy/ec2/rollout.sh; do
-            bash -n "$script"
-          done
-          shellcheck -e SC2034 deploy/setup-billing.sh deploy/setup-backend.sh deploy/setup-ci.sh \
-            deploy/setup-frontend.sh deploy/ec2/rollout.sh
+          bash -n deploy/ec2/rollout.sh
+          shellcheck deploy/ec2/rollout.sh
       - name: Lint the CloudFormation template
         run: pipx run cfn-lint deploy/aws.yaml

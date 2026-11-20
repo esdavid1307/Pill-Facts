@@ -3,7 +3,7 @@ name: Free-tier expiry
 # ADR-0009: the AWS free tier ends. This fails 30 days before it does, or whenever no end
 # date is recorded, and a failed scheduled run emails whoever last edited the schedule.
 # GitHub disables schedules in a public repo after 60 days without activity, so this can
-# go quiet; the calendar reminder deploy/setup-billing.sh opens is the backstop.
+# go quiet; a calendar reminder for the end date is the backstop.
 on:
   schedule:
     - cron: '17 8 * * 1'

@@ -4,7 +4,7 @@ name: Deploy
 # rollout to the EC2 instance over SSM Run Command. AWS is reached through
 # GitHub's OIDC tokens and a role only main can assume, so no AWS key exists anywhere.
 # Then the frontend, to Cloudflare Pages, checked end to end through its public URL.
-# deploy/setup-ci.sh and deploy/setup-frontend.sh set the variables and secret this reads.
+# The repo's variables and secret this reads are set by hand in its settings.
 on:
   workflow_run:
     workflows: [CI]
@@ -121,7 +121,7 @@ jobs:
   frontend:
     name: Deploy the frontend to Cloudflare Pages
     needs: [commit, rollout]
-    # Until deploy/setup-frontend.sh has made the Pages project, there's nowhere to deploy.
+    # Until the Pages project exists, there's nowhere to deploy.
     if: vars.PILLFACTS_PAGES_PROJECT != '' && vars.PILLFACTS_SITE_URL != ''
     runs-on: ubuntu-latest
     timeout-minutes: 15

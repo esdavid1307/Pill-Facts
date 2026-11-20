@@ -35,8 +35,7 @@ def main():
     if not recorded:
         return fail(
             "No free-tier expiry is recorded. Set the repo variable "
-            "PILLFACTS_FREE_TIER_EXPIRES to the date AWS shows under Billing → Free tier "
-            "(deploy/setup-billing.sh does this)."
+            "PILLFACTS_FREE_TIER_EXPIRES to the date AWS shows under Billing → Free tier."
         )
     try:
         # fromisoformat also reads 20270401 and week dates; only YYYY-MM-DD is recorded.
