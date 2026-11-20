@@ -152,8 +152,7 @@
 
 /* ---------- The black tag over a ruled box ---------- */
 
-.page .framing::before,
-.page [role='search']::before {
+.page .framing::before {
   content: 'Not medical advice \2014  just the label';
   position: absolute;
   left: -1px;
@@ -188,7 +187,6 @@
 /* ---------- Search ---------- */
 
 .page [role='search'] {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   margin: 72px 0 48px;
@@ -345,7 +343,6 @@
 
 .page .safety > h3 {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
   gap: 16px;
 }
