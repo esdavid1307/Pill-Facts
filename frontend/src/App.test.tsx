@@ -158,7 +158,10 @@ async function search(query: string) {
   await user.click(screen.getByRole('button', { name: /search/i }))
 }
 
-afterEach(() => vi.unstubAllGlobals())
+afterEach(() => {
+  vi.unstubAllGlobals()
+  vi.restoreAllMocks()
+})
 
 /**
  * The landing is a drawing either side of 900px, and the point of testing it is that being
@@ -688,6 +691,33 @@ describe("a prescription Drug Concept's page", () => {
     expect(boxed.closest('section')).toHaveClass('boxed-warning')
   })
 
+  it('opens a long section with View more, and never asks for the Boxed Warning to be opened', async () => {
+    // jsdom lays nothing out, so every section's text reads as longer than its box.
+    vi.spyOn(HTMLElement.prototype, 'offsetHeight', 'get').mockReturnValue(500)
+    vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(144)
+    await openPage(
+      drugConcept({
+        labelling: [
+          prescription([
+            section('Boxed Warning', 'WARNING: BLEEDING RISK'),
+            section('Contraindications', 'Pregnancy.'),
+          ]),
+        ],
+      }),
+    )
+
+    const toggle = await screen.findByRole('button', { name: 'View more' })
+    expect(screen.getAllByRole('button', { name: /view/i })).toHaveLength(1)
+    expect(screen.getByText('WARNING: BLEEDING RISK').closest('.safety-text')).not.toHaveClass('collapsed')
+    expect(screen.getByText('Pregnancy.').closest('.safety-text')).toHaveClass('collapsed')
+
+    await userEvent.click(toggle)
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    expect(toggle).toHaveTextContent('View less')
+    expect(screen.getByText('Pregnancy.').closest('.safety-text')).not.toHaveClass('collapsed')
+  })
+
   /**
    * ADR-0007: an absent Boxed Warning means the FDA did not require one, never that the
    * drug is safe. Nothing may stand in for it — no heading, no "None", no reassurance.
@@ -1004,6 +1034,41 @@ describe('a Drug Concept sold in both Regulatory Classes', () => {
       .toEqual(['Over-the-counter labelling', 'Prescription labelling'])
     expect(screen.getByText('Stomach bleeding warning.')).toBeInTheDocument()
     expect(screen.getByText('Cardiovascular thrombotic events.')).toBeInTheDocument()
+  })
+
+  it('lists both classes’ sections on this page, linked to where they are', async () => {
+    backendReturns({
+      '/api/search': searchResults([{ rxcui: '5640', name: 'ibuprofen' }]),
+      '/api/drug-concepts/5640': {
+        rxcui: '5640',
+        name: 'ibuprofen',
+        labelling: [
+          {
+            regulatoryClass: 'OVER_THE_COUNTER',
+            provenance: LIPITOR,
+            sections: [section('Warnings', 'Stomach bleeding warning.')],
+          },
+          {
+            regulatoryClass: 'PRESCRIPTION',
+            provenance: LIPITOR,
+            sections: [section('Warnings and Precautions', 'Cardiovascular thrombotic events.')],
+          },
+        ],
+      },
+    })
+
+    await search('ibuprofen')
+
+    const contents = await screen.findByRole('navigation', { name: 'On this page' })
+    expect(within(contents).getAllByRole('listitem').map((item) => item.textContent)).toEqual([
+      'Warnings',
+      'Warnings and Precautions',
+    ])
+    for (const link of within(contents).getAllByRole('link')) {
+      expect(document.querySelector(link.getAttribute('href')!)).toHaveTextContent(
+        link.textContent!,
+      )
+    }
   })
 })
 

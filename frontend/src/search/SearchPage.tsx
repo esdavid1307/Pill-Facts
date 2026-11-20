@@ -32,6 +32,12 @@ export function SearchPage() {
 
   return (
     <>
+      {query && (
+        <>
+          <p className="kicker">Results for</p>
+          <h1 className="headline">&ldquo;{query}&rdquo;</h1>
+        </>
+      )}
       <form onSubmit={submit} role="search">
         <label htmlFor="q">Search a medication by brand or ingredient name</label>
         <input

@@ -17,9 +17,9 @@ rather than assumed: `#c8321f` on white is about 5.3:1, which clears WCAG AA for
 
 ## Consequences
 
-Someone reading FDA warning text at night gets a white screen. That is a real cost and the
-reason this is written down rather than left as a deleted media query — a dark treatment
-is open work, and it is a design exercise for the composition, not a second set of tokens.
+Someone reading FDA warning text at night gets a white screen. That cost is accepted: there
+is no dark mode, and none is planned. It is written down so the missing media query is not
+mistaken for an oversight and put back.
 
 The names the other pages were written against (`--fg`, `--border`, `--alert`) survive as
 aliases onto the palette rather than as a second palette. There is one place a colour is
