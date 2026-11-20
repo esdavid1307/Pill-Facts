@@ -80,7 +80,10 @@ _Avoid_: Rx label, professional label
 **OTC Label**:
 A Label for a drug sold over the counter. It carries an entirely different Safety
 Section vocabulary — warnings, do not use, when using, stop use, ask a doctor — and
-essentially never an adverse reactions section.
+essentially never an adverse reactions section. It has no strengths section either: its
+strength is the one in the Drug Facts panel's active ingredient line, a single product's
+per unit of its dosage form. That line is rendered verbatim under its own heading, ahead
+of the Safety Sections, and is not one of them.
 _Avoid_: consumer label, non-prescription label
 
 **Drug Facts panel**:

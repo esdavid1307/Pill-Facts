@@ -962,8 +962,8 @@ describe("an over-the-counter Drug Concept's page", () => {
   /**
    * ADR-0007 renders the strengths a drug is made in, where the Label gives them. An OTC
    * Label has no strengths section at all, so the heading is absent rather than standing
-   * empty over nothing — the same rule as any other absent section. #18 asks whether the
-   * panel's active ingredient line is the same fact.
+   * empty over nothing — the same rule as any other absent section. The panel's active
+   * ingredient line is a different fact and arrives as a section of its own (#18).
    */
   it('shows no strengths heading where the Label carries none', async () => {
     await openPage(acetaminophen())

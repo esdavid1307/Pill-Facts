@@ -95,7 +95,8 @@ class Labelling {
 	/**
 	 * The page one Representative Label makes, through the renderer that knows its
 	 * class's vocabulary. Only a Prescription Label states the strengths a drug is made
-	 * in; the Drug Facts panel has no section for them, so an OTC page has none (#18).
+	 * in; the Drug Facts panel states one product's strength in its active ingredient
+	 * line, which the OTC renderer renders as a section of its own (#18).
 	 */
 	private RegulatoryClassBlock rendered(RegulatoryClass regulatoryClass, Label label) {
 		return switch (regulatoryClass) {

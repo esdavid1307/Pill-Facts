@@ -38,13 +38,14 @@ import org.springframework.web.client.RestClient;
 public class OpenFda {
 
 	/**
-	 * The Label sections Pill-Facts may read, both Regulatory Classes' worth. Dosing
+	 * The Label sections Pill-Facts may read, both Regulatory Classes' worth, the OTC
+	 * active ingredient line among them for all it is not a warning (#18). Dosing
 	 * instructions are absent from this list and stay absent: it is the one place that
 	 * guarantees they reach no response (ADR-0007).
 	 *
 	 * <p>Which of these a page shows, under what heading and in what order, is the
 	 * renderers' business — {@code PrescriptionSection} names the prescription five
-	 * again and {@code OtcSection} the OTC five, this being a Set precisely because
+	 * again and {@code OtcSection} the OTC six, this being a Set precisely because
 	 * order is theirs to decide. Those two agreeing with this is what
 	 * {@code DrugConceptApiTest} and {@code OtcDrugConceptApiTest} assert when they pin
 	 * the headings a Drug Concept comes back with; a field named here and nowhere else
@@ -63,6 +64,7 @@ public class OpenFda {
 			"warnings_and_cautions",
 			"adverse_reactions",
 			"drug_interactions",
+			"active_ingredient",
 			"warnings",
 			"do_not_use",
 			"ask_doctor",

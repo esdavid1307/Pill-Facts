@@ -49,6 +49,7 @@ class Upstreams(BaseHTTPRequestHandler):
     otc = {
         "set_id": "otc-label",
         "effective_time": "20260930",
+        "active_ingredient": ["active ingredient"],
         "warnings": ["warnings"],
         "do_not_use": ["do not use"],
         "ask_doctor": ["ask a doctor"],
