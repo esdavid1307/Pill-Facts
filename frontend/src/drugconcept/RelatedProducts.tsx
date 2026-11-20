@@ -15,6 +15,10 @@ import type { Alternative, CombinationProduct, DrugConcept } from '../api/drugCo
  *
  * A Drug Concept RxNorm relates to no other product shows no heading for one: an empty
  * section reads as "there are none", which is not what an absent list means.
+ *
+ * Both lists start closed under their count, at every size. Acetaminophen is in 348
+ * Combination Products, and open lists would push the labelling out of sight; closing
+ * only the longer one would make one list harder to see than the other. See ADR-0016.
  */
 export function RelatedProducts({ drugConcept }: { drugConcept: DrugConcept }) {
   const { name, alternatives, combinationProducts } = drugConcept
@@ -47,7 +51,10 @@ function Alternatives({
 }) {
   return (
     <section className="products" aria-labelledby="alternatives">
-      <h2 id="alternatives">Other products made with {name}</h2>
+      <h2 id="alternatives">
+        {alternatives.length} other {alternatives.length === 1 ? 'product' : 'products'} made
+        with {name}
+      </h2>
       <p className="composition-note">What each of these is made of, as RxNorm records it.</p>
       <ProductList products={alternatives} />
     </section>
@@ -68,7 +75,12 @@ function CombinationProducts({
 }) {
   return (
     <section className="products" aria-labelledby="combination-products">
-      <h2 id="combination-products">Products that combine {name} with another medication</h2>
+      <h2 id="combination-products">
+        {combinationProducts.length === 1
+          ? '1 product that combines'
+          : `${combinationProducts.length} products that combine`}{' '}
+        {name} with another medication
+      </h2>
       <p className="composition-note">
         Each of these contains {name} and at least one other active ingredient. The labelling
         above is for {name}, and describes none of them.
@@ -85,13 +97,16 @@ function CombinationProducts({
  */
 function ProductList({ products }: { products: { composition: string; brands: string[] }[] }) {
   return (
-    <ul className="compositions">
-      {products.map((product) => (
-        <li key={product.composition}>
-          {product.composition}
-          {product.brands.length > 0 && <span> &mdash; sold as {product.brands.join(', ')}</span>}
-        </li>
-      ))}
-    </ul>
+    <details>
+      <summary>{products.length === 1 ? 'Show 1' : `Show all ${products.length}`}</summary>
+      <ul className="compositions">
+        {products.map((product) => (
+          <li key={product.composition}>
+            {product.composition}
+            {product.brands.length > 0 && <span> &mdash; sold as {product.brands.join(', ')}</span>}
+          </li>
+        ))}
+      </ul>
+    </details>
   )
 }

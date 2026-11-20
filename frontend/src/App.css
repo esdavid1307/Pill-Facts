@@ -184,3 +184,9 @@
 .page .compositions span {
   color: var(--muted);
 }
+
+/* The closed lists' only affordance. The focus ring is the global one in index.css. */
+.page .products summary {
+  cursor: pointer;
+  padding: 0.5rem 0;
+}

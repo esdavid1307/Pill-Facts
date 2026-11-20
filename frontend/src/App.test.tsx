@@ -1034,12 +1034,40 @@ describe('the other products an Active Ingredient is sold in', () => {
     await openAtorvastatin({ alternatives: [LIPITOR_10, LIPITOR_20] })
 
     const list = within(
-      await screen.findByRole('region', { name: /other products made with atorvastatin/i }),
+      await screen.findByRole('region', { name: /other products? made with atorvastatin/i }),
     )
     expect(list.getAllByRole('listitem').map((item) => item.textContent)).toEqual([
       'atorvastatin 10 MG Oral Tablet — sold as Lipitor',
       'atorvastatin 20 MG Oral Tablet — sold as Lipitor',
     ])
+  })
+
+  /**
+   * Acetaminophen is in 348 Combination Products, and a page that listed them open would
+   * push the labelling out of sight. Both lists start closed under their count, the same
+   * way at every size, so neither is easier to see than the other. See ADR-0016.
+   */
+  it('starts both lists closed under their count, and opens either on request', async () => {
+    const user = userEvent.setup()
+    await openAtorvastatin({ alternatives: [LIPITOR_10, LIPITOR_20], combinationProducts: [CADUET] })
+
+    expect(
+      await screen.findByRole('heading', { name: '2 other products made with atorvastatin' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: '1 product that combines atorvastatin with another medication',
+      }),
+    ).toBeInTheDocument()
+
+    const showAlternatives = screen.getByText('Show all 2')
+    const showCombinations = screen.getByText('Show 1')
+    expect(showAlternatives.closest('details')).not.toHaveAttribute('open')
+    expect(showCombinations.closest('details')).not.toHaveAttribute('open')
+
+    await user.click(showCombinations)
+    expect(showCombinations.closest('details')).toHaveAttribute('open')
+    expect(showAlternatives.closest('details')).not.toHaveAttribute('open')
   })
 
   it('names a product sold without a Brand by its composition alone', async () => {
@@ -1059,12 +1087,12 @@ describe('the other products an Active Ingredient is sold in', () => {
     await openAtorvastatin({ alternatives: [LIPITOR_10], combinationProducts: [CADUET] })
 
     const alternatives = within(
-      await screen.findByRole('region', { name: /other products made with atorvastatin/i }),
+      await screen.findByRole('region', { name: /other products? made with atorvastatin/i }),
     )
     expect(alternatives.queryByText(/Caduet/)).toBeNull()
 
     const combinations = within(
-      screen.getByRole('region', { name: /combine atorvastatin with another medication/i }),
+      screen.getByRole('region', { name: /combines? atorvastatin with another medication/i }),
     )
     expect(combinations.getByText(/Caduet/)).toBeInTheDocument()
   })
@@ -1073,7 +1101,7 @@ describe('the other products an Active Ingredient is sold in', () => {
   it('says nothing that reads as permission to take one product in place of another', async () => {
     await openAtorvastatin({ alternatives: [LIPITOR_10, LIPITOR_20], combinationProducts: [CADUET] })
 
-    await screen.findByRole('region', { name: /other products made with atorvastatin/i })
+    await screen.findByRole('region', { name: /other products? made with atorvastatin/i })
     expect(document.body.textContent).not.toMatch(
       /\b(substitut|equivalent|interchangeable|generic version|the same as)/i,
     )
@@ -1082,17 +1110,17 @@ describe('the other products an Active Ingredient is sold in', () => {
   it('shows no heading for a list the Drug Concept has none of', async () => {
     await openAtorvastatin({ alternatives: [LIPITOR_10] })
 
-    expect(await screen.findByRole('heading', { name: /other products made with atorvastatin/i }))
+    expect(await screen.findByRole('heading', { name: /other products? made with atorvastatin/i }))
       .toBeInTheDocument()
-    expect(screen.queryByRole('heading', { name: /combine atorvastatin/i })).toBeNull()
+    expect(screen.queryByRole('heading', { name: /combines? atorvastatin/i })).toBeNull()
   })
 
   it('shows neither heading for a Drug Concept RxNorm relates to no other product', async () => {
     await openAtorvastatin({})
 
     expect(await screen.findByRole('heading', { name: 'Adverse Reactions' })).toBeInTheDocument()
-    expect(screen.queryByRole('heading', { name: /other products made with/i })).toBeNull()
-    expect(screen.queryByRole('heading', { name: /combine atorvastatin/i })).toBeNull()
+    expect(screen.queryByRole('heading', { name: /other products? made with/i })).toBeNull()
+    expect(screen.queryByRole('heading', { name: /combines? atorvastatin/i })).toBeNull()
   })
 
   /**
@@ -1105,6 +1133,6 @@ describe('the other products an Active Ingredient is sold in', () => {
       drugConcept({ rxcui: '10167', name: 'sulbactam', labelling: [], combinationProducts: [CADUET] }),
     )
 
-    expect(await screen.findByRole('heading', { name: /combine sulbactam/i })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: /combines? sulbactam/i })).toBeInTheDocument()
   })
 })
