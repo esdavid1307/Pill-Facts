@@ -56,7 +56,13 @@ function SafetyText({ id, text, collapsible }: { id: string; text: string; colla
 
   return (
     <>
-      <div ref={ref} id={id} className={collapsible && !open ? 'safety-text collapsed' : 'safety-text'}>
+      <div
+        ref={ref}
+        id={id}
+        className={
+          collapsible && !open ? `safety-text collapsed${overflows ? ' cut' : ''}` : 'safety-text'
+        }
+      >
         {/* Verbatim, per ADR-0006: the FDA's paragraphs, not ours. */}
         {text.split('\n\n').map((paragraph, index) => (
           <p key={index}>{paragraph}</p>

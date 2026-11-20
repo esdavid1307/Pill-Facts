@@ -371,10 +371,13 @@
   margin-bottom: 0;
 }
 
-/* Five lines of the text above, fading out where it is cut. */
+/* Five lines of the text above, fading out only where something is actually cut. */
 .page .safety-text.collapsed {
   max-height: calc(18px * 1.6 * 5);
   overflow: hidden;
+}
+
+.page .safety-text.cut {
   mask-image: linear-gradient(to bottom, #000 55%, transparent);
 }
 
