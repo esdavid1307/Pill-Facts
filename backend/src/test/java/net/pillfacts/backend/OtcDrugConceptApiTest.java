@@ -13,14 +13,15 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>An OTC Label shares no Safety Section with a Prescription Label, so what this
  * asserts is a different vocabulary rather than the same one over different drugs
  * (ADR-0008). The three drugs are the ones #5 names, chosen for what they disagree
- * about: acetaminophen (161) has an OTC brand Label and no "When using this product"
- * section, ibuprofen (5640) carries all five and is sold in both Regulatory Classes,
+ * about: acetaminophen (161) has OTC brand Labels that are all suppositories, so an oral
+ * generic speaks for it (ADR-0017), and that one has no "When using this product"
+ * section; ibuprofen (5640) carries all five and is sold in both Regulatory Classes;
  * and diphenhydramine (3498) has OTC brand Labels that are every one a Combination
  * Product, so the generic fallback runs.
  */
 class OtcDrugConceptApiTest extends ApiTest {
 
-	private static final String FEVERALL = "3561bbc3-53b0-4857-8b71-39e165ed95ce";
+	private static final String DISCOUNT_DRUG_MART_PAIN_RELIEF = "146c735b-5081-4de4-9025-d939d560bbba";
 
 	@Test
 	void returns_the_otc_safety_sections_in_render_order_each_carrying_its_own_provenance() {
@@ -36,12 +37,11 @@ class OtcDrugConceptApiTest extends ApiTest {
 						"Do not use",
 						"Ask a doctor before use if",
 						"Stop use and ask a doctor if"))
-				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(FEVERALL)
-				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Feverall Jr. Strength")
-				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer")
-						.isEqualTo("Sun Pharmaceutical Industries, Inc.")
-				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-09-03")
-				.jsonPath("$.labelling[0].sections[4].provenance.labelId").isEqualTo(FEVERALL);
+				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(DISCOUNT_DRUG_MART_PAIN_RELIEF)
+				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Pain Relief")
+				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer").isEqualTo("DISCOUNT DRUG MART")
+				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-11-10")
+				.jsonPath("$.labelling[0].sections[4].provenance.labelId").isEqualTo(DISCOUNT_DRUG_MART_PAIN_RELIEF);
 	}
 
 	/**
@@ -92,9 +92,9 @@ class OtcDrugConceptApiTest extends ApiTest {
 	}
 
 	/**
-	 * ADR-0007's absent-section rule, on this side of ADR-0008 too. Feverall carries no
-	 * "When using this product" section, and the page says nothing whatsoever about it:
-	 * no heading, no "None", nothing a reader could take for a statement that there is
+	 * ADR-0007's absent-section rule, on this side of ADR-0008 too. Acetaminophen's
+	 * Representative Label carries no "When using this product" section, and the page
+	 * says nothing whatsoever about it: no heading, no "None", nothing a reader could take for a statement that there is
 	 * nothing to watch for while taking it.
 	 */
 	@Test
@@ -150,11 +150,11 @@ class OtcDrugConceptApiTest extends ApiTest {
 						"When using this product",
 						"Stop use and ask a doctor if"))
 				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
-				.jsonPath("$.labelling[1].sections[0].provenance.label")
-						.isEqualTo("DIPHENHYDRAMINE HYDROCHLORIDE")
+				.jsonPath("$.labelling[1].sections[0].provenance.label").isEqualTo("Diphenhydramine HCL")
 				.jsonPath("$.labelling[1].sections[*].heading").isEqualTo(List.of(
 						"Contraindications",
-						"Adverse Reactions"));
+						"Adverse Reactions",
+						"Drug Interactions"));
 	}
 
 	@Test
@@ -166,14 +166,15 @@ class OtcDrugConceptApiTest extends ApiTest {
 					.expectBody()
 					.jsonPath("$.labelling[*].sections[0].provenance.label").isEqualTo(List.of(
 							"Nighttime Sleep Aid Berry Flavor",
-							"DIPHENHYDRAMINE HYDROCHLORIDE"));
+							"Diphenhydramine HCL"));
 		}
 	}
 
 	/**
 	 * ADR-0006: the FDA's own words, less the heading the Drug Facts panel prints above
 	 * them and openFDA repeats inside them. What is left reads as the panel reads, under
-	 * the heading it is read under — "Do not use" then "in children under 6 years".
+	 * the heading it is read under — "Do not use" then "with any other drug containing
+	 * acetaminophen".
 	 */
 	@Test
 	void renders_the_panels_words_under_the_panels_headings() {
@@ -183,8 +184,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.expectBody()
 				.jsonPath("$.labelling[0].sections[2].heading").isEqualTo("Do not use")
 				.jsonPath("$.labelling[0].sections[2].text").value(text -> assertThat((String) text)
-						.startsWith("in children under 6 years")
-						.contains("with any other drug containing acetaminophen"))
+						.startsWith("with any other drug containing acetaminophen"))
 				.jsonPath("$.labelling[0].sections[3].text").value(text -> assertThat((String) text)
 						.startsWith("you have liver disease"));
 	}
@@ -203,8 +203,8 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.labelling[0].strengths").doesNotExist()
 				.jsonPath("$.labelling[0].sections[0].heading").isEqualTo("Active ingredient")
 				.jsonPath("$.labelling[0].sections[0].text")
-						.isEqualTo("(in each rectal suppository) Acetaminophen, USP 325 mg")
-				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(FEVERALL);
+						.isEqualTo("(in each caplet) Acetaminophen 500 mg")
+				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(DISCOUNT_DRUG_MART_PAIN_RELIEF);
 	}
 
 	/**
@@ -220,7 +220,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.expectStatus().isOk()
 				.expectBody(String.class)
 				.value(body -> assertThat(body)
-						.doesNotContainIgnoringCase("insert suppository well up into the rectum"));
+						.doesNotContainIgnoringCase("take 2 caplets every 6 hours"));
 
 		api().get().uri("/api/drug-concepts/5640")
 				.exchange()

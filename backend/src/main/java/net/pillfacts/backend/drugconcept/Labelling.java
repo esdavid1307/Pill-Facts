@@ -110,13 +110,20 @@ class Labelling {
 
 	/**
 	 * The Label that speaks for a Drug Concept in one Regulatory Class: the brand one,
-	 * falling back to the most recently updated generic (ADR-0010). Both lists arrive
-	 * newest first, so the choice within each is the head of it.
+	 * falling back to the most recently updated generic (ADR-0010), with a Label taken by
+	 * mouth preferred over either (ADR-0017). RxNorm counts NeoProfen's ibuprofen lysine
+	 * as ibuprofen, so only the route keeps a neonatal infusion off Advil's page. Both
+	 * lists arrive newest first, so the choice within each is the first that qualifies.
 	 */
 	private Optional<Label> representativeLabel(RegulatoryClass regulatoryClass, String activeIngredient) {
 		List<Label> brand = this.openFda.brandLabels(regulatoryClass, activeIngredient);
-		return brand.isEmpty()
-				? this.openFda.labels(regulatoryClass, activeIngredient).stream().findFirst()
-				: Optional.of(brand.getFirst());
+		Optional<Label> oralBrand = brand.stream().filter(Label::isTakenByMouth).findFirst();
+		if (oralBrand.isPresent()) {
+			return oralBrand;
+		}
+		List<Label> generic = this.openFda.labels(regulatoryClass, activeIngredient);
+		return generic.stream().filter(Label::isTakenByMouth).findFirst()
+				.or(() -> brand.stream().findFirst())
+				.or(() -> generic.stream().findFirst());
 	}
 }

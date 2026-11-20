@@ -21,6 +21,8 @@ import java.util.Optional;
  * what it tells a reader of the response, not to be branched on
  * @param effectiveDate the date this version of the Label took effect
  * @param activeIngredients every substance in the product the Label describes
+ * @param routes how what the Label describes is taken, as openFDA names it — {@code ORAL},
+ * {@code INTRAVENOUS} and so on
  * @param sections the Safety Sections present, keyed by their openFDA field name
  * @param strengths the strengths the drug is made in, absent where the Label omits them
  */
@@ -31,6 +33,7 @@ public record Label(
 		String applicationNumber,
 		LocalDate effectiveDate,
 		List<String> activeIngredients,
+		List<String> routes,
 		Map<String, String> sections,
 		String strengths) {
 
@@ -48,6 +51,14 @@ public record Label(
 	 */
 	public boolean isForOneDrugConcept() {
 		return this.activeIngredients.size() == 1;
+	}
+
+	/**
+	 * Whether what this Label describes is taken by mouth, which is what a reader
+	 * holding a box or a bottle is most often holding (ADR-0017).
+	 */
+	public boolean isTakenByMouth() {
+		return this.routes.contains("ORAL");
 	}
 
 	public Optional<String> section(String name) {

@@ -92,6 +92,39 @@ class DrugConceptApiTest extends ApiTest {
 				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-08-31");
 	}
 
+	/**
+	 * ADR-0017: a Label taken by mouth is preferred over the brand one. Ibuprofen's
+	 * prescription brand Labels that name it alone are NeoProfen, an intravenous ibuprofen
+	 * lysine for premature infants, and Caldolor, a hospital infusion; neither is what a
+	 * reader holding a bottle of 800 mg tablets is holding, so an oral generic speaks.
+	 */
+	@Test
+	void prefers_a_label_taken_by_mouth_over_the_brand_one() {
+		api().get().uri("/api/drug-concepts/5640")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
+				.jsonPath("$.labelling[1].provenance.labelId").isEqualTo("701ee488-c57f-a82c-e053-2991aa0af403")
+				.jsonPath("$.labelling[1].provenance.manufacturer").isEqualTo("PD-Rx Pharmaceuticals, Inc.");
+	}
+
+	/**
+	 * Where nothing in a class is taken by mouth, the preference has nothing to choose
+	 * and ADR-0010's rule stands: every prescription Label for acetaminophen alone is an
+	 * infusion, and the brand one speaks.
+	 */
+	@Test
+	void falls_back_to_any_route_where_no_label_is_taken_by_mouth() {
+		api().get().uri("/api/drug-concepts/161")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
+				.jsonPath("$.labelling[1].provenance.labelId").isEqualTo("3f7a6fdc-6e36-dc3e-e063-6394a90a067d")
+				.jsonPath("$.labelling[1].provenance.manufacturer").isEqualTo("ProPharma Distribution");
+	}
+
 	@Test
 	void puts_a_boxed_warning_first() {
 		api().get().uri("/api/drug-concepts/11289")
