@@ -93,7 +93,9 @@ _Avoid_: consumer label, non-prescription label
 The standardised panel the FDA requires on an over-the-counter product's packaging, and
 the form an OTC Label's Safety Sections are published in. Its headings open the sentences
 their contents finish — "Do not use" is followed by what not to use it with — so a
-heading and its section are read as one thing and never separately.
+heading and its section are read as one thing and never separately. "Do not use", "Ask
+a doctor before use if", "When using this product" and "Stop use and ask a doctor if" are
+subsections of Warnings, and a Label may publish them inside it, beside it, or both.
 _Avoid_: drug facts box, label panel, warnings box
 
 **Boxed Warning**:

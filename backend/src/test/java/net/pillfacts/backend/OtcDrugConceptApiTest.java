@@ -24,7 +24,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 	private static final String DISCOUNT_DRUG_MART_PAIN_RELIEF = "146c735b-5081-4de4-9025-d939d560bbba";
 
 	@Test
-	void returns_the_otc_safety_sections_in_render_order_each_carrying_its_own_provenance() {
+	void returns_the_otc_safety_sections_each_carrying_its_own_provenance() {
 		api().get().uri("/api/drug-concepts/161")
 				.exchange()
 				.expectStatus().isOk()
@@ -33,15 +33,12 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.name").isEqualTo("acetaminophen")
 				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Active ingredient",
-						"Warnings",
-						"Do not use",
-						"Ask a doctor before use if",
-						"Stop use and ask a doctor if"))
+						"Warnings"))
 				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(DISCOUNT_DRUG_MART_PAIN_RELIEF)
 				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Pain Relief")
 				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer").isEqualTo("DISCOUNT DRUG MART")
 				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-11-10")
-				.jsonPath("$.labelling[0].sections[4].provenance.labelId").isEqualTo(DISCOUNT_DRUG_MART_PAIN_RELIEF);
+				.jsonPath("$.labelling[0].sections[1].provenance.labelId").isEqualTo(DISCOUNT_DRUG_MART_PAIN_RELIEF);
 	}
 
 	/**
@@ -66,11 +63,11 @@ class OtcDrugConceptApiTest extends ApiTest {
 
 	/**
 	 * The whole of the Drug Facts panel's warnings, for a Label that carries all five.
-	 * Acetaminophen's Representative Label has no "When using this product" section, so
-	 * a drug that does is what says the vocabulary is complete rather than truncated.
+	 * Advil Menstrual Pain nests all four subsections inside Warnings (ADR-0018), so the
+	 * panel is read there, in the order it is printed, rather than under five headings.
 	 */
 	@Test
-	void renders_every_section_an_otc_label_carries() {
+	void renders_the_whole_panel_inside_warnings_in_the_order_it_is_printed() {
 		api().get().uri("/api/drug-concepts/5640")
 				.exchange()
 				.expectStatus().isOk()
@@ -80,11 +77,13 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.labelling[0].regulatoryClass").isEqualTo("OVER_THE_COUNTER")
 				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Active ingredient",
-						"Warnings",
-						"Do not use",
-						"Ask a doctor before use if",
-						"When using this product",
-						"Stop use and ask a doctor if"))
+						"Warnings"))
+				.jsonPath("$.labelling[0].sections[1].text").value(text -> assertThat((String) text)
+						.containsSubsequence(
+								"Do not use",
+								"Ask a doctor before use if",
+								"When using this product",
+								"Stop use and ask a doctor if"))
 				.jsonPath("$.labelling[0].sections[0].provenance.label").isEqualTo("Advil Menstrual Pain")
 				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
 				.jsonPath("$.labelling[1].sections.length()").value(length ->
@@ -103,8 +102,8 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				// Five sections, not six with one of them standing empty.
-				.jsonPath("$.labelling[0].sections.length()").isEqualTo(5)
+				// Active ingredient and Warnings, with no empty "When using this product" beside them.
+				.jsonPath("$.labelling[0].sections.length()").isEqualTo(2)
 				.jsonPath("$.labelling[0].sections[*].heading").value(headings ->
 						assertThat((List<String>) headings).doesNotContain("When using this product"))
 				.jsonPath("$.labelling[0].sections[*].text").value(texts ->
@@ -144,11 +143,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 						.isEqualTo("Nighttime Sleep Aid Berry Flavor")
 				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
 						"Active ingredient",
-						"Warnings",
-						"Do not use",
-						"Ask a doctor before use if",
-						"When using this product",
-						"Stop use and ask a doctor if"))
+						"Warnings"))
 				.jsonPath("$.labelling[1].regulatoryClass").isEqualTo("PRESCRIPTION")
 				.jsonPath("$.labelling[1].sections[0].provenance.label").isEqualTo("Diphenhydramine HCL")
 				.jsonPath("$.labelling[1].sections[*].heading").isEqualTo(List.of(
@@ -173,8 +168,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 	/**
 	 * ADR-0006: the FDA's own words, less the heading the Drug Facts panel prints above
 	 * them and openFDA repeats inside them. What is left reads as the panel reads, under
-	 * the heading it is read under — "Do not use" then "with any other drug containing
-	 * acetaminophen".
+	 * the heading it is read under — "Warnings" then "Liver warning".
 	 */
 	@Test
 	void renders_the_panels_words_under_the_panels_headings() {
@@ -182,11 +176,29 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.labelling[0].sections[2].heading").isEqualTo("Do not use")
-				.jsonPath("$.labelling[0].sections[2].text").value(text -> assertThat((String) text)
-						.startsWith("with any other drug containing acetaminophen"))
-				.jsonPath("$.labelling[0].sections[3].text").value(text -> assertThat((String) text)
-						.startsWith("you have liver disease"));
+				.jsonPath("$.labelling[0].sections[1].heading").isEqualTo("Warnings")
+				.jsonPath("$.labelling[0].sections[1].text").value(text -> assertThat((String) text)
+						.startsWith("Liver warning")
+						.contains("Do not use with any other drug containing acetaminophen"));
+	}
+
+	/**
+	 * ADR-0018: Nighttime Sleep Aid publishes the whole Drug Facts panel in its warnings
+	 * section and splits every subsection out as well. Each subsection is already read
+	 * inside Warnings, so it is not read a second time under its own heading.
+	 */
+	@Test
+	void never_renders_a_subsection_the_warnings_section_already_contains() {
+		api().get().uri("/api/drug-concepts/3498")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
+						"Active ingredient",
+						"Warnings"))
+				.jsonPath("$.labelling[0].sections[1].text").value(text -> assertThat((String) text)
+						.contains("Do not use ▪ for children under 12 years of age")
+						.contains("When using this product ▪ avoid alcoholic beverages"));
 	}
 
 	/**
