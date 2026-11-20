@@ -24,7 +24,8 @@ _Avoid_: trade name, brand drug, brand-name drug
 
 **Active Ingredient**:
 The substance in a product responsible for its therapeutic effect. A Drug Concept has
-exactly one.
+exactly one. A salt form RxNorm relates to it as a precise ingredient — atorvastatin
+calcium, ibuprofen lysine — is the same Active Ingredient, not another one.
 _Avoid_: ingredient, substance, molecule, compound
 
 **Combination Product**:
@@ -61,7 +62,9 @@ _Avoid_: drug type, schedule, product type
 
 **Representative Label**:
 The Label chosen to speak for a Drug Concept within one Regulatory Class. A Drug Concept
-has one per class it appears in, so it may have two.
+has one per class it appears in, so it may have two. One taken by mouth is chosen where
+the class has one, because a salt form RxNorm counts as the same Active Ingredient — an
+intravenous ibuprofen lysine — is the same Drug Concept and still not what a reader holds.
 _Avoid_: canonical label, primary label, default label
 
 **Safety Section**:

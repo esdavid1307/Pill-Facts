@@ -14,8 +14,9 @@ it — which is what keeps a 250KB-per-Label fixture set to the Labels a test re
 
 "Does not answer it" is the backend's own test rather than "returned nothing": a brand
 search can come back full of Combination Products, every one of which is dropped before
-selection (ADR-0012), and the fallback then runs. Recording on emptiness alone would
-leave those drugs a missing fixture and a 500 from the stub.
+selection (ADR-0012), or of Labels none of which is taken by mouth (ADR-0017), and the
+fallback then runs. Recording on emptiness alone would leave those drugs a missing
+fixture and a 500 from the stub.
 """
 
 import json
@@ -78,6 +79,11 @@ def speaks_for_a_drug_concept(result):
     return len(openfda.get("substance_name", [])) == 1 and bool(result.get("effective_time"))
 
 
+def taken_by_mouth(result):
+    """Mirrors Label.isTakenByMouth, which Labelling prefers over the brand (ADR-0017)."""
+    return "ORAL" in result.get("openfda", {}).get("route", [])
+
+
 def write(relative, body):
     target = FIXTURES / relative
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -92,7 +98,7 @@ def main():
             brand = get(search + BRAND_ONLY)
             write(f"{directory}-brand/{ingredient}.json", brand)
             results = json.loads(brand).get("results", [])
-            if not any(map(speaks_for_a_drug_concept, results)):
+            if not any(speaks_for_a_drug_concept(r) and taken_by_mouth(r) for r in results):
                 fallback = get(search)
                 write(f"{directory}/{ingredient}.json", fallback)
                 results = json.loads(fallback).get("results", [])

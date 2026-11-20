@@ -1,0 +1,1158 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-11-19",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 3104
+    }
+  },
+  "results": [
+    {
+      "spl_product_data_elements": [
+        "Allergy Multisymptom ACETAMINOPHEN, CHLORPHENIRAMINE MALEATE, and PHENYLEPHRINE HYDROCHLORIDE ACETAMINOPHEN ACETAMINOPHEN CHLORPHENIRAMINE MALEATE CHLORPHENIRAMINE PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ACESULFAME POTASSIUM SILICON DIOXIDE CROSCARMELLOSE SODIUM FERRIC OXIDE YELLOW MAGNESIUM STEARATE CROSPOVIDONE CELLULOSE, MICROCRYSTALLINE POLYETHYLENE GLYCOL, UNSPECIFIED POLYVINYL ALCOHOL, UNSPECIFIED POVIDONE, UNSPECIFIED STARCH, CORN PROPYLENE GLYCOL STEARIC ACID TALC TITANIUM DIOXIDE Off-White AAA;1128"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever Chlorpheniramine maleate 2 mg Antihistamine Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"60%\"> <col width=\"50%\" align=\"left\" valign=\"top\"/> <col width=\"50%\" align=\"right\" valign=\"top\"/> <thead> <tr> <th> <content styleCode=\"italics\">Active ingredients  (in each caplet) </content> </th> <th> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td>Acetaminophen 325 mg</td> <td>Pain reliever</td> </tr> <tr> <td>Chlorpheniramine maleate 2 mg</td> <td>Antihistamine</td> </tr> <tr> <td>Phenylephrine HCl 5 mg</td> <td>Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever Chlorpheniramine maleate 2 mg Antihistamine Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "purpose_table": [
+        "<table width=\"60%\"> <col width=\"50%\" align=\"left\" valign=\"top\"/> <col width=\"50%\" align=\"right\" valign=\"top\"/> <thead> <tr> <th> <content styleCode=\"italics\">Active ingredients  (in each caplet) </content> </th> <th> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td>Acetaminophen 325 mg</td> <td>Pain reliever</td> </tr> <tr> <td>Chlorpheniramine maleate 2 mg</td> <td>Antihistamine</td> </tr> <tr> <td>Phenylephrine HCl 5 mg</td> <td>Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves these symptoms of hay fever or other upper respiratory allergies: headache sinus congestion and pressure nasal congestion runny nose and sneezing minor aches and pains temporarily relieves these additional symptoms of hay fever: itching of the nose or throat itchy, watery eyes helps clear nasal passages helps decongest sinus openings and passages"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. The maximum daily dose of this product is 10 caplets (3,250 mg acetaminophen) in 24 hours. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had an allergic reaction to this product or any of its ingredients Ask a doctor before use if you have liver disease heart disease high blood pressure thyroid disease diabetes trouble urinating due to an enlarged prostate gland a breathing problem such as emphysema or chronic bronchitis glaucoma Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers taking the blood thinning drug warfarin When using this product do not exceed recommended dosage excitability may occur, especially in children drowsiness may occur alcohol, sedatives, and tranquilizers may increase drowsiness avoid alcoholic drinks be careful when driving a motor vehicle or operating machinery Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain or nasal congestion gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had an allergic reaction to this product or any of its ingredients"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease heart disease high blood pressure thyroid disease diabetes trouble urinating due to an enlarged prostate gland a breathing problem such as emphysema or chronic bronchitis glaucoma"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers taking the blood thinning drug warfarin"
+      ],
+      "when_using": [
+        "When using this product do not exceed recommended dosage excitability may occur, especially in children drowsiness may occur alcohol, sedatives, and tranquilizers may increase drowsiness avoid alcoholic drinks be careful when driving a motor vehicle or operating machinery"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain or nasal congestion gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 caplets every 4 hours swallow whole; do not crush, chew, or dissolve do not take more than 10 caplets in 24 hours children under 12 years ask a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"60%\"> <col width=\"30%\" align=\"left\" valign=\"top\"/> <col width=\"70%\" align=\"left\" valign=\"top\"/> <tbody> <tr styleCode=\"Botrule First\"> <td align=\"left\" styleCode=\"Rrule Toprule\">adults and children 12 years and over</td> <td align=\"left\" styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 2 caplets every 4 hours</item> <item>swallow whole; do not crush, chew, or dissolve</item> <item>do not take more than 10 caplets in 24 hours</item> </list> </td> </tr> <tr> <td align=\"left\" styleCode=\"Rrule\">children under  12 years </td> <td align=\"left\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>ask a doctor</item> </list> </td> </tr> </tbody> </table>"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) in a dry place retain carton for complete product information and warnings"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients acesulfame potassium, colloidal silicon dioxide, corn starch, croscarmellose sodium, crospovidone, flavor, iron oxide yellow, magnesium stearate, microcrystalline cellulose, polyethylene glycol, polyvinyl alcohol, povidone, pregelatinized starch, propylene glycol, stearic acid, talc, titanium dioxide"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL QUALITY CHOICE\u00ae NDC 63868-578-24 Allergy Multi-Symptom Pain Reliever, Nasal Decongestant, Antihistamine Acetaminophen, Phenylephrine HCl, Chlorpheniramine Maleate For Relief of: Headache Sinus Pressure | Nasal Congestion Runny Nose | Sneezing Itchy, Watery Eyes May Cause Drowsiness 24 COOL TASTE CAPLETS Actual Size image description"
+      ],
+      "set_id": "5a5aa2ee-51b7-4698-bb27-3fb9d01bbea5",
+      "id": "6015f7b8-39f2-33a9-e063-6394a90a4b65",
+      "effective_time": "20261112",
+      "version": "5",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Allergy Multisymptom"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, CHLORPHENIRAMINE MALEATE, AND PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "CHAIN DRUG MARKETING ASSOCIATION INC"
+        ],
+        "product_ndc": [
+          "63868-578"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "CHLORPHENIRAMINE MALEATE",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "spl_id": [
+          "6015f7b8-39f2-33a9-e063-6394a90a4b65"
+        ],
+        "spl_set_id": [
+          "5a5aa2ee-51b7-4698-bb27-3fb9d01bbea5"
+        ],
+        "package_ndc": [
+          "63868-578-24"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "V1Q0O9OJ9Z",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Duraflu ACETAMINOPHEN, DEXTROMETHORPHAN HBr, GUAIFENESIN, PSEUDOEPHEDRINE HCl PSEUDOEPHEDRINE HYDROCHLORIDE PSEUDOEPHEDRINE ACETAMINOPHEN ACETAMINOPHEN DEXTROMETHORPHAN HYDROBROMIDE DEXTROMETHORPHAN GUAIFENESIN GUAIFENESIN MAGNESIUM STEARATE CELLULOSE, MICROCRYSTALLINE SODIUM STARCH GLYCOLATE TYPE A POTATO PE;723"
+      ],
+      "spl_unclassified_section": [
+        "Duraflu Tablets Rev. 09/17 Drug Facts",
+        "Other information Store at 20\u00b0- 25\u00b0 Celsius (68\u00b0 \u2013 77\u00b0 Fahrenheit) as defined in the (USP/NF). Dispense in tight, light-resistant container."
+      ],
+      "active_ingredient": [
+        "Active Ingredients Acetaminophen 325 mg Dextromethorphan HBr 20 mg Guaifenesin 200 mg Pseudoephedrine HCl 60 mg"
+      ],
+      "purpose": [
+        "Purpose Pain Reliever Antitussive Expectorant Nasal Decongestant"
+      ],
+      "indications_and_usage": [
+        "Temporarily relieves minor aches and pains fever headache cough due to minor throat and bronchial irritation helps loosen phlegm (mucus) and thin bronchial secretions to drain bronchial tubes nasal congestion due to the common cold"
+      ],
+      "warnings": [
+        "Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take: More than 3,000 mg of acetaminophen in 24 hrs; with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Do not Exceed recommended dosage Allergy alert:acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. \u25a0 KEEP THIS AND ALL MEDICATION OUT OF REACH OF CHILDREN Keep this and all medications out of the reach of children. Do not use this product with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. for more than 10 days for pain unless directed by a doctor for more than 3 days for fever unless directed by a doctor if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson\u2019s disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product Ask a doctor before use if you have \u25a0 liver disease \u25a0 heart disease \u25a0 high blood pressure \u25a0 thyroid disease \u25a0 diabetes \u25a0 trouble urinating \u25a0 due to an enlarged prostate gland \u25a0 persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema \u25a0 cough that occurs with too much phlegm (mucus) Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin. When using this product do not exceed recommended dosage. If pregnant or breast feeding, ask a health professional before use. Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain, cough, or nasal congestion gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur cough comes back or occurs with rash or headache that lasts These could be signs of a serious condition"
+      ],
+      "keep_out_of_reach_of_children": [
+        "\u25a0 KEEP THIS AND ALL MEDICATION OUT OF REACH OF CHILDREN Keep this and all medications out of the reach of children."
+      ],
+      "do_not_use": [
+        "Do not use this product with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. for more than 10 days for pain unless directed by a doctor for more than 3 days for fever unless directed by a doctor if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson\u2019s disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25a0 liver disease \u25a0 heart disease \u25a0 high blood pressure \u25a0 thyroid disease \u25a0 diabetes \u25a0 trouble urinating \u25a0 due to an enlarged prostate gland \u25a0 persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema \u25a0 cough that occurs with too much phlegm (mucus)"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin."
+      ],
+      "when_using": [
+        "When using this product do not exceed recommended dosage."
+      ],
+      "pregnancy": [
+        "If pregnant or breast feeding, ask a health professional before use."
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain, cough, or nasal congestion gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur cough comes back or occurs with rash or headache that lasts These could be signs of a serious condition"
+      ],
+      "dosage_and_administration": [
+        "Directions Adults and children 12 years of age and over: 1 tablet every 4 hours not to exceed 4 tablets in 24 hours or as directed by a doctor. Children 6 to under 12 years of age: \u00bd tablet every 4 hours not to exceed 2 tablets in 24 hours or as directed by a doctor. Children under 6 years of age: Consult a doctor. When using this product do not exceed recommended dosage."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients magnesium stearate, microcrystalline cellulose, sodium starch glycolate"
+      ],
+      "questions": [
+        "Questions or comments? 800-882-1041 Manufactured For: Poly Pharmaceuticals, Inc. Huntsville, AL 35763 Rev. 09/17"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL DurafluBase DurafluInsert DurafluInsert2"
+      ],
+      "set_id": "55fffc1d-8449-4c28-a391-c6f60dd85622",
+      "id": "60077867-4000-619b-e063-6394a90a8fd3",
+      "effective_time": "20261111",
+      "version": "9",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Duraflu"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, DEXTROMETHORPHAN HBR, GUAIFENESIN, PSEUDOEPHEDRINE HCL"
+        ],
+        "manufacturer_name": [
+          "Poly Pharmaceuticals, Inc."
+        ],
+        "product_ndc": [
+          "50991-535"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "PSEUDOEPHEDRINE HYDROCHLORIDE",
+          "ACETAMINOPHEN",
+          "DEXTROMETHORPHAN HYDROBROMIDE",
+          "GUAIFENESIN"
+        ],
+        "spl_id": [
+          "60077867-4000-619b-e063-6394a90a8fd3"
+        ],
+        "spl_set_id": [
+          "55fffc1d-8449-4c28-a391-c6f60dd85622"
+        ],
+        "package_ndc": [
+          "50991-535-01",
+          "50991-535-02"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0350991535013"
+        ],
+        "nui": [
+          "N0000193956",
+          "N0000008867",
+          "N0000009560"
+        ],
+        "pharm_class_epc": [
+          "Expectorant [EPC]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Respiratory Secretion Viscosity [PE]",
+          "Increased Respiratory Secretions [PE]"
+        ],
+        "unii": [
+          "6V9V2RYJ8N",
+          "362O9ITL9D",
+          "9D2RTI9KYH",
+          "495W7451VQ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Alka-Seltzer Plus Severe Cold and Flu PowerFast Fizz chlorpheniramine maleate, acetaminophen, phenylephrine hydrochloride, dextromethorphan hydrobromide DEXTROMETHORPHAN HYDROBROMIDE DEXTROMETHORPHAN CHLORPHENIRAMINE MALEATE CHLORPHENIRAMINE PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ACETAMINOPHEN ACETAMINOPHEN FD&C YELLOW NO. 6 DIMETHICONE CALCIUM SILICATE MAGNESIUM STEARATE MALTODEXTRIN MANNITOL POVIDONE FD&C RED NO. 40 ANHYDROUS CITRIC ACID SUCRALOSE POTASSIUM BICARBONATE SODIUM BICARBONATE Speckled ASP;FLU"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each tablet) Purposes Acetaminophen 250 mg\u2026\u2026\u2026\u2026\u2026.\u2026\u2026\u2026...Pain reliever/fever reducer Chlorpheniramine maleate 2 mg\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026..\u2026\u2026..Antihistamine Dextromethorphan hydrobromide 10 mg\u2026\u2026\u2026\u2026\u2026Cough suppressant Phenylephrine hydrochloride 5 mg\u2026\u2026\u2026\u2026\u2026\u2026\u2026.Nasal decongestant"
+      ],
+      "purpose": [
+        ""
+      ],
+      "indications_and_usage": [
+        "Uses \u00b7 temporarily relieves these symptoms due to a cold or flu: \u00b7 minor aches and pains \u00b7 headache \u00b7 cough \u00b7 sore throat \u00b7 runny nose \u00b7 sneezing \u00b7 nasal and sinus congestion \u00b7 temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take \u00b7 more than 4,000 mg of acetaminophen in 24 hours \u00b7 with other drugs containing acetaminophen \u00b7 3 or more alcoholic drinks every day while using this product Allergy alert: Acetaminophen may cause severe skin or severe allergic reactions. Symptoms may include: \u00b7 skin reddening \u00b7 blisters \u00b7 rash \u00b7 hives \u00b7 facial swelling \u00b7 asthma (wheezing) \u00b7 shock If a skin or general allergic reaction occurs, stop use and seek medical help right away. Sore throat warning: If sore throat is severe, persists for more than 2 days, is accompanied or followed by fever, headache, rash, nausea, or vomiting, consult a doctor promptly. Do not use to sedate children Do not use \u25cf with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. \u25cf if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. \u25cf if you have ever had an allergic reaction to this product or any of its ingredients \u25cf in children under 12 years of age Ask a doctor before use if you have \u25cf liver disease \u25cf heart disease \u25cf high blood pressure \u25cf thyroid disease \u25cf diabetes \u25cf glaucoma \u25cf cough with excessive phlegm (mucus) \u25cf a breathing problem such as emphysema or chronic bronchitis \u25cf difficulty in urination due to enlargement of the prostate gland \u25cf persistent or chronic cough such as occurs with smoking, asthma, or emphysema \u25cf a sodium restricted diet Ask a doctor or pharmacist before use if you are \u25cf taking the blood thinning drug warfarin \u25cf taking sedatives or tranquilizers When using this product \u25cf do not exceed recommended dosage \u25cf may cause marked drowsiness \u25cf avoid alcoholic drinks \u25cf alcohol, sedatives, and tranquilizers may increase drowsiness \u25cf be careful when driving a motor vehicle or operating machinery \u25cf excitability may occur, especially in childre Stop use and ask a doctor if \u00b7 pain, cough, or nasal congestion gets worse or lasts more than 7 days \u00b7 fever gets worse or lasts more than 3 days \u00b7 redness or swelling is present \u00b7 new symptoms occur \u00b7 cough comes back or occurs with rash or headache that lasts. These could be signs of a serious condition. \u00b7 nervousness, dizziness, or sleeplessness occurs If pregnant or breast-feeding , ask a health professional before use. Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms"
+      ],
+      "do_not_use": [
+        "Do not use \u25cf with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. \u25cf if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. \u25cf if you have ever had an allergic reaction to this product or any of its ingredients \u25cf in children under 12 years of age"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25cf liver disease \u25cf heart disease \u25cf high blood pressure \u25cf thyroid disease \u25cf diabetes \u25cf glaucoma \u25cf cough with excessive phlegm (mucus) \u25cf a breathing problem such as emphysema or chronic bronchitis \u25cf difficulty in urination due to enlargement of the prostate gland \u25cf persistent or chronic cough such as occurs with smoking, asthma, or emphysema \u25cf a sodium restricted diet"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are \u25cf taking the blood thinning drug warfarin \u25cf taking sedatives or tranquilizers"
+      ],
+      "when_using": [
+        "When using this product \u25cf do not exceed recommended dosage \u25cf may cause marked drowsiness \u25cf avoid alcoholic drinks \u25cf alcohol, sedatives, and tranquilizers may increase drowsiness \u25cf be careful when driving a motor vehicle or operating machinery \u25cf excitability may occur, especially in childre"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u00b7 pain, cough, or nasal congestion gets worse or lasts more than 7 days \u00b7 fever gets worse or lasts more than 3 days \u00b7 redness or swelling is present \u00b7 new symptoms occur \u00b7 cough comes back or occurs with rash or headache that lasts. These could be signs of a serious condition. \u00b7 nervousness, dizziness, or sleeplessness occurs"
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding , ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. In case of overdose, get medical help or contact a Poison Control Center right away. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms"
+      ],
+      "dosage_and_administration": [
+        "Directions Directions \u00b7 do not take more than the recommended dose \u00b7 adults and children 12 years and over: take 2 tablets fully dissolved in 4 oz of water every 4 hours. Do not exceed 8 tablets in 24 hours or as directed by a doctor. \u00b7 children under 12 years: do not use"
+      ],
+      "other_safety_information": [
+        "Other information \u25cf each tablet contains: potassium 80 mg; sodium 356 mg \u25cf store at room temperature. Avoid excessive heat."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients anhydrous citric acid, calcium silicate, dimethicone, FD&C red #40, FD&C yellow #6, flavors, magnesium stearate, maltodextrin, mannitol, potassium bicarbonate, povidone, sodium bicarbonate, sucralose"
+      ],
+      "questions": [
+        "Questions or comments Questions or comments? 1-800-986-0369 (Mon-Fri 9AM - 5PM EST)"
+      ],
+      "package_label_principal_display_panel": [
+        "PDP"
+      ],
+      "set_id": "dd7da15a-4e0b-405f-e053-2995a90a06d2",
+      "id": "6003f4e2-fdf5-5d02-e063-6294a90a9c71",
+      "effective_time": "20261111",
+      "version": "16",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Alka-Seltzer Plus Severe Cold and Flu PowerFast Fizz"
+        ],
+        "generic_name": [
+          "CHLORPHENIRAMINE MALEATE, ACETAMINOPHEN, PHENYLEPHRINE HYDROCHLORIDE, DEXTROMETHORPHAN HYDROBROMIDE"
+        ],
+        "manufacturer_name": [
+          "Bayer HealthCare LLC."
+        ],
+        "product_ndc": [
+          "0280-0022"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "DEXTROMETHORPHAN HYDROBROMIDE",
+          "CHLORPHENIRAMINE MALEATE",
+          "PHENYLEPHRINE HYDROCHLORIDE",
+          "ACETAMINOPHEN"
+        ],
+        "spl_id": [
+          "6003f4e2-fdf5-5d02-e063-6294a90a9c71"
+        ],
+        "spl_set_id": [
+          "dd7da15a-4e0b-405f-e053-2995a90a06d2"
+        ],
+        "package_ndc": [
+          "0280-0022-01",
+          "0280-0022-02",
+          "0280-0022-03",
+          "0280-0022-04",
+          "0280-0022-05"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0016500598831"
+        ],
+        "unii": [
+          "9D2RTI9KYH",
+          "V1Q0O9OJ9Z",
+          "04JA59TNSJ",
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Head Congestion Mucus PE ACETAMINOPHEN, GUAIFENESIN, and PHENYLEPHRINE HYDROCHLORIDE ACETAMINOPHEN ACETAMINOPHEN GUAIFENESIN GUAIFENESIN PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE SILICON DIOXIDE CROSCARMELLOSE SODIUM CROSPOVIDONE MAGNESIUM STEARATE MALTODEXTRIN CELLULOSE, MICROCRYSTALLINE POLYETHYLENE GLYCOL, UNSPECIFIED POLYVINYL ALCOHOL, UNSPECIFIED POVIDONE, UNSPECIFIED STARCH, PREGELATINIZED CORN STEARIC ACID TALC TITANIUM DIOXIDE AAA;1173"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever/fever reducer Guaifenesin 200 mg Expectorant Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"596\"> <col width=\"70%\" valign=\"top\" align=\"left\"/> <col width=\"30%\" valign=\"top\" align=\"right\"/> <thead> <tr styleCode=\"First Last\"> <th align=\"left\"> <content styleCode=\"italics\">Active ingredients (in each caplet)</content> </th> <th align=\"right\"> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td align=\"left\">Acetaminophen 325 mg</td> <td align=\"right\">Pain reliever/fever reducer</td> </tr> <tr> <td align=\"left\">Guaifenesin 200 mg</td> <td align=\"right\">Expectorant</td> </tr> <tr> <td align=\"left\">Phenylephrine HCl 5 mg</td> <td align=\"right\">Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever/fever reducer Guaifenesin 200 mg Expectorant Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "purpose_table": [
+        "<table width=\"596\"> <col width=\"70%\" valign=\"top\" align=\"left\"/> <col width=\"30%\" valign=\"top\" align=\"right\"/> <thead> <tr styleCode=\"First Last\"> <th align=\"left\"> <content styleCode=\"italics\">Active ingredients (in each caplet)</content> </th> <th align=\"right\"> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td align=\"left\">Acetaminophen 325 mg</td> <td align=\"right\">Pain reliever/fever reducer</td> </tr> <tr> <td align=\"left\">Guaifenesin 200 mg</td> <td align=\"right\">Expectorant</td> </tr> <tr> <td align=\"left\">Phenylephrine HCl 5 mg</td> <td align=\"right\">Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves these symptoms associated with hay fever or other upper respiratory allergies, and the common cold: sinus congestion and pressure headache minor aches and pains nasal congestion helps loosen phlegm (mucus) and thin bronchial secretions to rid the bronchial passageways of bothersome mucus and make coughs more productive temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. The maximum daily dose of this product is 10 caplets (3,250 mg acetaminophen) in 24 hours. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had an allergic reaction to this product or any of its ingredients Ask a doctor before use if you have liver disease heart disease high blood pressure thyroid disease diabetes trouble urinating due to an enlarged prostate gland persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema cough that occurs with too much phlegm (mucus) Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin When using this product do not exceed recommended dosage Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain, nasal congestion, or cough gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur cough comes back or occurs with rash or headache that lasts These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had an allergic reaction to this product or any of its ingredients"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease heart disease high blood pressure thyroid disease diabetes trouble urinating due to an enlarged prostate gland persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema cough that occurs with too much phlegm (mucus)"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin"
+      ],
+      "when_using": [
+        "When using this product do not exceed recommended dosage"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain, nasal congestion, or cough gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur cough comes back or occurs with rash or headache that lasts These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 caplets every 4 hours do not take more than 10 caplets in 24 hours children under 12 years ask a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"50%\"> <col width=\"25%\" valign=\"top\" align=\"left\"/> <col width=\"75%\" valign=\"top\" align=\"left\"/> <tbody> <tr styleCode=\"Botrule\"> <td align=\"left\" styleCode=\"Rrule Toprule\">adults and children 12 years and over</td> <td align=\"left\" styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 2 caplets every 4 hours</item> <item>do not take more than 10 caplets in 24 hours</item> </list> </td> </tr> <tr> <td align=\"left\" styleCode=\"Rrule\">children under 12 years</td> <td align=\"left\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>ask a doctor</item> </list> </td> </tr> </tbody> </table>"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20-25\u00baC (68-77\u00baF) in a dry place retain carton for complete product information and warnings"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients colloidal silicon dioxide, corn starch, croscarmellose sodium, crospovidone, magnesium stearate, maltodextrin, microcrystalline cellulose, polyethylene glycol, polyvinyl alcohol, povidone, pregelatinized starch, stearic acid, talc, titanium dioxide"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL Quality Choice\u00ae NDC 63868-103-24 \u2020Compare to Active Ingredients in SUDAFED PE\u00ae Head Congestion + Mucus Head Congestion + Mucus PE Acetaminophen, Guaifenesin, Phenylephrine HCl Pain Reliever | Fever Reducer, Expectorant, Nasal Decongestant For Relief of: Sinus Pressure Headache Chest Congestion Non-Drowsy Actual Size 24 CAPLETS image description"
+      ],
+      "set_id": "0955d856-cc4e-4ef2-8bc0-1a632a5b5f79",
+      "id": "5ff363b8-040e-02af-e063-6394a90a018d",
+      "effective_time": "20261110",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Head Congestion Mucus PE"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, GUAIFENESIN, AND PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "CHAIN DRUG MARKETING ASSOCIATION INC"
+        ],
+        "product_ndc": [
+          "63868-103"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "GUAIFENESIN",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "spl_id": [
+          "5ff363b8-040e-02af-e063-6394a90a018d"
+        ],
+        "spl_set_id": [
+          "0955d856-cc4e-4ef2-8bc0-1a632a5b5f79"
+        ],
+        "package_ndc": [
+          "63868-103-24"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0635515987395"
+        ],
+        "nui": [
+          "N0000193956",
+          "N0000008867",
+          "N0000009560"
+        ],
+        "pharm_class_epc": [
+          "Expectorant [EPC]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Respiratory Secretion Viscosity [PE]",
+          "Increased Respiratory Secretions [PE]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "495W7451VQ",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Mucus Relief Sinus Severe Congestion Relief ACETAMINOPHEN, GUAIFENESIN, and PHENYLEPHRINE HYDROCHLORIDE ACETAMINOPHEN ACETAMINOPHEN GUAIFENESIN GUAIFENESIN PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE STARCH, CORN STEARIC ACID TALC TITANIUM DIOXIDE SILICON DIOXIDE CROSCARMELLOSE SODIUM CROSPOVIDONE, UNSPECIFIED FD&C RED NO. 40 FD&C YELLOW NO. 6 MAGNESIUM STEARATE MALTODEXTRIN CELLULOSE, MICROCRYSTALLINE POLYETHYLENE GLYCOL, UNSPECIFIED POLYVINYL ALCOHOL, UNSPECIFIED POVIDONE, UNSPECIFIED AAA;1166"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever Guaifenesin 200 mg Expectorant Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"65%\"> <col width=\"60%\" valign=\"top\" align=\"left\"/> <col width=\"40%\" valign=\"top\" align=\"right\"/> <thead> <tr styleCode=\"First Last\"> <th align=\"left\"> <content styleCode=\"italics\">Active ingredients (in each caplet)</content> </th> <th align=\"right\"> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td align=\"left\">Acetaminophen 325 mg</td> <td align=\"right\">Pain reliever</td> </tr> <tr> <td align=\"left\">Guaifenesin 200 mg</td> <td align=\"right\">Expectorant</td> </tr> <tr> <td align=\"left\">Phenylephrine HCl 5 mg</td> <td align=\"right\">Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever Guaifenesin 200 mg Expectorant Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "purpose_table": [
+        "<table width=\"65%\"> <col width=\"60%\" valign=\"top\" align=\"left\"/> <col width=\"40%\" valign=\"top\" align=\"right\"/> <thead> <tr styleCode=\"First Last\"> <th align=\"left\"> <content styleCode=\"italics\">Active ingredients (in each caplet)</content> </th> <th align=\"right\"> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td align=\"left\">Acetaminophen 325 mg</td> <td align=\"right\">Pain reliever</td> </tr> <tr> <td align=\"left\">Guaifenesin 200 mg</td> <td align=\"right\">Expectorant</td> </tr> <tr> <td align=\"left\">Phenylephrine HCl 5 mg</td> <td align=\"right\">Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves: nasal congestion headache minor aches and pains sinus congestion and pressure promotes nasal and/or sinus drainage helps loosen phlegm (mucus) and thin bronchial secretions to rid the bronchial passageways of bothersome mucus and make coughs more productive"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if you take more than 12 caplets in 24 hours, which is the maximum daily amount with other drugs containing acetaminophen 3 or more alcoholic drinks daily while using this product Allergy alert acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. Ask a doctor before use if you have liver disease heart disease diabetes high blood pressure thyroid disease trouble urinating due to an enlarged prostate gland persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema cough that occurs with too much phlegm (mucus) Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin When using this product do not use more than directed Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain, nasal congestion, or cough gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur cough comes back or occurs with rash or persistent headache These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease heart disease diabetes high blood pressure thyroid disease trouble urinating due to an enlarged prostate gland persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis, or emphysema cough that occurs with too much phlegm (mucus)"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin"
+      ],
+      "when_using": [
+        "When using this product do not use more than directed"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain, nasal congestion, or cough gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur cough comes back or occurs with rash or persistent headache These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "overdosage": [
+        "Overdose warning Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see Overdose warning ) do not take more than 12 caplets in any 24-hour period adults and children 12 years and older: take 2 caplets every 4 hours children under 12 years of age: do not use"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20-25\u00b0C (68-77\u00b0F) in a dry place retain outer package for complete product information"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients colloidal silicon dioxide, croscarmellose sodium, crospovidone, FD&C red #40 aluminum lake, FD&C yellow #6 aluminum lake, magnesium stearate, maltodextrin, microcrystalline cellulose, polyethylene glycol, polyvinyl alcohol, povidone, pregelatinized starch, stearic acid, talc, titanium dioxide"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL Quality Choice\u00ae NDC 63868-722-20 \u2020Compare to Active Ingredients in Mucinex\u00ae Sinus-Max\u2122 Severe Congestion Relief Maximum Strength* Mucus Relief Sinus Severe Congestion Relief Pain Reliever, Expectorant, Nasal Decongestant Acetaminophen, Guaifenesin, Phenylephrine HCl For Relief of: Sinus Congestion Headache Thins & Loosens Mucus For Ages 12+ 20 Caplets image description"
+      ],
+      "set_id": "0ea270b7-9c28-49fb-9615-c4afdbdbc8f1",
+      "id": "5ff43970-f1d2-c8ff-e063-6394a90af2e6",
+      "effective_time": "20261110",
+      "version": "5",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Mucus Relief Sinus Severe Congestion Relief"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, GUAIFENESIN, AND PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "Chain Drug Marketing Association"
+        ],
+        "product_ndc": [
+          "63868-722"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "GUAIFENESIN",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "spl_id": [
+          "5ff43970-f1d2-c8ff-e063-6394a90af2e6"
+        ],
+        "spl_set_id": [
+          "0ea270b7-9c28-49fb-9615-c4afdbdbc8f1"
+        ],
+        "package_ndc": [
+          "63868-722-20"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0635515994072"
+        ],
+        "nui": [
+          "N0000193956",
+          "N0000008867",
+          "N0000009560"
+        ],
+        "pharm_class_epc": [
+          "Expectorant [EPC]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Respiratory Secretion Viscosity [PE]",
+          "Increased Respiratory Secretions [PE]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "495W7451VQ",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Pain Relief Acetaminophen ACETAMINOPHEN ACETAMINOPHEN ACESULFAME POTASSIUM HYPROMELLOSES POLYETHYLENE GLYCOL, UNSPECIFIED POVIDONE STARCH, PREGELATINIZED CORN PROPYLENE GLYCOL SODIUM STARCH GLYCOLATE TYPE A CORN STEARIC ACID TITANIUM DIOXIDE AAA;1098"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each caplet) Acetaminophen 500 mg"
+      ],
+      "purpose": [
+        "Purpose Pain reliever/fever reducer"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves minor aches and pains due to: the common cold headache backache minor pain of arthritis toothache muscular aches premenstrual and menstrual cramps temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are allergic to acetaminophen or any of the inactive ingredients in this product Ask a doctor before use if you have liver disease. Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin Stop use and ask a doctor if pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days new symptoms occur redness or swelling is present These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are allergic to acetaminophen or any of the inactive ingredients in this product"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease."
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days new symptoms occur redness or swelling is present These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 caplets every 6 hours while symptoms last swallow whole \u2013 do not crush, chew, or dissolve do not take more than 6 caplets in 24 hours, unless directed by a doctor do not use for more than 10 days unless directed by a doctor children under 12 years ask a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"75%\" styleCode=\"Noautorules\"> <col width=\"35%\" align=\"left\" valign=\"top\"/> <col width=\"65%\" align=\"left\" valign=\"top\"/> <tbody> <tr styleCode=\"Botrule\"> <td styleCode=\"Toprule Rrule\">adults and children 12 years and over</td> <td styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 2 caplets every 6 hours while symptoms last</item> <item>swallow whole &#x2013; do not crush, chew, or dissolve</item> <item>do not take more than 6 caplets in 24 hours, unless directed by a doctor</item> <item>do not use for more than 10 days unless directed by a doctor</item> </list> </td> </tr> <tr> <td styleCode=\"Rrule\">children under 12 years</td> <td> <list listType=\"unordered\" styleCode=\"Square\"> <item>ask a doctor</item> </list> </td> </tr> </tbody> </table>"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20-25\u00b0C (68-77\u00b0F) retain carton for complete product information"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients acesulfame potassium, flavor, hypromellose, polyethylene glycol, povidone, pregelatinized starch, propylene glycol, sodium starch glycolate, stearic acid, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? 1-844-705-4384"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL DISCOUNT drug mart FOOD FAIR NDC 53943-298-03 \u2020Compare to the active ingredient in Tylenol\u00ae Extra Strength Extra Strength Pain Relief Acetaminophen Caplets, 500 mg Pain Reliever / Fever Reducer Instant Cooling Sensation For Adults COOL TASTE CAPLETS Actual Size 100 CAPLETS - 500 MG EACH image description"
+      ],
+      "set_id": "146c735b-5081-4de4-9025-d939d560bbba",
+      "id": "5ff1d81f-2241-c31a-e063-6394a90ad756",
+      "effective_time": "20261110",
+      "version": "5",
+      "openfda": {
+        "application_number": [
+          "M013"
+        ],
+        "brand_name": [
+          "Pain Relief"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "DISCOUNT DRUG MART"
+        ],
+        "product_ndc": [
+          "53943-298"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN"
+        ],
+        "spl_id": [
+          "5ff1d81f-2241-c31a-e063-6394a90ad756"
+        ],
+        "spl_set_id": [
+          "146c735b-5081-4de4-9025-d939d560bbba"
+        ],
+        "package_ndc": [
+          "53943-298-03"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0093351121760"
+        ],
+        "unii": [
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Target Maximum Strength Cold Flu and Sore Throat Acetaminophen, Dextromethorphan HBr, Guaifenesin, Phenylephrine HCl ACETAMINOPHEN ACETAMINOPHEN DEXTROMETHORPHAN HYDROBROMIDE DEXTROMETHORPHAN GUAIFENESIN GUAIFENESIN PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ANHYDROUS CITRIC ACID EDETATE DISODIUM FD&C BLUE NO. 1 FD&C RED NO. 40 POTASSIUM CITRATE PROPYLENE GLYCOL PROPYL GALLATE WATER SODIUM BENZOATE SORBITOL SUCRALOSE XANTHAN GUM"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each 20 mL) Acetaminophen 650 mg Dextromethorphan HBr 20 mg Guaifenesin 400 mg Phenylephrine HCl 10 mg"
+      ],
+      "purpose": [
+        "Purposes Pain reliever/fever reducer Cough suppressant Expectorant Nasal decongestant"
+      ],
+      "indications_and_usage": [
+        "Uses \u25aa temporarily relieves these common cold and flu symptoms: \u25aa cough \u25aa nasal congestion \u25aa minor aches and pain \u25aa sore throat \u25aa headache \u25aa stuffy nose \u25aa sinus congestion and pressure \u25aa temporarily reduces fever \u25aa temporarily promotes nasal and/or sinus drainage \u25aa helps loosen phlegm (mucus) and thin bronchial secretions to rid the bronchial passageways of bothersome mucus and make coughs more productive"
+      ],
+      "warnings": [
+        "Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take: \u25aa more than 6 doses in 24 hours, which is the maximum daily amount \u25aa with other drugs containing acetaminophen \u25aa 3 or more alcoholic drinks everyday while using this product Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may include: \u25aa skin reddening \u25aa blisters \u25aa rash If a skin reaction occurs, stop use and seek medical help right away. Sore throat warning: If sore throat is severe, persists for more than 2 days, is accompanied or followed by fever, headache, rash, nausea or vomiting, consult a doctor promptly. Do not use \u25aa with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. \u25aa if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. Ask a doctor before use if you have \u25aa liver disease \u25aa heart disease \u25aa high blood pressure \u25aa thyroid disease \u25aa diabetes \u25aa trouble urinating due to an enlarged prostate gland \u25aa persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis or emphysema \u25aa cough that occurs with too much phlegm (mucus) Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin. When using this product, do not use more than directed. Stop use and ask a doctor if \u25aa nervousness, dizziness or sleeplessness occur \u25aa pain, nasal congestion or cough gets worse or lasts more than 7 days \u25aa fever gets worse or lasts more than 3 days \u25aa redness or swelling is present \u25aa new symptoms occur \u25aa cough comes back, or occurs with fever, rash or headache that lasts. These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning: Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use \u25aa with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. \u25aa if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product."
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have \u25aa liver disease \u25aa heart disease \u25aa high blood pressure \u25aa thyroid disease \u25aa diabetes \u25aa trouble urinating due to an enlarged prostate gland \u25aa persistent or chronic cough such as occurs with smoking, asthma, chronic bronchitis or emphysema \u25aa cough that occurs with too much phlegm (mucus)"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin."
+      ],
+      "when_using": [
+        "When using this product, do not use more than directed."
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if \u25aa nervousness, dizziness or sleeplessness occur \u25aa pain, nasal congestion or cough gets worse or lasts more than 7 days \u25aa fever gets worse or lasts more than 3 days \u25aa redness or swelling is present \u25aa new symptoms occur \u25aa cough comes back, or occurs with fever, rash or headache that lasts. These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children. Overdose warning: Taking more than the recommended dose (overdose) may cause liver damage. In case of overdose, get medical help or contact a Poison Control Center right away at 1-800-222-1222. Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "dosage_and_administration": [
+        "Directions \u25aa do not take more than directed (see Overdose warning) \u25aa do not take more than 6 doses in any 24-hour period \u25aa measure only with dosing cup provided. \u25aa do not use dosing cup with other products \u25aa dose as follows or as directed by a doctor \u25aa mL = milliliter \u25aa adults and children 12 years of age and older: 20 mL in dosing cup provided every 4 hours \u25aa children under 12 years of age: Do not use"
+      ],
+      "spl_unclassified_section": [
+        "Other information \u25aa each 20 mL contains: sodium 8 mg \u25aa store at room temperature \u25aa do not refrigerate."
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients anhydrous citric acid, edetate disodium, FD&C Blue No. 1, FD&C Red No. 40, flavor, potassium citrate, propylene glycol, propyl gallate, purified water, sodium benzoate, sorbitol, sucralose, xanthan gum"
+      ],
+      "questions": [
+        "Questions or comments? 1-866-467-2748"
+      ],
+      "package_label_principal_display_panel": [
+        "Principal Display Panel Compare to active ingredients in Maximum Strength \u2021 Mucinex \u00ae Fast-Max \u00ae Cold, Flu & Sore Throat* NDC# 11673-773-06 Maximum Strength \u2021 Cold, Flu & Sore Throat Acetaminophen - Pain Reliever/Fever Reducer Dextromethorphan HBr - Cough Suppressant Guaifenesin - Expectorant Phenylephrine HCl - Nasal Decongestant \u2022 Controls Cough, This & Loosens Mucus \u2022 Nasal & Chest Congestion \u2022 Sinus Pressure & Congestion \u2022 Body Pain, Headache, Fever & Sore Throat For Ages 12+ 6 FL OZ (180 mL) Tamper evident: Do not use if printed seal under cap is broken or missing. \u2021 Per 4-hour dose. Up & up AGES 12+ YEARS Distributed by: Target Corp. Mpls., MN 5403 *This product is not manufactured or distributed by Reckitt Benckiser, the distributer of Maximum Strength Mucinex\u00ae Fast-Max\u2122 Cold, Flu & Sore Throat. PEEL CORNER TO READ COMPELETE DRUG FACTS AND INFORMATION Target Maximum Strength Cold, Flu and Sore Throat"
+      ],
+      "set_id": "1d3ad31f-ef4d-45ba-a6e3-13d66b51d1d2",
+      "id": "87cd152f-7faa-4935-b38d-280bf28e0892",
+      "effective_time": "20261110",
+      "version": "8",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Target Maximum Strength Cold Flu and Sore Throat"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, DEXTROMETHORPHAN HBR, GUAIFENESIN, PHENYLEPHRINE HCL"
+        ],
+        "manufacturer_name": [
+          "TARGET CORPORATION"
+        ],
+        "product_ndc": [
+          "11673-773"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "DEXTROMETHORPHAN HYDROBROMIDE",
+          "GUAIFENESIN",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "spl_id": [
+          "87cd152f-7faa-4935-b38d-280bf28e0892"
+        ],
+        "spl_set_id": [
+          "1d3ad31f-ef4d-45ba-a6e3-13d66b51d1d2"
+        ],
+        "package_ndc": [
+          "11673-773-06"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "nui": [
+          "N0000193956",
+          "N0000008867",
+          "N0000009560"
+        ],
+        "pharm_class_epc": [
+          "Expectorant [EPC]"
+        ],
+        "pharm_class_pe": [
+          "Decreased Respiratory Secretion Viscosity [PE]",
+          "Increased Respiratory Secretions [PE]"
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "9D2RTI9KYH",
+          "495W7451VQ",
+          "04JA59TNSJ"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Pain Relief Acetaminophen ACETAMINOPHEN ACETAMINOPHEN POVIDONE STARCH, PREGELATINIZED CORN SODIUM STARCH GLYCOLATE TYPE A CORN STEARIC ACID M2A3;57344"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each tablet) Acetaminophen 325 mg"
+      ],
+      "purpose": [
+        "Purpose Pain reliever/fever reducer"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves minor aches and pains due to: the common cold headache backache minor pain of arthritis toothache muscular aches premenstrual and menstrual cramps temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if adult takes more than 4,000 mg of acetaminophen in 24 hours child takes more than 5 doses in 24 hours, which is the maximum daily amount taken with other drugs containing acetaminophen adult has 3 or more alcoholic drinks every day while using this product Allergy alert acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if the user is allergic to acetaminophen or any of the inactive ingredients in this product Ask a doctor before use if the user has liver disease. Ask a doctor or pharmacist before use if the user is taking the blood thinning drug warfarin Stop use and ask a doctor if pain gets worse or lasts more than 10 days in adults pain gets worse or lasts more than 5 days in children under 12 years fever gets worse or lasts more than 3 days new symptoms occur redness or swelling is present These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if the user is allergic to acetaminophen or any of the inactive ingredients in this product"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if the user has liver disease."
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if the user is taking the blood thinning drug warfarin"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if pain gets worse or lasts more than 10 days in adults pain gets worse or lasts more than 5 days in children under 12 years fever gets worse or lasts more than 3 days new symptoms occur redness or swelling is present These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 tablets every 4 to 6 hours while symptoms last do not take more than 10 tablets in 24 hours do not use for more than 10 days unless directed by a doctor children 6-11 years take 1 tablet every 4 to 6 hours while symptoms last do not take more than 5 tablets in 24 hours do not use for more than 5 days unless directed by a doctor children under 6 years ask a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"70%\" styleCode=\"Noautorules\"> <col width=\"30%\" align=\"left\" valign=\"top\"/> <col width=\"70%\" align=\"left\" valign=\"top\"/> <tbody> <tr styleCode=\"Botrule\"> <td styleCode=\"Toprule Rrule\">adults and children 12 years and over</td> <td styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 2 tablets every 4 to 6 hours while symptoms last</item> <item>do not take more than 10 tablets in 24 hours</item> <item>do not use for more than 10 days unless directed by a doctor</item> </list> </td> </tr> <tr styleCode=\"Botrule\"> <td styleCode=\"Toprule Rrule\">children 6-11 years</td> <td styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 1 tablet every 4 to 6 hours while symptoms last</item> <item>do not take more than 5 tablets in 24 hours</item> <item>do not use for more than 5 days unless directed by a doctor</item> </list> </td> </tr> <tr> <td styleCode=\"Rrule\">children under 6 years</td> <td> <list listType=\"unordered\" styleCode=\"Square\"> <item>ask a doctor</item> </list> </td> </tr> </tbody> </table>"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20-25\u00b0C (68-77\u00b0F) retain carton for complete product information"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients povidone, pregelatinized starch, sodium starch glycolate, stearic acid"
+      ],
+      "questions": [
+        "Questions or comments? 1-844-705-4384"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL Restore U NDC 57344-001-06 \u2020COMPARE TO THE ACTIVE INGREDIENT IN TYLENOL\u00ae REGULAR STRENGTH TABLETS REGULAR STRENGTH Pain Relief Acetaminophen Pain Reliever / Fever Reducer actual size 500 TABLETS - 325 MG EACH image description"
+      ],
+      "set_id": "36ad21a3-6229-e91b-e063-6394a90a7933",
+      "id": "5ff0de8f-ff65-04fb-e063-6394a90af892",
+      "effective_time": "20261110",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "M013"
+        ],
+        "brand_name": [
+          "Pain Relief"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "AAA Pharmaceutical, Inc."
+        ],
+        "product_ndc": [
+          "57344-301"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN"
+        ],
+        "spl_id": [
+          "5ff0de8f-ff65-04fb-e063-6394a90af892"
+        ],
+        "spl_set_id": [
+          "36ad21a3-6229-e91b-e063-6394a90a7933"
+        ],
+        "package_ndc": [
+          "57344-301-06",
+          "57344-301-08"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0099581912390"
+        ],
+        "unii": [
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Pain Relief Acetaminophen ACETAMINOPHEN ACETAMINOPHEN POVIDONE STARCH, PREGELATINIZED CORN SODIUM STARCH GLYCOLATE TYPE A CORN STEARIC ACID M2A4;57344"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredient (in each tablet) Acetaminophen 500 mg"
+      ],
+      "purpose": [
+        "Purpose Pain reliever/fever reducer"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves minor aches and pains due to: the common cold headache backache minor pain of arthritis toothache muscular aches premenstrual and menstrual cramps temporarily reduces fever"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are allergic to acetaminophen or any of the inactive ingredients in this product Ask a doctor before use if you have liver disease. Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin Stop use and ask a doctor if pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days new symptoms occur redness or swelling is present These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are allergic to acetaminophen or any of the inactive ingredients in this product"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease."
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking the blood thinning drug warfarin"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if pain gets worse or lasts more than 10 days fever gets worse or lasts more than 3 days new symptoms occur redness or swelling is present These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 tablets every 6 hours while symptoms last do not take more than 6 tablets in 24 hours, unless directed by a doctor do not use for more than 10 days unless directed by a doctor children under 12 years ask a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"50%\" styleCode=\"Noautorules\"> <col width=\"25%\" align=\"left\" valign=\"top\"/> <col width=\"75%\" align=\"left\" valign=\"top\"/> <tbody> <tr styleCode=\"Botrule\"> <td styleCode=\"Toprule Rrule\">adults and children 12 years and over</td> <td styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 2 tablets every 6 hours while symptoms last</item> <item>do not take more than 6 tablets in 24 hours, unless directed by a doctor</item> <item>do not use for more than 10 days unless directed by a doctor</item> </list> </td> </tr> <tr> <td styleCode=\"Rrule\">children under 12 years</td> <td> <list listType=\"unordered\" styleCode=\"Square\"> <item>ask a doctor</item> </list> </td> </tr> </tbody> </table>"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20-25\u00b0C (68-77\u00b0F) retain carton for complete product information"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients povidone, pregelatinized starch, sodium starch glycolate, stearic acid"
+      ],
+      "questions": [
+        "Questions or comments? 1-844-705-4384"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL RESTORE U NDC 57344-003-07 \u2020COMPARE TO THE ACTIVE INGREDIENT IN TYLENOL\u00ae EXTRA STRENGTH For Adults EXTRA STRENGTH Pain Relief Acetaminophen Pain Relievcer / Fever Reducer actual size 500 TABLETS - 500 MG EACH image description"
+      ],
+      "set_id": "36ad34f4-4e66-f371-e063-6394a90ae76a",
+      "id": "5ff0ea23-0d7d-1132-e063-6394a90a3437",
+      "effective_time": "20261110",
+      "version": "5",
+      "openfda": {
+        "application_number": [
+          "M013"
+        ],
+        "brand_name": [
+          "Pain Relief"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN"
+        ],
+        "manufacturer_name": [
+          "AAA Pharmaceutical, Inc."
+        ],
+        "product_ndc": [
+          "57344-103"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN"
+        ],
+        "spl_id": [
+          "5ff0ea23-0d7d-1132-e063-6394a90a3437"
+        ],
+        "spl_set_id": [
+          "36ad34f4-4e66-f371-e063-6394a90ae76a"
+        ],
+        "package_ndc": [
+          "57344-103-07",
+          "57344-103-15",
+          "57344-103-11"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "upc": [
+          "0099581912406"
+        ],
+        "unii": [
+          "362O9ITL9D"
+        ]
+      }
+    },
+    {
+      "spl_product_data_elements": [
+        "Allergy Multi-Symptom ACETAMINOPHEN, CHLORPHENIRAMINE MALEATE, and PHENYLEPHRINE HYDROCHLORIDE ACETAMINOPHEN ACETAMINOPHEN CHLORPHENIRAMINE MALEATE CHLORPHENIRAMINE PHENYLEPHRINE HYDROCHLORIDE PHENYLEPHRINE ACESULFAME POTASSIUM SILICON DIOXIDE CROSCARMELLOSE SODIUM FERRIC OXIDE YELLOW MAGNESIUM STEARATE CROSPOVIDONE CELLULOSE, MICROCRYSTALLINE POLYETHYLENE GLYCOL, UNSPECIFIED POLYVINYL ALCOHOL, UNSPECIFIED POVIDONE, UNSPECIFIED STARCH, CORN PROPYLENE GLYCOL STEARIC ACID TALC TITANIUM DIOXIDE Off-White AAA;1128"
+      ],
+      "spl_unclassified_section": [
+        "Drug Facts"
+      ],
+      "active_ingredient": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever Chlorpheniramine maleate 2 mg Antihistamine Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "active_ingredient_table": [
+        "<table width=\"60%\"> <col width=\"50%\" align=\"left\" valign=\"top\"/> <col width=\"50%\" align=\"right\" valign=\"top\"/> <thead> <tr> <th> <content styleCode=\"italics\">Active ingredients  (in each caplet) </content> </th> <th> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td>Acetaminophen 325 mg</td> <td>Pain reliever</td> </tr> <tr> <td>Chlorpheniramine maleate 2 mg</td> <td>Antihistamine</td> </tr> <tr> <td>Phenylephrine HCl 5 mg</td> <td>Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "purpose": [
+        "Active ingredients (in each caplet) Purpose Acetaminophen 325 mg Pain reliever Chlorpheniramine maleate 2 mg Antihistamine Phenylephrine HCl 5 mg Nasal decongestant"
+      ],
+      "purpose_table": [
+        "<table width=\"60%\"> <col width=\"50%\" align=\"left\" valign=\"top\"/> <col width=\"50%\" align=\"right\" valign=\"top\"/> <thead> <tr> <th> <content styleCode=\"italics\">Active ingredients  (in each caplet) </content> </th> <th> <content styleCode=\"italics\">Purpose</content> </th> </tr> </thead> <tbody> <tr> <td>Acetaminophen 325 mg</td> <td>Pain reliever</td> </tr> <tr> <td>Chlorpheniramine maleate 2 mg</td> <td>Antihistamine</td> </tr> <tr> <td>Phenylephrine HCl 5 mg</td> <td>Nasal decongestant</td> </tr> </tbody> </table>"
+      ],
+      "indications_and_usage": [
+        "Uses temporarily relieves these symptoms of hay fever or other upper respiratory allergies: headache sinus congestion and pressure nasal congestion runny nose and sneezing minor aches and pains temporarily relieves these additional symptoms of hay fever: itching of the nose or throat itchy, watery eyes helps clear nasal passages helps decongest sinus openings and passages"
+      ],
+      "warnings": [
+        "Warnings Liver warning This product contains acetaminophen. The maximum daily dose of this product is 10 caplets (3,250 mg acetaminophen) in 24 hours. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had an allergic reaction to this product or any of its ingredients Ask a doctor before use if you have liver disease heart disease high blood pressure thyroid disease diabetes trouble urinating due to an enlarged prostate gland a breathing problem such as emphysema or chronic bronchitis glaucoma Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers taking the blood thinning drug warfarin When using this product do not exceed recommended dosage excitability may occur, especially in children drowsiness may occur alcohol, sedatives, and tranquilizers may increase drowsiness avoid alcoholic drinks be careful when driving a motor vehicle or operating machinery Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain or nasal congestion gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur These could be signs of a serious condition. If pregnant or breast-feeding, ask a health professional before use. Keep out of reach of children. Overdose warning In case of overdose, get medical help or contact a Poison Control Center right away (1-800-222-1222). Quick medical attention is critical for adults as well as for children even if you do not notice any signs or symptoms."
+      ],
+      "do_not_use": [
+        "Do not use with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had an allergic reaction to this product or any of its ingredients"
+      ],
+      "ask_doctor": [
+        "Ask a doctor before use if you have liver disease heart disease high blood pressure thyroid disease diabetes trouble urinating due to an enlarged prostate gland a breathing problem such as emphysema or chronic bronchitis glaucoma"
+      ],
+      "ask_doctor_or_pharmacist": [
+        "Ask a doctor or pharmacist before use if you are taking sedatives or tranquilizers taking the blood thinning drug warfarin"
+      ],
+      "when_using": [
+        "When using this product do not exceed recommended dosage excitability may occur, especially in children drowsiness may occur alcohol, sedatives, and tranquilizers may increase drowsiness avoid alcoholic drinks be careful when driving a motor vehicle or operating machinery"
+      ],
+      "stop_use": [
+        "Stop use and ask a doctor if nervousness, dizziness, or sleeplessness occur pain or nasal congestion gets worse or lasts more than 7 days fever gets worse or lasts more than 3 days redness or swelling is present new symptoms occur These could be signs of a serious condition."
+      ],
+      "pregnancy_or_breast_feeding": [
+        "If pregnant or breast-feeding, ask a health professional before use."
+      ],
+      "keep_out_of_reach_of_children": [
+        "Keep out of reach of children."
+      ],
+      "dosage_and_administration": [
+        "Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 caplets every 4 hours swallow whole; do not crush, chew, or dissolve do not take more than 10 caplets in 24 hours children under 12 years ask a doctor"
+      ],
+      "dosage_and_administration_table": [
+        "<table width=\"60%\"> <col width=\"30%\" align=\"left\" valign=\"top\"/> <col width=\"70%\" align=\"left\" valign=\"top\"/> <tbody> <tr styleCode=\"Botrule First\"> <td align=\"left\" styleCode=\"Rrule Toprule\">adults and children 12 years and over</td> <td align=\"left\" styleCode=\"Toprule\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>take 2 caplets every 4 hours</item> <item>swallow whole; do not crush, chew, or dissolve</item> <item>do not take more than 10 caplets in 24 hours</item> </list> </td> </tr> <tr> <td align=\"left\" styleCode=\"Rrule\">children under  12 years </td> <td align=\"left\"> <list listType=\"unordered\" styleCode=\"Square\"> <item>ask a doctor</item> </list> </td> </tr> </tbody> </table>"
+      ],
+      "storage_and_handling": [
+        "Other information store between 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F) in a dry place retain carton for complete product information and warnings"
+      ],
+      "inactive_ingredient": [
+        "Inactive ingredients acesulfame potassium, colloidal silicon dioxide, corn starch, croscarmellose sodium, crospovidone, flavor, iron oxide yellow, magnesium stearate, microcrystalline cellulose, polyethylene glycol, polyvinyl alcohol, povidone, pregelatinized starch, propylene glycol, stearic acid, talc, titanium dioxide"
+      ],
+      "questions": [
+        "Questions or comments? Call 833-358-6431"
+      ],
+      "package_label_principal_display_panel": [
+        "PRINCIPAL DISPLAY PANEL NDC 70677-1004-1 Foster & Thrive\u2122 FOR ADULTS Allergy Multi-Symptom Acetaminophen 325 mg, Phenylephrine HCl 5 mg, Chlorpheniramine Maleate 2 mg PAIN RELIEVER, NASAL DECONGESTANT, ANTIHISTAMINE Cool Taste | May Cause Drowsiness For relief of: \u2022 Headache \u2022 Sinus Pressure \u2022 Nasal Congestion \u2022 Runny Nose \u2022 Itchy, Watery Eyes \u2022 Sneezing ACTUAL SIZE 24 CAPLETS image description"
+      ],
+      "set_id": "38e70a28-eff2-4a48-b829-8cd68e80beef",
+      "id": "5ff1dff9-0930-c8ab-e063-6394a90a929a",
+      "effective_time": "20261110",
+      "version": "4",
+      "openfda": {
+        "application_number": [
+          "M012"
+        ],
+        "brand_name": [
+          "Allergy Multi-Symptom"
+        ],
+        "generic_name": [
+          "ACETAMINOPHEN, CHLORPHENIRAMINE MALEATE, AND PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "manufacturer_name": [
+          "STRATEGIC SOURCING SERVICES LLC"
+        ],
+        "product_ndc": [
+          "70677-1004"
+        ],
+        "product_type": [
+          "HUMAN OTC DRUG"
+        ],
+        "route": [
+          "ORAL"
+        ],
+        "substance_name": [
+          "ACETAMINOPHEN",
+          "CHLORPHENIRAMINE MALEATE",
+          "PHENYLEPHRINE HYDROCHLORIDE"
+        ],
+        "spl_id": [
+          "5ff1dff9-0930-c8ab-e063-6394a90a929a"
+        ],
+        "spl_set_id": [
+          "38e70a28-eff2-4a48-b829-8cd68e80beef"
+        ],
+        "package_ndc": [
+          "70677-1004-1"
+        ],
+        "is_original_packager": [
+          true
+        ],
+        "unii": [
+          "362O9ITL9D",
+          "V1Q0O9OJ9Z",
+          "04JA59TNSJ"
+        ]
+      }
+    }
+  ]
+}

@@ -175,6 +175,7 @@ public class OpenFda {
 				first(openfda, "application_number").orElse(null),
 				effectiveDate(result),
 				strings(openfda.path("substance_name")),
+				strings(openfda.path("route")),
 				Map.copyOf(sections),
 				text(result, STRENGTHS).orElse(null));
 	}
