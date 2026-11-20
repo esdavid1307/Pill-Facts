@@ -1,5 +1,6 @@
-# Pill-Facts
+# <img src="frontend/public/favicon.svg" alt="" width="32" height="32"> Pill-Facts
 
+Live at <https://pillfacts.net>.
 
 Pill-Facts presents FDA-published drug labelling
 verbatim, attributed to its source, and authors no medical content of its own.
