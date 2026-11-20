@@ -12,3 +12,8 @@ import type { Candidate } from '../api/search'
 export function drugConceptPath({ rxcui }: Candidate): string {
   return `/drug-concepts/${rxcui}`
 }
+
+/** Where the page's contents link to a Safety Section, the nth of its class's. */
+export function safetySectionId(idPrefix: string, index: number): string {
+  return `${idPrefix}-${index + 1}`
+}

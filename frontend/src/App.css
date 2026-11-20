@@ -315,7 +315,6 @@
 /* ---------- A Drug Concept's labelling ---------- */
 
 .page .regulatory-class {
-  counter-reset: section;
   margin: 0 0 48px;
 }
 
@@ -472,6 +471,88 @@
 
 .page .compositions span {
   color: var(--muted);
+}
+
+/* ---------- On this page ---------- */
+
+/* One count for the whole page, so a section's number here is its number in the contents. */
+.page .with-contents {
+  counter-reset: section;
+}
+
+.page .on-this-page {
+  counter-reset: entry;
+  margin: 0 0 48px;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.page .on-this-page > p {
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.page .on-this-page ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page .on-this-page li {
+  display: flex;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.page .on-this-page li:not(.class-name) {
+  counter-increment: entry;
+}
+
+.page .on-this-page li:not(.class-name)::before {
+  content: '/' counter(entry, decimal-leading-zero);
+  color: var(--muted);
+}
+
+.page .on-this-page li.class-name {
+  padding-top: 20px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.page .on-this-page a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.page .on-this-page a:hover {
+  text-decoration: underline;
+}
+
+/* Beside the labelling once there is room for both, and kept in view while it is read. */
+@media (min-width: 1100px) {
+  .page .page-body:has(.with-contents) {
+    max-width: 1320px;
+  }
+
+  .page .with-contents {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 0 40px;
+    align-items: start;
+  }
+
+  .page .on-this-page {
+    position: sticky;
+    top: 24px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(13, 13, 13, 0.12);
+  }
 }
 
 /*

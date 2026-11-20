@@ -1,4 +1,5 @@
 import type { Provenance, SafetySection } from '../api/drugConcept'
+import { safetySectionId } from './drugConceptPath'
 
 /** The heading the backend gives the FDA's most serious warning. */
 const BOXED_WARNING = 'Boxed Warning'
@@ -11,12 +12,13 @@ const BOXED_WARNING = 'Boxed Warning'
  * because it leads the list; a Drug Concept without one has no Boxed Warning in the list
  * and so this renders nothing whatsoever about it, per ADR-0007.
  */
-export function SafetySections({ sections }: { sections: SafetySection[] }) {
+export function SafetySections({ sections, idPrefix }: { sections: SafetySection[]; idPrefix: string }) {
   return (
     <>
-      {sections.map((section) => (
+      {sections.map((section, index) => (
         <section
           key={section.heading}
+          id={safetySectionId(idPrefix, index)}
           className={section.heading === BOXED_WARNING ? 'safety boxed-warning' : 'safety'}
         >
           <h3>{section.heading}</h3>

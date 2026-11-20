@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router'
 import {
   fetchDrugConcept,
@@ -12,6 +12,7 @@ import { TooManyRequests, tooManyRequestsMessage } from '../api/tooManyRequests'
 import { Unreachable } from '../api/unreachable'
 import { RelatedProducts } from './RelatedProducts'
 import { SafetyFraming } from './SafetyFraming'
+import { safetySectionId } from './drugConceptPath'
 import { LabelProvenance, SafetySections } from './SafetySections'
 
 /**
@@ -118,14 +119,19 @@ export function DrugConceptPage() {
 
       {answer?.state === 'loaded' && (
         <>
-          <Labelling drugConcept={answer.drugConcept} />
-          {/*
-            * What else the Active Ingredient is sold in is a claim about composition
-            * rather than about the labelling, so it is shown whether the FDA publishes a
-            * Label or not.
-            */}
-          <RelatedProducts drugConcept={answer.drugConcept} />
-          <FetchedDate on={answer.drugConcept.fetchedDate} />
+          <div className="with-contents">
+            <OnThisPage drugConcept={answer.drugConcept} />
+            <div>
+              <Labelling drugConcept={answer.drugConcept} />
+              {/*
+                * What else the Active Ingredient is sold in is a claim about composition
+                * rather than about the labelling, so it is shown whether the FDA publishes
+                * a Label or not.
+                */}
+              <RelatedProducts drugConcept={answer.drugConcept} />
+              <FetchedDate on={answer.drugConcept.fetchedDate} />
+            </div>
+          </div>
         </>
       )}
 
@@ -200,12 +206,12 @@ const CLASS_HEADINGS: Record<RegulatoryClass, string> = {
 
 /** One Representative Label, clearly bounded so its class cannot be mistaken. */
 function ClassLabelling({ block }: { block: RegulatoryClassBlock }) {
-  const id = `labelling-${block.regulatoryClass.toLowerCase().replaceAll('_', '-')}`
+  const id = classId(block)
   return (
     <section className="regulatory-class" aria-labelledby={id}>
       <h2 id={id}>{CLASS_HEADINGS[block.regulatoryClass]}</h2>
       {/* Safety first within the class: no claim is allowed above a Boxed Warning. */}
-      <SafetySections sections={block.sections} />
+      <SafetySections sections={block.sections} idPrefix={id} />
       {block.strengths && (
         <section aria-labelledby={`${id}-strengths`}>
           <h3 id={`${id}-strengths`}>Strengths</h3>
@@ -214,6 +220,66 @@ function ClassLabelling({ block }: { block: RegulatoryClassBlock }) {
         </section>
       )}
     </section>
+  )
+}
+
+function classId(block: RegulatoryClassBlock): string {
+  return `labelling-${block.regulatoryClass.toLowerCase().replaceAll('_', '-')}`
+}
+
+/**
+ * The page's contents, in the order they are read: each Safety Section, then the product
+ * lists. A Drug Concept in both Regulatory Classes can carry two sections of one name, so
+ * each class's are listed under that class.
+ *
+ * Links scroll rather than navigate: a new history entry would drop the router state that
+ * carries the Brand the page is titled by.
+ */
+function OnThisPage({ drugConcept }: { drugConcept: DrugConcept }) {
+  const { labelling, alternatives, combinationProducts } = drugConcept
+  const entries: { id: string; label: string }[] = []
+  if (alternatives && alternatives.length > 0) {
+    entries.push({ id: 'alternatives', label: 'Other products' })
+  }
+  if (combinationProducts && combinationProducts.length > 0) {
+    entries.push({ id: 'combination-products', label: 'Combination products' })
+  }
+  if (labelling.every((block) => block.sections.length === 0) && entries.length === 0) {
+    return null
+  }
+
+  const link = ({ id, label }: { id: string; label: string }) => (
+    <li key={id}>
+      <a
+        href={`#${id}`}
+        onClick={(event) => {
+          event.preventDefault()
+          document.getElementById(id)?.scrollIntoView()
+        }}
+      >
+        {label}
+      </a>
+    </li>
+  )
+
+  return (
+    <nav className="on-this-page" aria-labelledby="on-this-page">
+      {/* Not a heading: the page's outline is its labelling, and this is a way through it. */}
+      <p id="on-this-page">On this page</p>
+      <ol>
+        {labelling.map((block) => (
+          <Fragment key={block.regulatoryClass}>
+            {labelling.length > 1 && block.sections.length > 0 && (
+              <li className="class-name">{CLASS_HEADINGS[block.regulatoryClass]}</li>
+            )}
+            {block.sections.map((section, index) =>
+              link({ id: safetySectionId(classId(block), index), label: section.heading }),
+            )}
+          </Fragment>
+        ))}
+        {entries.map(link)}
+      </ol>
+    </nav>
   )
 }
 

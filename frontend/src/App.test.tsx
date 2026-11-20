@@ -1005,6 +1005,43 @@ describe('a Drug Concept sold in both Regulatory Classes', () => {
     expect(screen.getByText('Stomach bleeding warning.')).toBeInTheDocument()
     expect(screen.getByText('Cardiovascular thrombotic events.')).toBeInTheDocument()
   })
+
+  it('lists each class’s sections on this page, linked to where they are', async () => {
+    backendReturns({
+      '/api/search': searchResults([{ rxcui: '5640', name: 'ibuprofen' }]),
+      '/api/drug-concepts/5640': {
+        rxcui: '5640',
+        name: 'ibuprofen',
+        labelling: [
+          {
+            regulatoryClass: 'OVER_THE_COUNTER',
+            provenance: LIPITOR,
+            sections: [section('Warnings', 'Stomach bleeding warning.')],
+          },
+          {
+            regulatoryClass: 'PRESCRIPTION',
+            provenance: LIPITOR,
+            sections: [section('Warnings and Precautions', 'Cardiovascular thrombotic events.')],
+          },
+        ],
+      },
+    })
+
+    await search('ibuprofen')
+
+    const contents = await screen.findByRole('navigation', { name: 'On this page' })
+    expect(within(contents).getAllByRole('listitem').map((item) => item.textContent)).toEqual([
+      'Over-the-counter labelling',
+      'Warnings',
+      'Prescription labelling',
+      'Warnings and Precautions',
+    ])
+    for (const link of within(contents).getAllByRole('link')) {
+      expect(document.querySelector(link.getAttribute('href')!)).toHaveTextContent(
+        link.textContent!,
+      )
+    }
+  })
 })
 
 /**
