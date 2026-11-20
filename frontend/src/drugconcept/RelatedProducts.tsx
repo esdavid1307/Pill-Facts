@@ -56,7 +56,7 @@ function Alternatives({
         with {name}
       </h2>
       <p className="composition-note">What each of these is made of, as RxNorm records it.</p>
-      <ProductList products={alternatives} />
+      <ProductList products={alternatives} headingId="alternatives" />
     </section>
   )
 }
@@ -85,7 +85,7 @@ function CombinationProducts({
         Each of these contains {name} and at least one other active ingredient. The labelling
         above is for {name}, and describes none of them.
       </p>
-      <ProductList products={combinationProducts} />
+      <ProductList products={combinationProducts} headingId="combination-products" />
     </section>
   )
 }
@@ -94,11 +94,20 @@ function CombinationProducts({
  * One product per line, each naming its own strength and dosage form. A Brand sold in
  * four strengths is four lines, because a line covering all four would be a claim that
  * the strength does not matter.
+ *
+ * The list starts closed, and its toggle is described by the heading above it, so a
+ * reader tabbing between the two toggles hears which list each one opens.
  */
-function ProductList({ products }: { products: { composition: string; brands: string[] }[] }) {
+function ProductList({
+  products,
+  headingId,
+}: {
+  products: { composition: string; brands: string[] }[]
+  headingId: string
+}) {
   return (
     <details>
-      <summary>{products.length === 1 ? 'Show 1' : `Show all ${products.length}`}</summary>
+      <summary aria-describedby={headingId}>Show the list</summary>
       <ul className="compositions">
         {products.map((product) => (
           <li key={product.composition}>

@@ -2,7 +2,7 @@
 
 Acetaminophen is in 55 Alternatives and 348 Combination Products, and a page that listed
 them open put 403 rows of product names under four sections of labelling. Nothing in the
-rows was wrong. The page was unreadable, and the warnings a reader came for were pushed out
+rows was wrong. The page was unreadable, and the Safety Sections a reader came for were pushed out
 of sight.
 
 So both lists start closed. Each is headed by its true count ("348 products that combine

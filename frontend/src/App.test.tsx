@@ -1060,8 +1060,11 @@ describe('the other products an Active Ingredient is sold in', () => {
       }),
     ).toBeInTheDocument()
 
-    const showAlternatives = screen.getByText('Show all 2')
-    const showCombinations = screen.getByText('Show 1')
+    const [showAlternatives, showCombinations] = screen.getAllByText('Show the list')
+    expect(showAlternatives).toHaveAccessibleDescription('2 other products made with atorvastatin')
+    expect(showCombinations).toHaveAccessibleDescription(
+      '1 product that combines atorvastatin with another medication',
+    )
     expect(showAlternatives.closest('details')).not.toHaveAttribute('open')
     expect(showCombinations.closest('details')).not.toHaveAttribute('open')
 
