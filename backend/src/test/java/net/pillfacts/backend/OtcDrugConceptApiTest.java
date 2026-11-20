@@ -31,6 +31,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.rxcui").isEqualTo("161")
 				.jsonPath("$.name").isEqualTo("acetaminophen")
 				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
+						"Active ingredient",
 						"Warnings",
 						"Do not use",
 						"Ask a doctor before use if",
@@ -40,7 +41,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.labelling[0].sections[0].provenance.manufacturer")
 						.isEqualTo("Sun Pharmaceutical Industries, Inc.")
 				.jsonPath("$.labelling[0].sections[0].provenance.effectiveDate").isEqualTo("2026-09-03")
-				.jsonPath("$.labelling[0].sections[3].provenance.labelId").isEqualTo(FEVERALL);
+				.jsonPath("$.labelling[0].sections[4].provenance.labelId").isEqualTo(FEVERALL);
 	}
 
 	/**
@@ -78,6 +79,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.labelling.length()").isEqualTo(2)
 				.jsonPath("$.labelling[0].regulatoryClass").isEqualTo("OVER_THE_COUNTER")
 				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
+						"Active ingredient",
 						"Warnings",
 						"Do not use",
 						"Ask a doctor before use if",
@@ -101,8 +103,8 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				// Four sections, not five with one of them standing empty.
-				.jsonPath("$.labelling[0].sections.length()").isEqualTo(4)
+				// Five sections, not six with one of them standing empty.
+				.jsonPath("$.labelling[0].sections.length()").isEqualTo(5)
 				.jsonPath("$.labelling[0].sections[*].heading").value(headings ->
 						assertThat((List<String>) headings).doesNotContain("When using this product"))
 				.jsonPath("$.labelling[0].sections[*].text").value(texts ->
@@ -141,6 +143,7 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.jsonPath("$.labelling[0].sections[0].provenance.label")
 						.isEqualTo("Nighttime Sleep Aid Berry Flavor")
 				.jsonPath("$.labelling[0].sections[*].heading").isEqualTo(List.of(
+						"Active ingredient",
 						"Warnings",
 						"Do not use",
 						"Ask a doctor before use if",
@@ -178,12 +181,30 @@ class OtcDrugConceptApiTest extends ApiTest {
 				.exchange()
 				.expectStatus().isOk()
 				.expectBody()
-				.jsonPath("$.labelling[0].sections[1].heading").isEqualTo("Do not use")
-				.jsonPath("$.labelling[0].sections[1].text").value(text -> assertThat((String) text)
+				.jsonPath("$.labelling[0].sections[2].heading").isEqualTo("Do not use")
+				.jsonPath("$.labelling[0].sections[2].text").value(text -> assertThat((String) text)
 						.startsWith("in children under 6 years")
 						.contains("with any other drug containing acetaminophen"))
-				.jsonPath("$.labelling[0].sections[2].text").value(text -> assertThat((String) text)
+				.jsonPath("$.labelling[0].sections[3].text").value(text -> assertThat((String) text)
 						.startsWith("you have liver disease"));
+	}
+
+	/**
+	 * #18: an OTC Label states its strength in the Drug Facts active ingredient line,
+	 * not in a strengths section. It is one product's strength, per unit of its dosage
+	 * form, so it renders verbatim under the panel's own heading and never as "Strengths".
+	 */
+	@Test
+	void renders_the_panels_active_ingredient_line_verbatim_under_its_own_heading() {
+		api().get().uri("/api/drug-concepts/161")
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody()
+				.jsonPath("$.labelling[0].strengths").doesNotExist()
+				.jsonPath("$.labelling[0].sections[0].heading").isEqualTo("Active ingredient")
+				.jsonPath("$.labelling[0].sections[0].text")
+						.isEqualTo("(in each rectal suppository) Acetaminophen, USP 325 mg")
+				.jsonPath("$.labelling[0].sections[0].provenance.labelId").isEqualTo(FEVERALL);
 	}
 
 	/**

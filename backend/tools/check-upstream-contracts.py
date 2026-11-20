@@ -28,7 +28,14 @@ PRESCRIPTION_FIELDS = (
     "drug_interactions",
     "dosage_forms_and_strengths",
 )
-OTC_FIELDS = ("warnings", "do_not_use", "ask_doctor", "when_using", "stop_use")
+OTC_FIELDS = (
+    "active_ingredient",
+    "warnings",
+    "do_not_use",
+    "ask_doctor",
+    "when_using",
+    "stop_use",
+)
 OPENFDA_FIELDS = (
     "brand_name",
     "generic_name",

@@ -62,9 +62,13 @@ final class LabelText {
 		return RUN_OF_SPACES.matcher(rendered).replaceAll(" ").strip();
 	}
 
+	/**
+	 * Only a whole-word restatement goes: "Active ingredients (in each caplet)" under
+	 * "Active ingredient" is the panel's own plural, and left whole rather than cut to "s".
+	 */
 	private static String withoutLeading(String text, String heading) {
-		return text.toLowerCase(Locale.ROOT).startsWith(heading.toLowerCase(Locale.ROOT))
-				? text.substring(heading.length()).strip()
-				: text;
+		boolean restated = text.toLowerCase(Locale.ROOT).startsWith(heading.toLowerCase(Locale.ROOT))
+				&& (text.length() == heading.length() || !Character.isLetter(text.charAt(heading.length())));
+		return restated ? text.substring(heading.length()).strip() : text;
 	}
 }
