@@ -158,7 +158,10 @@ async function search(query: string) {
   await user.click(screen.getByRole('button', { name: /search/i }))
 }
 
-afterEach(() => vi.unstubAllGlobals())
+afterEach(() => {
+  vi.unstubAllGlobals()
+  vi.restoreAllMocks()
+})
 
 /**
  * The landing is a drawing either side of 900px, and the point of testing it is that being
@@ -686,6 +689,33 @@ describe("a prescription Drug Concept's page", () => {
     const boxed = await screen.findByRole('heading', { name: 'Boxed Warning' })
     expect(screen.getAllByRole('heading', { level: 3 })[0]).toBe(boxed)
     expect(boxed.closest('section')).toHaveClass('boxed-warning')
+  })
+
+  it('opens a long section with View more, and never asks for the Boxed Warning to be opened', async () => {
+    // jsdom lays nothing out, so every section's text reads as longer than its box.
+    vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(500)
+    vi.spyOn(HTMLElement.prototype, 'clientHeight', 'get').mockReturnValue(144)
+    await openPage(
+      drugConcept({
+        labelling: [
+          prescription([
+            section('Boxed Warning', 'WARNING: BLEEDING RISK'),
+            section('Contraindications', 'Pregnancy.'),
+          ]),
+        ],
+      }),
+    )
+
+    const toggle = await screen.findByRole('button', { name: 'View more' })
+    expect(screen.getAllByRole('button', { name: /view/i })).toHaveLength(1)
+    expect(screen.getByText('WARNING: BLEEDING RISK').parentElement).not.toHaveClass('collapsed')
+    expect(screen.getByText('Pregnancy.').parentElement).toHaveClass('collapsed')
+
+    await userEvent.click(toggle)
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    expect(toggle).toHaveTextContent('View less')
+    expect(screen.getByText('Pregnancy.').parentElement).not.toHaveClass('collapsed')
   })
 
   /**

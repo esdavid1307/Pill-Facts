@@ -354,12 +354,43 @@
   color: #3a3a3a;
 }
 
-.page .safety > p:not(.provenance),
+.page .safety-text > p,
 .page .regulatory-class > section > p:not(.provenance) {
   max-width: 760px;
   margin: 0 12px 14px;
   font-size: 18px;
   line-height: 1.6;
+}
+
+/* So text of exactly five lines fits the collapsed box and is not cut. */
+.page .safety-text {
+  margin-bottom: 14px;
+}
+
+.page .safety-text > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Five lines of the text above, fading out where it is cut. */
+.page .safety-text.collapsed {
+  max-height: calc(18px * 1.6 * 5);
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
+.page .view-more {
+  margin: 6px 12px 0;
+  padding: 12px 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
 }
 
 .page .safety > h3,
@@ -584,7 +615,11 @@
     font-size: 17px;
   }
 
-  .page .safety > p:not(.provenance) {
+  .page .safety-text > p {
     font-size: 16px;
+  }
+
+  .page .safety-text.collapsed {
+    max-height: calc(16px * 1.6 * 5);
   }
 }

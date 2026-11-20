@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, useState } from 'react'
 import type { Provenance, SafetySection } from '../api/drugConcept'
 import { safetySectionId } from './drugConceptPath'
 
@@ -22,13 +23,56 @@ export function SafetySections({ sections, idPrefix }: { sections: SafetySection
           className={section.heading === BOXED_WARNING ? 'safety boxed-warning' : 'safety'}
         >
           <h3>{section.heading}</h3>
-          {/* Verbatim, per ADR-0006: the FDA's paragraphs, not ours. */}
-          {section.text.split('\n\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          <SafetyText
+            id={`${safetySectionId(idPrefix, index)}-text`}
+            text={section.text}
+            collapsible={section.heading !== BOXED_WARNING}
+          />
           <LabelProvenance provenance={section.provenance} />
         </section>
       ))}
+    </>
+  )
+}
+
+/**
+ * A section's text, opening with its first few lines so the page reads as a list of
+ * sections rather than one long scroll. Nothing is cut: the rest is there to open, and
+ * to find-in-page and screen readers it is there already.
+ *
+ * Not a Boxed Warning, which stays open: a warning that has to be opened is not one that
+ * cannot be missed. See ADR-0007.
+ */
+function SafetyText({ id, text, collapsible }: { id: string; text: string; collapsible: boolean }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [overflows, setOverflows] = useState(false)
+  const [open, setOpen] = useState(false)
+
+  // shortcut: measured once on mount, so a resize that changes whether it overflows is missed; use a ResizeObserver if that matters.
+  useLayoutEffect(() => {
+    const element = ref.current
+    setOverflows(collapsible && !!element && element.scrollHeight > element.clientHeight + 1)
+  }, [collapsible, text])
+
+  return (
+    <>
+      <div ref={ref} id={id} className={collapsible && !open ? 'safety-text collapsed' : 'safety-text'}>
+        {/* Verbatim, per ADR-0006: the FDA's paragraphs, not ours. */}
+        {text.split('\n\n').map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
+      {overflows && (
+        <button
+          type="button"
+          className="view-more"
+          aria-expanded={open}
+          aria-controls={id}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? 'View less' : 'View more'}
+        </button>
+      )}
     </>
   )
 }
