@@ -1,7 +1,7 @@
 /*
  * One palette, taken from the landing page's technical-drawing composition. See ADR-0015:
  * the app is light-only, deliberately, and there is no prefers-color-scheme block to
- * half-apply. A dark treatment is its own design exercise, not a token swap.
+ * half-apply. There is no dark mode and none is planned.
  */
 :root {
   --bg: #ffffff;
